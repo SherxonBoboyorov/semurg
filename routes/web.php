@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\InsuranceCategoryController;
+use App\Http\Controllers\Admin\InsuranceProductController;
 use App\Http\Controllers\Admin\SliderController;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
@@ -17,7 +18,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
     Route::get('/', [HomeController::class, 'index'])->name('homeAdmin');
     Route::resources([
         'slider' => SliderController::class,
-        'insurancecategory' => InsuranceCategoryController::class
+        'insurancecategory' => InsuranceCategoryController::class,
+        'insuranceproduct' => InsuranceProductController::class
     ]);
 });
 

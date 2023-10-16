@@ -59,6 +59,18 @@
                         </li>
                       {{-- end  --}}
 
+
+                      {{-- start  --}}
+                      <li class="nav-item">
+                        <a href="{{ route('insuranceproduct.index') }}" class="nav-link">
+                        <i class="nav-icon fa-solid fa-arrow-down-wide-short"></i>
+                         <p>
+                            Insurance Product
+                         </p>
+                        </a>
+                       </li>
+                     {{-- end  --}}
+
                 </ul>
             </nav>
         </div>

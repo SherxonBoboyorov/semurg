@@ -44,11 +44,11 @@ class InsuranceCategoryController extends Controller
         if (InsuranceCategory::create($data)) {
             return redirect()
                    ->route('insurancecategory.index')
-                   ->with('message', 'added successfully!!!');
+                   ->with('message', 'added successfully!!');
         }
         return redirect()
                ->route('insurancecategory.index')
-               ->with('message', 'failed to add successfully');
+               ->with('message', 'failed to add successfully!!');
     }
 
     /**
@@ -92,12 +92,12 @@ class InsuranceCategoryController extends Controller
         if ($insurancecategory->update($data)) {
             return redirect()
                    ->route('insurancecategory.index')
-                   ->with('message', 'updated successfully!!!');
+                   ->with('message', 'updated successfully!!');
         }
 
         return redirect()
                ->route('insurancecategory.index')
-               ->with('message', 'failed to update successfully');
+               ->with('message', 'failed to update successfully!!');
     }
 
     /**
@@ -113,11 +113,11 @@ class InsuranceCategoryController extends Controller
         if ($insurancecategory->delete()) {
             return redirect()
                    ->route('insurancecategory.index')
-                   ->with('message', "deleted successfully!!!");
+                   ->with('message', "deleted successfully!!");
         }
 
         return redirect()
                ->route('insurancecategory.index')
-               ->with('message', "failed to delete successfully");
+               ->with('message', "failed to delete successfully!!");
     }
 }
