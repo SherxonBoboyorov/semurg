@@ -63,7 +63,7 @@
                       {{-- start  --}}
                       <li class="nav-item">
                         <a href="{{ route('insuranceproduct.index') }}" class="nav-link">
-                        <i class="nav-icon fa-solid fa-arrow-down-wide-short"></i>
+                        <i class="nav-icon fa-solid fa-cart-plus"></i>
                          <p>
                             Insurance Product
                          </p>

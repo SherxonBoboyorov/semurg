@@ -33,7 +33,7 @@ class InsuranceProductController extends Controller
     public function create()
     {
         $insurancecategories = InsuranceCategory::all();
-        return view('admin.insuranceproduct.index', compact('insurancecategories'));
+        return view('admin.insuranceproduct.create', compact('insurancecategories'));
     }
 
     /**
@@ -89,8 +89,8 @@ class InsuranceProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (!UpdateInsuranceProduct::find($id)) {
-            return redirect()->route('activity.index')->with('message', "not fount");
+        if (!InsuranceProduct::find($id)) {
+            return redirect()->route('insuranceproduct.index')->with('message', "not fount");
         }
 
         $insuranceproduct = InsuranceProduct::find($id);
