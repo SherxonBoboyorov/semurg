@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\SliderController;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
 
+
 Auth::routes();
 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
