@@ -71,6 +71,17 @@
                        </li>
                      {{-- end  --}}
 
+                     {{-- start  --}}
+                     <li class="nav-item">
+                        <a href="{{ route('client.index') }}" class="nav-link">
+                          <i class="nav-icon fa-solid fas fa-user-secret"></i>
+                           <p>
+                              Our clients
+                           </p>
+                         </a>
+                       </li>
+                     {{-- end  --}}
+
                 </ul>
             </nav>
         </div>

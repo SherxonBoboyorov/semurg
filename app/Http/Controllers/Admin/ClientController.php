@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\CreateClient;
+use App\Http\Requests\Admin\UpdateClient;
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ClientController extends Controller
 {
@@ -28,9 +31,16 @@ class ClientController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreateClient $request)
     {
-        //
+        $data = $request->all();
+
+        $data['image'] = Client::uploadImage($request);
+
+        if (Client::create($data)) {
+            return redirect()->route('client.index')->with('message', 'added successfully!!');
+        }
+        return redirect()->route('client.index')->back()->with('message', 'failed to add successfully!!');
     }
 
     /**
@@ -46,15 +56,25 @@ class ClientController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $client = Client::find($id);
+        return view('admin.client.edit', compact('client'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateClient $request, string $id)
     {
-        //
+        $client = Client::find($id);
+
+        $data = $request->all();
+        $data['image'] = Client::updateImage($request, $client);
+
+        if ($client->update($data)) {
+            return redirect()->route('client.index')->with('message', 'updated successfully!!');
+        }
+
+        return redirect()->route('client.index')->with('message', 'failed to update successfully!!!');
     }
 
     /**
@@ -62,6 +82,16 @@ class ClientController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $client = Client::find($id);
+
+        if (File::exists(public_path() . $client->image)) {
+            File::delete(public_path() . $client->image);
+        }
+
+        if ($client->delete()) {
+            return redirect()->route('client.index')->with('message', "deleted successfully!!");
+        }
+
+        return redirect()->route('client.index')->with('message', "failed to delete successfully!!");
     }
 }

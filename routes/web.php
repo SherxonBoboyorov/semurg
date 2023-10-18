@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ClientController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -20,7 +21,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
     Route::resources([
         'slider' => SliderController::class,
         'insurancecategory' => InsuranceCategoryController::class,
-        'insuranceproduct' => InsuranceProductController::class
+        'insuranceproduct' => InsuranceProductController::class,
+        'client' => ClientController::class
     ]);
 });
 
