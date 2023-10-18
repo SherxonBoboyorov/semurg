@@ -104,6 +104,17 @@
                        </li>
                      {{-- end  --}}
 
+                       {{-- start  --}}
+                       <li class="nav-item">
+                        <a href="{{ route('category.index') }}" class="nav-link">
+                          <i class="nav-icon fa-brands fa-affiliatetheme"></i>
+                           <p>
+                              Affiliated entities
+                           </p>
+                         </a>
+                       </li>
+                     {{-- end  --}}
+
                 </ul>
             </nav>
         </div>
