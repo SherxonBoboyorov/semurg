@@ -7,7 +7,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\InsuranceCategoryController;
 use App\Http\Controllers\Admin\InsuranceProductController;
+use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\SliderController;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
 
@@ -22,7 +24,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'slider' => SliderController::class,
         'insurancecategory' => InsuranceCategoryController::class,
         'insuranceproduct' => InsuranceProductController::class,
-        'client' => ClientController::class
+        'client' => ClientController::class,
+        'page' => PageController::class
     ]);
 });
 
