@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\ClientController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -25,7 +26,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'insurancecategory' => InsuranceCategoryController::class,
         'insuranceproduct' => InsuranceProductController::class,
         'client' => ClientController::class,
-        'page' => PageController::class
+        'page' => PageController::class,
+        'article' => ArticleController::class
     ]);
 });
 

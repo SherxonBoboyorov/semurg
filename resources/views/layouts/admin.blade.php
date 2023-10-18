@@ -93,6 +93,17 @@
                        </li>
                      {{-- end  --}}
 
+                     {{-- start  --}}
+                     <li class="nav-item">
+                        <a href="{{ route('article.index') }}" class="nav-link">
+                          <i class="nav-icon fas fa-newspaper"></i>
+                           <p>
+                              Articles
+                           </p>
+                         </a>
+                       </li>
+                     {{-- end  --}}
+
                 </ul>
             </nav>
         </div>
