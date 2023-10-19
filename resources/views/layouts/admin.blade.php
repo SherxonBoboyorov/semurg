@@ -74,7 +74,7 @@
                      {{-- start  --}}
                      <li class="nav-item">
                         <a href="{{ route('client.index') }}" class="nav-link">
-                          <i class="nav-icon fa-solid fas fa-user-secret"></i>
+                          <i class="nav-icon fa-solid fas fa-users"></i>
                            <p>
                               Our clients
                            </p>
@@ -107,13 +107,24 @@
                        {{-- start  --}}
                        <li class="nav-item">
                         <a href="{{ route('category.index') }}" class="nav-link">
-                          <i class="nav-icon fa-brands fa-affiliatetheme"></i>
+                          <i class="nav-icon fa-solid fa-arrow-down-wide-short"></i>
                            <p>
-                              Affiliated entities
+                              Document Categories
                            </p>
                          </a>
                        </li>
                      {{-- end  --}}
+
+                     {{-- start  --}}
+                     <li class="nav-item">
+                      <a href="{{ route('product.index') }}" class="nav-link">
+                        <i class="nav-icon fa-solid fa-file"></i>
+                         <p>
+                             Documents
+                         </p>
+                       </a>
+                     </li>
+                   {{-- end  --}}
 
                 </ul>
             </nav>
