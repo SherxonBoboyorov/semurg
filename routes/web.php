@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ClientController;
 use Illuminate\Support\Facades\Auth;
@@ -31,7 +32,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'page' => PageController::class,
         'article' => ArticleController::class,
         'category' => CategoryController::class,
-        'product' => ProductController::class
+        'product' => ProductController::class,
+        'blog' => BlogController::class
     ]);
 });
 

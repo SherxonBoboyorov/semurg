@@ -104,6 +104,18 @@
                        </li>
                      {{-- end  --}}
 
+                     
+                     {{-- start  --}}
+                     <li class="nav-item">
+                      <a href="{{ route('blog.index') }}" class="nav-link">
+                        <i class="nav-icon fa-solid fa-info"></i>
+                         <p>
+                            About us
+                         </p>
+                       </a>
+                     </li>
+                   {{-- end  --}}
+
                        {{-- start  --}}
                        <li class="nav-item">
                         <a href="{{ route('category.index') }}" class="nav-link">
