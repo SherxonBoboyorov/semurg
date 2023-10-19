@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ClientController;
+use App\Http\Controllers\Admin\HistoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -33,7 +34,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'article' => ArticleController::class,
         'category' => CategoryController::class,
         'product' => ProductController::class,
-        'blog' => BlogController::class
+        'blog' => BlogController::class,
+        'history' => HistoryController::class
     ]);
 });
 

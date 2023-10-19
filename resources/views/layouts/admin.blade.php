@@ -138,6 +138,17 @@
                      </li>
                    {{-- end  --}}
 
+                    {{-- start  --}}
+                    <li class="nav-item">
+                      <a href="{{ route('history.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-history"></i>
+                         <p>
+                             History Company
+                         </p>
+                       </a>
+                     </li>
+                   {{-- end  --}}
+
                 </ul>
             </nav>
         </div>
