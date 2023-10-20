@@ -143,7 +143,7 @@
                       <a href="{{ route('history.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-history"></i>
                          <p>
-                             History Company
+                            History Company
                          </p>
                        </a>
                      </li>
@@ -154,7 +154,7 @@
                       <a href="{{ route('leadership.index') }}" class="nav-link">
                         <i class="nav-icon far fa-id-card"></i>
                          <p>
-                             Leaderships
+                            Leaderships
                          </p>
                        </a>
                      </li>
@@ -163,12 +163,24 @@
                      {{-- start  --}}
                      <li class="nav-item">
                       <a href="{{ route('structure.index') }}" class="nav-link">
-                        <i class="nav-icon 	fas fa-project-diagram"></i>
+                        <i class="nav-icon fas fa-project-diagram"></i>
                          <p>
-                              Company structure
+                            Company structure
                          </p>
                        </a>
                      </li>
+                   {{-- end  --}}
+
+
+                   {{-- start  --}}
+                      <li class="nav-item">
+                        <a href="{{ route('forum.index') }}" class="nav-link">
+                          <i class="nav-icon fas fa-comment"></i>
+                           <p>
+                              Forum
+                           </p>
+                         </a>
+                       </li>
                    {{-- end  --}}
 
                 </ul>

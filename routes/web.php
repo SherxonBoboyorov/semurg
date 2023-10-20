@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ClientController;
+use App\Http\Controllers\Admin\ForumController;
 use App\Http\Controllers\Admin\HistoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -39,7 +40,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'blog' => BlogController::class,
         'history' => HistoryController::class,
         'leadership' => LeadershipController::class,
-        'structure' => StructureController::class
+        'structure' => StructureController::class,
+        'forum' => ForumController::class
     ]);
 });
 
