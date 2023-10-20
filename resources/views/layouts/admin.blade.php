@@ -160,6 +160,17 @@
                      </li>
                    {{-- end  --}}
 
+                     {{-- start  --}}
+                     <li class="nav-item">
+                      <a href="{{ route('structure.index') }}" class="nav-link">
+                        <i class="nav-icon 	fas fa-project-diagram"></i>
+                         <p>
+                              Company structure
+                         </p>
+                       </a>
+                     </li>
+                   {{-- end  --}}
+
                 </ul>
             </nav>
         </div>

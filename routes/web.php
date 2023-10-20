@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\LeadershipController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\StructureController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
@@ -37,7 +38,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'product' => ProductController::class,
         'blog' => BlogController::class,
         'history' => HistoryController::class,
-        'leadership' => LeadershipController::class
+        'leadership' => LeadershipController::class,
+        'structure' => StructureController::class
     ]);
 });
 
