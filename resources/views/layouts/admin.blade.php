@@ -149,6 +149,17 @@
                      </li>
                    {{-- end  --}}
 
+                    {{-- start  --}}
+                    <li class="nav-item">
+                      <a href="{{ route('leadership.index') }}" class="nav-link">
+                        <i class="nav-icon far fa-id-card"></i>
+                         <p>
+                             Leaderships
+                         </p>
+                       </a>
+                     </li>
+                   {{-- end  --}}
+
                 </ul>
             </nav>
         </div>

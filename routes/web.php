@@ -11,6 +11,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\InsuranceCategoryController;
 use App\Http\Controllers\Admin\InsuranceProductController;
+use App\Http\Controllers\Admin\LeadershipController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SliderController;
@@ -35,7 +36,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'category' => CategoryController::class,
         'product' => ProductController::class,
         'blog' => BlogController::class,
-        'history' => HistoryController::class
+        'history' => HistoryController::class,
+        'leadership' => LeadershipController::class
     ]);
 });
 
