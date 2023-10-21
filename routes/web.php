@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\InsuranceCategoryController;
 use App\Http\Controllers\Admin\InsuranceProductController;
 use App\Http\Controllers\Admin\LeadershipController;
+use App\Http\Controllers\Admin\LicensesCategoryController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SliderController;
@@ -41,7 +42,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'history' => HistoryController::class,
         'leadership' => LeadershipController::class,
         'structure' => StructureController::class,
-        'forum' => ForumController::class
+        'forum' => ForumController::class,
+        'licensescategory' => LicensesCategoryController::class
     ]);
 });
 

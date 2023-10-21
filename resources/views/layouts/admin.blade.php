@@ -160,6 +160,20 @@
                      </li>
                    {{-- end  --}}
 
+
+                    {{-- start  --}}
+                    <li class="nav-item">
+                      <a href="{{ route('licensescategory.index') }}" class="nav-link">
+                        <i class="nav-icon fa-solid fa-certificate"></i>
+                         <p>
+                            Licenses and certificates
+                         </p>
+                       </a>
+                     </li>
+                   {{-- end  --}}
+
+                  
+
                      {{-- start  --}}
                      <li class="nav-item">
                       <a href="{{ route('structure.index') }}" class="nav-link">
