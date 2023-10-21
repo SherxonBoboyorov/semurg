@@ -18,6 +18,7 @@ class Product extends Model
         'title_ru',
         'title_uz',
         'title_en',
+        'size'
     ];
 
     public function category()
