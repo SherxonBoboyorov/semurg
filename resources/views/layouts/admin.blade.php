@@ -166,14 +166,24 @@
                       <a href="{{ route('licensescategory.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-award"></i>
                          <p>
-                            Licenses and certificates
+                            Certificates Type
                          </p>
                        </a>
                      </li>
                    {{-- end  --}}
 
-                  
 
+                   {{-- start  --}}
+                   <li class="nav-item">
+                    <a href="{{ route('licensesdocument.index') }}" class="nav-link">
+                      <i class="nav-icon fa-solid fa-file"></i>
+                       <p>
+                          Certificates Documents
+                       </p>
+                     </a>
+                   </li>
+                 {{-- end  --}}
+                   
                      {{-- start  --}}
                      <li class="nav-item">
                       <a href="{{ route('structure.index') }}" class="nav-link">
