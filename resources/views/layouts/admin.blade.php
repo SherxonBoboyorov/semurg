@@ -207,6 +207,17 @@
                        </li>
                    {{-- end  --}}
 
+                    {{-- start  --}}
+                    <li class="nav-item">
+                      <a href="{{ route('vacancy.index') }}" class="nav-link">
+                        <i class="nav-icon far fa-folder-open"></i>
+                         <p>
+                            Vacancies
+                         </p>
+                       </a>
+                     </li>
+                 {{-- end  --}}
+
                 </ul>
             </nav>
         </div>
