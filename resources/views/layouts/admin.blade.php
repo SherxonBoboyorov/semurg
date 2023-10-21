@@ -164,7 +164,7 @@
                     {{-- start  --}}
                     <li class="nav-item">
                       <a href="{{ route('licensescategory.index') }}" class="nav-link">
-                        <i class="nav-icon fa-solid fa-certificate"></i>
+                        <i class="nav-icon fas fa-award"></i>
                          <p>
                             Licenses and certificates
                          </p>
