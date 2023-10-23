@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ClientController;
+use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\ForumController;
 use App\Http\Controllers\Admin\HistoryController;
 use Illuminate\Support\Facades\Auth;
@@ -47,7 +48,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'forum' => ForumController::class,
         'licensescategory' => LicensesCategoryController::class,
         'licensesdocument' => LicensesDocumentController::class,
-        'vacancy' => VacancyController::class
+        'vacancy' => VacancyController::class,
+        'faq' => FaqController::class
     ]);
 });
 

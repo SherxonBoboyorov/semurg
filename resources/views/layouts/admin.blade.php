@@ -218,6 +218,18 @@
                      </li>
                  {{-- end  --}}
 
+
+                 {{-- start  --}}
+                  <li class="nav-item">
+                   <a href="{{ route('faq.index') }}" class="nav-link">
+                     <i class="nav-icon fas fa-question"></i>
+                      <p>
+                         FAQ
+                      </p>
+                    </a>
+                  </li>
+                 {{-- end  --}}
+
                 </ul>
             </nav>
         </div>

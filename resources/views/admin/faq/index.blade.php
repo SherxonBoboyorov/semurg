@@ -8,13 +8,13 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">All Vacancies</h4>
+                    <h4 class="page-title">All Faq</h4>
                 </div>
             </div>
             <div class="clearfix"></div>
         </div>
 
-             <a href="{{ route('vacancy.create')}}" class="btn bg-success mb-2">Add Vacancies +</a>
+             <a href="{{ route('faq.create')}}" class="btn bg-success mb-2">Add Faq +</a>
 
 
         <div class="card">
@@ -42,19 +42,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($vacancies as $vacancy)
+                        @foreach ($faqs as $faq)
                         <tr>
-                            <td>{{ $vacancy->id }}</td>
-                            <td>{{ $vacancy->title_uz }}</td>
-                            <td>{{ $vacancy->title_ru }}</td>
-                            <td>{{ $vacancy->title_en }}</td>
+                            <td>{{ $faq->id }}</td>
+                            <td>{{ $faq->title_uz }}</td>
+                            <td>{{ $faq->title_ru }}</td>
+                            <td>{{ $faq->title_en }}</td>
                             <td>
-                                <a href="{{ route('vacancy.edit', $vacancy->id) }}" class="btn btn-primary btn-icon">
+                                <a href="{{ route('faq.edit', $faq->id) }}" class="btn btn-primary btn-icon">
                                     <i class="fa fa-edit">Edit</i>
                                 </a>
                             </td>
                             <td>
-                                <form action="{{ route('vacancy.destroy', $vacancy->id) }}" method="POST">
+                                <form action="{{ route('faq.destroy', $faq->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-icon">
