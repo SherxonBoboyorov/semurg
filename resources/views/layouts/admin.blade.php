@@ -230,6 +230,17 @@
                   </li>
                  {{-- end  --}}
 
+
+                 {{-- start  --}}
+                 <li class="nav-item">
+                  <a href="{{ route('tender.index') }}" class="nav-link">
+                    <i class="nav-icon far fa-calendar-alt"></i>
+                     <p>
+                        Tenders
+                     </p>
+                   </a>
+                 </li>
+                {{-- end  --}}
                 </ul>
             </nav>
         </div>
