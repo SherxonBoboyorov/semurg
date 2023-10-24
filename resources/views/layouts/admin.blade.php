@@ -71,6 +71,17 @@
                        </li>
                      {{-- end  --}}
 
+                      {{-- start  --}}
+                      <li class="nav-item">
+                        <a href="{{ route('carousel.index') }}" class="nav-link">
+                          <i class="nav-icon fas fa-check"></i>
+                           <p>
+                            Why clients choose us
+                           </p>
+                         </a>
+                       </li>
+                     {{-- end  --}}
+
                      {{-- start  --}}
                      <li class="nav-item">
                         <a href="{{ route('client.index') }}" class="nav-link">

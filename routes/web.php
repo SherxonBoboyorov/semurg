@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\CarouselController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\FaqController;
@@ -53,7 +54,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'vacancy' => VacancyController::class,
         'faq' => FaqController::class,
         'tender' => TenderController::class,
-        'useful' => UsefulController::class
+        'useful' => UsefulController::class,
+        'carousel' => CarouselController::class
     ]);
 });
 
