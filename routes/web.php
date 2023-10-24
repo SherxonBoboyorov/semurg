@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\StructureController;
 use App\Http\Controllers\Admin\TenderController;
+use App\Http\Controllers\Admin\UsefulController;
 use App\Http\Controllers\Admin\VacancyController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
@@ -51,7 +52,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'licensesdocument' => LicensesDocumentController::class,
         'vacancy' => VacancyController::class,
         'faq' => FaqController::class,
-        'tender' => TenderController::class
+        'tender' => TenderController::class,
+        'useful' => UsefulController::class
     ]);
 });
 
