@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\InternationalController;
 use App\Http\Controllers\Admin\LeadershipController;
 use App\Http\Controllers\Admin\LicensesCategoryController;
 use App\Http\Controllers\Admin\LicensesDocumentController;
+use App\Http\Controllers\Admin\OutgoingController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SliderController;
@@ -59,7 +60,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'useful' => UsefulController::class,
         'carousel' => CarouselController::class,
         'international' => InternationalController::class,
-        'incoming' => IncomingController::class
+        'incoming' => IncomingController::class,
+        'outgoing' => OutgoingController::class
     ]);
 });
 
