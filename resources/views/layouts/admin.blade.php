@@ -265,8 +265,21 @@
                  </li>
                 {{-- end  --}}
 
+                 
+                {{-- start  --}}
+                   <li class="nav-item">
+                    <a href="{{ route('incoming.index') }}" class="nav-link">
+                    <i class="nav-icon far fa-window-maximize"></i>
+                       <p>
+                           Incoming reinsurance
+                       </p>
+                     </a>
+                   </li>
+                {{-- end  --}}
+
+
                  {{-- start  --}}
-                 <li class="nav-item">
+                  <li class="nav-item">
                   <a href="{{ route('international.index') }}" class="nav-link">
                     <i class="nav-icon far fa-handshake"></i>
                      <p>

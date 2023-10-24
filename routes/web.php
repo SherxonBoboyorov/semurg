@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\IncomingController;
 use App\Http\Controllers\Admin\InsuranceCategoryController;
 use App\Http\Controllers\Admin\InsuranceProductController;
 use App\Http\Controllers\Admin\InternationalController;
@@ -57,7 +58,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'tender' => TenderController::class,
         'useful' => UsefulController::class,
         'carousel' => CarouselController::class,
-        'international' => InternationalController::class
+        'international' => InternationalController::class,
+        'incoming' => IncomingController::class
     ]);
 });
 
