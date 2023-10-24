@@ -33,7 +33,7 @@
             <span class="brand-text font-weight-light" style="margin-left: 88px">Semurg</span>
         </a>
         <div class="sidebar" style="background-color: #182B45">
-            <nav class="mt-2">
+            <nav class="mt-8" style="padding-bottom: 40px">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                       {{-- start  --}}
@@ -264,6 +264,19 @@
                    </a>
                  </li>
                 {{-- end  --}}
+
+                 {{-- start  --}}
+                 <li class="nav-item">
+                  <a href="{{ route('international.index') }}" class="nav-link">
+                    <i class="nav-icon far fa-handshake"></i>
+                     <p>
+                        Partners
+                     </p>
+                   </a>
+                 </li>
+                {{-- end  --}}
+
+                
                 </ul>
             </nav>
         </div>

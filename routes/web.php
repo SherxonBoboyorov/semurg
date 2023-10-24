@@ -14,6 +14,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\InsuranceCategoryController;
 use App\Http\Controllers\Admin\InsuranceProductController;
+use App\Http\Controllers\Admin\InternationalController;
 use App\Http\Controllers\Admin\LeadershipController;
 use App\Http\Controllers\Admin\LicensesCategoryController;
 use App\Http\Controllers\Admin\LicensesDocumentController;
@@ -55,7 +56,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'faq' => FaqController::class,
         'tender' => TenderController::class,
         'useful' => UsefulController::class,
-        'carousel' => CarouselController::class
+        'carousel' => CarouselController::class,
+        'international' => InternationalController::class
     ]);
 });
 

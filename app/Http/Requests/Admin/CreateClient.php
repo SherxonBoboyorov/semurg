@@ -22,7 +22,8 @@ class CreateClient extends FormRequest
     public function rules(): array
     {
         return [
-            'image' => 'required|image|mimes:jpg,jpeg,webp,png'
+            'image' => 'required|image|mimes:jpg,jpeg,webp,png',
+            'link' => 'nullable|string|max:55',
         ];
     }
 }

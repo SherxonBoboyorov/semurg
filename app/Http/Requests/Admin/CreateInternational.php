@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateClient extends FormRequest
+class CreateInternational extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,6 +22,7 @@ class UpdateClient extends FormRequest
     public function rules(): array
     {
         return [
+            'image' => 'required|image|mimes:jpg,jpeg,webp,png',
             'link' => 'nullable|string|max:55',
         ];
     }
