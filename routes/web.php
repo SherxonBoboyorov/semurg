@@ -29,6 +29,8 @@ use App\Http\Controllers\Admin\StructureController;
 use App\Http\Controllers\Admin\TenderController;
 use App\Http\Controllers\Admin\UsefulController;
 use App\Http\Controllers\Admin\VacancyController;
+use App\Http\Controllers\Front\AboutController;
+use App\Http\Controllers\Front\IndexController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
@@ -75,7 +77,8 @@ Route::group(
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){ 
-            //
+            Route::get('/', [IndexController::class, 'homepage'])->name('/');
+            Route::get('about-us', [AboutController::class, 'about'])->name('about-us');
     });
 
 
