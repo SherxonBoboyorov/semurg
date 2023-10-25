@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CarouselController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ClientController;
+use App\Http\Controllers\Admin\ContactListController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\ForumController;
 use App\Http\Controllers\Admin\HistoryController;
@@ -61,7 +62,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'carousel' => CarouselController::class,
         'international' => InternationalController::class,
         'incoming' => IncomingController::class,
-        'outgoing' => OutgoingController::class
+        'outgoing' => OutgoingController::class,
+        'contactlist' => ContactListController::class
     ]);
 });
 

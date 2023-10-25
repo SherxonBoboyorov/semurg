@@ -301,6 +301,19 @@
                  </li>
                 {{-- end  --}}
 
+
+                 {{-- start  --}}
+                 <li class="nav-item">
+                  <a href="{{ route('contactlist.index') }}" class="nav-link">
+                    <i class="nav-icon fa fa-list-alt"></i>
+                     <p>
+                        Contact List
+                     </p>
+                   </a>
+                 </li>
+                {{-- end  --}}
+
+            
                 
                 </ul>
             </nav>
