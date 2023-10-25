@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateLeadership extends FormRequest
+class CreateDirector extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +22,10 @@ class UpdateLeadership extends FormRequest
     public function rules(): array
     {
         return [
-            'name_ru' => 'required|string|max:255',
-            'name_uz' => 'required|string|max:255',
-            'name_en' => 'required|string|max:255',
+            'image' => 'required|image|mimes:jpg,png,jpeg,webp',
+            'title_ru' => 'required|string|max:255',
+            'title_uz' => 'required|string|max:255',
+            'title_en' => 'required|string|max:255',
             'job_ru' => 'required|string|max:255',
             'job_uz' => 'required|string|max:255',
             'job_en' => 'required|string|max:255',

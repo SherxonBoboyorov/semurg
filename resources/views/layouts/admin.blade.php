@@ -139,7 +139,19 @@
                      </li>
                    {{-- end  --}}
 
-                       {{-- start  --}}
+
+                    {{-- start  --}}
+                    <li class="nav-item">
+                      <a href="{{ route('director.index') }}" class="nav-link">
+                        <i class="nav-icon far fa-address-book"></i>
+                         <p>
+                            Director
+                         </p>
+                       </a>
+                     </li>
+                   {{-- end  --}}
+
+                    {{-- start  --}}
                        <li class="nav-item">
                         <a href="{{ route('category.index') }}" class="nav-link">
                           <i class="nav-icon fa-solid fa-arrow-down-wide-short"></i>
@@ -312,6 +324,7 @@
                    </a>
                  </li>
                 {{-- end  --}}
+
 
             
                 
