@@ -339,6 +339,19 @@
                 {{-- end  --}}
 
 
+                  
+                 {{-- start  --}}
+                 <li class="nav-item">
+                  <a href="{{ route('poll.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-poll"></i>
+                     <p>
+                        Survey
+                    </p>
+                   </a>
+                 </li>
+                {{-- end  --}}
+
+
             
                 
                 </ul>

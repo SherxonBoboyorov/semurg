@@ -24,6 +24,7 @@ use App\Http\Controllers\Admin\LicensesDocumentController;
 use App\Http\Controllers\Admin\OptionsController;
 use App\Http\Controllers\Admin\OutgoingController;
 use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\PollController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\StructureController;
@@ -69,7 +70,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'outgoing' => OutgoingController::class,
         'contactlist' => ContactListController::class,
         'director' => DirectorController::class,
-        'options' => OptionsController::class
+        'options' => OptionsController::class,
+        'poll' => PollController::class
     ]);
 });
 
