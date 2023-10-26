@@ -326,6 +326,19 @@
                 {{-- end  --}}
 
 
+                
+                 {{-- start  --}}
+                 <li class="nav-item">
+                  <a href="{{ route('options.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-cog"></i>
+                     <p>
+                        Options
+                    </p>
+                   </a>
+                 </li>
+                {{-- end  --}}
+
+
             
                 
                 </ul>

@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\InternationalController;
 use App\Http\Controllers\Admin\LeadershipController;
 use App\Http\Controllers\Admin\LicensesCategoryController;
 use App\Http\Controllers\Admin\LicensesDocumentController;
+use App\Http\Controllers\Admin\OptionsController;
 use App\Http\Controllers\Admin\OutgoingController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ProductController;
@@ -67,7 +68,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'incoming' => IncomingController::class,
         'outgoing' => OutgoingController::class,
         'contactlist' => ContactListController::class,
-        'director' => DirectorController::class
+        'director' => DirectorController::class,
+        'options' => OptionsController::class
     ]);
 });
 
