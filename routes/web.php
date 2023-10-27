@@ -73,6 +73,7 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'options' => OptionsController::class,
         'poll' => PollController::class
     ]);
+
 });
 
 

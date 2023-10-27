@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+
     <div class="page-content-wrapper ">
 
         <div class="container-fluid">
@@ -67,8 +68,22 @@
 
                         <h1>Answer</h1>
 
+                        <div class="answers">
+                            <button id="add-answer">Add Answer</button>
+                        
+                            <div class="answer-template" style="display: none;">
+                                <div class="answer">
+                                    <input type="text" name="answer_en" placeholder="Answer EN">
+                                    <input type="text" name="answer_ru" placeholder="Answer RU">
+                                    <input type="text" name="answer_uz" placeholder="Answer UZ">
+                                    <button class="remove-answer">-</button>
+                                </div>
+                            </div>
+                        
+                            <div class="added-answers"></div>
+                        </div>
 
-
+                    
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-1">
                                 <button type="submit" class="btn btn-success btn-block">Save</button>
@@ -81,4 +96,24 @@
         </div>
     </div>
 @endsection
+@section('custom_js')
+<script>
 
+   document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('add-answer').addEventListener('click', function() {
+        var newAnswer = document.querySelector('.answer-template .answer').cloneNode(true);
+        document.querySelector('.added-answers').appendChild(newAnswer);
+    });
+
+    document.addEventListener('click', function(event) {
+        if (event.target && event.target.classList.contains('remove-answer')) {
+            event.target.closest('.answer').remove();
+        }
+    });
+});
+
+</script>
+@endsection
+
+
+    
