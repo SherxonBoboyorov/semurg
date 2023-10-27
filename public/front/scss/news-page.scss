@@ -1,0 +1,67 @@
+@import './foundation/mixin';
+@import './foundation/variables';
+
+.news-page {
+    &__content {
+        .news__row {
+            gap: 40px;
+        }
+
+        .news__col {
+            .img {
+                height: 330px;
+                @include media(1024px){
+                    height: 310px;
+                }
+                @include media(768px){
+                    height: 280px;
+                }
+                @include media(550px){
+                    height: 250px;
+                }
+            }
+            &-txt{
+                padding: 24px 20px 32px;
+            }
+        }
+    }
+    @include media(1112px){
+        .parent{
+            gap: 40px;
+        }
+    }
+}
+
+.news-in {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    padding-top: 100px;
+    padding-bottom: 110px;
+
+    &__img {
+        width: 100%;
+        height: 700px;
+        @include media(1124px){
+            height: 600px;
+        }
+        @include media(1024px){
+            height: 500px;
+        }
+        @include media(768px){
+            height: 350px;
+        }
+        @include media(500px){
+            height: 300px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .date {
+        @include font(18, 22, $bg-primary);
+    }
+}

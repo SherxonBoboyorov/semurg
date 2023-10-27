@@ -1,0 +1,58 @@
+@import 'foundation/variables';
+@import 'foundation/mixin';
+
+.for-individuals {
+    padding: 81px 0 120px;
+    .tab-content{
+        &__item{
+            flex-direction: column;
+        }
+    }
+}
+.legal-entities{
+    .tab-content{
+        &#Legal {
+            display: grid;
+        }
+        &#Physical {
+            display: none;
+        }
+    }
+}
+.for-individuals_in {
+    padding: 96px 0 90px;
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 42px;
+    }
+    .title3 {
+        margin-bottom: 25px;
+    }
+
+    &__txt {
+        @include font(24,32,$bg-primary);
+    }
+    .img{
+        width: 100%;
+        height: 600px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    @include media(1024px){
+        .img{
+            height: 400px;
+        }
+    }
+    @include media(768px){
+        .img{
+            height: 250px;
+            img{
+                border-radius: $bor-rad-size;
+            }
+        }
+    }
+}

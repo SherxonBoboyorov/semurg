@@ -1,0 +1,305 @@
+@import 'foundation/mixin';
+@import 'foundation/variables';
+
+.kacko {
+    padding: 90px 0 120px;
+
+    &__top {
+        margin-bottom: 56px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        @include media(530px) {
+            svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        h1 {
+            font-weight: 700;
+            text-transform: uppercase;
+            @include font(40, 54, $dark-color);
+
+            @include media(1024px) {
+                @include font(30, 40, $dark-color);
+            }
+
+            @include media(530px) {
+                @include font(24, 30, $dark-color);
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        gap: 60px;
+
+        @include media(1024px) {
+            flex-direction: column;
+        }
+
+        #prev {
+            &:hover {
+                color: $bg-primary;
+            }
+        }
+
+        .btn-right {
+            color: $white-color;
+            display: block;
+            position: relative;
+            background: transparent;
+            border: 1px solid $bg-primary;
+
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: $bg-primary;
+                z-index: -1;
+                transition: transform .3s;
+                transform-origin: left;
+                transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+                transform: scaleX(1);
+                border-radius: 8px;
+            }
+
+
+            &:hover::before {
+                transition: transform .3s;
+                transform: scaleX(0);
+                transform-origin: right;
+            }
+
+            &:hover {
+                color: $bg-primary;
+            }
+        }
+    }
+
+    &__info {
+        flex-grow: 1;
+
+        h3 {
+            margin-bottom: 33px;
+            @include font(20, 24, $dark-color);
+        }
+
+        .types {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 31px;
+
+            &__item {
+                display: block;
+                width: 50%;
+
+                @include media(1200px) {
+                    &:nth-child(even) {
+                        text-align: end;
+                    }
+                }
+
+                @include media(1024px) {
+                    &:nth-child(even) {
+                        text-align: start;
+                    }
+                }
+
+                @include media(550px) {
+                    width: 100%;
+                }
+
+                label {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 18px;
+                    cursor: pointer;
+
+                    input[type=radio] {
+                        position: relative;
+                        margin-left: 4px;
+                        cursor: pointer;
+                    }
+
+                    input[type=radio]::after {
+                        width: 18px;
+                        height: 18px;
+                        border-radius: 50%;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        position: absolute;
+                        background-color: #FFF;
+                        content: '';
+                        display: inline-block;
+                        visibility: visible;
+                        border: 2px solid #D7D7D7;
+                    }
+
+                    input[type=radio]:checked::after {
+                        background-color: $bg-primary;
+                    }
+
+                    input[type=radio]::before {
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        position: absolute;
+                        background-color: transparent;
+                        content: '';
+                        display: block;
+                        border: 4.5px solid $white-color;
+                        z-index: 2;
+                    }
+
+                    span {
+                        @include font(22, 24, $dark-color);
+                    }
+                }
+            }
+        }
+
+        .line {
+            width: 100%;
+            height: 1px;
+            background: rgba($color: $dark-color, $alpha: 0.1);
+            margin: 45px 0 50px;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: space-between;
+
+            &.odd-btn {
+                justify-content: flex-end;
+            }
+
+            a {
+                width: 160px;
+
+                @include media(550px) {
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    &__result {
+        max-width: 500px;
+        width: 100%;
+        border-radius: $bor-rad-size;
+        background: $white-color;
+        box-shadow: $shadow-btn-white;
+        padding: 25px 40px 40px 40px;
+
+        h1 {
+            margin-bottom: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            @include font(30, 54, $dark-color);
+        }
+
+        .res-list {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+
+            p {
+                @include font(16, 34, $dark-color);
+            }
+
+            h4 {
+                @include font(26, 34, $dark-color);
+                font-weight: 700;
+            }
+        }
+
+        button {
+            background: $bg-primary;
+            color: $white-color;
+        }
+
+        @include media(1024px) {
+            margin: 0 auto;
+        }
+
+        @include media(550px) {
+            padding: 25px 20px 40px 20px;
+
+            .btn-right {
+                line-height: 16px;
+                padding: 20px;
+            }
+
+            h1 {
+                @include font(30, 40, $dark-color);
+
+            }
+        }
+    }
+}
+
+.kacko-form {
+    .kacko__top {
+        margin-bottom: 41px;
+    }
+
+    &__el {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 20px;
+
+        .base-input {
+            width: 100%;
+            background: $bg-secondary;
+        }
+
+        .form-btn {
+            color: $white-color;
+            margin-top: 30px;
+            position: relative;
+            background: transparent;
+            border: 1px solid $bg-primary;
+
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: $bg-primary;
+                z-index: -1;
+                transition: transform .3s;
+                transform-origin: left;
+                transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+                transform: scaleX(1);
+                border-radius: 8px;
+            }
+
+
+            &:hover::before {
+                transition: transform .3s;
+                transform: scaleX(0);
+                transform-origin: right;
+            }
+
+            &:hover {
+                color: $bg-primary;
+            }
+        }
+    }
+}

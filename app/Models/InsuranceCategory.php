@@ -16,4 +16,9 @@ class InsuranceCategory extends Model
         'title_uz',
         'title_en',
     ];
+
+    public function insuranceproducts() 
+    {
+        return $this->hasMany(InsuranceProduct::class);  
+    }
 }

@@ -3,12 +3,35 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Article;
+use App\Models\Carousel;
+use App\Models\InsuranceCategory;
+use App\Models\InsuranceProduct;
+use App\Models\Page;
+use App\Models\Slider;
+use App\Models\Useful;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     public function homepage()
     {
-        return view('front.index');
+        $sliders = Slider::orderBy('id')->get();
+        $pages = Page::all();
+        $insurancecategories = InsuranceCategory::all();
+        $insuranceproducts = InsuranceProduct::orderBy('id')->get();
+        $articles = Article::orderBy('created_at', 'DESC')->paginate(3);
+        $carousels = Carousel::orderBy('id')->get();
+        $usefuls = Useful::orderBy('id')->get();
+
+        return view('front.index', compact(
+            'sliders',
+            'pages',
+            'insurancecategories',
+            'insuranceproducts',
+            'articles',
+            'carousels',
+            'usefuls',
+        ));
     }
 }

@@ -1,0 +1,43 @@
+@import 'foundation/mixin';
+@import 'foundation/variables';
+
+.forum-page {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        &-item {
+            border-radius: $bor-rad-size;
+            background: $white-color;
+            box-shadow: $shadow-btn-white;
+            padding: 23px 40px;
+            transition: 0.3s;
+
+            @include media(550px) {
+                padding: 23px 15px;
+            }
+
+            a {
+                @include font(20, 24, $dark-color);
+
+                @include media(768px) {
+                    @include font(18, 24, $dark-color);
+                }
+
+                @include media(550px) {
+                    @include font(16, 24, $dark-color);
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+                background: $bg-primary;
+
+                a {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}

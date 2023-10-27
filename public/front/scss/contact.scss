@@ -1,0 +1,175 @@
+@import 'foundation/fonts';
+@import 'foundation/mixin';
+@import 'foundation/variables';
+@import 'foundation/global';
+
+.contact-page {
+    padding: 60px 0 120px;
+
+    &__btns {
+        margin-bottom: 60px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    &__map {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        &-left,
+        &-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 29px;
+            @include media(768px){
+                display: none;
+            }
+            .map-links {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+                transition: 0.3s linear;
+
+                span {
+                    @include font(18, 24, $dark-color);
+
+                    @include media(1024px) {
+                        @include font(14, 24, $dark-color);
+                    }
+                }
+
+                &.active,
+                &:hover {
+                    cursor: pointer;
+
+                    span {
+                        color: $bg-primary;
+                    }
+
+                    svg {
+                        path {
+                            fill: $bg-primary;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-right {
+            align-items: flex-end;
+
+            .map-links {
+                align-items: flex-end;
+            }
+        }
+
+        &-inner {
+            max-width: 800px;
+            width: 100%;
+            height: 800px;
+            position: relative;
+            background: $bg-secondary;
+            border-radius: $bor-rad-size;
+            @include media(1024px){
+                height: 600px;
+            }
+            @include media(768px){
+                height: 400px;
+            }
+            .map {
+                width: 100%;
+                height: 100%;
+
+                iframe {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: $bor-rad-size;
+
+                    .gm-control-active {
+                        background: red !important;
+                    }
+                }
+            }
+
+            // Iframeni ozini zoomidan foydalanilsa ochirvoring!
+            .zoom-wrap {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 30px;
+                display: flex;
+                gap: 20px;
+
+                button {
+                    width: 50px;
+                    height: 50px;
+                    display: grid;
+                    place-items: center;
+                    font-size: 24px;
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    &__list {
+        &-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 30px;
+
+            @include media(450px) {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        &-col {
+            width: 100%;
+            border-radius: $bor-rad-size;
+            background: $white-color;
+            box-shadow: $shadow-items;
+            padding: 24px 30px 22px;
+            transition: transform 0.3s ease-in;
+
+            @include media(450px) {
+                padding: 24px 15px 22px;
+            }
+
+            .card-title {
+                font-weight: 700;
+                margin-bottom: 14px;
+            }
+
+            p {
+                @include font(16, 40, $text-color);
+
+                span {
+                    color: $bg-primary;
+                    font-weight: 700;
+                }
+            }
+
+            &:hover {
+                transform: scale(0.95, 0.95);
+            }
+
+            @include media(500px) {
+                padding: 24px 15px 22px;
+
+                p {
+                    @include font(14, 32, $text-color);
+                }
+            }
+        }
+    }
+
+    &__map.hidden,
+    &__list.hidden {
+        display: none;
+    }
+}
