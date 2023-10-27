@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\Carousel;
+use App\Models\Client;
 use App\Models\InsuranceCategory;
 use App\Models\InsuranceProduct;
 use App\Models\Page;
@@ -23,6 +24,7 @@ class IndexController extends Controller
         $articles = Article::orderBy('created_at', 'DESC')->paginate(3);
         $carousels = Carousel::orderBy('id')->get();
         $usefuls = Useful::orderBy('id')->get();
+        $clients = Client::orderBy('id')->get();
 
         return view('front.index', compact(
             'sliders',
@@ -32,6 +34,7 @@ class IndexController extends Controller
             'articles',
             'carousels',
             'usefuls',
+            'clients'
         ));
     }
 }

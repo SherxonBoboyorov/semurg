@@ -132,8 +132,8 @@
             </div>
             <div class="nav__menu">
                 <div class="container">
-                    <a href="./index.html" class="logo">
-                        <img src="./images/logo.svg" alt="logo">
+                    <a href="{{ route('/') }}" class="logo">
+                        <img src="{{ asset('front/images/logo.svg') }}" alt="logo">
                     </a>
                     <div class="menu-right">
                         <a href="tel:1251" class="menu-right__operator">

@@ -20,7 +20,7 @@
                 <div class="about-us__top">
                     <div class="about-us__top-img" data-aos="slide-right">
                         <div class="image">
-                            <img src="../../images/employees/director-img2.png" alt="">
+                            <img src="{{ asset('front/images/employees/director-img2.png') }}" alt="">
                         </div>
                     </div>
                     <div class="about-us__top-info" data-aos="zoom-in-left">
@@ -53,10 +53,10 @@
                     </p>
                     <div class="images">
                         <div class="images__item" data-aos="slide-right">
-                            <img src="../../images/news/news-col-img1.png" alt="">
+                            <img src="{{ asset('front/images/news/news-col-img1.png') }}" alt="">
                         </div>
                         <div class="images__item" data-aos="slide-left">
-                            <img src="../../images/news/news-col-img2.png" alt="">
+                            <img src="{{ asset('front/images/news/news-col-img2.png') }}" alt="">
                         </div>
                     </div>
                     <p class="text" data-aos="slide-up">Мы дорожим своей репутацией, действуем на основании лицензии, выданной Агентством по развитию страхового рынка при Министерстве финансов Республики Узбекистан, и нацелены на долгосрочное сотрудничество. Именно поэтому подписываем с каждым клиентом договор на оказание услуг, где фиксируем все взятые на себя обязательства и стоимость, которая не меняется после заключения контракта.

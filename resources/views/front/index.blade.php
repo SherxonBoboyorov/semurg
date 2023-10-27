@@ -161,24 +161,11 @@
                 <h1 class="title">Наши клиенты</h1>
                 <div class="swiper2">
                     <div class="swiper-wrapper">
+                        @foreach ($clients as $client)
                         <div class="swiper-slide">
-                            <img src="./images/our-clients/our-clients-img1.png" alt="">
+                            <img src="{{ asset($client->image) }}" alt="">
                         </div>
-                        <div class="swiper-slide">
-                            <img src="./images/our-clients/our-clients-img2.png" alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="./images/our-clients/our-clients-img3.png" alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="./images/our-clients/our-clients-img4.png" alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="./images/our-clients/our-clients-img1.png" alt="">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="./images/our-clients/our-clients-img2.png" alt="">
-                        </div>
+                        @endforeach
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
