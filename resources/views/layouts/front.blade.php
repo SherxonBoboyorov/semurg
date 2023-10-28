@@ -12,18 +12,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('front/css/main.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('front/css/index.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/about.min.css') }}">
 </head>
 
 <body>
 
     <header>
-        <button onclick="scrollToTop()" class="to-Top-Btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 14 9" fill="none">
-                <path d="M1 0.999999L7 7.0251L13 1" stroke="#fff" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-            </svg>
-        </button>
         <nav class="nav">
             <div class="nav__top">
                 <div class="container">
@@ -41,26 +35,26 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('/') }}" class="active nav__list-link">Главная</a>
+                            <a href="../../index.html" class="nav__list-link">Главная</a>
                         </li>
                         <li class="relative right">
-                            <button class="nav__list-link">О компании</button>
+                            <button class="nav__list-link active">О компании</button>
                             <ul class="submenu">
-                                <li><a href="{{ route('about-us') }}">О нас</a></li>
-                                <li><a href="./pages/about/history-company.html">История компании</a></li>
-                                <li><a href="./pages/about/leadership-management.html">Руководство и управление</a></li>
-                                <li><a href="./pages/about/licenses-certificates.html">Лицензии и сертификаты</a></li>
-                                <li><a href="./pages/about/structure-company.html">Структура компании</a></li>
+                                <li><a href="./about-us.html">О нас</a></li>
+                                <li><a href="./history-company.html">История компании</a></li>
+                                <li><a href="./leadership-management.html">Руководство и управление</a></li>
+                                <li><a href="./licenses-certificates.html">Лицензии и сертификаты</a></li>
+                                <li><a href="./structure-company.html">Структура компании</a></li>
                             </ul>
                         </li>
                         <li class="relative">
                             <button class="nav__list-link">Страховые продукты</button>
                             <ul class="submenu">
                                 <li>
-                                    <a href="./pages/insurance-products/for-individuals.html">Физические лица</a>
+                                    <a href="../insurance-products/for-individuals.html">Физические лица</a>
                                 </li>
                                 <li>
-                                    <a href="./pages/insurance-products/legal-entities.html">Юридические лица</a>
+                                    <a href="../insurance-products/legal-entities.html">Юридические лица</a>
                                 </li>
                             </ul>
                         </li>
@@ -68,13 +62,13 @@
                             <button class="nav__list-link">Документы</button>
                             <ul class="submenu">
                                 <li>
-                                    <a href="./pages/documents/charter.html">Устав</a>
+                                    <a href="../documents/charter.html">Устав</a>
                                 </li>
                                 <li>
-                                    <a href="./pages/documents/provisions.html">Положения</a>
+                                    <a href="../documents/provisions.html">Положения</a>
                                 </li>
                                 <li>
-                                    <a href="./pages/documents/codex.html">Кодексы</a>
+                                    <a href="../documents/codex.html">Кодексы</a>
                                 </li>
                             </ul>
                         </li>
@@ -82,19 +76,19 @@
                             <button class="nav__list-link">Акционерам и инвесторам</button>
                             <ul class="submenu">
                                 <li>
-                                    <a href="./pages/shareholders-investors/affiliates.html">Аффилированные лица</a>
+                                    <a href="../shareholders-investors/affiliates.html">Аффилированные лица</a>
                                 </li>
                                 <li>
-                                    <a href="./pages/shareholders-investors/statements.html">Финансовая отчётность</a>
+                                    <a href="../shareholders-investors/statements.html">Финансовая отчётность</a>
                                 </li>
                                 <li>
-                                    <a href="./pages/shareholders-investors/facts.html">Существенные факты</a>
+                                    <a href="../shareholders-investors/facts.html">Существенные факты</a>
                                 </li>
                                 <li>
-                                    <a href="./pages/shareholders-investors/plans.html">Бизнес план</a>
+                                    <a href="../shareholders-investors/plans.html">Бизнес план</a>
                                 </li>
                                 <li>
-                                    <a href="./pages/shareholders-investors/dividends.html">Дивиденды</a>
+                                    <a href="../shareholders-investors/dividends.html">Дивиденды</a>
                                 </li>
                             </ul>
                         </li>
@@ -102,10 +96,10 @@
                             <button class="nav__list-link">Перестрахование</button>
                             <ul class="submenu">
                                 <li>
-                                    <a href="./pages/reinsurance/incoming-reinsurance.html">Входящее перестрахование</a>
+                                    <a href="../reinsurance/incoming-reinsurance.html">Входящее перестрахование</a>
                                 </li>
                                 <li>
-                                    <a href="./pages/reinsurance/outgoing-reinsurance.html">Исходящее
+                                    <a href="../reinsurance/outgoing-reinsurance.html">Исходящее
                                         перестрахование</a>
                                 </li>
                             </ul>
@@ -113,16 +107,16 @@
                         <li class="relative">
                             <button class="nav__list-link">Пресс-центр</button>
                             <ul class="submenu">
-                                <li><a href="./pages/press-center/news.html">Новости</a></li>
-                                <li><a href="./pages/press-center/forum.html">Форум</a></li>
-                                <li><a href="./pages/press-center/vacancies.html">Вакансии</a></li>
-                                <li><a href="./pages/press-center/survey.html">Опрос</a></li>
-                                <li><a href="./pages/press-center/FAQ.html">Часто задаваемые вопросы</a></li>
-                                <li><a href="./pages/press-center/tenders.html">Тендеры</a></li>
+                                <li><a href="../press-center/news.html">Новости</a></li>
+                                <li><a href="../press-center/forum.html">Форум</a></li>
+                                <li><a href="../press-center/vacancies.html">Вакансии</a></li>
+                                <li><a href="../press-center/survey.html">Опрос</a></li>
+                                <li><a href="../press-center/FAQ.html">Часто задаваемые вопросы</a></li>
+                                <li><a href="../press-center/tenders.html">Тендеры</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="nav__list-link" href="./pages/contact.html">Контакты</a>
+                            <a class="nav__list-link" href="../contact.html">Контакты</a>
                         </li>
                     </ul>
                     <div class="bars">
@@ -132,8 +126,8 @@
             </div>
             <div class="nav__menu">
                 <div class="container">
-                    <a href="{{ route('/') }}" class="logo">
-                        <img src="{{ asset('front/images/logo.svg') }}" alt="logo">
+                    <a href="../../index.html" class="logo">
+                        <img src="../../images/logo.svg" alt="logo">
                     </a>
                     <div class="menu-right">
                         <a href="tel:1251" class="menu-right__operator">
@@ -214,6 +208,7 @@
                 </div>
             </div>
         </nav>
+        
     </header>
 
     @yield('content')
@@ -224,31 +219,31 @@
             <div class="container">
                 <div class="footer__info__map">
                     <div class="logo">
-                        <img src="{{ asset('front/images/logo.svg') }}" alt="footer-logo">
+                        <img src="../../images/logo.svg" alt="footer-logo">
                     </div>
                     <h4 class="heading4">Карта сайта</h4>
                     <ul class="footer__info__list">
                         <li>
-                            <a href="{{ route('/') }}" class="active">Главная</a>
+                            <a href="../../index.html">Главная</a>
                         </li>
                         <li class="footer-relative">
-                            <button class="footer-list-link">О компании</button>
+                            <button class="footer-list-link active">О компании</button>
                             <ul class="submenu">
-                                <li><a href="{{ route('about-us') }}">О нас</a></li>
-                                <li><a href="./pages/about/history-company.html">История компании</a></li>
-                                <li><a href="./pages/about/leadership-management.html">Руководство и управление</a></li>
-                                <li><a href="./pages/about/licenses-certificates.html">Лицензии и сертификаты</a></li>
-                                <li><a href="./pages/about/structure-company.html">Структура компании</a></li>
+                                <li><a href="./about-us.html">О нас</a></li>
+                                <li><a href="./history-company.html">История компании</a></li>
+                                <li><a href="./leadership-management.html">Руководство и управление</a></li>
+                                <li><a href="./licenses-certificates.html">Лицензии и сертификаты</a></li>
+                                <li><a href="./structure-company.html">Структура компании</a></li>
                             </ul>
                         </li>
                         <li class="footer-relative">
                             <button class="footer-list-link">Страховые продукты</button>
                             <ul class="submenu">
                                 <li>
-                                    <a href="./pages/insurance-products/for-individuals.html">Физические лица</a>
+                                    <a href="../insurance-products/for-individuals.html">Физические лица</a>
                                 </li>
                                 <li>
-                                    <a href="./pages/insurance-products/legal-entities.html">Юридические лица</a>
+                                    <a href="../insurance-products/legal-entities.html">Юридические лица</a>
                                 </li>
                             </ul>
                         </li>
@@ -256,13 +251,13 @@
                             <button class="footer-list-link">Документы</button>
                             <ul class="submenu">
                                 <li>
-                                    <a href="./pages/documents/charter.html">Устав</a>
+                                    <a href="../documents/charter.html">Устав</a>
                                 </li>
                                 <li>
-                                    <a href="./pages/documents/provisions.html">Положения</a>
+                                    <a href="../documents/provisions.html">Положения</a>
                                 </li>
                                 <li>
-                                    <a href="./pages/documents/codex.html">Кодексы</a>
+                                    <a href="../documents/codex.html">Кодексы</a>
                                 </li>
                             </ul>
                         </li>
@@ -270,19 +265,19 @@
                             <button class="footer-list-link">Акционерам и инвесторам</button>
                             <ul class="submenu">
                                 <li>
-                                    <a href="./pages/shareholders-investors/affiliates.html">Аффилированные лица</a>
+                                    <a href="../shareholders-investors/affiliates.html">Аффилированные лица</a>
                                 </li>
                                 <li>
-                                    <a href="./pages/shareholders-investors/statements.html">Финансовая отчётность</a>
+                                    <a href="../shareholders-investors/statements.html">Финансовая отчётность</a>
                                 </li>
                                 <li>
-                                    <a href="./pages/shareholders-investors/facts.html">Существенные факты</a>
+                                    <a href="../shareholders-investors/facts.html">Существенные факты</a>
                                 </li>
                                 <li>
-                                    <a href="./pages/shareholders-investors/plans.html">Бизнес план</a>
+                                    <a href="../shareholders-investors/plans.html">Бизнес план</a>
                                 </li>
                                 <li>
-                                    <a href="./pages/shareholders-investors/dividends.html">Дивиденды</a>
+                                    <a href="../shareholders-investors/dividends.html">Дивиденды</a>
                                 </li>
                             </ul>
                         </li>
@@ -290,10 +285,10 @@
                             <button class="footer-list-link">Перестрахование</button>
                             <ul class="submenu">
                                 <li>
-                                    <a href="./pages/reinsurance/incoming-reinsurance.html">Входящее перестрахование</a>
+                                    <a href="../reinsurance/incoming-reinsurance.html">Входящее перестрахование</a>
                                 </li>
                                 <li>
-                                    <a href="./pages/reinsurance/outgoing-reinsurance.html">Исходящее
+                                    <a href="../reinsurance/outgoing-reinsurance.html">Исходящее
                                         перестрахование</a>
                                 </li>
                             </ul>
@@ -301,16 +296,16 @@
                         <li class="footer-relative">
                             <button class="footer-list-link">Пресс-центр</button>
                             <ul class="submenu">
-                                <li><a href="./pages/press-center/news.html">Новости</a></li>
-                                <li><a href="./pages/press-center/forum.html">Форум</a></li>
-                                <li><a href="./pages/press-center/vacancies.html">Вакансии</a></li>
-                                <li><a href="./pages/press-center/survey.html">Опрос</a></li>
-                                <li><a href="./pages/press-center/FAQ.html">Часто задаваемые вопросы</a></li>
-                                <li><a href="./pages/press-center/tenders.html">Тендеры</a></li>
+                                <li><a href="../press-center/news.html">Новости</a></li>
+                                <li><a href="../press-center/forum.html">Форум</a></li>
+                                <li><a href="../press-center/vacancies.html">Вакансии</a></li>
+                                <li><a href="../press-center/survey.html">Опрос</a></li>
+                                <li><a href="../press-center/FAQ.html">Часто задаваемые вопросы</a></li>
+                                <li><a href="../press-center/tenders.html">Тендеры</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="./pages/contact.html">Контакты</a>
+                            <a href="../contact.html">Контакты</a>
                         </li>
                     </ul>
                 </div>
@@ -405,28 +400,28 @@
             </div>
         </div>
     </footer>
-
+    <button onclick="scrollToTop()" class="to-Top-Btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 14 9" fill="none">
+            <path d="M1 0.999999L7 7.0251L13 1" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </button>
     <!-- AOS ANIMATION -->
     <script src="{{ asset('front/js/plugins/aos.js') }}"></script>
     <script>
-        AOS.init({
+       AOS.init({
             duration: 1000
         });
     </script>
-    <!-- SWIPER JS  -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="{{ asset('front/js/plugins/swiper.js') }}"></script>
-    <!-- JS -->
-    <script src="{{ asset('front/js/index-page/insurance-products-tabs.js') }}"></script>
+<!-- JS FOR NAV FOOTER -->
 
-    <!-- JS FOR NAV FOOTER -->
-    <script src="{{ asset('front/js/special-abilities.js') }}"></script>
-    <script src="{{ asset('front/js/scrollTopBtn.js') }}"></script>
-    <script src="{{ asset('front/js/lang/lang.js') }}"></script>
-    <script src="{{ asset('front/js/search-modal.js') }}"></script>
-    <script src="{{ asset('front/js/hamburger.js') }}"></script>
-    <script src="{{ asset('front/js/resNavAccordion.js') }}"></script>
-    <script src="{{ asset('front/js/footerNavAccordion.js') }}"></script>
+<script src="{{ asset('front/js/special-abilities.js') }}"></script>
+<script src="{{ asset('front/js/scrollTopBtn.js') }}"></script>
+<script src="{{ asset('front/js/lang/lang.js') }}"></script>
+<script src="{{ asset('front/js/search-modal.js') }}"></script>
+<script src="{{ asset('front/js/hamburger.js') }}"></script>
+<script src="{{ asset('front/js/resNavAccordion.js') }}"></script>
+<script src="{{ asset('front/js/footerNavAccordion.js') }}"></script>
 </body>
 
 </html>

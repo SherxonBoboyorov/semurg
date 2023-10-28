@@ -58,6 +58,8 @@ class PollController extends Controller
             }
         }
 
+        dd($request->all());
+
         return redirect()->route('poll.index')->with('message', "Created successfully!!");
 
     }
@@ -91,6 +93,11 @@ class PollController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $poll = Poll::find($id);
+
+        if ($poll->delete()) {
+            return redirect()->route('poll.index')->with('message', "Deleted successfully!!");
+        }
+        return redirect()->route('poll.index')->with('message', "Failed to delete successfully!!");
     }
 }
