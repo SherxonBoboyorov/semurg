@@ -35,15 +35,15 @@
                             </a>
                         </li>
                         <li>
-                            <a href="../../index.html" class="nav__list-link">Главная</a>
+                            <a href="{{ route('/') }}" class="nav__list-link">Главная</a>
                         </li>
                         <li class="relative right">
                             <button class="nav__list-link active">О компании</button>
                             <ul class="submenu">
-                                <li><a href="./about-us.html">О нас</a></li>
+                                <li><a href="{{ route('about-us') }}">О нас</a></li>
                                 <li><a href="./history-company.html">История компании</a></li>
                                 <li><a href="./leadership-management.html">Руководство и управление</a></li>
-                                <li><a href="./licenses-certificates.html">Лицензии и сертификаты</a></li>
+                                <li><a href="{{ route('licenses-ertificates') }}">Лицензии и сертификаты</a></li>
                                 <li><a href="./structure-company.html">Структура компании</a></li>
                             </ul>
                         </li>
@@ -126,8 +126,8 @@
             </div>
             <div class="nav__menu">
                 <div class="container">
-                    <a href="../../index.html" class="logo">
-                        <img src="../../images/logo.svg" alt="logo">
+                    <a href="{{ route('/') }}" class="logo">
+                        <img src="{{ asset('front/images/logo.svg') }}" alt="logo">
                     </a>
                     <div class="menu-right">
                         <a href="tel:1251" class="menu-right__operator">
@@ -219,17 +219,17 @@
             <div class="container">
                 <div class="footer__info__map">
                     <div class="logo">
-                        <img src="../../images/logo.svg" alt="footer-logo">
+                        <img src="{{ asset('front/images/logo.svg') }}" alt="footer-logo">
                     </div>
                     <h4 class="heading4">Карта сайта</h4>
                     <ul class="footer__info__list">
                         <li>
-                            <a href="../../index.html">Главная</a>
+                            <a href="{{ route('/') }}">Главная</a>
                         </li>
                         <li class="footer-relative">
                             <button class="footer-list-link active">О компании</button>
                             <ul class="submenu">
-                                <li><a href="./about-us.html">О нас</a></li>
+                                <li><a href="{{ route('about-us') }}">О нас</a></li>
                                 <li><a href="./history-company.html">История компании</a></li>
                                 <li><a href="./leadership-management.html">Руководство и управление</a></li>
                                 <li><a href="./licenses-certificates.html">Лицензии и сертификаты</a></li>

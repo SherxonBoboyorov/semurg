@@ -16,4 +16,9 @@ class LicensesCategory extends Model
         'title_uz',
         'title_en',
     ];
+
+    public function licensesdocuments()
+    {
+        return $this->hasMany(LicensesDocument::class, 'licensescategory_id');
+    }
 }
