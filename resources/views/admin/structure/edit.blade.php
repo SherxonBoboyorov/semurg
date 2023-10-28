@@ -68,7 +68,7 @@
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-6">
                                 <label for="image">File</label>
-                                <input type="file" name="image" class="form-control-file">
+                                <input type="file" id="file" name="image" class="form-control-file" onchange="inputData(event)">
                                 @if($errors->has('image'))
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -82,6 +82,13 @@
                                 <a href="{{ asset($structure->image) }}" download=""><fieldset>{{ asset($structure->image) }}</fieldset></a>
                             </div>
                         </div><br>
+
+
+                        <div>
+                            <input id="fileSize" value="{{ $structure->size }}" name="size" readonly>
+                          </div>
+
+
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-12">
                                 <button type="submit" class="btn btn-success btn-block">Update</button>
@@ -94,4 +101,17 @@
         </div>
     </div>
 @endsection
+@section('custom_js')
+    <script>
 
+    function inputData(e) {
+        const bytes = e.target.files[0].size
+        const sufixes = ['B', 'kB', 'MB', 'GB', 'TB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(1024));
+        const fileSize = document.getElementById('fileSize')
+        fileSize.value = `${(bytes / Math.pow(1024, i)).toFixed(0)} ${sufixes[i]}`
+    }
+
+
+    </script>
+@endsection

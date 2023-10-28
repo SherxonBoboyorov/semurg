@@ -16,7 +16,8 @@ class Structure extends Model
         'image',
         'title_ru',
         'title_uz',
-        'title_en'
+        'title_en',
+        'size'
     ];
 
 

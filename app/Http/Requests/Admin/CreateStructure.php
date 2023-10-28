@@ -26,6 +26,7 @@ class CreateStructure extends FormRequest
             'title_ru' => 'required|string|max:255',
             'title_uz' => 'required|string|max:255',
             'title_en' => 'required|string|max:255',
+            'size' => 'nullable'
         ];
     }
 }

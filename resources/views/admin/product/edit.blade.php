@@ -102,7 +102,7 @@
                         </div><br>
 
                         <div>
-                            <input id="fileSize"  value="{{ $product->size }}" name="size" readonly>
+                            <input id="fileSize" value="{{ $product->size }}" name="size" readonly>
                           </div>
 
                         <div class="row" style="margin-top: 15px">

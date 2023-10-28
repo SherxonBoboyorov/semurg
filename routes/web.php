@@ -34,6 +34,7 @@ use App\Http\Controllers\Admin\VacancyController;
 use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\IndexController;
 use App\Http\Controllers\Front\LicensesCertificatesController;
+use App\Http\Controllers\Front\StracturesController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
@@ -85,7 +86,8 @@ Route::group(
     ], function(){ 
             Route::get('/', [IndexController::class, 'homepage'])->name('/');
             Route::get('about-us', [AboutController::class, 'about'])->name('about-us');
-            Route::get('licenses-ertificates', [LicensesCertificatesController::class, 'licensesCertificates'])->name('licenses-ertificates');
+            Route::get('licenses-certificates', [LicensesCertificatesController::class, 'licensesCertificates'])->name('licenses-certificates');
+            Route::get('structure-company', [StracturesController::class, 'structureCompany'])->name('structure-company');
     });
 
 

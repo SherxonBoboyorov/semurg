@@ -43,8 +43,8 @@
                                 <li><a href="{{ route('about-us') }}">О нас</a></li>
                                 <li><a href="./history-company.html">История компании</a></li>
                                 <li><a href="./leadership-management.html">Руководство и управление</a></li>
-                                <li><a href="{{ route('licenses-ertificates') }}">Лицензии и сертификаты</a></li>
-                                <li><a href="./structure-company.html">Структура компании</a></li>
+                                <li><a href="{{ route('licenses-certificates') }}">Лицензии и сертификаты</a></li>
+                                <li><a href="{{ route('structure-company') }}">Структура компании</a></li>
                             </ul>
                         </li>
                         <li class="relative">

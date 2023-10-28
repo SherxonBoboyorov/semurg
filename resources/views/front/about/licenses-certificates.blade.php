@@ -11,8 +11,8 @@
                             <li><a href="{{ route('about-us') }}">О нас</a></li>
                             <li><a href="./history-company.html">История компании</a></li>
                             <li><a href="./leadership-management.html">Руководство и управление</a></li>
-                            <li><a class="active" href="{{ route('licenses-ertificates') }}">Лицензии и сертификаты</a></li>
-                            <li><a href="./structure-company.html">Структура компании</a></li>
+                            <li><a class="active" href="{{ route('licenses-certificates') }}">Лицензии и сертификаты</a></li>
+                            <li><a href="{{ route('structure-company') }}">Структура компании</a></li>
                         </ul>
                     </div>
                     <div class="content">
@@ -22,13 +22,13 @@
                                 <h2>{{ $licensescategory->{'title_' . app()->getLocale()} }}</h2>
                                 <div>
                                     @foreach($licensescategory->licensesdocuments as $licensesdocument)
-                                    <div class="pdf-icon">
-                                        <img src="{{ asset($licensesdocument->image) }}" alt="">
+                                    <div class="pdf-icon" >
+                                        <img src="{{ asset($licensesdocument->image) }}" download alt="">
                                     </div>
                                     <div class="info">
                                         <p>{{ $licensesdocument->{'title_' . app()->getLocale()} }}</p>
                                         <a>{{ $licensesdocument->size }}</a>
-                                    </div>
+                                    </div> 
                                     @endforeach
                                 </div>
 
