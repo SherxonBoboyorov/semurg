@@ -18,9 +18,7 @@
     <link rel="stylesheet" href="{{ asset('front/css/forum-page.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/news-page.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/survey-page.min.css') }}">
-
-
-
+    <link rel="stylesheet" href="{{ asset('front/css/contact.min.css') }}">
 </head>
 
 <body>
@@ -117,7 +115,7 @@
                             <ul class="submenu">
                                 <li><a href="{{ route('news') }}">Новости</a></li>
                                 <li><a href="{{ route('forum') }}">Форум</a></li>
-                                <li><a href="../press-center/vacancies.html">Вакансии</a></li>
+                                <li><a href="{{ route('vacancies') }}">Вакансии</a></li>
                                 <li><a href="{{ route('survey') }}">Опрос</a></li>
                                 <li><a href="{{ route('faq') }}">Часто задаваемые вопросы</a></li>
                                 <li><a href="{{ route('tenders') }}">Тендеры</a></li>
@@ -304,12 +302,12 @@
                         <li class="footer-relative">
                             <button class="footer-list-link">Пресс-центр</button>
                             <ul class="submenu">
-                                <li><a href="../press-center/news.html">Новости</a></li>
-                                <li><a href="../press-center/forum.html">Форум</a></li>
-                                <li><a href="../press-center/vacancies.html">Вакансии</a></li>
-                                <li><a href="../press-center/survey.html">Опрос</a></li>
-                                <li><a href="../press-center/FAQ.html">Часто задаваемые вопросы</a></li>
-                                <li><a href="../press-center/tenders.html">Тендеры</a></li>
+                                <li><a href="{{ route('news') }}">Новости</a></li>
+                                <li><a href="{{ route('forum') }}">Форум</a></li>
+                                <li><a href="{{ route('vacancies') }}">Вакансии</a></li>
+                                <li><a href="{{ route('survey') }}">Опрос</a></li>
+                                <li><a href="{{ route('faq') }}">Часто задаваемые вопросы</a></li>
+                                <li><a href="{{ route('tenders') }}">Тендеры</a></li>
                             </ul>
                         </li>
                         <li>
@@ -429,6 +427,8 @@
     <!-- JS -->
     <script src="{{ asset('front/js/index-page/insurance-products-tabs.js') }}"></script>
     <script src="{{ asset('front/js/accordion.js') }}"></script>
+    <script src="{{ asset('front/js/contact-page/contact-map.js') }}"></script>
+
 
 
     <!-- JS FOR NAV FOOTER -->

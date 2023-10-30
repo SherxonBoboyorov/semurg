@@ -21,7 +21,7 @@
                         <ul>
                             <li><a href="{{ route('news') }}">Новости</a></li>
                             <li><a href="{{ route('forum') }}">Форум</a></li>
-                            <li><a href="./vacancies.html">Вакансии</a></li>
+                            <li><a href="{{ route('vacancies') }}">Вакансии</a></li>
                             <li><a href="{{ route('survey') }}">Опрос</a></li>
                             <li><a class="active" href="{{ route('faq') }}">Часто задаваемые вопросы</a></li>
                             <li><a href="{{ route('tenders') }}">Тендеры</a></li>
