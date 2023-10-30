@@ -120,7 +120,7 @@
                                 <li><a href="../press-center/vacancies.html">Вакансии</a></li>
                                 <li><a href="{{ route('survey') }}">Опрос</a></li>
                                 <li><a href="{{ route('faq') }}">Часто задаваемые вопросы</a></li>
-                                <li><a href="../press-center/tenders.html">Тендеры</a></li>
+                                <li><a href="{{ route('tenders') }}">Тендеры</a></li>
                             </ul>
                         </li>
                         <li>

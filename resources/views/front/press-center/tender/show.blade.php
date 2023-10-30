@@ -8,8 +8,8 @@
                     <h1 class="title">{{ $tender->{'title_' . app()->getLocale()} }}</h1>
                     <ul>
                         <li><a href="{{ route('/') }}">Главная</a></li>
-                        <li><a href="{{ route('tenders') }}">Новости</a></li>
-                        <li><a>Sed do eiusmod tempor incididunt</a></li>
+                        <li><a href="{{ route('tenders') }}">Тендеры</a></li>
+                        <li><a>{{ $tender->{'title_' . app()->getLocale()} }}</a></li>
                     </ul>
                 </div>
             </div>

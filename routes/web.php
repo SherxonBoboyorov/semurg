@@ -39,6 +39,7 @@ use App\Http\Controllers\Front\LicensesCertificatesController;
 use App\Http\Controllers\Front\NewsController;
 use App\Http\Controllers\Front\StracturesController;
 use App\Http\Controllers\Front\SurveyController;
+use App\Http\Controllers\Front\TendersController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
@@ -97,6 +98,8 @@ Route::group(
             Route::get('news/{slug}', [NewsController::class, 'show'])->name('new.show');
             Route::get('forum', [ForumsController::class, 'forum'])->name('forum');
             Route::get('survey', [SurveyController::class, 'survey'])->name('survey');
+            Route::get('tenders', [TendersController::class, 'list'])->name('tenders');
+            Route::get('tenders/{slug}', [TendersController::class, 'show'])->name('tender.show');
 
     });
 
