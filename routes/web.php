@@ -36,6 +36,7 @@ use App\Http\Controllers\Front\FaqsController;
 use App\Http\Controllers\Front\ForumsController;
 use App\Http\Controllers\Front\HistoryCompanysController;
 use App\Http\Controllers\Front\IndexController;
+use App\Http\Controllers\Front\InsurancesController;
 use App\Http\Controllers\Front\LicensesCertificatesController;
 use App\Http\Controllers\Front\ManagementController;
 use App\Http\Controllers\Front\NewsController;
@@ -106,6 +107,7 @@ Route::group(
             Route::get('vacancies', [VacancysController::class, 'vacancies'])->name('vacancies');
             Route::get('history-company', [HistoryCompanysController::class, 'historyCompany'])->name('history-company');
             Route::get('leadership-management', [ManagementController::class, 'leadershipManagement'])->name('leadership-management');
+            Route::get('products', [InsurancesController::class, 'insurancesProduct'])->name('products');
 
     });
 

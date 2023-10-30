@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="{{ asset('front/css/news-page.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/survey-page.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/contact.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/persons.min.css') }}">
+
 </head>
 
 <body>
@@ -56,12 +58,11 @@
                         <li class="relative">
                             <button class="nav__list-link">Страховые продукты</button>
                             <ul class="submenu">
+                                @foreach (\App\Models\InsuranceCategory::orderBy('id')->get() as $item)
                                 <li>
-                                    <a href="../insurance-products/for-individuals.html">Физические лица</a>
+                                    <a href="{{ route('products', ['id' => $item->id]) }}">{{ $item->{'title_' . app()->getLocale()} }}</a>
                                 </li>
-                                <li>
-                                    <a href="../insurance-products/legal-entities.html">Юридические лица</a>
-                                </li>
+                                @endforeach   
                             </ul>
                         </li>
                         <li class="relative">
@@ -219,7 +220,6 @@
 
     @yield('content')
 
-
     <footer class="footer">
         <div class="footer__info" data-aos="zoom-in">
             <div class="container">
@@ -250,7 +250,7 @@
                                 </li>
                                 <li>
                                     <a href="../insurance-products/legal-entities.html">Юридические лица</a>
-                                </li>
+                                </li>                     
                             </ul>
                         </li>
                         <li class="footer-relative">
