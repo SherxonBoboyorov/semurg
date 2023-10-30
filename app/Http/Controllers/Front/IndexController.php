@@ -21,7 +21,7 @@ class IndexController extends Controller
         $pages = Page::all();
         $insurancecategories = InsuranceCategory::all();
         $insuranceproducts = InsuranceProduct::orderBy('id')->get();
-        $articles = Article::orderBy('created_at', 'DESC')->paginate(3);
+        $news = Article::orderBy('created_at', 'DESC')->paginate(3);
         $carousels = Carousel::orderBy('id')->get();
         $usefuls = Useful::orderBy('id')->get();
         $clients = Client::orderBy('id')->get();
@@ -31,7 +31,7 @@ class IndexController extends Controller
             'pages',
             'insurancecategories',
             'insuranceproducts',
-            'articles',
+            'news',
             'carousels',
             'usefuls',
             'clients'

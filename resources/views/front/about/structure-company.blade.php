@@ -22,8 +22,8 @@
                     <div class="sidebar" data-aos="slide-right">
                         <ul>
                             <li><a href="{{ route('about-us') }}">О нас</a></li>
-                            <li><a href="./history-company.html">История компании</a></li>
-                            <li><a href="./leadership-management.html">Руководство и управление</a></li>
+                            <li><a href="{{ route('history-company') }}">История компании</a></li>
+                            <li><a href="{{ route('leadership-management') }}">Руководство и управление</a></li>
                             <li><a href="{{ route('licenses-certificates') }}">Лицензии и сертификаты</a></li>
                             <li><a class="active" href="{{ route('structure-company') }}">Структура компании</a></li>
                         </ul>

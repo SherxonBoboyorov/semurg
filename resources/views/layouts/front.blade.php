@@ -41,13 +41,13 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('/') }}" class="nav__list-link">Главная</a>
+                            <a href="{{ route('/') }}" class="nav__list-link {{ (\Request::route()->getName() == '/') ? 'active' : '' }}">Главная</a>
                         </li>
                         <li class="relative right">
-                            <button class="nav__list-link active">О компании</button>
+                            <button class="nav__list-link">О компании</button>
                             <ul class="submenu">
                                 <li><a href="{{ route('about-us') }}">О нас</a></li>
-                                <li><a href="./history-company.html">История компании</a></li>
+                                <li><a href="{{ route('history-company') }}">История компании</a></li>
                                 <li><a href="./leadership-management.html">Руководство и управление</a></li>
                                 <li><a href="{{ route('licenses-certificates') }}">Лицензии и сертификаты</a></li>
                                 <li><a href="{{ route('structure-company') }}">Структура компании</a></li>
@@ -236,10 +236,10 @@
                             <button class="footer-list-link active">О компании</button>
                             <ul class="submenu">
                                 <li><a href="{{ route('about-us') }}">О нас</a></li>
-                                <li><a href="./history-company.html">История компании</a></li>
-                                <li><a href="./leadership-management.html">Руководство и управление</a></li>
-                                <li><a href="./licenses-certificates.html">Лицензии и сертификаты</a></li>
-                                <li><a href="./structure-company.html">Структура компании</a></li>
+                                <li><a href="{{ route('history-company') }}">История компании</a></li>
+                                <li><a href="{{ route('leadership-management') }}">Руководство и управление</a></li>
+                                <li><a href="{{ route('licenses-certificates') }}">Лицензии и сертификаты</a></li>
+                                <li><a href="{{ route('structure-company') }}">Структура компании</a></li>
                             </ul>
                         </li>
                         <li class="footer-relative">
@@ -300,7 +300,7 @@
                             </ul>
                         </li>
                         <li class="footer-relative">
-                            <button class="footer-list-link">Пресс-центр</button>
+                            <button  class="footer-list-link">Пресс-центр</button>
                             <ul class="submenu">
                                 <li><a href="{{ route('news') }}">Новости</a></li>
                                 <li><a href="{{ route('forum') }}">Форум</a></li>
@@ -428,6 +428,7 @@
     <script src="{{ asset('front/js/index-page/insurance-products-tabs.js') }}"></script>
     <script src="{{ asset('front/js/accordion.js') }}"></script>
     <script src="{{ asset('front/js/contact-page/contact-map.js') }}"></script>
+    <script src="{{ asset('front/js/haa.js') }}"></script>
 
 
 

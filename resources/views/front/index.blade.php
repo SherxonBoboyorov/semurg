@@ -209,20 +209,20 @@
             <div class="container">
                 <h1 class="title">Новости</h1>
                 <div class="news__row">
-                  @foreach ($articles as $article)
-                    <a href="./pages/press-center/news_in.html" class="news__col" data-aos="slide-left">
+                  @foreach ($news as $new)
+                    <a href="{{ route('new.show', $new->{'slug_' . app()->getLocale()}) }}" class="news__col" data-aos="slide-left">
                         <div class="img">
-                            <img src="{{ asset($article->image) }}" alt="">
+                            <img src="{{ asset($new->image) }}" alt="">
                         </div>
                         <div class="news__col-txt">
                             <h6 class="date">10.08.2023</h6>
-                            <h3 class="card-title">{{ $article->{'title_' . App::getLocale()} }}</h3>
-                            <h6 class="desc">{!! $article->{'content_' . App::getLocale()} !!}</h6>
+                            <h3 class="card-title">{{ $new->{'title_' . App::getLocale()} }}</h3>
+                            <h6 class="desc">{!! $new->{'content_' . App::getLocale()} !!}</h6>
                         </div>
                     </a>
                     @endforeach
                 </div>
-                <a href="#!" class="news__all-btn more-btn">
+                <a href="{{ route('news') }}" class="news__all-btn more-btn">
                     <span>Все новости</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
                         <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
