@@ -32,9 +32,13 @@ use App\Http\Controllers\Admin\TenderController;
 use App\Http\Controllers\Admin\UsefulController;
 use App\Http\Controllers\Admin\VacancyController;
 use App\Http\Controllers\Front\AboutController;
+use App\Http\Controllers\Front\FaqsController;
+use App\Http\Controllers\Front\ForumsController;
 use App\Http\Controllers\Front\IndexController;
 use App\Http\Controllers\Front\LicensesCertificatesController;
+use App\Http\Controllers\Front\NewsController;
 use App\Http\Controllers\Front\StracturesController;
+use App\Http\Controllers\Front\SurveyController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
@@ -88,6 +92,12 @@ Route::group(
             Route::get('about-us', [AboutController::class, 'about'])->name('about-us');
             Route::get('licenses-certificates', [LicensesCertificatesController::class, 'licensesCertificates'])->name('licenses-certificates');
             Route::get('structure-company', [StracturesController::class, 'structureCompany'])->name('structure-company');
+            Route::get('faq', [FaqsController::class, 'faq'])->name('faq');
+            Route::get('news', [NewsController::class, 'list'])->name('news');
+            Route::get('news/{slug}', [NewsController::class, 'show'])->name('new.show');
+            Route::get('forum', [ForumsController::class, 'forum'])->name('forum');
+            Route::get('survey', [SurveyController::class, 'survey'])->name('survey');
+
     });
 
 

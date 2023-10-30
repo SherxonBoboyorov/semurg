@@ -12,7 +12,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('front/css/main.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/index.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/about.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/faq.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/forum-page.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/news-page.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/survey-page.min.css') }}">
+
+
+
 </head>
 
 <body>
@@ -107,11 +115,11 @@
                         <li class="relative">
                             <button class="nav__list-link">Пресс-центр</button>
                             <ul class="submenu">
-                                <li><a href="../press-center/news.html">Новости</a></li>
-                                <li><a href="../press-center/forum.html">Форум</a></li>
+                                <li><a href="{{ route('news') }}">Новости</a></li>
+                                <li><a href="{{ route('forum') }}">Форум</a></li>
                                 <li><a href="../press-center/vacancies.html">Вакансии</a></li>
-                                <li><a href="../press-center/survey.html">Опрос</a></li>
-                                <li><a href="../press-center/FAQ.html">Часто задаваемые вопросы</a></li>
+                                <li><a href="{{ route('survey') }}">Опрос</a></li>
+                                <li><a href="{{ route('faq') }}">Часто задаваемые вопросы</a></li>
                                 <li><a href="../press-center/tenders.html">Тендеры</a></li>
                             </ul>
                         </li>
@@ -400,20 +408,30 @@
             </div>
         </div>
     </footer>
+    <!-- to-Top-Btn -->
     <button onclick="scrollToTop()" class="to-Top-Btn">
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 14 9" fill="none">
             <path d="M1 0.999999L7 7.0251L13 1" stroke="#fff" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" />
         </svg>
     </button>
+    
     <!-- AOS ANIMATION -->
     <script src="{{ asset('front/js/plugins/aos.js') }}"></script>
     <script>
-       AOS.init({
+        AOS.init({
             duration: 1000
         });
     </script>
-<!-- JS FOR NAV FOOTER -->
+    <!-- SWIPER JS  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="{{ asset('front/js/plugins/swiper.js') }}"></script>
+    <!-- JS -->
+    <script src="{{ asset('front/js/index-page/insurance-products-tabs.js') }}"></script>
+    <script src="{{ asset('front/js/accordion.js') }}"></script>
+
+
+    <!-- JS FOR NAV FOOTER -->
 
 <script src="{{ asset('front/js/special-abilities.js') }}"></script>
 <script src="{{ asset('front/js/scrollTopBtn.js') }}"></script>
@@ -422,6 +440,7 @@
 <script src="{{ asset('front/js/hamburger.js') }}"></script>
 <script src="{{ asset('front/js/resNavAccordion.js') }}"></script>
 <script src="{{ asset('front/js/footerNavAccordion.js') }}"></script>
+
 </body>
 
 </html>

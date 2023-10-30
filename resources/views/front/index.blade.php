@@ -6,7 +6,7 @@
         <div class="hero__left">
             <div class="hero__grid">
                 <div class="half half1" data-aos="slide-left">
-                    <img src="./images/header-hero/hero-icon3.png" alt="">
+                    <img src="{{ asset('front/images/header-hero/hero-icon3.png') }}" alt="">
                     <h2 class="heading2">Имущество и ответственность</h2>
                     <button class="more-btn">
                         <span>Подробнее</span>
@@ -18,7 +18,7 @@
                     </button>
                 </div>
                 <div class="full full1" data-aos="slide-right">
-                    <img src="./images/header-hero/hero-left-bg1.png" alt="">
+                    <img src="{{ asset('front/images/header-hero/hero-left-bg1.png') }}" alt="">
                     <div class="full__info">
                         <h2 class="heading2">Страхование грузов</h2>
                         <button class="more-btn">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="full full2" data-aos="slide-left">
-                    <img src="./images/header-hero/hero-left-bg2.png" alt="">
+                    <img src="{{ asset('front/images/header-hero/hero-left-bg2.png') }}" alt="">
                     <div class="full__info">
                         <h2 class="heading2">Автострахование</h2>
                         <button class="more-btn">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="half half2" data-aos="slide-right">
-                    <img src="./images/header-hero/hero-icon2.png" alt="">
+                    <img src="{{ asset('front/images/header-hero/hero-icon2.png') }}" alt="">
                     <h2 class="heading2">Сфера энергетики</h2>
                     <button class="more-btn">
                         <span>Подробнее</span>
@@ -58,7 +58,7 @@
                     </button>
                 </div>
                 <div class="half half3" data-aos="zoom-in-left">
-                    <img src="./images/header-hero/hero-icon1.png" alt="">
+                    <img src="{{ asset('front/images/header-hero/hero-icon1.png') }}" alt="">
                     <h2 class="heading2">Агрострахование</h2>
                     <button class="more-btn">
                         <span>Подробнее</span>
@@ -70,7 +70,7 @@
                     </button>
                 </div>
                 <div class="full full3" data-aos="zoom-in-right">
-                    <img src="./images/header-hero/hero-left-bg3.png" alt="">
+                    <img src="{{ asset('front/images/header-hero/hero-left-bg3.png') }}" alt="">
                     <div class="full__info">
                         <h2 class="heading2">Страхование строительно-монтажных рисков</h2>
                         <button class="more-btn">
