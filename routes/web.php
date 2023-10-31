@@ -36,11 +36,13 @@ use App\Http\Controllers\Front\DocumentsController;
 use App\Http\Controllers\Front\FaqsController;
 use App\Http\Controllers\Front\ForumsController;
 use App\Http\Controllers\Front\HistoryCompanysController;
+use App\Http\Controllers\Front\IncomingReinsuranceController;
 use App\Http\Controllers\Front\IndexController;
 use App\Http\Controllers\Front\InsurancesController;
 use App\Http\Controllers\Front\LicensesCertificatesController;
 use App\Http\Controllers\Front\ManagementController;
 use App\Http\Controllers\Front\NewsController;
+use App\Http\Controllers\Front\OutgoingReinsuranceController;
 use App\Http\Controllers\Front\StracturesController;
 use App\Http\Controllers\Front\SurveyController;
 use App\Http\Controllers\Front\TendersController;
@@ -111,7 +113,8 @@ Route::group(
             Route::get('products', [InsurancesController::class, 'insurancesProduct'])->name('products');
             Route::get('products/{id?}', [InsurancesController::class, 'show'])->name('roduct.show');
             Route::get('documents/{id?}', [DocumentsController::class, 'document'])->name('document.show');
-
+            Route::get('incoming-reinsurance', [IncomingReinsuranceController::class, 'incomingReinsurance'])->name('incoming-reinsurance');
+            Route::get('outgoing-reinsurance', [OutgoingReinsuranceController::class, 'outgoingReinsurance'])->name('outgoing-reinsurance');
     });
 
 
