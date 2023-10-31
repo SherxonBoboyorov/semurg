@@ -22,8 +22,8 @@
                        <button class="tablinks" onclick="openCity(event, '{{ $insurancecategory->id }}')">{{ $insurancecategory->{'title_' . app()->getLocale()} }}</button>
                     </div>
                      
-                 <div id="{{$insurancecategory->id}}" class="tab-content">
-                   @foreach ($insurancecategory->insuranceproducts as $insuranceproduct)
+                    <div id="{{$insurancecategory->id}}" class="tab-content">
+                        @foreach ($insurancecategory->insuranceproducts as $insuranceproduct)
                     <a href="{{ route('roduct.show', $insuranceproduct->id) }}" class="tab-content__item" data-aos="slide-left">
                         <div class="img-item">
                             <img src="{{ asset($insuranceproduct->image) }}" alt="">
@@ -31,7 +31,7 @@
                         <p>{{ $insuranceproduct->{'title_' . app()->getLocale()} }}</p>
                     </a>
                     @endforeach
-                 </div>
+                </div>
                 @endforeach
              </div>
                 
