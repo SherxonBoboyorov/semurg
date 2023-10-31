@@ -32,6 +32,7 @@ use App\Http\Controllers\Admin\TenderController;
 use App\Http\Controllers\Admin\UsefulController;
 use App\Http\Controllers\Admin\VacancyController;
 use App\Http\Controllers\Front\AboutController;
+use App\Http\Controllers\Front\DocumentsController;
 use App\Http\Controllers\Front\FaqsController;
 use App\Http\Controllers\Front\ForumsController;
 use App\Http\Controllers\Front\HistoryCompanysController;
@@ -109,7 +110,7 @@ Route::group(
             Route::get('leadership-management', [ManagementController::class, 'leadershipManagement'])->name('leadership-management');
             Route::get('products', [InsurancesController::class, 'insurancesProduct'])->name('products');
             Route::get('products/{id?}', [InsurancesController::class, 'show'])->name('roduct.show');
-            // Route::get('insurance-products', [InsurancesController::class, 'insurancesProduct'])->name('insurance-products');
+            Route::get('documents/{id?}', [DocumentsController::class, 'document'])->name('document.show');
 
     });
 

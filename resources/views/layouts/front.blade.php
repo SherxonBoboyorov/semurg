@@ -82,21 +82,11 @@
                         <li class="relative">
                             <button class="nav__list-link">Акционерам и инвесторам</button>
                             <ul class="submenu">
+                                @foreach(\App\Models\Category::orderBy('id')->get() as $category)
                                 <li>
-                                    <a href="../shareholders-investors/affiliates.html">Аффилированные лица</a>
+                                    <a href="{{ route('document.show', $category->id) }}">{{ $category->{'title_' . app()->getLocale()} }}</a>
                                 </li>
-                                <li>
-                                    <a href="../shareholders-investors/statements.html">Финансовая отчётность</a>
-                                </li>
-                                <li>
-                                    <a href="../shareholders-investors/facts.html">Существенные факты</a>
-                                </li>
-                                <li>
-                                    <a href="../shareholders-investors/plans.html">Бизнес план</a>
-                                </li>
-                                <li>
-                                    <a href="../shareholders-investors/dividends.html">Дивиденды</a>
-                                </li>
+                                @endforeach
                             </ul>
                         </li>
                         <li class="relative">
