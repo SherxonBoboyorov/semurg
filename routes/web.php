@@ -108,6 +108,8 @@ Route::group(
             Route::get('history-company', [HistoryCompanysController::class, 'historyCompany'])->name('history-company');
             Route::get('leadership-management', [ManagementController::class, 'leadershipManagement'])->name('leadership-management');
             Route::get('products', [InsurancesController::class, 'insurancesProduct'])->name('products');
+            Route::get('products/{id?}', [InsurancesController::class, 'show'])->name('roduct.show');
+            // Route::get('insurance-products', [InsurancesController::class, 'insurancesProduct'])->name('insurance-products');
 
     });
 

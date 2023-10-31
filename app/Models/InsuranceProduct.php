@@ -29,10 +29,9 @@ class InsuranceProduct extends Model
         'meta_description_en',
     ];
 
-
     public function insurancecategory()
     {
-        return $this->belongsTo(InsuranceCategory::class, 'id', 'insurancecategory_id');
+        return $this->belongsTo('App\Models\InsuranceCategory', 'insurancecategory_id');
     }
 
 

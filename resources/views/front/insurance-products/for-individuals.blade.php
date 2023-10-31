@@ -16,62 +16,25 @@
         </div>
         <section class="insurance-products for-individuals">
             <div class="container">
-                <div class="tab">
-                    <button class="tablinks active" onclick="openCity(event, 'Physical')">Физическим лицам</button>
-                    <button class="tablinks" onclick="openCity(event, 'Legal')">Юридическим лицам</button>
-                </div>
-                <div id="Legal" class="tab-content">
-                    <a href="./legal-entities_in.html" class="tab-content__item" data-aos="slide-left">
+                <div>
+                  @foreach ($insurancecategories as $insurancecategory)  
+                   <div class="tab">
+                       <button class="tablinks" onclick="openCity(event, '{{ $insurancecategory->id }}')">{{ $insurancecategory->{'title_' . app()->getLocale()} }}</button>
+                    </div>
+                     
+                 <div id="{{$insurancecategory->id}}" class="tab-content">
+                   @foreach ($insurancecategory->insuranceproducts as $insuranceproduct)
+                    <a href="{{ route('roduct.show', $insuranceproduct->id) }}" class="tab-content__item" data-aos="slide-left">
                         <div class="img-item">
-                            <img src="../../images/insurance-products/insurance-products1.svg" alt="">
+                            <img src="{{ asset($insuranceproduct->image) }}" alt="">
                         </div>
-                        <p>ОСГОВТС</p>
+                        <p>{{ $insuranceproduct->{'title_' . app()->getLocale()} }}</p>
                     </a>
-                    <a href="./legal-entities_in.html" class="tab-content__item" data-aos="slide-up">
-                        <div class="img-item">
-                            <img src="../../images/insurance-products/insurance-products2.svg" alt="">
-                        </div>
-                        <p>КАСКО</p>
-                    </a>
-                </div>
-                <div id="Physical" class="tab-content">
-                    <a href="./for-individuals_in.html" class="tab-content__item" data-aos="slide-left">
-                        <div class="img-item">
-                            <img src="../../images/insurance-products/insurance-products1.svg" alt="">
-                        </div>
-                        <p>ОСГОВТС</p>
-                    </a>
-                    <a href="./for-individuals_in.html" class="tab-content__item" data-aos="slide-up">
-                        <div class="img-item">
-                            <img src="../../images/insurance-products/insurance-products2.svg" alt="">
-                        </div>
-                        <p>КАСКО</p>
-                    </a>
-                    <a href="./for-individuals_in.html" class="tab-content__item" data-aos="slide-right">
-                        <div class="img-item">
-                            <img src="../../images/insurance-products/insurance-products3.svg" alt="">
-                        </div>
-                        <p>Страхование от несчастных случаев</p>
-                    </a>
-                    <a href="./for-individuals_in.html" class="tab-content__item" data-aos="slide-left">
-                        <div class="img-item">
-                            <img src="../../images/insurance-products/insurance-products6.svg" alt="">
-                        </div>
-                        <p>Страхование спортсменов</p>
-                    </a>
-                    <a href="./for-individuals_in.html" class="tab-content__item" data-aos="slide-up">
-                        <div class="img-item">
-                            <img src="../../images/insurance-products/insurance-products4.svg" alt="">
-                        </div>
-                        <p>Страхование имущества</p>
-                    </a>
-                    <a href="./for-individuals_in.html" class="tab-content__item" data-aos="slide-right">
-                        <div class="img-item">
-                            <img src="../../images/insurance-products/insurance-products5.svg" alt="">
-                        </div>
-                        <p>Страхование автокредита</p>
-                    </a>
-                </div>
+                    @endforeach
+                 </div>
+                @endforeach
+             </div>
+                
                 <div class="insurance-products__btn">
                     <button class="btn primary-btn">Все продукты</button>
                 </div>

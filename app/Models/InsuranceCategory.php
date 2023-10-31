@@ -19,6 +19,6 @@ class InsuranceCategory extends Model
 
     public function insuranceproducts() 
     {
-        return $this->hasMany(InsuranceProduct::class);  
+        return $this->hasMany(InsuranceProduct::class, 'insurancecategory_id');  
     }
 }
