@@ -8,9 +8,9 @@
                 <div class="breadcrumb">
                     <h1 class="title">Каско</h1>
                     <ul>
-                        <li><a href="../../index.html">Главная</a></li>
+                        <li><a href="{{ route('/') }}">Главная</a></li>
                         <li><a href="./for-individuals.html">Физическим лицам</a></li>
-                        <li><a href="./for-individuals_in.html">Каско</a></li>
+                        <li><a>Каско</a></li>
                     </ul>
                 </div>
             </div>

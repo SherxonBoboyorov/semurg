@@ -6,11 +6,13 @@
         <div class="hero hero-crumb" data-aos="flip-up">
             <div class="container">
                 <div class="breadcrumb">
-                    <h1 class="title">Аффилированные лица </h1>
+                    @foreach($menu as $item)
+                    <h1 class="title">{{ $item->{'title_' . app()->getLocale()} }}</h1>
                     <ul>
                         <li><a href="{{ route('/') }}">Главная</a></li>
-                        <li><a>Аффилированные лица </a></li>
+                        <li><a>{{ $item->{'title_' . app()->getLocale()} }}</a></li>
                     </ul>
+                    @endforeach
                 </div>
             </div>
         </div>
