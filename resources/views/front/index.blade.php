@@ -111,7 +111,7 @@
                 @foreach ($pages as $page)
                     
                 <p class="text">
-                    {!! $page->{'content_' . App::getLocale()} !!}
+                    {!! $page->{'content_' . app()->getLocale()} !!}
                 </p>
                 <div class="about-company__map">
                     <img src="{{ asset($page->image) }}" alt="">
@@ -124,23 +124,25 @@
         <section class="insurance-products" data-aos="fade-up">
             <div class="container">
                 <h1 class="title">Страховые продукты</h1>
+                @foreach ($insurancecategories as $insurancecategory)
                 <div class="tab">
-                    @foreach ($insurancecategories as $insurancecategory)
-                     <button class="tablinks" onclick="openCity(event, '{{ $insurancecategory->id }}')">{{ $insurancecategory->{'title_' . App::getLocale()} }}</button> 
-                    @endforeach
+                     <button class="tablinks" onclick="openCity(event, '{{ $insurancecategory->id }}')">{{ $insurancecategory->{'title_' . app()->getLocale()} }}</button> 
                     </div>
 
-                @foreach($insuranceproducts as $insuranceproduct)
-                 <div id="{{ $insurancecategory->id }}" class="tab-content">
+                <div id="{{ $insurancecategory->id }}" class="tab-content">
+                   @foreach($insurancecategory->insuranceproducts as $insuranceproduct)
                     <a href="./pages/insurance-products/legal-entities_in.html" class="tab-content__item" data-aos="slide-right">
                         <div class="img-item">
                             <img src="{{ asset($insuranceproduct->image) }}" alt="">
                         </div>
-                        <p>{{ $insuranceproduct->{'title_' . App::getLocale()} }} </p>
+                        <p>{{ $insuranceproduct->{'title_' . app()->getLocale()} }} </p>
                     </a>
+                    @endforeach
                   </div>
+               
+                  @endforeach
 
-                @endforeach
+
 
 
 
@@ -193,9 +195,9 @@
                                     <div class="img">
                                         <img src="{{ asset($carousel->image) }}" alt="">
                                     </div>
-                                    <h3>{{ $carousel->{'title_' . App::getLocale()} }}</h3>
+                                    <h3>{{ $carousel->{'title_' . app()->getLocale()} }}</h3>
                                 </div>
-                                <p class="desc">{!! $carousel->{'content_' . App::getLocale()} !!}</p>
+                                <p class="desc">{!! $carousel->{'content_' . app()->getLocale()} !!}</p>
                             </div>
                             @endforeach
                         </div>
@@ -212,12 +214,12 @@
                   @foreach ($news as $new)
                     <a href="{{ route('new.show', $new->{'slug_' . app()->getLocale()}) }}" class="news__col" data-aos="slide-left">
                         <div class="img">
-                            <img src="{{ asset($new->image) }}" alt="">
+                            <img src="{{ asset($new->image) }}" alt="alt">
                         </div>
                         <div class="news__col-txt">
                             <h6 class="date">10.08.2023</h6>
-                            <h3 class="card-title">{{ $new->{'title_' . App::getLocale()} }}</h3>
-                            <h6 class="desc">{!! $new->{'content_' . App::getLocale()} !!}</h6>
+                            <h3 class="card-title">{{ $new->{'title_' . app()->getLocale()} }}</h3>
+                            <h6 class="desc">{!! $new->{'content_' . app()->getLocale()} !!}</h6>
                         </div>
                     </a>
                     @endforeach
@@ -254,7 +256,7 @@
                         <div class="img">
                             <img src="{{ asset($useful->image) }}" alt="">
                         </div>
-                        <p class="card-desc">{{ $useful->{'title_' . App::getLocale()} }}</p>
+                        <p class="card-desc">{{ $useful->{'title_' . app()->getLocale()} }}</p>
                         <a href="{{ $useful->link }}">{{ $useful->link }}</a>
                     </div>
                     @endforeach                   

@@ -42,20 +42,20 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('/') }}" class="nav__list-link {{ (\Request::route()->getName() == '/') ? 'active' : '' }}">Главная</a>
+                            <a href="{{ route('/') }}" class="nav__list-link {{ (\Request::route()->getName() == '/') ? 'active' : '' }}">@lang('front.home')</a>
                         </li>
                         <li class="relative right">
-                            <button class="nav__list-link {{ (\Request::route()->getName() == 'about-us') ? 'active' : '' }}">О компании</button>
+                            <button class="nav__list-link {{ (\Request::route()->getName() == 'about-us') ? 'active' : '' }}">@lang('front.about_company')</button>
                             <ul class="submenu">
-                                <li><a href="{{ route('about-us') }}">О нас</a></li>
-                                <li><a href="{{ route('history-company') }}">История компании</a></li>
-                                <li><a href="{{ route('leadership-management') }}">Руководство и управление</a></li>
-                                <li><a href="{{ route('licenses-certificates') }}">Лицензии и сертификаты</a></li>
-                                <li><a href="{{ route('structure-company') }}">Структура компании</a></li>
+                                <li><a href="{{ route('about-us') }}">@lang('front.about_us')</a></li>
+                                <li><a href="{{ route('history-company') }}">@lang('front.company_history')</a></li>
+                                <li><a href="{{ route('leadership-management') }}">@lang('front.leadership_and_management')</a></li>
+                                <li><a href="{{ route('licenses-certificates') }}">@lang('front.licences_and_certificates')</a></li>
+                                <li><a href="{{ route('structure-company') }}">@lang('front.company_structure')</a></li>
                             </ul>
                         </li>
                         <li class="relative">
-                            <button class="nav__list-link {{ (\Request::route()->getName() == 'products') ? 'active' : '' }}" {{ (\Request::route()->getName() == 'products') ? 'active' : '' }}>Страховые продукты</button>
+                            <button class="nav__list-link {{ (\Request::route()->getName() == 'products') ? 'active' : '' }}" {{ (\Request::route()->getName() == 'products') ? 'active' : '' }}>@lang('front.insurance_products')</button>
                             <ul class="submenu">
                                 @foreach (\App\Models\InsuranceCategory::orderBy('id')->get() as $item)
                                 <li>
@@ -65,21 +65,21 @@
                             </ul>
                         </li>
                         <li class="relative">
-                            <button class="nav__list-link">Документы</button>
+                            <button class="nav__list-link">@lang('front.documents')</button>
                             <ul class="submenu">
                                 <li>
-                                    <a href="../documents/charter.html">Устав</a>
+                                    <a href="../documents/charter.html">@lang('front.company_charter')</a>
                                 </li>
                                 <li>
-                                    <a href="../documents/provisions.html">Положения</a>
+                                    <a href="../documents/provisions.html">@lang('front.provisions')</a>
                                 </li>
                                 <li>
-                                    <a href="../documents/codex.html">Кодексы</a>
+                                    <a href="../documents/codex.html">@lang('front.codex')</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="relative">
-                            <button class="nav__list-link {{ (\Request::route()->getName() == 'document.show') ? 'active' : '' }}">Акционерам и инвесторам</button>
+                            <button class="nav__list-link {{ (\Request::route()->getName() == 'document.show') ? 'active' : '' }}">@lang('front.shareholders_and_investors')</button>
                             <ul class="submenu">
                                 @foreach(\App\Models\Category::orderBy('id')->get() as $category)
                                 <li>
@@ -89,29 +89,29 @@
                             </ul>
                         </li>
                         <li class="relative">
-                            <button class="nav__list-link {{ (\Request::route()->getName() == 'incoming-reinsurance') ? 'active' : '' }}">Перестрахование</button>
+                            <button class="nav__list-link {{ (\Request::route()->getName() == 'incoming-reinsurance') ? 'active' : '' }}">@lang('front.reinsurance')</button>
                             <ul class="submenu">
                                 <li>
-                                    <a href="{{ route('incoming-reinsurance') }}">Входящее перестрахование</a>
+                                    <a href="{{ route('incoming-reinsurance') }}">@lang('front.incoming_reinsurance')</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('outgoing-reinsurance') }}">Исходящееперестрахование</a>
+                                    <a href="{{ route('outgoing-reinsurance') }}">@lang('front.outgoing_reinsurance')</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="relative">
-                            <button class="nav__list-link {{ (\Request::route()->getName() == 'news') ? 'active' : '' }}">Пресс-центр</button>
+                            <button class="nav__list-link {{ (\Request::route()->getName() == 'news') ? 'active' : '' }}">@lang('front.press_center')</button>
                             <ul class="submenu">
-                                <li><a href="{{ route('news') }}">Новости</a></li>
-                                <li><a href="{{ route('forum') }}">Форум</a></li>
-                                <li><a href="{{ route('vacancies') }}">Вакансии</a></li>
-                                <li><a href="{{ route('survey') }}">Опрос</a></li>
-                                <li><a href="{{ route('faq') }}">Часто задаваемые вопросы</a></li>
-                                <li><a href="{{ route('tenders') }}">Тендеры</a></li>
+                                <li><a href="{{ route('news') }}">@lang('front.news')</a></li>
+                                <li><a href="{{ route('forum') }}">@lang('front.forum')</a></li>
+                                <li><a href="{{ route('vacancies') }}">@lang('front.vacancies')</a></li>
+                                <li><a href="{{ route('survey') }}">@lang('fron.survey')</a></li>
+                                <li><a href="{{ route('faq') }}">@lang('front.frequency_asked_questions')</a></li>
+                                <li><a href="{{ route('tenders') }}">@lang('front.tenders')</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="nav__list-link {{ (\Request::route()->getName() == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">Контакты</a>
+                            <a class="nav__list-link {{ (\Request::route()->getName() == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">@lang('front.contacts')</a>
                         </li>
                     </ul>
                     <div class="bars">
@@ -139,7 +139,7 @@
                                 <path fill="#0B4848"
                                     d="m19.9011 18.5992-3.4008-3.3733A8.25 8.25 0 1 0 15.2261 16.5l3.3733 3.3734a.9171.9171 0 0 0 1.3017 0 .917.917 0 0 0 0-1.2742ZM10.0836 16.5a6.4165 6.4165 0 0 1-6.2934-7.6685A6.4167 6.4167 0 1 1 10.0836 16.5Z" />
                             </svg>
-                            <span class="p">Поиск</span>
+                            <span class="p">@lang('front.search')</span>
                         </div>
                         <div class="menu-right__search-modal hidden">
                             <form action="" class="search-modal-form">
@@ -155,7 +155,7 @@
                             </form>
                         </div>
                         <div class="menu-right__view">
-                            <span class="a">Специальные возможности</span>
+                            <span class="a">@lang('front.special_functions')</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none">
                                 <path fill="#0B4848"
                                     d="M9 6.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Zm0 6A3.7502 3.7502 0 0 1 5.25 9 3.75 3.75 0 1 1 9 12.75Zm0-9.375C5.25 3.375 2.0475 5.7075.75 9c1.2975 3.2925 4.5 5.625 8.25 5.625S15.9525 12.2925 17.25 9C15.9525 5.7075 12.75 3.375 9 3.375Z" />
@@ -163,19 +163,19 @@
                             <div class="overlay hidden"></div>
                             <div class="special-abilities hidden">
                                 <div class="special-abilities__colors">
-                                    <h3>Вид:</h3>
+                                    <h3>@lang('front.view'):</h3>
                                     <label class="normal-color">
                                         <input type="radio" name="sp-ab-colors">
-                                        <span class="label-txt">Обычный дизайн</span>
+                                        <span class="label-txt">@lang('front.normal_design')</span>
                                     </label>
                                     <label class="grayscale-color">
                                         <input type="radio" name="sp-ab-colors">
-                                        <span class="label-txt">Черно-белый дизайн</span>
+                                        <span class="label-txt">@lang('front.black_and_white_design')</span>
                                     </label>
                                 </div>
                                 <div class="line"></div>
                                 <div class="special-abilities__text-size">
-                                    <h3>Размер шрифта:</h3>
+                                    <h3>@lang('front.font_size'):</h3>
                                     <div class="btns">
                                         <button class="ha-btn" id="fontSizeMin">A-</button>
                                         <button class="ha-btn" id="fontSizeDefault">A</button>
@@ -187,7 +187,7 @@
                         
                         <div class="menu-right__lang">
                             <div onclick="openLangMenu()">
-                                <span class="content lang-text-info">RU</span>
+                                <span class="content lang-text-info active">{{ strtoupper(app()->getLocale()) }}</span>
                                 <span class="content">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" viewBox="0 0 14 9" fill="none">
                                         <path d="M1 0.999999L7 7.0251L13 1" stroke="silver" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -195,13 +195,17 @@
                                 </span>
                             </div>
                             <ul class="menu-right__lang-options hidden">
-                                <li id="en" class="lang-option-item">English</li>
-                                <li id="ru" class="lang-option-item">Русский</li>
-                                <li id="uz" class="lang-option-item">O'zbekcha</li>
-                            </ul>
+                             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                               @if($localeCode != app()->getLocale())
+                                <li id="{{ strtoupper(app()->getLocale()) }}" class="lang-option-item">
+                                  <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                     {{ strtoupper($localeCode) }}
+                                  </a>
+                                </li>
+                               @endif
+                              @endforeach
+                            </ul> 
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -221,20 +225,20 @@
                     <h4 class="heading4">Карта сайта</h4>
                     <ul class="footer__info__list">
                         <li>
-                            <a href="{{ route('/') }}">Главная</a>
+                            <a href="{{ route('/') }}">@lang('front.home')</a>
                         </li>
                         <li class="footer-relative">
-                            <button class="footer-list-link {{ (\Request::route()->getName() == 'about-us') ? 'active' : '' }}">О компании</button>
+                            <button class="footer-list-link {{ (\Request::route()->getName() == 'about-us') ? 'active' : '' }}">@lang('front.about_company')</button>
                             <ul class="submenu">
-                                <li><a href="{{ route('about-us') }}">О нас</a></li>
-                                <li><a href="{{ route('history-company') }}">История компании</a></li>
-                                <li><a href="{{ route('leadership-management') }}">Руководство и управление</a></li>
-                                <li><a href="{{ route('licenses-certificates') }}">Лицензии и сертификаты</a></li>
-                                <li><a href="{{ route('structure-company') }}">Структура компании</a></li>
+                                <li><a href="{{ route('about-us') }}">@lang('front.about_us')</a></li>
+                                <li><a href="{{ route('history-company') }}">@lang('front.company_history')</a></li>
+                                <li><a href="{{ route('leadership-management') }}">@lang('front.leadership_and_management')</a></li>
+                                <li><a href="{{ route('licenses-certificates') }}">@lang('front.licences_and_certificates')</a></li>
+                                <li><a href="{{ route('structure-company') }}">@lang('front.company_structure')</a></li>
                             </ul>
                         </li>
                         <li class="footer-relative">
-                            <button class="footer-list-link {{ (\Request::route()->getName() == 'products') ? 'active' : '' }}">Страховые продукты</button>
+                            <button class="footer-list-link {{ (\Request::route()->getName() == 'products') ? 'active' : '' }}">@lang('front.insurance_products')</button>
                             <ul class="submenu">
                                 @foreach (\App\Models\InsuranceCategory::orderBy('id')->get() as $item)
                                 <li>
@@ -244,21 +248,21 @@
                             </ul>
                         </li>
                         <li class="footer-relative">
-                            <button class="footer-list-link">Документы</button>
+                            <button class="footer-list-link">@lang('front.documents')</button>
                             <ul class="submenu">
                                 <li>
-                                    <a href="../documents/charter.html">Устав</a>
+                                    <a href="../documents/charter.html">@lang('front.company_charter')</a>
                                 </li>
                                 <li>
-                                    <a href="../documents/provisions.html">Положения</a>
+                                    <a href="../documents/provisions.html">@lang('front.provisions')</a>
                                 </li>
                                 <li>
-                                    <a href="../documents/codex.html">Кодексы</a>
+                                    <a href="../documents/codex.html">@lang('front.codex')</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="footer-relative">
-                            <button class="footer-list-link {{ (\Request::route()->getName() == 'document.show') ? 'active' : '' }}">Акционерам и инвесторам</button>
+                            <button class="footer-list-link {{ (\Request::route()->getName() == 'document.show') ? 'active' : '' }}">@lang('front.shareholders_and_investors')</button>
                             <ul class="submenu">
                                 @foreach(\App\Models\Category::orderBy('id')->get() as $category)
                                 <li>
@@ -268,34 +272,34 @@
                             </ul>
                         </li>
                         <li class="footer-relative">
-                            <button class="footer-list-link {{ (\Request::route()->getName() == 'incoming-reinsurance') ? 'active' : '' }}">Перестрахование</button>
+                            <button class="footer-list-link {{ (\Request::route()->getName() == 'incoming-reinsurance') ? 'active' : '' }}">@lang('front.reinsurance')</button>
                             <ul class="submenu">
                                 <li>
-                                    <a href="{{ route('incoming-reinsurance') }}">Входящее перестрахование</a>
+                                    <a href="{{ route('incoming-reinsurance') }}">@lang('front.incoming_reinsurance')</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('outgoing-reinsurance') }}">Исходящее перестрахование</a>
+                                    <a href="{{ route('outgoing-reinsurance') }}">@lang('front.outgoing_reinsurance')</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="footer-relative">
-                            <button  class="footer-list-link {{ (\Request::route()->getName() == 'news') ? 'active' : '' }}">Пресс-центр</button>
+                            <button  class="footer-list-link {{ (\Request::route()->getName() == 'news') ? 'active' : '' }}">@lang('front.press_center')</button>
                             <ul class="submenu">
-                                <li><a href="{{ route('news') }}">Новости</a></li>
-                                <li><a href="{{ route('forum') }}">Форум</a></li>
-                                <li><a href="{{ route('vacancies') }}">Вакансии</a></li>
-                                <li><a href="{{ route('survey') }}">Опрос</a></li>
-                                <li><a href="{{ route('faq') }}">Часто задаваемые вопросы</a></li>
-                                <li><a href="{{ route('tenders') }}">Тендеры</a></li>
+                                <li><a href="{{ route('news') }}">@lang('front.news')</a></li>
+                                <li><a href="{{ route('forum') }}">@lang('front.forum')</a></li>
+                                <li><a href="{{ route('vacancies') }}">@lang('front.vacancies')</a></li>
+                                <li><a href="{{ route('survey') }}">@lang('fron.survey')</a></li>
+                                <li><a href="{{ route('faq') }}">@lang('front.frequency_asked_questions')</a></li>
+                                <li><a href="{{ route('tenders') }}">@lang('front.tenders')</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="{{ (\Request::route()->getName() == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">Контакты</a>
+                            <a class="{{ (\Request::route()->getName() == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">@lang('front.contacts')</a>
                         </li>
                     </ul>
                 </div>
                 <div class="footer__info__contact">
-                    <h4 class="heading4">Контакты</h4>
+                    <h4 class="heading4">@lang('front.contacts')</h4>
                     <ul class="footer__info__contact-list">
                         <li>
                             <a href="tel:+998 71 205 11 55">
