@@ -107,7 +107,7 @@
     <main>
         <section class="about-company" data-aos="zoom-in-up">
             <div class="container">
-                <h1 class="title">О компании</h1>
+                <h1 class="title">@lang('front.about_us')</h1>
                 @foreach ($pages as $page)
                     
                 <p class="text">
@@ -123,7 +123,7 @@
 
         <section class="insurance-products" data-aos="fade-up">
             <div class="container">
-                <h1 class="title">Страховые продукты</h1>
+                <h1 class="title">@lang('front.insurance_products')</h1>
                 @foreach ($insurancecategories as $insurancecategory)
                 <div class="tab">
                      <button class="tablinks" onclick="openCity(event, '{{ $insurancecategory->id }}')">{{ $insurancecategory->{'title_' . app()->getLocale()} }}</button> 

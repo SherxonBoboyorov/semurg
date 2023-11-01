@@ -30,7 +30,8 @@ return [
      'view' => 'View',
      'special_functions' => 'Special functions',
      'search' => 'Search',
-     'contacts' => 'Contacts'
+     'contacts' => 'Contacts',
+     'all_products' => 'All products'
       
 ]
 

@@ -38,7 +38,6 @@ class PollController extends Controller
             'question_uz' => 'required|max:255',
             'question_ru' => 'required|max:255',
             'question_en' => 'required|max:255',
-
         ])->validate();
 
         $poll = Poll::create([
@@ -54,6 +53,7 @@ class PollController extends Controller
                     'answer_uz' => $answer['answer_uz'],
                     'answer_ru' => $answer['answer_ru'],
                     'answer_en' => $answer['answer_en'],
+                    'order' => $answer['order']
                 ]);
             }
         }

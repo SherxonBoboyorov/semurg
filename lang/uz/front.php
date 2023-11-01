@@ -30,7 +30,8 @@ return [
    'view' =>'Ko\'rinish',
    'special_functions' => 'Maxsus imkoniyatlar',
    'search' => 'Qidirmoq',
-   'contacts' => 'Kontaktlar'
+   'contacts' => 'Kontaktlar',
+   'all_products' => 'Barcha mahsulotlar'
 ]
 
 

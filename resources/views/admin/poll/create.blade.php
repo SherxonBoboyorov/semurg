@@ -77,7 +77,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label for="answer_uz">Answer UZ</label>
-                                            <input type="text" id="answer_uz" class="form-control" name="answer_uz">
+                                            <input type="text" id="answer_uz" class="form-control" name="answer_uz[]">
                                             @if($errors->has('answer_uz'))
                                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -93,7 +93,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label for="answer_ru">Answer RU</label>
-                                            <input type="text" id="answer_ru" class="form-control" name="answer_ru">
+                                            <input type="text" id="answer_ru" class="form-control" name="answer_ru[]">
                                             @if($errors->has('answer_ru'))
                                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -108,7 +108,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label for="answer_en">Answer EN</label>
-                                            <input type="text" id="answer_en" class="form-control" name="answer_en">
+                                            <input type="text" id="answer_en" class="form-control" name="answer_en[]">
                                             @if($errors->has('answer_en'))
                                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -121,12 +121,10 @@
             
                                     </div><br><samp></samp>
 
-
-
                                     <div class="col-md-6">
                                         <label class="form-label" for="order">Order</label>
                                         <div class="input-group">
-                                            <input id="order" name="order" type="number" aria-label="Order"
+                                            <input id="order" name="order[]" type="number" aria-label="Order"
                                                 aria-describedby="order" class="touchspin" value="1"/>
                                         </div>
                                     </div><br><br>

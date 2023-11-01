@@ -17,6 +17,7 @@ class PollAnswer extends Model
         'answer_ru',
         'answer_uz',
         'answer_en',
+        'order'
     ];
 
     public function votes(): HasMany

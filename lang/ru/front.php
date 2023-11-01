@@ -30,9 +30,9 @@ return [
      'view' => 'Вид',
      'special_functions' => 'Специальные возможности',
      'search' => 'Поиск',
-     'contacts' => 'Контакты'
-
-]
+     'contacts' => 'Контакты',
+     'all_products' => 'Все продукты',
+];
 
 
 ?>
