@@ -32,6 +32,7 @@ use App\Http\Controllers\Admin\TenderController;
 use App\Http\Controllers\Admin\UsefulController;
 use App\Http\Controllers\Admin\VacancyController;
 use App\Http\Controllers\Front\AboutController;
+use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\DocumentsController;
 use App\Http\Controllers\Front\FaqsController;
 use App\Http\Controllers\Front\ForumsController;
@@ -111,10 +112,11 @@ Route::group(
             Route::get('history-company', [HistoryCompanysController::class, 'historyCompany'])->name('history-company');
             Route::get('leadership-management', [ManagementController::class, 'leadershipManagement'])->name('leadership-management');
             Route::get('products', [InsurancesController::class, 'insurancesProduct'])->name('products');
-            Route::get('products/{id?}', [InsurancesController::class, 'show'])->name('roduct.show');
+            Route::get('products/{id?}', [InsurancesController::class, 'show'])->name('product.show');
             Route::get('documents/{id?}', [DocumentsController::class, 'document'])->name('document.show');
             Route::get('incoming-reinsurance', [IncomingReinsuranceController::class, 'incomingReinsurance'])->name('incoming-reinsurance');
             Route::get('outgoing-reinsurance', [OutgoingReinsuranceController::class, 'outgoingReinsurance'])->name('outgoing-reinsurance');
+            Route::get('contact', [ContactController::class, 'contact'])->name('contact');
     });
 
 

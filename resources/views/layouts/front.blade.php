@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="{{ asset('front/css/survey-page.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/contact.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/persons.min.css') }}">
-
 </head>
 
 <body>
@@ -46,17 +45,17 @@
                             <a href="{{ route('/') }}" class="nav__list-link {{ (\Request::route()->getName() == '/') ? 'active' : '' }}">Главная</a>
                         </li>
                         <li class="relative right">
-                            <button class="nav__list-link">О компании</button>
+                            <button class="nav__list-link {{ (\Request::route()->getName() == 'about-us') ? 'active' : '' }}">О компании</button>
                             <ul class="submenu">
                                 <li><a href="{{ route('about-us') }}">О нас</a></li>
                                 <li><a href="{{ route('history-company') }}">История компании</a></li>
-                                <li><a href="./leadership-management.html">Руководство и управление</a></li>
+                                <li><a href="{{ route('leadership-management') }}">Руководство и управление</a></li>
                                 <li><a href="{{ route('licenses-certificates') }}">Лицензии и сертификаты</a></li>
                                 <li><a href="{{ route('structure-company') }}">Структура компании</a></li>
                             </ul>
                         </li>
                         <li class="relative">
-                            <button class="nav__list-link">Страховые продукты</button>
+                            <button class="nav__list-link {{ (\Request::route()->getName() == 'products') ? 'active' : '' }}" {{ (\Request::route()->getName() == 'products') ? 'active' : '' }}>Страховые продукты</button>
                             <ul class="submenu">
                                 @foreach (\App\Models\InsuranceCategory::orderBy('id')->get() as $item)
                                 <li>
@@ -80,7 +79,7 @@
                             </ul>
                         </li>
                         <li class="relative">
-                            <button class="nav__list-link">Акционерам и инвесторам</button>
+                            <button class="nav__list-link {{ (\Request::route()->getName() == 'document.show') ? 'active' : '' }}">Акционерам и инвесторам</button>
                             <ul class="submenu">
                                 @foreach(\App\Models\Category::orderBy('id')->get() as $category)
                                 <li>
@@ -90,19 +89,18 @@
                             </ul>
                         </li>
                         <li class="relative">
-                            <button class="nav__list-link">Перестрахование</button>
+                            <button class="nav__list-link {{ (\Request::route()->getName() == 'incoming-reinsurance') ? 'active' : '' }}">Перестрахование</button>
                             <ul class="submenu">
                                 <li>
                                     <a href="{{ route('incoming-reinsurance') }}">Входящее перестрахование</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('outgoing-reinsurance') }}">Исходящее
-                                        перестрахование</a>
+                                    <a href="{{ route('outgoing-reinsurance') }}">Исходящееперестрахование</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="relative">
-                            <button class="nav__list-link">Пресс-центр</button>
+                            <button class="nav__list-link {{ (\Request::route()->getName() == 'news') ? 'active' : '' }}">Пресс-центр</button>
                             <ul class="submenu">
                                 <li><a href="{{ route('news') }}">Новости</a></li>
                                 <li><a href="{{ route('forum') }}">Форум</a></li>
@@ -113,7 +111,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="nav__list-link" href="../contact.html">Контакты</a>
+                            <a class="nav__list-link {{ (\Request::route()->getName() == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">Контакты</a>
                         </li>
                     </ul>
                     <div class="bars">
@@ -186,6 +184,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="menu-right__lang">
                             <div onclick="openLangMenu()">
                                 <span class="content lang-text-info">RU</span>
@@ -201,6 +200,8 @@
                                 <li id="uz" class="lang-option-item">O'zbekcha</li>
                             </ul>
                         </div>
+
+
                     </div>
                 </div>
             </div>
@@ -223,7 +224,7 @@
                             <a href="{{ route('/') }}">Главная</a>
                         </li>
                         <li class="footer-relative">
-                            <button class="footer-list-link active">О компании</button>
+                            <button class="footer-list-link {{ (\Request::route()->getName() == 'about-us') ? 'active' : '' }}">О компании</button>
                             <ul class="submenu">
                                 <li><a href="{{ route('about-us') }}">О нас</a></li>
                                 <li><a href="{{ route('history-company') }}">История компании</a></li>
@@ -233,7 +234,7 @@
                             </ul>
                         </li>
                         <li class="footer-relative">
-                            <button class="footer-list-link">Страховые продукты</button>
+                            <button class="footer-list-link {{ (\Request::route()->getName() == 'products') ? 'active' : '' }}">Страховые продукты</button>
                             <ul class="submenu">
                                 @foreach (\App\Models\InsuranceCategory::orderBy('id')->get() as $item)
                                 <li>
@@ -257,7 +258,7 @@
                             </ul>
                         </li>
                         <li class="footer-relative">
-                            <button class="footer-list-link">Акционерам и инвесторам</button>
+                            <button class="footer-list-link {{ (\Request::route()->getName() == 'document.show') ? 'active' : '' }}">Акционерам и инвесторам</button>
                             <ul class="submenu">
                                 @foreach(\App\Models\Category::orderBy('id')->get() as $category)
                                 <li>
@@ -267,7 +268,7 @@
                             </ul>
                         </li>
                         <li class="footer-relative">
-                            <button class="footer-list-link">Перестрахование</button>
+                            <button class="footer-list-link {{ (\Request::route()->getName() == 'incoming-reinsurance') ? 'active' : '' }}">Перестрахование</button>
                             <ul class="submenu">
                                 <li>
                                     <a href="{{ route('incoming-reinsurance') }}">Входящее перестрахование</a>
@@ -278,7 +279,7 @@
                             </ul>
                         </li>
                         <li class="footer-relative">
-                            <button  class="footer-list-link">Пресс-центр</button>
+                            <button  class="footer-list-link {{ (\Request::route()->getName() == 'news') ? 'active' : '' }}">Пресс-центр</button>
                             <ul class="submenu">
                                 <li><a href="{{ route('news') }}">Новости</a></li>
                                 <li><a href="{{ route('forum') }}">Форум</a></li>
@@ -289,7 +290,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="../contact.html">Контакты</a>
+                            <a class="{{ (\Request::route()->getName() == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">Контакты</a>
                         </li>
                     </ul>
                 </div>

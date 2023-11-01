@@ -17,6 +17,7 @@
         <section class="contact-page">
             <div class="container">
                 <div class="contact-page__btns">
+                    <a></a>
                     <button id="contact-page-mapBtn" class="btn white-btn primary-btn">На карте</button>
                     <button id="contact-page-listBtn" class="btn white-btn">Списком</button>
                 </div>
@@ -118,177 +119,28 @@
                 </div>
                 <div class="contact-page__list hidden">
                     <div class="contact-page__list-row">
+                        @foreach ($contacts as $contact)
                         <div class="contact-page__list-col" data-aos="fade-up">
-                            <h3 class="card-title">Ташкентский городской филиал</h3>
+                            <h3 class="card-title">{{ $contact->{'title_' . app()->getLocale()} }}</h3>
                             <p>
                                 <span>Адрес:</span>
-                                Узбекистан, г. ТашкентУл. Темур Малик, дом 17а
+                                {{ $contact->{'address_' . app()->getLocale()} }}
                             </p>
                             <p>
                                 <span>Номер телефона:</span>
-                                Номер телефона:
+                                {{ $contact->phone }}
                             </p>
                             <p>
                                 <span>Рабочие дни:</span>
-                                Понедельник - Суббота
+                                {{ $contact->{'work_days_' . app()->getLocale()} }}
                             </p>
                             <p>
                                 <span>Часы работы:</span>
-                                09:00-18:00
+                                {{ $contact->{'opening_hours_' . app()->getLocale()} }}
                             </p>
                         </div>
-                        <div class="contact-page__list-col" data-aos="fade-up">
-                            <h3 class="card-title">ЦСУ «РАВНАҚ» (г. Ташкент)</h3>
-                            <p>
-                                <span>Адрес:</span>
-                                Узбекистан, г. ТашкентУл. Темур Малик, дом 17а
-                            </p>
-                            <p>
-                                <span>Номер телефона:</span>
-                                Номер телефона:
-                            </p>
-                            <p>
-                                <span>Рабочие дни:</span>
-                                Понедельник - Суббота
-                            </p>
-                            <p>
-                                <span>Часы работы:</span>
-                                09:00-18:00
-                            </p>
-                        </div>
-                        <div class="contact-page__list-col" data-aos="fade-up">
-                            <h3 class="card-title">ЦСУ «ИННОВАТИВ» (г. Ташкент)</h3>
-                            <p>
-                                <span>Адрес:</span>
-                                Узбекистан, г. ТашкентУл. Темур Малик, дом 17а
-                            </p>
-                            <p>
-                                <span>Номер телефона:</span>
-                                Номер телефона:
-                            </p>
-                            <p>
-                                <span>Рабочие дни:</span>
-                                Понедельник - Суббота
-                            </p>
-                            <p>
-                                <span>Часы работы:</span>
-                                09:00-18:00
-                            </p>
-                        </div>
-                        <div class="contact-page__list-col" data-aos="fade-up">
-                            <h3 class="card-title">ЦСУ «МИРОБОД» (г.Ташкент)</h3>
-                            <p>
-                                <span>Адрес:</span>
-                                Узбекистан, г. ТашкентУл. Темур Малик, дом 17а
-                            </p>
-                            <p>
-                                <span>Номер телефона:</span>
-                                Номер телефона:
-                            </p>
-                            <p>
-                                <span>Рабочие дни:</span>
-                                Понедельник - Суббота
-                            </p>
-                            <p>
-                                <span>Часы работы:</span>
-                                09:00-18:00
-                            </p>
-                        </div>
-                        <div class="contact-page__list-col" data-aos="fade-up">
-                            <h3 class="card-title">Филиал в Андижанской области</h3>
-                            <p>
-                                <span>Адрес:</span>
-                                Узбекистан, г. ТашкентУл. Темур Малик, дом 17а
-                            </p>
-                            <p>
-                                <span>Номер телефона:</span>
-                                Номер телефона:
-                            </p>
-                            <p>
-                                <span>Рабочие дни:</span>
-                                Понедельник - Суббота
-                            </p>
-                            <p>
-                                <span>Часы работы:</span>
-                                09:00-18:00
-                            </p>
-                        </div>
-                        <div class="contact-page__list-col" data-aos="fade-up">
-                            <h3 class="card-title">Филиал в Бухарской области</h3>
-                            <p>
-                                <span>Адрес:</span>
-                                Узбекистан, г. ТашкентУл. Темур Малик, дом 17а
-                            </p>
-                            <p>
-                                <span>Номер телефона:</span>
-                                Номер телефона:
-                            </p>
-                            <p>
-                                <span>Рабочие дни:</span>
-                                Понедельник - Суббота
-                            </p>
-                            <p>
-                                <span>Часы работы:</span>
-                                09:00-18:00
-                            </p>
-                        </div>
-                        <div class="contact-page__list-col" data-aos="fade-up">
-                            <h3 class="card-title">Филиал в Джизакской области</h3>
-                            <p>
-                                <span>Адрес:</span>
-                                Узбекистан, г. ТашкентУл. Темур Малик, дом 17а
-                            </p>
-                            <p>
-                                <span>Номер телефона:</span>
-                                Номер телефона:
-                            </p>
-                            <p>
-                                <span>Рабочие дни:</span>
-                                Понедельник - Суббота
-                            </p>
-                            <p>
-                                <span>Часы работы:</span>
-                                09:00-18:00
-                            </p>
-                        </div>
-                        <div class="contact-page__list-col" data-aos="fade-up">
-                            <h3 class="card-title">Филиал в Навоийской области</h3>
-                            <p>
-                                <span>Адрес:</span>
-                                Узбекистан, г. ТашкентУл. Темур Малик, дом 17а
-                            </p>
-                            <p>
-                                <span>Номер телефона:</span>
-                                Номер телефона:
-                            </p>
-                            <p>
-                                <span>Рабочие дни:</span>
-                                Понедельник - Суббота
-                            </p>
-                            <p>
-                                <span>Часы работы:</span>
-                                09:00-18:00
-                            </p>
-                        </div>
-                        <div class="contact-page__list-col" data-aos="fade-up">
-                            <h3 class="card-title">Филиал в Наманганской области</h3>
-                            <p>
-                                <span>Адрес:</span>
-                                Узбекистан, г. ТашкентУл. Темур Малик, дом 17а
-                            </p>
-                            <p>
-                                <span>Номер телефона:</span>
-                                Номер телефона:
-                            </p>
-                            <p>
-                                <span>Рабочие дни:</span>
-                                Понедельник - Суббота
-                            </p>
-                            <p>
-                                <span>Часы работы:</span>
-                                09:00-18:00
-                            </p>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>
