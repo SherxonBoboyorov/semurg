@@ -142,15 +142,10 @@
                
                   @endforeach
 
-
-
-
-
-
                 <div class="insurance-products__btn">
                     <a href="#!">
                     <button class="btn primary-btn">
-                        Все продукты
+                        @lang('front.all_products')
                     </button>
                   </a>
                 </div>
@@ -160,7 +155,7 @@
 
         <section class="our-clients" data-aos="fade-up">
             <div class="container">
-                <h1 class="title">Наши клиенты</h1>
+                <h1 class="title">@lang('front.our_clients')</h1>
                 <div class="swiper2">
                     <div class="swiper-wrapper">
                         @foreach ($clients as $client)
@@ -179,8 +174,8 @@
                 <div class="clients-choose__content">
                     <div class="clients-choose__left">
                         <h2 class="title2">
-                            Почему клиенты выбирают
-                            <span>нас</span>
+                            @lang('front.why_clients_choose')
+                            <span>@lang('front.us')</span>
                         </h2>
                         <div class="img">
                             <img src="{{ asset('front/images/clients-choose/clients-choose.png') }}" alt="">
@@ -209,7 +204,7 @@
         
         <section class="news">
             <div class="container">
-                <h1 class="title">Новости</h1>
+                <h1 class="title">@lang('front.news')</h1>
                 <div class="news__row">
                   @foreach ($news as $new)
                     <a href="{{ route('new.show', $new->{'slug_' . app()->getLocale()}) }}" class="news__col" data-aos="slide-left">
@@ -225,7 +220,7 @@
                     @endforeach
                 </div>
                 <a href="{{ route('news') }}" class="news__all-btn more-btn">
-                    <span>Все новости</span>
+                    <span>@lang('front.all_news')</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
                         <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -236,11 +231,11 @@
 
         <section class="subscribe" data-aos="flip-up" data-aos-duration="1500">
             <div class="container">
-                <h1 class="title2">Подписаться на нашу рассылку</h1>
+                <h1 class="title2">@lang('front.subscribe_to_our_newsletter')</h1>
                 <form action="" class="subscribe__form">
                     <input class="base-input" type="email" placeholder="Email" name="email" id="email">
                     <button type="submit" class="form-btn">
-                        Отправить
+                        @lang('front.send')
                     </button>
                 </form>
             </div>
@@ -248,7 +243,7 @@
 
         <section class="useful-links">
             <div class="container">
-                <h1 class="title">Полезные ссылки</h1>
+                <h1 class="title">@lang('front.useful_links')</h1>
                 <div class="useful-links__row">
                     @foreach ($usefuls as $useful)
                         

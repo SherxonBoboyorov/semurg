@@ -31,7 +31,17 @@ return [
    'special_functions' => 'Maxsus imkoniyatlar',
    'search' => 'Qidirmoq',
    'contacts' => 'Kontaktlar',
-   'all_products' => 'Barcha mahsulotlar'
+   'all_products' => 'Barcha mahsulotlar',
+   'our_clients' => 'Bizning mijozlarimiz',
+   'why_clients_choose' => 'Nima uchun mijozlar tanlashadi',
+   'us' => 'Biz',
+   'all_news' => 'Barcha yangiliklar',
+   'subscribe_to_our_newsletter' => 'Bizning yangiliklarimizga obuna bo\'ling',
+   'send' => 'Yuborish',
+   'useful_links' => 'Foydali havolalar'
+
+
+
 ]
 
 

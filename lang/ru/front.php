@@ -32,6 +32,14 @@ return [
      'search' => 'Поиск',
      'contacts' => 'Контакты',
      'all_products' => 'Все продукты',
+     'our_clients' => 'Наши клиенты',
+     'why_clients_choose' => 'Почему клиенты выбирают',
+     'us' => 'Нас',
+     'all_news' => 'Все новости',
+     'subscribe_to_our_newsletter' => 'Подписаться на нашу рассылку',
+     'send' => 'Отправить',
+     'useful_links' => 'Полезные ссылки'
+
 ];
 
 

@@ -31,7 +31,14 @@ return [
      'special_functions' => 'Special functions',
      'search' => 'Search',
      'contacts' => 'Contacts',
-     'all_products' => 'All products'
+     'all_products' => 'All products',
+     'our_clients' => 'Our clients',
+     'why_clients_choose' => 'Why clients choose',
+     'us' => 'Us',
+     'all_news' => 'All news',
+     'subscribe_to_our_newsletter' => 'Subscribe to our newsletter',
+     'send' => 'Send',
+     'useful_links' => 'Useful links'
       
 ]
 
