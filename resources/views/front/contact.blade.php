@@ -6,10 +6,10 @@
         <div class="hero hero-crumb" data-aos="flip-up">
             <div class="container">
                 <div class="breadcrumb">
-                    <h1 class="title">Контакты</h1>
+                    <h1 class="title">@lang('front.contacts')</h1>
                     <ul>
-                        <li><a href="{{ route('/') }}">Главная</a></li>
-                        <li><a>Контакты</a></li>
+                        <li><a href="{{ route('/') }}">@lang('front.home')</a></li>
+                        <li><a>@lang('front.contacts')</a></li>
                     </ul>
                 </div>
             </div>
@@ -18,8 +18,8 @@
             <div class="container">
                 <div class="contact-page__btns">
                     <a></a>
-                    <button id="contact-page-mapBtn" class="btn white-btn primary-btn">На карте</button>
-                    <button id="contact-page-listBtn" class="btn white-btn">Списком</button>
+                    <button id="contact-page-mapBtn" class="btn white-btn primary-btn">@lang('front.on_the_map')</button>
+                    <button id="contact-page-listBtn" class="btn white-btn">@lang('front.list')</button>
                 </div>
                 <div class="contact-page__map">
                     <div class="contact-page__map-left" data-aos="fade-right">

@@ -3,16 +3,27 @@
 @section('content')
 
     <main>
+        <div class="hero hero-crumb" data-aos="flip-up">
+            <div class="container">
+                <div class="breadcrumb">
+                    <h1 class="title">@lang('front.licences_and_certificates')</h1>
+                    <ul>
+                        <li><a href="{{ route('/') }}">@lang('front.home')</a></li>
+                        <li><a>@lang('front.licences_and_certificates')</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <section class="licenses-certificates">
             <div class="container">
                 <div class="parent">
                     <div class="sidebar" data-aos="slide-right">
                         <ul>
-                            <li><a href="{{ route('about-us') }}">О нас</a></li>
-                            <li><a href="{{ route('history-company') }}">История компании</a></li>
-                            <li><a href="{{ route('leadership-management') }}">Руководство и управление</a></li>
-                            <li><a class="active" href="{{ route('licenses-certificates') }}">Лицензии и сертификаты</a></li>
-                            <li><a href="{{ route('structure-company') }}">Структура компании</a></li>
+                            <li><a href="{{ route('about-us') }}">@lang('front.about_us')</a></li>
+                            <li><a href="{{ route('history-company') }}">@lang('front.company_history')</a></li>
+                            <li><a href="{{ route('leadership-management') }}">@lang('front.leadership_and_management')</a></li>
+                            <li><a class="active" href="{{ route('licenses-certificates') }}">@lang('front.licences_and_certificates')</a></li>
+                            <li><a href="{{ route('structure-company') }}">@lang('front.company_structure')</a></li>
                         </ul>
                     </div>
                     <div class="content">
@@ -27,7 +38,7 @@
                                     </div>
                                     <div class="info">
                                         <p>{{ $licensesdocument->{'title_' . app()->getLocale()} }}</p>
-                                        <a>{{ $licensesdocument->size }}</a>
+                                        <a href="{{ $licensesdocument->image }}" download>{{ $licensesdocument->size }}</a>
                                     </div> 
                                     @endforeach
                                 </div>

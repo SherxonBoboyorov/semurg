@@ -8,7 +8,7 @@
                 <div class="breadcrumb">
                     <h1 class="title">Физическим лицам</h1>
                     <ul>
-                        <li><a href="{{ route('/') }}">Главная</a></li>
+                        <li><a href="{{ route('/') }}">@lang('front.home')</a></li>
                         <li><a>Физическим лицам</a></li>
                     </ul>
                 </div>
@@ -35,9 +35,9 @@
                 @endforeach
              </div>
                 
-                <div class="insurance-products__btn">
-                    <button class="btn primary-btn">Все продукты</button>
-                </div>
+                {{-- <div class="insurance-products__btn">
+                    <button class="btn primary-btn">@lang('front.all_products')</button>
+                </div> --}}
             </div>
         </section>
     </main>

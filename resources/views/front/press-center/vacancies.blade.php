@@ -6,10 +6,10 @@
         <div class="hero hero-crumb" data-aos="flip-up">
             <div class="container">
                 <div class="breadcrumb">
-                    <h1 class="title">Вакансии</h1>
+                    <h1 class="title">@lang('front.vacancies')</h1>
                     <ul>
-                        <li><a href="{{ route('/') }}">Главная</a></li>
-                        <li><a>Вакансии</a></li>
+                        <li><a href="{{ route('/') }}">@lang('front.home')</a></li>
+                        <li><a>@lang('front.vacancies')</a></li>
                     </ul>
                 </div>
             </div>
@@ -19,12 +19,12 @@
                 <div class="parent">
                     <div class="sidebar" data-aos="slide-right">
                         <ul>
-                            <li><a href="{{ route('news') }}">Новости</a></li>
-                            <li><a href="{{ route('forum') }}">Форум</a></li>
-                            <li><a class="active" href="{{ route('vacancies') }}">Вакансии</a></li>
-                            <li><a href="{{ route('survey') }}">Опрос</a></li>
-                            <li><a href="{{ route('faq') }}">Часто задаваемые вопросы</a></li>
-                            <li><a href="{{ route('tenders') }}">Тендеры</a></li>
+                            <li><a href="{{ route('news') }}">@lang('front.news')</a></li>
+                            <li><a href="{{ route('forum') }}">@lang('front.forum')</a></li>
+                            <li><a class="active" href="{{ route('vacancies') }}">@lang('front.vacancies')</a></li>
+                            <li><a href="{{ route('survey') }}">@lang('front.survey')</a></li>
+                            <li><a href="{{ route('faq') }}">@lang('front.frequency_asked_questions')</a></li>
+                            <li><a href="{{ route('tenders') }}">@lang('front.tenders')</a></li>
                         </ul>
                     </div>
                     <div class="content vacancies-page__content">
@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="accordion-body">
                                     <p>{!! $vacancy->{'content_' . app()->getLocale()} !!}</p>
-                                    <button class="accordion-btn">Откликнуться</button>
+                                    <button class="accordion-btn">@lang('front.reply')</button>
                                 </div>
                             </li>
                           @endforeach

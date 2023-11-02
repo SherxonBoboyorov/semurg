@@ -6,10 +6,10 @@
         <div class="hero hero-crumb" data-aos="flip-up">
             <div class="container">
                 <div class="breadcrumb">
-                    <h1 class="title">Новости</h1>
+                    <h1 class="title">@lang('front.news')</h1>
                     <ul>
-                        <li><a href="{{ route('/') }}">Главная</a></li>
-                        <li><a>Новости</a></li>
+                        <li><a href="{{ route('/') }}">@lang('front.home')</a></li>
+                        <li><a>@lang('front.news')</a></li>
                     </ul>
                 </div>
             </div>
@@ -19,12 +19,12 @@
                 <div class="parent">
                     <div class="sidebar" data-aos="slide-right">
                         <ul>
-                            <li><a class="active" href="{{ route('news') }}">Новости</a></li>
-                            <li><a href="{{ route('forum') }}">Форум</a></li>
-                            <li><a href="{{ route('vacancies') }}">Вакансии</a></li>
-                            <li><a href="{{ route('survey') }}">Опрос</a></li>
-                            <li><a href="{{ route('faq') }}">Часто задаваемые вопросы</a></li>
-                            <li><a href="{{ route('tenders') }}">Тендеры</a></li>
+                            <li><a class="active" href="{{ route('news') }}">@lang('front.news')</a></li>
+                            <li><a href="{{ route('forum') }}">@lang('front.forum')</a></li>
+                            <li><a href="{{ route('vacancies') }}">@lang('front.vacancies')</a></li>
+                            <li><a href="{{ route('survey') }}">@lang('front.survey')</a></li>
+                            <li><a href="{{ route('faq') }}">@lang('front.frequency_asked_questions')</a></li>
+                            <li><a href="{{ route('tenders') }}">@lang('front.tenders')</a></li>
                         </ul>
                     </div>
                     <div class="content news-page__content">
@@ -44,7 +44,7 @@
                             @endforeach
                         </div>
 
-                        <div class="pagination">
+                        {{-- <div class="pagination">
                             <div class="prev disabled">Пред.</div>
                             <ul class="pagination__el">
                                 <li class="pagination__el-item">1</li>
@@ -52,7 +52,7 @@
                                 <li class="pagination__el-item">3</li>
                             </ul>
                             <div class="next">След.</div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

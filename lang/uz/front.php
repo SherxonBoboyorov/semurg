@@ -16,7 +16,7 @@ return [
    'shareholders_and_investors' => 'Aksiyadorlar va investorlar',
    'reinsurance' => 'Qayta sug\'urtalash',
    'incoming_reinsurance' => 'Kiruvchi qayta sug\'urtalash',
-   'outgoing_reinsurance' => 'Chiqish qayta sug\'urtalash',
+   'outgoing_reinsurance' => 'Chiquvchi qayta sug\'urtalash',
    'press_center' => 'Press markazi',
    'news' => 'Yangiliklar',
    'forum' => 'Forum',
@@ -24,6 +24,7 @@ return [
    'survey' => 'So\'rov',
    'frequency_asked_questions' => 'Ko\'p so\'raladigan savollar',
    'tenders' => 'Tenderlar',
+   'tender' => 'Tender',
    'normal_design' => 'Oddiy dizayn',
    'black_and_white_design' => 'Qora va oq dizayn',
    'font_size' => 'Shrift hajmi',
@@ -38,9 +39,17 @@ return [
    'all_news' => 'Barcha yangiliklar',
    'subscribe_to_our_newsletter' => 'Bizning yangiliklarimizga obuna bo\'ling',
    'send' => 'Yuborish',
-   'useful_links' => 'Foydali havolalar'
-
-
+   'useful_links' => 'Foydali havolalar',
+   'online_survey' => 'Onlayn so\'rov',
+   'online_survey_results' => 'Onlayn so\'rov natijalari',
+   'confirm' => 'Tasdiqlang',
+   'reply' => 'Javob bering',
+   'our_international' => 'Xalqaro qayta sug\'urtalash bo\'yicha hamkorlarimiz qatoriga kiradi',
+   'site_map' => 'Sayt xaritasi',
+   'more_details' => 'Batafsil',
+   'feedback' => 'Qayta aloqa',
+   'on_the_map' => 'Xaritada',
+   'list' => 'Roʻyxat'
 
 ]
 

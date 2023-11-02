@@ -40,6 +40,7 @@ use App\Http\Controllers\Front\HistoryCompanysController;
 use App\Http\Controllers\Front\IncomingReinsuranceController;
 use App\Http\Controllers\Front\IndexController;
 use App\Http\Controllers\Front\InsurancesController;
+use App\Http\Controllers\Front\KackoController;
 use App\Http\Controllers\Front\LicensesCertificatesController;
 use App\Http\Controllers\Front\ManagementController;
 use App\Http\Controllers\Front\NewsController;
@@ -117,6 +118,8 @@ Route::group(
             Route::get('incoming-reinsurance', [IncomingReinsuranceController::class, 'incomingReinsurance'])->name('incoming-reinsurance');
             Route::get('outgoing-reinsurance', [OutgoingReinsuranceController::class, 'outgoingReinsurance'])->name('outgoing-reinsurance');
             Route::get('contact', [ContactController::class, 'contact'])->name('contact');
+            Route::get('kacko', [KackoController::class, 'kacko'])->name('kacko');
+
     });
 
 

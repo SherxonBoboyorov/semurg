@@ -7,8 +7,8 @@
                 <div class="breadcrumb">
                     <h1 class="title">{{ $tender->{'title_' . app()->getLocale()} }}</h1>
                     <ul>
-                        <li><a href="{{ route('/') }}">Главная</a></li>
-                        <li><a href="{{ route('tenders') }}">Тендеры</a></li>
+                        <li><a href="{{ route('/') }}">@lang('front.home')</a></li>
+                        <li><a href="{{ route('tenders') }}">@lang('front.tenders')</a></li>
                         <li><a>{{ $tender->{'title_' . app()->getLocale()} }}</a></li>
                     </ul>
                 </div>

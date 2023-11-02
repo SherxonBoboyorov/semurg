@@ -8,7 +8,7 @@
                 <div class="breadcrumb">
                     <h1 class="title">Каско</h1>
                     <ul>
-                        <li><a href="{{ route('/') }}">Главная</a></li>
+                        <li><a href="{{ route('/') }}">@lang('front.home')</a></li>
                         <li><a href="./for-individuals.html">Физическим лицам</a></li>
                         <li><a>Каско</a></li>
                     </ul>

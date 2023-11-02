@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ asset('front/css/survey-page.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/contact.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/persons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/kacko.min.css') }}">
 </head>
 
 <body>
@@ -105,7 +106,7 @@
                                 <li><a href="{{ route('news') }}">@lang('front.news')</a></li>
                                 <li><a href="{{ route('forum') }}">@lang('front.forum')</a></li>
                                 <li><a href="{{ route('vacancies') }}">@lang('front.vacancies')</a></li>
-                                <li><a href="{{ route('survey') }}">@lang('fron.survey')</a></li>
+                                <li><a href="{{ route('survey') }}">@lang('front.survey')</a></li>
                                 <li><a href="{{ route('faq') }}">@lang('front.frequency_asked_questions')</a></li>
                                 <li><a href="{{ route('tenders') }}">@lang('front.tenders')</a></li>
                             </ul>
@@ -222,7 +223,7 @@
                     <div class="logo">
                         <img src="{{ asset('front/images/logo.svg') }}" alt="footer-logo">
                     </div>
-                    <h4 class="heading4">Карта сайта</h4>
+                    <h4 class="heading4">@lang('front.site_map')</h4>
                     <ul class="footer__info__list">
                         <li>
                             <a href="{{ route('/') }}">@lang('front.home')</a>

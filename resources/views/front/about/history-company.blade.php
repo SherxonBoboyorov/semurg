@@ -7,10 +7,10 @@
     <div class="hero hero-img">
         <div class="container">
             <div class="breadcrumb">
-                <h1 class="title">История компании</h1>
+                <h1 class="title">@lang('front.company_history')</h1>
                 <ul>
-                    <li><a href="{{ route('/') }}">Главная</a></li>
-                    <li><a>История компании</a></li>
+                    <li><a href="{{ route('/') }}">@lang('front.home')</a></li>
+                    <li><a>@lang('front.company_history')</a></li>
                 </ul>
             </div>
             <div class="hero-img__item" data-aos="zoom-in">
@@ -23,11 +23,11 @@
             <div class="parent">
                 <div class="sidebar" data-aos="slide-right">
                     <ul>
-                        <li><a href="{{ route('about-us') }}">О нас</a></li>
-                        <li><a class="active" href="{{ route('history-company') }}">История компании</a></li>
-                        <li><a href="{{ route('leadership-management') }}">Руководство и управление</a></li>
-                        <li><a href="{{ route('licenses-certificates') }}">Лицензии и сертификаты</a></li>
-                        <li><a href="{{ route('structure-company') }}">Структура компании</a></li>
+                        <li><a href="{{ route('about-us') }}">@lang('front.about_us')</a></li>
+                        <li><a class="active" href="{{ route('history-company') }}">@lang('front.company_history')</a></li>
+                        <li><a href="{{ route('leadership-management') }}">@lang('front.leadership_and_management')</a></li>
+                        <li><a href="{{ route('licenses-certificates') }}">@lang('front.licences_and_certificates')</a></li>
+                        <li><a href="{{ route('structure-company') }}">@lang('front.company_structure')</a></li>
                     </ul>
                 </div>
                 <div class="about-history-company-par">

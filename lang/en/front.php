@@ -24,6 +24,7 @@ return [
      'survey' => 'Survey',
      'frequency_asked_questions' => 'Frequency asked questions',
      'tenders' => 'Tenders',
+     'tender' => 'Tender',
      'normal_design' => 'Regular design',
      'black_and_white_design' => 'Black and white design',
      'font_size' => 'Font size',
@@ -38,7 +39,17 @@ return [
      'all_news' => 'All news',
      'subscribe_to_our_newsletter' => 'Subscribe to our newsletter',
      'send' => 'Send',
-     'useful_links' => 'Useful links'
+     'useful_links' => 'Useful links',
+     'online_survey' => 'Online survey',
+     'online_survey_results' => 'Online survey results',
+     'confirm' => 'Confirm',
+     'reply' => 'Reply',
+     'our_international' => 'Our international reinsurance partners include',
+     'site_map' => 'Site Map',
+     'more_details' => 'More details',
+     'feedback' => 'Feedback',
+     'on_the_map' => 'On the map',
+     'list' => 'List'
       
 ]
 

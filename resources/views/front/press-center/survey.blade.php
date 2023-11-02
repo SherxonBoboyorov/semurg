@@ -6,10 +6,10 @@
         <div class="hero hero-crumb" data-aos="flip-up">
             <div class="container">
                 <div class="breadcrumb">
-                    <h1 class="title">Опрос</h1>
+                    <h1 class="title">@lang('front.survey')</h1>
                     <ul>
-                        <li><a href="{{ route('/') }}">Главная</a></li>
-                        <li><a>Опрос</a></li>
+                        <li><a href="{{ route('/') }}">@lang('front.home')</a></li>
+                        <li><a>@lang('front.survey')</a></li>
                     </ul>
                 </div>
             </div>
@@ -17,7 +17,7 @@
         <section class="survey-page">
             <div class="container">
                 <div class="survey-page__left" data-aos="slide-right">
-                    <h1 class="title3">Онлайн-опрос</h1>
+                    <h1 class="title3">@lang('front.online_survey')</h1>
                     <p class="desc3">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</p>
                     <div class="survey-page__form">
                         <label class="survey-page__form-label">
@@ -37,10 +37,10 @@
                             <span>Ut enim ad minim veniam, quis nostrud</span>
                         </label>
                     </div>
-                    <button class="form-btn" id="survey-btn">Подтвердить</button>
+                    <button class="form-btn" id="survey-btn">@lang('front.confirm')</button>
                 </div>
                 <div class="survey-page__right" data-aos="slide-left">
-                    <h1 class="title3">Результаты онлайн-опроса</h1>
+                    <h1 class="title3">@lang('front.online_survey_results')</h1>
                     <p class="desc3">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</p>
                     <ul class="survey-page__right__list">
                         <li class="survey-page__right__item">

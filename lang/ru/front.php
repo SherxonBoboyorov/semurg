@@ -24,6 +24,7 @@ return [
      'survey' => 'Опрос',
      'frequency_asked_questions' => 'Часто задаваемые вопросы',
      'tenders' => 'Тендеры',
+     'tender' => 'Тендер',
      'normal_design' => 'Обычный дизайн',
      'black_and_white_design' => 'Черно-белый дизайн',
      'font_size' => 'Размер шрифта',
@@ -38,8 +39,17 @@ return [
      'all_news' => 'Все новости',
      'subscribe_to_our_newsletter' => 'Подписаться на нашу рассылку',
      'send' => 'Отправить',
-     'useful_links' => 'Полезные ссылки'
-
+     'useful_links' => 'Полезные ссылки',
+     'online_survey' => 'Онлайн-опрос',
+     'online_survey_results' => 'Результаты онлайн-опроса',
+     'confirm' => 'Подтвердить',
+     'reply' => 'Откликнуться',
+     'our_international' => 'Наши международные партнеры по перестрахованию включают',
+     'site_map' => 'Карта сайта',
+     'more_details' => 'Подробнее',
+     'feedback' => 'Обратная связь',
+     'on_the_map' => 'На карте',
+     'list' => 'Списком'
 ];
 
 
