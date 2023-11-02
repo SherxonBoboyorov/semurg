@@ -124,26 +124,25 @@
         <section class="insurance-products" data-aos="fade-up">
             <div class="container">
                 <h1 class="title">@lang('front.insurance_products')</h1>
-                @foreach ($insurancecategories as $insurancecategory)
                 <div class="tab">
+                    @foreach ($insurancecategories as $insurancecategory)
                      <button class="tablinks" onclick="openCity(event, '{{ $insurancecategory->id }}')">{{ $insurancecategory->{'title_' . app()->getLocale()} }}</button> 
+                    @endforeach
                 </div>
-
+                
                 <div id="{{ $insurancecategory->id }}" class="tab-content">
-                   @foreach($insurancecategory->insuranceproducts as $insuranceproduct)
-                    <a href="./pages/insurance-products/legal-entities_in.html" class="tab-content__item" data-aos="slide-right">
+                    @foreach($insurancecategory->insuranceproducts as $insuranceproduct)
+                    <a href="{{ route('product', $insuranceproduct->id) }}" class="tab-content__item" data-aos="slide-right">
                         <div class="img-item">
                             <img src="{{ asset($insuranceproduct->image) }}" alt="">
                         </div>
                         <p>{{ $insuranceproduct->{'title_' . app()->getLocale()} }} </p>
                     </a>
                     @endforeach
-                  </div>
-               
-                  @endforeach
+                </div>
 
                 <div class="insurance-products__btn">
-                    <a href="#!">
+                    <a href="{{ route('product.show', ['id' => 1]) }}">
                     <button class="btn primary-btn">
                         @lang('front.all_products')
                     </button>
