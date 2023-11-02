@@ -9,22 +9,25 @@ use Illuminate\Http\Request;
 
 class InsurancesController extends Controller
 {
-    public function insurancesProduct()
+    public function insurancesProduct($id)
     {
-        $insuranceproducts = InsuranceProduct::all();
-        $insurancecategories = InsuranceCategory::with('insuranceproducts')->orderBy('id')->get();
+        $menu = InsuranceCategory::where('id', $id)->get();
+        $insurancecategories = InsuranceCategory::all();
+        $insuranceproducts = InsuranceProduct::where('insurancecategory_id', $id)->get();
 
-        return view('front.insurance-products.for-individuals', [
-            'insuranceproducts' => $insuranceproducts,
-            'insurancecategories' => $insurancecategories,
-        ]);
+        return view('front.insurance-products.for-individuals', compact(
+            'insurancecategories',
+            'insuranceproducts',
+            'menu',
+            'id'
+        ));
     }
 
-    // public function show($id)
-    // {
-    //     $insuranceproduct = InsuranceProduct::find($id);
-    //     return view('front.insurance-products.for-individuals_in', compact(
-    //         'insuranceproduct',
-    //     ));
-    // }
+    public function show($id)
+    {
+        $insuranceproduct = InsuranceProduct::find($id);
+        return view('front.insurance-products.for-individuals_in', compact(
+            'insuranceproduct',
+        ));
+    }
 }

@@ -127,7 +127,7 @@
                 @foreach ($insurancecategories as $insurancecategory)
                 <div class="tab">
                      <button class="tablinks" onclick="openCity(event, '{{ $insurancecategory->id }}')">{{ $insurancecategory->{'title_' . app()->getLocale()} }}</button> 
-                    </div>
+                </div>
 
                 <div id="{{ $insurancecategory->id }}" class="tab-content">
                    @foreach($insurancecategory->insuranceproducts as $insuranceproduct)

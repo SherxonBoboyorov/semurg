@@ -31,7 +31,7 @@ class InsuranceProduct extends Model
 
     public function insurancecategory()
     {
-        return $this->belongsTo('App\Models\InsuranceCategory', 'insurancecategory_id');
+        return $this->belongsTo(InsuranceCategory::class, 'insurancecategory_id');
     }
 
 

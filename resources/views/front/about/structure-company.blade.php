@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="info">
                                     <p>{{ $stractur->{'title_' . app()->getLocale()} }}</p>
-                                    <a>{{ $stractur->size }}</a>
+                                    <a href="{{ $stractur->image }}" download>{{ $stractur->size }}</a>
                                 </div>
                             </li>
                             @endforeach

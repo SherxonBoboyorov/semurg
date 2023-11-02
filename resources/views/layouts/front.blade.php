@@ -56,11 +56,11 @@
                             </ul>
                         </li>
                         <li class="relative">
-                            <button class="nav__list-link {{ (\Request::route()->getName() == 'products') ? 'active' : '' }}" {{ (\Request::route()->getName() == 'products') ? 'active' : '' }}>@lang('front.insurance_products')</button>
+                            <button class="nav__list-link {{ (\Request::route()->getName() == 'product.show') ? 'active' : '' }}" {{ (\Request::route()->getName() == 'products') ? 'active' : '' }}>@lang('front.insurance_products')</button>
                             <ul class="submenu">
                                 @foreach (\App\Models\InsuranceCategory::orderBy('id')->get() as $item)
                                 <li>
-                                    <a href="{{ route('products', ['id' => $item->id]) }}">{{ $item->{'title_' . app()->getLocale()} }}</a>
+                                    <a href="{{ route('product.show', ['id' => $item->id]) }}">{{ $item->{'title_' . app()->getLocale()} }}</a>
                                 </li>
                                 @endforeach   
                             </ul>
@@ -239,11 +239,11 @@
                             </ul>
                         </li>
                         <li class="footer-relative">
-                            <button class="footer-list-link {{ (\Request::route()->getName() == 'products') ? 'active' : '' }}">@lang('front.insurance_products')</button>
+                            <button class="footer-list-link {{ (\Request::route()->getName() == 'product.show') ? 'active' : '' }}">@lang('front.insurance_products')</button>
                             <ul class="submenu">
                                 @foreach (\App\Models\InsuranceCategory::orderBy('id')->get() as $item)
                                 <li>
-                                    <a href="{{ route('products', ['id' => $item->id]) }}">{{ $item->{'title_' . app()->getLocale()} }}</a>
+                                    <a href="{{ route('product.show', ['id' => $item->id]) }}">{{ $item->{'title_' . app()->getLocale()} }}</a>
                                 </li>
                                 @endforeach                    
                             </ul>
