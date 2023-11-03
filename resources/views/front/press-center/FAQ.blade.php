@@ -6,10 +6,10 @@
         <div class="hero hero-crumb" data-aos="flip-up">
             <div class="container">
                 <div class="breadcrumb">
-                    <h1 class="title">@lang('front.@lang('front.frequency_asked_questions')')</h1>
+                    <h1 class="title">@lang('front.frequency_asked_questions')</h1>
                     <ul>
                         <li><a href="{{ route('/') }}">@lang('front.home')</a></li>
-                        <li><a>@lang('front.@lang('front.frequency_asked_questions')')</a></li>
+                        <li><a>@lang('front.frequency_asked_questions')</a></li>
                     </ul>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                             <li><a href="{{ route('forum') }}">@lang('front.forum')</a></li>
                             <li><a href="{{ route('vacancies') }}">@lang('front.vacancies')</a></li>
                             <li><a href="{{ route('survey') }}">@lang('front.survey')</a></li>
-                            <li><a class="active" href="{{ route('faq') }}">@lang('front.@lang('front.frequency_asked_questions')')</a></li>
+                            <li><a class="active" href="{{ route('faq') }}">@lang('front.frequency_asked_questions')</a></li>
                             <li><a href="{{ route('tenders') }}">@lang('front.tenders')</a></li>
                         </ul>
                     </div>
