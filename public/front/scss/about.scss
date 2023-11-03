@@ -181,10 +181,11 @@
     .about-history-company-par {
         height: 100vh;
         overflow: scroll;
+
         &::-webkit-scrollbar {
             width: 0px;
             height: 0px;
-          }
+        }
     }
 
     &__content {
@@ -317,6 +318,51 @@
             padding: 12px 35px;
             text-transform: uppercase;
             @include font(12, 26, $white-color);
+        }
+    }
+
+    &__modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba($color: $dark-color, $alpha: 0.6);
+        z-index: 99998;
+
+        &-content {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 544px;
+            max-height: 95vh;
+            overflow-y: auto;
+            z-index: 99999;
+            background: $white-color;
+            border-radius: $bor-rad-size;
+            padding: 16px;
+            .description{
+                @include font(13, 16, $dark-color);
+                strong{
+                    font-weight: 700;
+                }
+                p{
+                    margin: 16px 0;
+                }
+            }
+        }
+
+        &-title {
+            margin-bottom: 7px;
+            font-weight: 700;
+            @include font(22, 24, $dark-color);
+        }
+
+        &-position {
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            @include font(16, 24, $bg-primary);
         }
     }
 }

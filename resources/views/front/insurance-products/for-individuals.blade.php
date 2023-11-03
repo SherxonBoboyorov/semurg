@@ -6,10 +6,10 @@
         <div class="hero hero-crumb" data-aos="flip-up">
             <div class="container">
                 <div class="breadcrumb">
-                    <h1 class="title">PRODUCTS</h1>
+                    <h1 class="title">@lang('front.insurance_products')</h1>
                     <ul>
                         <li><a href="{{ route('/') }}">@lang('front.home')</a></li>
-                        <li><a>PRODUCTS</a></li>
+                        <li><a>@lang('front.insurance_products')</a></li>
                     </ul>
                 </div>
             </div>

@@ -49,8 +49,11 @@ return [
      'more_details' => 'More details',
      'feedback' => 'Feedback',
      'on_the_map' => 'On the map',
-     'list' => 'List'
-      
+     'list' => 'List',
+     'we_are_in_social_networks' => 'We are in social networks',
+     'information' => 'Information' ,
+     'longtext' => 'The requirement to provide a link to the company’s corporate website when use other persons of the information materials contained therein. All documents posted on this website are electronic copies of original documents. When using information materials on the company\'s corporate website, a link to the corporate website is required!',
+     'text' => 'Our specialists have been working closely with the global insurance market for many years.'    
 ]
 
 

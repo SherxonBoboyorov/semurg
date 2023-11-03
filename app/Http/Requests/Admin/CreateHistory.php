@@ -26,6 +26,7 @@ class CreateHistory extends FormRequest
             'content_ru' => 'required',
             'content_uz' => 'required',
             'content_en' => 'required',
+            'active_year' => 'required|string|max:100',
         ];
     }
 }

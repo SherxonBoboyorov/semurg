@@ -155,7 +155,7 @@
         
         <section class="insurance-products" data-aos="fade-up">
             <div class="container">
-                <h1 class="title">Страховые продукты</h1>
+                <h1 class="title">@lang('front.insurance_products')</h1>
                 <div class="tab">
                     @foreach ($insurancecategories as $insurancecategory)
                     <button class="tablinks" onclick="openCity(event, 'category_{{ $insurancecategory->id }}')">{{ $insurancecategory->{'title_' . app()->getLocale()} }}</button>
@@ -176,9 +176,11 @@
                 @endforeach
                
                 <div class="insurance-products__btn">
+                    <a href="{{ route('product.show', ['id' => 1]) }}">
                     <button class="btn primary-btn">
-                        Все продукты
+                        @lang('front.all_products')
                     </button>
+                </a>
                 </div>
             </div>
         </section>

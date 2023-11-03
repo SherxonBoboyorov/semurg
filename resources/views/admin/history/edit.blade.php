@@ -19,6 +19,23 @@
                 @method('PUT')
                 <div class="card">
                     <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="active_year">Active Year</label>
+                                <input type="text" id="active_year" value="{{ $history->active_year }}" class="form-control" name="active_year">
+                                @if($errors->has('active_year'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        {{ $errors->first('active_year') }}
+
+                                    </div>
+                                @endif
+                            </div>
+                        </div><br>
+
                         <div class="row">
                             <div class="col-md-4">
                                 <label for="year">Year</label>
@@ -33,10 +50,8 @@
                                     </div>
                                 @endif
                             </div>
-                        </div>
-
-
-
+                        </div><br>
+                        
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-12">
                                 <label for="content_uz">Content [Uzbek]</label>

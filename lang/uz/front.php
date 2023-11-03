@@ -49,7 +49,13 @@ return [
    'more_details' => 'Batafsil',
    'feedback' => 'Qayta aloqa',
    'on_the_map' => 'Xaritada',
-   'list' => 'Roʻyxat'
+   'list' => 'Roʻyxat',
+   'we_are_in_social_networks' => 'Biz ijtimoiy tarmoqlardamiz',
+   'information' => 'Ma `lumot',
+   'longtext' => 'Qachon kompaniyaning korporativ veb-saytiga havolani taqdim etish talabi foydalanish ulardagi axborot materiallarining boshqa shaxslari. Bu haqda barcha hujjatlar e\'lon qilingan veb-sayt asl hujjatlarning elektron nusxalari. Ma\'lumotdan foydalanganda kompaniyaning korporativ veb-saytidagi materiallar, korporativ veb-saytga havola kerak!',
+   'text' => 'Mutaxassislarimiz uzoq yillar davomida jahon sug‘urta bozori bilan yaqin hamkorlik qilib kelmoqda.'     
+
+
 
 ]
 

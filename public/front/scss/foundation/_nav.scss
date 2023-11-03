@@ -424,10 +424,12 @@
                     border-radius: $bor-rad-size;
                     background: $bg-secondary;
 
-                    li {
-                        @include font(10, 10, $dark-color);
+                    .lang-option-item {
                         padding: 8px;
-
+                        width: 100%;
+                        display: block;
+                        @include font(10, 10, $dark-color);
+                       
                         &:hover {
                             background: $bg-primary;
                             color: $white-color;

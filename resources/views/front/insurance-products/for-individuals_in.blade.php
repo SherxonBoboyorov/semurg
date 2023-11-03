@@ -9,7 +9,7 @@
                     <h1 class="title">{{ $insuranceproduct->{'title_' . app()->getLocale()} }}</h1>
                     <ul>
                         <li><a href="{{ route('/') }}">@lang('front.home')</a></li>
-                        <li><a href="{{ route('product.show', ['id' => 1]) }}">product</a></li>
+                        <li><a href="{{ route('product.show', ['id' => 1]) }}">@lang('front.insurance_products')</a></li>
                         <li><a>{{ $insuranceproduct->{'title_' . app()->getLocale()} }}</a></li>
                     </ul>
                 </div>

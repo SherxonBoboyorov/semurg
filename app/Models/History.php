@@ -16,5 +16,6 @@ class History extends Model
         'content_ru',
         'content_uz',
         'content_en',
+        'active_year'
     ];
 }
