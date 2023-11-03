@@ -56,7 +56,12 @@ return [
      'text' => 'Our specialists have been working closely with the global insurance market for many years.',
      'searching_results' => 'Searching results',
      'question1' => 'Online questionnaire: How do you rate the society\'s website?',
-     'question2' => 'Essential Facts'
+     'question2' => 'Essential Facts',
+     'question3' => 'Prospectuses and issues',
+     'question4' => 'Financial statements',
+     'question5' => 'Dividends',
+     'question6' => 'Audit reports',
+     'question7' => 'Information on purchasing shares'
 ]
 
 

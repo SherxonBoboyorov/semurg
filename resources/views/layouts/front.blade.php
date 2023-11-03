@@ -375,11 +375,11 @@
                     <ul>
                         <li>@lang('front.question1')</li>
                         <li>@lang('front.question2')</li>
-                        <li>Проспекты и эмиссии</li>
-                        <li>Финансовая отчетность</li>
-                        <li>Дивиденды</li>
-                        <li>аудиторские заключения</li>
-                        <li>Информация о приобретении акций</li>
+                        <li>@lang('front.question3')</li>
+                        <li>@lang('front.question4')</li>
+                        <li>@lang('front.question5')</li>
+                        <li>@lang('front.question6')</li>
+                        <li>@lang('front.question7')</li>
                     </ul>
                     <p class="card-desc">@lang('front.text')</p>
                 </div>

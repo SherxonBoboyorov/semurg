@@ -56,7 +56,12 @@ return [
    'text' => 'Mutaxassislarimiz uzoq yillar davomida jahon sug‘urta bozori bilan yaqin hamkorlik qilib kelmoqda.',
    'searching_results' => 'Qidiruv natijalari',
    'question1' => 'Onlayn anketa: Jamiyat veb-saytiga qanday baho berasiz?',
-   'question2' => 'Muhim faktlar'
+   'question2' => 'Muhim faktlar',
+   'question3' => 'Prospektlar va muammolar',
+   'question4' => 'Moliyaviy hisobot',
+   'question5' => 'Dividendlar',
+   'question6' => 'Audit hisobotlari',
+   'question7' => 'Aktsiyalarni sotib olish to\'g\'risida ma\'lumot'
 
 
 
