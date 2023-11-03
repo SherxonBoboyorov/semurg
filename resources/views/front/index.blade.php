@@ -9,7 +9,7 @@
                     <img src="{{ asset('front/images/header-hero/hero-icon3.png') }}" alt="">
                     <h2 class="heading2">Имущество и ответственность</h2>
                     <button class="more-btn">
-                        <span>Подробнее</span>
+                        <span>@lang('front.more_details')</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
                             fill="none">
                             <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
@@ -22,7 +22,7 @@
                     <div class="full__info">
                         <h2 class="heading2">Страхование грузов</h2>
                         <button class="more-btn">
-                            <span>Подробнее</span>
+                            <span>@lang('front.more_details')</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
                                 fill="none">
                                 <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
@@ -36,7 +36,7 @@
                     <div class="full__info">
                         <h2 class="heading2">Автострахование</h2>
                         <button class="more-btn">
-                            <span>Подробнее</span>
+                            <span>@lang('front.more_details')</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
                                 fill="none">
                                 <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
@@ -49,7 +49,7 @@
                     <img src="{{ asset('front/images/header-hero/hero-icon2.png') }}" alt="">
                     <h2 class="heading2">Сфера энергетики</h2>
                     <button class="more-btn">
-                        <span>Подробнее</span>
+                        <span>@lang('front.more_details')</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
                             fill="none">
                             <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
@@ -61,7 +61,7 @@
                     <img src="{{ asset('front/images/header-hero/hero-icon1.png') }}" alt="">
                     <h2 class="heading2">Агрострахование</h2>
                     <button class="more-btn">
-                        <span>Подробнее</span>
+                        <span>@lang('front.more_details')</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
                             fill="none">
                             <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
@@ -74,7 +74,7 @@
                     <div class="full__info">
                         <h2 class="heading2">Страхование строительно-монтажных рисков</h2>
                         <button class="more-btn">
-                            <span>Подробнее</span>
+                            <span>@lang('front.more_details')</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
                                 fill="none">
                                 <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
@@ -121,38 +121,6 @@
             </div>
         </section>
 
-        {{-- <section class="insurance-products" data-aos="fade-up">
-            <div class="container">
-                <h1 class="title">@lang('front.insurance_products')</h1>
-                <div class="tab">
-                    @foreach ($insurancecategories as $insurancecategory)
-                     <button class="tablinks" onclick="openCity(event, '{{ $insurancecategory->id }}')">{{ $insurancecategory->{'title_' . app()->getLocale()} }}</button> 
-                    @endforeach
-                </div>
-                
-                <div id="{{ $insurancecategory->id }}" class="tab-content">
-                    @foreach($insuranceproducts as $insuranceproduct)
-                    <a href="{{ route('product', $insuranceproduct->id) }}" class="tab-content__item" data-aos="slide-right">
-                        <div class="img-item">
-                            <img src="{{ asset($insuranceproduct->image) }}" alt="">
-                        </div>
-                        <p>{{ $insuranceproduct->{'title_' . app()->getLocale()} }} </p>
-                    </a>
-                    @endforeach
-                </div>
-
-                <div class="insurance-products__btn">
-                    <a href="{{ route('product.show', ['id' => 1]) }}">
-                    <button class="btn primary-btn">
-                        @lang('front.all_products')
-                    </button>
-                  </a>
-                </div>
-            </div>
-
-        </section> --}}
-
-        
         <section class="insurance-products" data-aos="fade-up">
             <div class="container">
                 <h1 class="title">@lang('front.insurance_products')</h1>
@@ -244,7 +212,7 @@
                             <img src="{{ asset($new->image) }}" alt="alt">
                         </div>
                         <div class="news__col-txt">
-                            <h6 class="date">10.08.2023</h6>
+                            <h6 class="date">{{  date('d.m.Y', strtotime($new->created_at)) }}</h6>
                             <h3 class="card-title">{{ $new->{'title_' . app()->getLocale()} }}</h3>
                             <h6 class="desc">{!! $new->{'content_' . app()->getLocale()} !!}</h6>
                         </div>

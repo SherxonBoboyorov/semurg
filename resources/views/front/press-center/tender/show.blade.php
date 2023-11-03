@@ -19,7 +19,7 @@
                 <div class="news-in__img" data-aos="zoom-in">
                     <img src="{{ asset($tender->image) }}" alt="">
                 </div>
-                <h5 data-aos="fade-up" class="date">10.08.2023</h5>
+                <h5 data-aos="fade-up" class="date">{{  date('d.m.Y', strtotime($tender->created_at)) }}</h5>
                 <p data-aos="fade-up" class="text">
                     {!! $tender->{'content_' . app()->getLocale()} !!}</p>
                 

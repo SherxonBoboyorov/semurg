@@ -36,7 +36,7 @@
                                     <img src="{{ asset($new->image) }}" alt="">
                                 </div>
                                 <div class="news__col-txt">
-                                    <h6 class="date">10.08.2023</h6>
+                                    <h6 class="date">{{  date('d.m.Y', strtotime($new->created_at)) }}</h6>
                                     <h3 class="card-title">{{ $new->{'title_' . app()->getLocale()} }}</h3>
                                     <h6 class="desc">{!! $new->{'content_' . app()->getLocale()} !!}</h6>
                                 </div>

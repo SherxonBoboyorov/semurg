@@ -38,7 +38,7 @@
                                     <h3 class="card-title">{{ $tender->{'title_' . app()->getLocale()} }}</h3>
                                     <h6 class="desc">{!! $tender->{'content_' . app()->getLocale()} !!}</h6>
                                     <div class="news__col-bottom">
-                                        <h6 class="date">10.08.2023</h6>
+                                        <h6 class="date">{{  date('d.m.Y', strtotime($tender->created_at)) }}</h6>
                                         <h6 class="date">@lang('front.tender')</h6>
                                     </div>
                                 </div>

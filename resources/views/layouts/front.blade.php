@@ -143,9 +143,10 @@
                             <span class="p">@lang('front.search')</span>
                         </div>
                         <div class="menu-right__search-modal hidden">
-                            <form action="" class="search-modal-form">
+                            <form action="{{ route('front_search') }}" class="search-modal-form" method="GET">
+                                @csrf
                                 <div class="content">
-                                    <input id="search-modal-form-input" type="text" placeholder="Поиск" class="base-input" autocomplete="off">
+                                    <input id="search-modal-form-input" type="text" placeholder="@lang('front.search')" name="phrase"  class="base-input" autocomplete="off" required>
                                     <button class="search-modal-btn">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none">
                                             <path fill="#0B4848"
@@ -372,8 +373,8 @@
                 <div class="footer__info__information">
                     <h4 class="heading4">@lang('front.information')</h4>
                     <ul>
-                        <li>Онлайн опросник: Как вы оцениваете сайт общества?</li>
-                        <li>Существенные факты</li>
+                        <li>@lang('front.question1')</li>
+                        <li>@lang('front.question2')</li>
                         <li>Проспекты и эмиссии</li>
                         <li>Финансовая отчетность</li>
                         <li>Дивиденды</li>

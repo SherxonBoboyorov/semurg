@@ -45,11 +45,14 @@ use App\Http\Controllers\Front\LicensesCertificatesController;
 use App\Http\Controllers\Front\ManagementController;
 use App\Http\Controllers\Front\NewsController;
 use App\Http\Controllers\Front\OutgoingReinsuranceController;
+use App\Http\Controllers\Front\SearchController;
 use App\Http\Controllers\Front\StracturesController;
 use App\Http\Controllers\Front\SurveyController;
 use App\Http\Controllers\Front\TendersController;
 use App\Http\Controllers\Front\VacancysController;
+use App\Models\Article;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Symfony\Component\Console\Input\Input;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
 
@@ -119,7 +122,11 @@ Route::group(
             Route::get('outgoing-reinsurance', [OutgoingReinsuranceController::class, 'outgoingReinsurance'])->name('outgoing-reinsurance');
             Route::get('contact', [ContactController::class, 'contact'])->name('contact');
             Route::get('kacko', [KackoController::class, 'kacko'])->name('kacko');
+            Route::get('front_search', [SearchController::class, 'search'])->name('front_search');
 
+
+            
+            
     });
 
 
