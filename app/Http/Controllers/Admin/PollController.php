@@ -60,6 +60,7 @@ class PollController extends Controller
 
         dd($request->all());
 
+
         return redirect()->route('poll.index')->with('message', "Created successfully!!");
 
     }

@@ -45,15 +45,7 @@
                             </div>
                             @endforeach
                         </a>
-                        {{-- <div class="pagination">
-                            <div class="prev disabled">Пред.</div>
-                            <ul class="pagination__el">
-                                <li class="pagination__el-item">1</li>
-                                <li class="pagination__el-item active">2</li>
-                                <li class="pagination__el-item">3</li>
-                            </ul>
-                            <div class="next">След.</div>
-                        </div> --}}
+                        {{ $tenders->links("vendor.pagination.pagination")}}
                     </div>
                 </div>
             </div>
