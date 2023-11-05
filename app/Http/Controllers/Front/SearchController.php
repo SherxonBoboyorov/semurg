@@ -26,6 +26,7 @@ class SearchController extends Controller
             'leaderships',
             'tenders'
         ));
+        
         // $search = request()->query('search');
 
         // if($search) {
