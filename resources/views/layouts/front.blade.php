@@ -62,7 +62,7 @@
                                 <li>
                                     <a href="{{ route('product.show', ['id' => $item->id]) }}">{{ $item->{'title_' . app()->getLocale()} }}</a>
                                 </li>
-                                @endforeach   
+                                @endforeach
                             </ul>
                         </li>
                         <li class="relative">
@@ -146,7 +146,7 @@
                             <form action="{{ route('front_search') }}" class="search-modal-form" method="GET">
                                 @csrf
                                 <div class="content">
-                                    <input id="search-modal-form-input" type="text" placeholder="@lang('front.search')" name="phrase"  class="base-input" autocomplete="off" required>
+                                    <input id="search-modal-form-input" type="text" placeholder="@lang('front.search')" name="q"  class="base-input" autocomplete="off" required>
                                     <button class="search-modal-btn">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none">
                                             <path fill="#0B4848"
@@ -186,7 +186,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="menu-right__lang">
                             <div onclick="openLangMenu()">
                                 <span class="content lang-text-info active">{{ strtoupper(app()->getLocale()) }}</span>
@@ -204,13 +204,13 @@
                                   </a>
                                @endif
                               @endforeach
-                            </ul> 
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </nav>
-        
+
     </header>
 
     @yield('content')
@@ -244,7 +244,7 @@
                                 <li>
                                     <a href="{{ route('product.show', ['id' => $item->id]) }}">{{ $item->{'title_' . app()->getLocale()} }}</a>
                                 </li>
-                                @endforeach                    
+                                @endforeach
                             </ul>
                         </li>
                         <li class="footer-relative">
@@ -308,7 +308,7 @@
                                         d="M15.75 12.315v2.652a.75.75 0 0 1-.6975.7485c-.3278.0225-.5955.0345-.8025.0345-6.6277 0-12-5.3722-12-12 0-.207.0112-.4747.0345-.8025A.75.75 0 0 1 3.033 2.25h2.652a.375.375 0 0 1 .3735.3375c.0172.1725.033.3098.048.414a10.4257 10.4257 0 0 0 .906 3.0008.3417.3417 0 0 1-.1102.4252L5.2838 7.584a9.7854 9.7854 0 0 0 5.1329 5.133l1.155-1.6155a.3468.3468 0 0 1 .4298-.1118 10.4244 10.4244 0 0 0 3 .9038c.1043.015.2415.0307.4125.048a.3754.3754 0 0 1 .2403.1219.3745.3745 0 0 1 .0957.2516Z" />
                                 </svg>
                                 <span>{{ $options->where('key', 'phone')->first()->value }}</span>
-                            </a> 
+                            </a>
                         </li>
                         <li>
                             <a href="tel:{{ $options->where('key', 'fax')->first()->value }}">
@@ -398,7 +398,7 @@
                 stroke-linejoin="round" />
         </svg>
     </button>
-    
+
     <!-- AOS ANIMATION -->
     <script src="{{ asset('front/js/plugins/aos.js') }}"></script>
     <script>

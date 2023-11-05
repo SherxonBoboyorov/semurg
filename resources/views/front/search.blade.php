@@ -39,7 +39,7 @@
     </section>
 
 
-    <section class="news-page tenders">
+    <!-- <section class="news-page tenders">
         <div class="container">
             <div class="parent">
                 <div class="content news-page__content">
@@ -63,14 +63,14 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
-    <section class="leadership-management">
+    <!-- <section class="leadership-management">
         <div class="container">
             <div class="parent">
                 <div class="content leadership-management__content">
-                    @foreach ($leaderships as $leadership)        
+                    @foreach ($leaderships as $leadership)
                     <div class="leadership-management__item" data-aos="slide-right">
                         <div class="leadership-management__item-img">
                             <img src="{{ asset($leadership->image) }}" alt="">
@@ -93,7 +93,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
 
