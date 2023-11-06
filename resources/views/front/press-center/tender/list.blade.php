@@ -42,14 +42,14 @@
                                         <h6 class="date">@lang('front.tender')</h6>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                             @endforeach
-                        </a>
+                        </div>
                         {{ $tenders->links("vendor.pagination.pagination")}}
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    
+
 @endsection
