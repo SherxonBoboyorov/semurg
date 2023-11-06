@@ -100,7 +100,7 @@ Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
-    ], function(){ 
+    ], function(){
             Route::get('/', [IndexController::class, 'homepage'])->name('/');
             Route::get('about-us', [AboutController::class, 'about'])->name('about-us');
             Route::get('licenses-certificates', [LicensesCertificatesController::class, 'licensesCertificates'])->name('licenses-certificates');
@@ -122,11 +122,8 @@ Route::group(
             Route::get('outgoing-reinsurance', [OutgoingReinsuranceController::class, 'outgoingReinsurance'])->name('outgoing-reinsurance');
             Route::get('contact', [ContactController::class, 'contact'])->name('contact');
             Route::get('kacko', [KackoController::class, 'kacko'])->name('kacko');
-            Route::get('front_search', [SearchController::class, 'search'])->name('front_search');
+            Route::post('search_front', [SearchController::class, 'search'])->name('search_front');
 
-
-            
-            
     });
 
 

@@ -143,10 +143,10 @@
                             <span class="p">@lang('front.search')</span>
                         </div>
                         <div class="menu-right__search-modal hidden">
-                            <form action="{{ route('front_search') }}" class="search-modal-form" method="GET">
+                            <form action="{{ route('search_front') }}" class="search-modal-form" method="POST">
                                 @csrf
                                 <div class="content">
-                                    <input id="search-modal-form-input" type="text" placeholder="@lang('front.search')" name="q"  class="base-input" autocomplete="off" required>
+                                    <input type="search" name="price" placeholder="@lang('front.search')" class="base-input" autocomplete="off" required>
                                     <button class="search-modal-btn">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none">
                                             <path fill="#0B4848"
