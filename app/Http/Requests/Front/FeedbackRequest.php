@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin;
+namespace App\Http\Requests\Front;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreatePoll extends FormRequest
+class FeedbackRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,9 @@ class CreatePoll extends FormRequest
     public function rules(): array
     {
         return [
-            'question_ru' => 'required',
-            'question_uz' => 'required',
-            'question_en' => 'required',
-            'answers' => 'required'
+            'fullname' => 'required|max:100',
+            'phone' => 'required|numeric',
+            'comment' => 'required'
         ];
     }
 }

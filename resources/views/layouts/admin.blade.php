@@ -127,7 +127,7 @@
                        </li>
                      {{-- end  --}}
 
-                     
+
                      {{-- start  --}}
                      <li class="nav-item">
                       <a href="{{ route('blog.index') }}" class="nav-link">
@@ -218,7 +218,7 @@
                      </a>
                    </li>
                  {{-- end  --}}
-                   
+
                      {{-- start  --}}
                      <li class="nav-item">
                       <a href="{{ route('structure.index') }}" class="nav-link">
@@ -277,7 +277,7 @@
                  </li>
                 {{-- end  --}}
 
-                 
+
                 {{-- start  --}}
                    <li class="nav-item">
                     <a href="{{ route('incoming.index') }}" class="nav-link">
@@ -326,7 +326,6 @@
                 {{-- end  --}}
 
 
-                
                  {{-- start  --}}
                  <li class="nav-item">
                   <a href="{{ route('options.index') }}" class="nav-link">
@@ -338,8 +337,6 @@
                  </li>
                 {{-- end  --}}
 
-
-                  
                  {{-- start  --}}
                  <li class="nav-item">
                   <a href="{{ route('poll.index') }}" class="nav-link">
@@ -351,9 +348,17 @@
                  </li>
                 {{-- end  --}}
 
+                 {{-- start  --}}
+                  <li class="nav-item">
+                    <a href="{{ route('feedback.index') }}" class="nav-link">
+                      <i class="nav-icon fas fa-envelope-open-text"></i>
+                       <p>
+                          Feedback
+                      </p>
+                     </a>
+                   </li>
+                  {{-- end  --}}
 
-            
-                
                 </ul>
             </nav>
         </div>

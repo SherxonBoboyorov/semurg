@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\CreatePoll;
 use App\Models\Poll;
 use App\Models\PollAnswer;
 use Illuminate\Http\Request;
@@ -30,21 +31,9 @@ class PollController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreatePoll $request)
     {
-        $input = $request->all();
-
-        Validator::make($input, [
-            'question_uz' => 'required|max:255',
-            'question_ru' => 'required|max:255',
-            'question_en' => 'required|max:255',
-        ])->validate();
-
-        $poll = Poll::create([
-            'question_uz' => $input['question_uz'],
-            'question_ru' => $input['question_ru'],
-            'question_en' => $input['question_en'],
-        ]);
+        $poll = Poll::create($request->all());
 
         if (isset($input['answers']) && $input['answers'] !== null && json_decode($input['answers'], true)) {
             foreach(json_decode($input['answers'], true) as $answer) {
@@ -58,11 +47,7 @@ class PollController extends Controller
             }
         }
 
-        dd($request->all());
-
-
         return redirect()->route('poll.index')->with('message', "Created successfully!!");
-
     }
 
     /**

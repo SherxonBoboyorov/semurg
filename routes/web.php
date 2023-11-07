@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\ContactListController;
 use App\Http\Controllers\Admin\DirectorController;
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\FeedbacksController;
 use App\Http\Controllers\Admin\ForumController;
 use App\Http\Controllers\Admin\HistoryController;
 use Illuminate\Support\Facades\Auth;
@@ -35,6 +36,7 @@ use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\DocumentsController;
 use App\Http\Controllers\Front\FaqsController;
+use App\Http\Controllers\Front\FeedbackController;
 use App\Http\Controllers\Front\ForumsController;
 use App\Http\Controllers\Front\HistoryCompanysController;
 use App\Http\Controllers\Front\IncomingReinsuranceController;
@@ -90,7 +92,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'contactlist' => ContactListController::class,
         'director' => DirectorController::class,
         'options' => OptionsController::class,
-        'poll' => PollController::class
+        'poll' => PollController::class,
+        'feedback' => FeedbacksController::class
     ]);
 
 });
@@ -123,6 +126,7 @@ Route::group(
             Route::get('contact', [ContactController::class, 'contact'])->name('contact');
             Route::get('kacko', [KackoController::class, 'kacko'])->name('kacko');
             Route::post('search_front', [SearchController::class, 'search'])->name('search_front');
+            Route::post('/feedback-form', FeedbackController::class)->name('feedback-form.store');
 
     });
 
