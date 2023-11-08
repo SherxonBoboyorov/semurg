@@ -18,25 +18,17 @@
             <div class="container">
                 <div class="survey-page__left" data-aos="slide-right">
                     <h1 class="title3">@lang('front.online_survey')</h1>
-                    <p class="desc3">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</p>
+                    @foreach ($polls as $poll)
+                    <p class="desc3">{{ $poll->{'question_' . app()->getLocale()} }}</p>
                     <div class="survey-page__form">
+                       @foreach ($poll->answers as $answer)
                         <label class="survey-page__form-label">
                             <input type="radio" name="survey-radio">
-                            <span>Ut enim ad minim veniam, quis nostrud</span>
-                        </label>
-                        <label class="survey-page__form-label">
-                            <input type="radio" name="survey-radio">
-                            <span>Ut enim ad minim veniam, quis nostrud</span>
-                        </label>
-                        <label class="survey-page__form-label">
-                            <input type="radio" name="survey-radio">
-                            <span>Ut enim ad minim veniam, quis nostrud</span>
-                        </label>
-                        <label class="survey-page__form-label">
-                            <input type="radio" name="survey-radio">
-                            <span>Ut enim ad minim veniam, quis nostrud</span>
-                        </label>
+                            <span>{{ $answer->{'answer_' . app()->getLocale()} }}</span>
+                         </label>
+                        @endforeach
                     </div>
+                    @endforeach
                     <button class="form-btn" id="survey-btn">@lang('front.confirm')</button>
                 </div>
                 <div class="survey-page__right" data-aos="slide-left">
