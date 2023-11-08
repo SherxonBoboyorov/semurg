@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreatePoll extends FormRequest
+class UpdatePoll extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

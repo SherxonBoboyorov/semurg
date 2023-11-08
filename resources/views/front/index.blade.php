@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero hero-index">
+    <div class="hero hero-index" style="min-height: 700px">
         <div class="hero__left">
             <div class="hero__grid">
                 <div class="half half1" data-aos="slide-left">
@@ -97,7 +97,7 @@
                         </div>
                     </div>
                     @endforeach
-                    
+
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -109,7 +109,7 @@
             <div class="container">
                 <h1 class="title">@lang('front.about_us')</h1>
                 @foreach ($pages as $page)
-                    
+
                 <p class="text">
                     {!! $page->{'content_' . app()->getLocale()} !!}
                 </p>
@@ -142,7 +142,7 @@
                         @endforeach
                     </div>
                 @endforeach
-               
+
                 <div class="insurance-products__btn">
                     <a href="{{ route('product.show', ['id' => 1]) }}">
                     <button class="btn primary-btn">
@@ -168,7 +168,7 @@
                 </div>
             </div>
         </section>
-       
+
         <section class="clients-choose" data-aos="flip-down" data-aos-duration="1500">
             <div class="container">
                 <div class="clients-choose__content">
@@ -184,7 +184,7 @@
                     <div class="swiper3 clients-choose__right">
                         <div class="swiper-wrapper">
                             @foreach ($carousels as $carousel)
-                                
+
                             <div class="swiper-slide">
                                 <div class="slide-top">
                                     <div class="img">
@@ -201,7 +201,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section class="news">
             <div class="container">
                 <h1 class="title">@lang('front.news')</h1>
@@ -227,7 +227,7 @@
                     </svg>
                 </a>
             </div>
-        </section> 
+        </section>
 
         <section class="subscribe" data-aos="flip-up" data-aos-duration="1500">
             <div class="container">
@@ -246,7 +246,7 @@
                 <h1 class="title">@lang('front.useful_links')</h1>
                 <div class="useful-links__row">
                     @foreach ($usefuls as $useful)
-                        
+
                     <div class="useful-links__col" data-aos="slide-right">
                         <div class="img">
                             <img src="{{ asset($useful->image) }}" alt="">
@@ -254,7 +254,7 @@
                         <p class="card-desc">{{ $useful->{'title_' . app()->getLocale()} }}</p>
                         <a href="{{ $useful->link }}">{{ $useful->link }}</a>
                     </div>
-                    @endforeach                   
+                    @endforeach
                 </div>
             </div>
         </section>

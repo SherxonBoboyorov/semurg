@@ -7,6 +7,8 @@
     position: relative;
 
     &.hero-index {
+    min-height: 610px;
+
         @include media(1024px){
         padding-bottom: 1190px;
         }
@@ -41,7 +43,7 @@
     }
 
     &__grid {
-        padding: 45px 50px 45px 15px;
+        padding: 0px 50px 0px 15px;
         display: grid;
         gap: 20px;
         justify-content: end;
@@ -133,7 +135,7 @@
         }
 
         @include media(1350px) {
-            padding: 45px 30px 45px 15px;
+            padding: 0px 30px 0px 15px;
             gap: 15px;
 
             .full {
@@ -196,7 +198,7 @@
 
     &__swiper {
         width: 50%;
-        height: 700px;
+        height: 610px;
         position: absolute;
         right: 0;
         top: 0;

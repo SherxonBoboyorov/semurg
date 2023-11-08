@@ -4,12 +4,12 @@
 .news-page {
     &__content {
         .news__row {
-            gap: 40px;
+            gap: 20px;
         }
 
         .news__col {
             .img {
-                height: 330px;
+                height: 280px;
                 @include media(1024px){
                     height: 310px;
                 }

@@ -48,11 +48,11 @@
                                 <td>{{ $poll->question_ru }}</td>
                                 <td>{{ $poll->question_uz }}</td>
                                 <td>{{ $poll->question_en }}</td>
-                                {{-- <td>
+                                <td>
                                     <a href="{{ route('poll.edit', $poll->id) }}" class="btn btn-primary btn-icon">
                                         <i class="fa fa-edit">Edit</i>
                                     </a>
-                                </td> --}}
+                                </td>
                                 <td>
                                     <form action="{{ route('poll.destroy', $poll->id) }}" method="POST">
                                         @csrf

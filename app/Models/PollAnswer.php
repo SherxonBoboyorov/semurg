@@ -10,6 +10,8 @@ class PollAnswer extends Model
 {
     use HasFactory;
 
+    protected $timestamp = false;
+
     protected $table = 'poll_answers';
 
     protected $fillable = [

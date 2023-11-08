@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CreatePoll;
+use App\Http\Requests\Admin\UpdatePoll;
 use App\Models\Poll;
 use App\Models\PollAnswer;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -33,21 +35,18 @@ class PollController extends Controller
      */
     public function store(CreatePoll $request)
     {
-        $poll = Poll::create($request->all());
+        $data = $request->all();
 
-        if (isset($input['answers']) && $input['answers'] !== null && json_decode($input['answers'], true)) {
-            foreach(json_decode($input['answers'], true) as $answer) {
-                PollAnswer::create([
-                    'poll_id' => $poll->id,
-                    'answer_uz' => $answer['answer_uz'],
-                    'answer_ru' => $answer['answer_ru'],
-                    'answer_en' => $answer['answer_en'],
-                    'order' => $answer['order']
-                ]);
-            }
+        if (Poll::create($data)) {
+            return redirect()
+                   ->route('poll.index')
+                   ->with('message', 'added successfully!!');
         }
+        return redirect()
+               ->route('poll.index')
+               ->with('message', 'failed to add successfully!!');
+         return redirect()->route('poll.index')->with('message', "Created successfully!!");
 
-        return redirect()->route('poll.index')->with('message', "Created successfully!!");
     }
 
     /**
@@ -63,15 +62,28 @@ class PollController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $poll = Poll::find($id);
+        return view('admin.poll.edit', compact('poll'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdatePoll $request, string $id)
     {
-        //
+        $poll = Poll::find($id);
+
+        $data = $request->all();
+
+        if ($poll->update($data)) {
+            return redirect()
+                   ->route('poll.index')
+                   ->with('message', 'updated successfully!!');
+        }
+
+        return redirect()
+               ->route('poll.index')
+               ->with('message', 'failed to update successfully!!');
     }
 
     /**
