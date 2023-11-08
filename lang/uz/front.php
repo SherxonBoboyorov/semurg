@@ -64,8 +64,8 @@ return [
    'question7' => 'Aktsiyalarni sotib olish to\'g\'risida ma\'lumot',
    'full_name' => 'To\'liq ism',
    'phone' => 'Telefon',
-   'comment' => 'Izoh'
-
+   'comment' => 'Izoh',
+   'reinsurance' => 'Qayta sug\'urtalash'
 
 ]
 

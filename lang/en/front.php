@@ -64,7 +64,8 @@ return [
      'question7' => 'Information on purchasing shares',
      'full_name' => 'Full name',
      'phone' => 'Phone',
-     'comment' => 'Comment'
+     'comment' => 'Comment',
+     'reinsurance' => 'Reinsurance'
 
 ]
 

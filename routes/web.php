@@ -53,9 +53,7 @@ use App\Http\Controllers\Front\StracturesController;
 use App\Http\Controllers\Front\SurveyController;
 use App\Http\Controllers\Front\TendersController;
 use App\Http\Controllers\Front\VacancysController;
-use App\Models\Article;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-use Symfony\Component\Console\Input\Input;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
 
@@ -97,7 +95,6 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'feedback' => FeedbacksController::class,
         'pollanswer' => PollAnswerController::class
     ]);
-
 });
 
 
@@ -123,16 +120,13 @@ Route::group(
             Route::get('products/{id?}', [InsurancesController::class, 'insurancesProduct'])->name('product.show');
             Route::get('product/{id?}', [InsurancesController::class, 'show'])->name('product');
             Route::get('documents/{id?}', [DocumentsController::class, 'document'])->name('document.show');
-            Route::get('incoming-reinsurance', [IncomingReinsuranceController::class, 'incomingReinsurance'])->name('incoming-reinsurance');
-            Route::get('outgoing-reinsurance', [OutgoingReinsuranceController::class, 'outgoingReinsurance'])->name('outgoing-reinsurance');
+            Route::get('reinsurance', [IncomingReinsuranceController::class, 'incomingReinsurance'])->name('reinsurance');
+            // Route::get('outgoing-reinsurance', [OutgoingReinsuranceController::class, 'outgoingReinsurance'])->name('outgoing-reinsurance');
             Route::get('contact', [ContactController::class, 'contact'])->name('contact');
             Route::get('kacko', [KackoController::class, 'kacko'])->name('kacko');
             Route::post('search_front', [SearchController::class, 'search'])->name('search_front');
             Route::post('/feedback-form', FeedbackController::class)->name('feedback-form.store');
-
     });
-
-
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     UniSharp\LaravelFilemanager\Lfm::routes();

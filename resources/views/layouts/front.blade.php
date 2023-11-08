@@ -89,17 +89,21 @@
                                 @endforeach
                             </ul>
                         </li>
-                        <li class="relative">
+
+                        <li>
+                            <a class="nav__list-link {{ (\Request::route()->getName() == 'reinsurance') ? 'active' : '' }}" href="{{ route('reinsurance') }}">@lang('front.reinsurance')</a>
+                        </li>
+                        {{-- <li class="relative">
                             <button class="nav__list-link {{ (\Request::route()->getName() == 'incoming-reinsurance') ? 'active' : '' }}">@lang('front.reinsurance')</button>
                             <ul class="submenu">
-                                <li>
+                                 <li>
                                     <a href="{{ route('incoming-reinsurance') }}">@lang('front.incoming_reinsurance')</a>
                                 </li>
-                                <li>
+                                 <li>
                                     <a href="{{ route('outgoing-reinsurance') }}">@lang('front.outgoing_reinsurance')</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li class="relative">
                             <button class="nav__list-link {{ (\Request::route()->getName() == 'news') ? 'active' : '' }}">@lang('front.press_center')</button>
                             <ul class="submenu">
@@ -271,7 +275,12 @@
                                 @endforeach
                             </ul>
                         </li>
-                        <li class="footer-relative">
+
+                        <li>
+                            <a class="nav__list-link {{ (\Request::route()->getName() == 'reinsurance') ? 'active' : '' }}" href="{{ route('reinsurance') }}">@lang('front.reinsurance')</a>
+                        </li>
+
+                        {{-- <li class="footer-relative">
                             <button class="footer-list-link {{ (\Request::route()->getName() == 'incoming-reinsurance') ? 'active' : '' }}">@lang('front.reinsurance')</button>
                             <ul class="submenu">
                                 <li>
@@ -281,7 +290,7 @@
                                     <a href="{{ route('outgoing-reinsurance') }}">@lang('front.outgoing_reinsurance')</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li class="footer-relative">
                             <button  class="footer-list-link {{ (\Request::route()->getName() == 'news') ? 'active' : '' }}">@lang('front.press_center')</button>
                             <ul class="submenu">
