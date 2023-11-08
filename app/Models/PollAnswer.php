@@ -10,8 +10,6 @@ class PollAnswer extends Model
 {
     use HasFactory;
 
-    protected $timestamp = false;
-
     protected $table = 'poll_answers';
 
     protected $fillable = [
@@ -21,6 +19,11 @@ class PollAnswer extends Model
         'answer_en',
         'order'
     ];
+
+    public function poll()
+    {
+        return $this->belongsTo(Poll::class, 'poll_id');
+    }
 
     public function votes(): HasMany
     {

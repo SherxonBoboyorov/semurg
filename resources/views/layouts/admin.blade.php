@@ -349,6 +349,18 @@
                 {{-- end  --}}
 
                  {{-- start  --}}
+                 <li class="nav-item">
+                    <a href="{{ route('pollanswer.index') }}" class="nav-link">
+                      <i class="nav-icon fas fa-poll"></i>
+                       <p>
+                          Survey Answer
+                      </p>
+                     </a>
+                   </li>
+                  {{-- end  --}}
+
+
+                 {{-- start  --}}
                   <li class="nav-item">
                     <a href="{{ route('feedback.index') }}" class="nav-link">
                       <i class="nav-icon fas fa-envelope-open-text"></i>

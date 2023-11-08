@@ -25,6 +25,7 @@ use App\Http\Controllers\Admin\LicensesDocumentController;
 use App\Http\Controllers\Admin\OptionsController;
 use App\Http\Controllers\Admin\OutgoingController;
 use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\PollAnswerController;
 use App\Http\Controllers\Admin\PollController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SliderController;
@@ -93,7 +94,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'director' => DirectorController::class,
         'options' => OptionsController::class,
         'poll' => PollController::class,
-        'feedback' => FeedbacksController::class
+        'feedback' => FeedbacksController::class,
+        'pollanswer' => PollAnswerController::class
     ]);
 
 });
