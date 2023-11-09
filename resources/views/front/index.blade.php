@@ -70,7 +70,7 @@
                     </button>
                 </div>
                 <div class="full full3" data-aos="zoom-in-right">
-                    <img src="{{ asset('front/images/header-hero/hero-left-bg3.png') }}" alt="">
+                    <img src="{{ asset('front/images/header-hero/hero-left-bg3.png') }}" alt="img">
                     <div class="full__info">
                         <h2 class="heading2">Страхование строительно-монтажных рисков</h2>
                         <button class="more-btn">
@@ -90,10 +90,10 @@
                 <div class="swiper-wrapper">
                     @foreach ($sliders as $slider)
                     <div class="swiper-slide">
-                        <img src="{{ asset($slider->image) }}" alt="">
+                        <img src="{{ asset($slider->image) }}" alt="img">
                         <div class="swiper-slide__info">
-                            <h1>{{ $slider->{'title_' . App::getLocale()} }}</h1>
-                            <p>{{ $slider->{'description_' . App::getLocale()} }}</p>
+                            <h1>{{ $slider->{'title_' . app()->getLocale()} }}</h1>
+                            <p>{{ $slider->{'description_' . app()->getLocale()} }}</p>
                         </div>
                     </div>
                     @endforeach
@@ -114,7 +114,7 @@
                     {!! $page->{'content_' . app()->getLocale()} !!}
                 </p>
                 <div class="about-company__map">
-                    <img src="{{ asset($page->image) }}" alt="">
+                    <img src="{{ asset($page->image) }}" alt="img">
                 </div>
                 @endforeach
 

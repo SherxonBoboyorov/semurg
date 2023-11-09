@@ -17,17 +17,20 @@
             @foreach ($polls as $poll)
             <div class="container">
                 <div class="survey-page__left" data-aos="slide-right">
+                    <form action="/survey/vote" method="POST">
+                    @csrf
                     <h1 class="title3">@lang('front.online_survey')</h1>
                     <p class="desc3">{{ $poll['question_' . app()->getLocale()] }}</p>
                     <div class="survey-page__form">
                         @foreach ($poll['answer'] as $answer)
                         <label class="survey-page__form-label">
-                            <input type="radio" name="order[]" value="{{ $answer['id'] }}">
+                            <input type="radio" name="answer_id" value="{{ $answer['id'] }}">
                             <span>{{ $answer['answer_' . app()->getLocale()] }}</span>
                         </label>
                         @endforeach
                     </div>
-                    <button class="form-btn" id="demo" onclick="myFunction()">@lang('front.confirm')</button>
+                    <button type="submit" class="form-btn" id="survey-btn">@lang('front.confirm')</button>
+                    </form>
                 </div>
 
               <div class="survey-page__right" data-aos="slide-left">
@@ -38,7 +41,7 @@
                         <li class="survey-page__right__item">
                             <div class="survey-page__right__item-content">
                                 <p class="range-selected-pi">{{ $answer['answer_' . app()->getLocale()] }}</p>
-                                <p class="prosent">{{ $answer['votes_count'] }} ({{ $answer['votes_in_percentage'] }})</p>
+                                <p class="prosent">{{ $answer['votes_count'] }} ({{ $answer['votes_in_percentage'] }}% )</p>
                             </div>
                             <input class="survey-page__right__item-input" type="range" value="{{ $answer['votes_in_percentage'] }}" min="0" max="100">
                          </li>
@@ -53,8 +56,27 @@
     @endsection
     @section('custom_js')
         <script>
-                function myFunction() {
-                document.getElementById("demo").style.color = "red";
-                }
+                $(document).on('click', '#survey-btn', function(event) {
+                event.preventDefault();
+
+                getMessage();
+
+            });
+            var getMessage = function(){
+                $.ajax({
+                    type: 'POST',
+                    url: '/survey/vote',
+                    cache : false,
+                    contentType: false,
+                    processData: false,
+                    data: formdata,
+                    success:function(data){
+                        console.log(data);
+                    }
+                });
+            }
         </script>
     @endsection
+
+
+

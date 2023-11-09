@@ -39,7 +39,7 @@
                                     <div class="info">
                                         <p>{{ $licensesdocument->{'title_' . app()->getLocale()} }}</p>
                                         <a href="{{ $licensesdocument->image }}" download>{{ $licensesdocument->size }}</a>
-                                    </div> 
+                                    </div>
                                     @endforeach
                                 </div>
 

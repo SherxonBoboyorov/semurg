@@ -17,9 +17,8 @@ class FeedbackController extends Controller
 
         $feedback = Feedback::create($data);
 
-        Mail::to('sherxonbabayar@gmail.com')->send(new FeedbackMail($feedback));
+        Mail::to('info@semurgins.uz')->send(new FeedbackMail($feedback));
 
         return back()->with('message', 'Success');
-
     }
 }

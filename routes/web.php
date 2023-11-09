@@ -112,6 +112,8 @@ Route::group(
             Route::get('news/{slug}', [NewsController::class, 'show'])->name('new.show');
             Route::get('forum', [ForumsController::class, 'forum'])->name('forum');
             Route::get('survey', [SurveyController::class, 'survey'])->name('survey');
+            Route::post('survey/vote', [SurveyController::class, 'registerVote']);
+            Route::get('survey/result', [SurveyController::class, 'voteResults']);
             Route::get('tenders', [TendersController::class, 'list'])->name('tenders');
             Route::get('tenders/{slug}', [TendersController::class, 'show'])->name('tender.show');
             Route::get('vacancies', [VacancysController::class, 'vacancies'])->name('vacancies');

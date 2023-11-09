@@ -283,7 +283,7 @@
                     <a href="{{ route('incoming.index') }}" class="nav-link">
                     <i class="nav-icon far fa-window-maximize"></i>
                        <p>
-                           Incoming reinsurance
+                           Reinsurance
                        </p>
                      </a>
                    </li>
@@ -291,14 +291,14 @@
 
 
                  {{-- start  --}}
-                 <li class="nav-item">
+                 {{-- <li class="nav-item">
                   <a href="{{ route('outgoing.index') }}" class="nav-link">
                   <i class="nav-icon far fa-window-maximize"></i>
                      <p>
                           Outgoing reinsurance
                      </p>
                    </a>
-                 </li>
+                 </li> --}}
                {{-- end  --}}
 
 
@@ -342,7 +342,7 @@
                   <a href="{{ route('poll.index') }}" class="nav-link">
                     <i class="nav-icon fas fa-poll"></i>
                      <p>
-                        Survey
+                        Survey Question
                     </p>
                    </a>
                  </li>
