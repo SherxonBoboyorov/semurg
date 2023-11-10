@@ -60,7 +60,7 @@
                             <ul class="submenu">
                                 @foreach (\App\Models\InsuranceCategory::orderBy('id')->get() as $item)
                                 <li>
-                                    <a href="{{ route('product.show', ['id' => $item->id]) }}">{{ $item->{'title_' . app()->getLocale()} }}</a>
+                                    <a href="{{ route('product.show', $item->id) }}">{{ $item->{'title_' . app()->getLocale()} }}</a>
                                 </li>
                                 @endforeach
                             </ul>

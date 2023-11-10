@@ -124,7 +124,7 @@
         <section class="insurance-products" data-aos="fade-up">
             <div class="container">
                 <h1 class="title">@lang('front.insurance_products')</h1>
-                <div class="tab">
+                <div class="tab" id="categoryTab">
                     @foreach ($insurancecategories as $insurancecategory)
                     <button class="tablinks" onclick="openCity(event, 'category_{{ $insurancecategory->id }}')">{{ $insurancecategory->{'title_' . app()->getLocale()} }}</button>
                     @endforeach

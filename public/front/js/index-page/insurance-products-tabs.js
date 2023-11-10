@@ -12,3 +12,9 @@ function openCity(evt, cityName) {
     document.getElementById(cityName).style.display = "grid";
     evt.currentTarget.className += " active";
   }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const defaultTab = document.getElementById('categoryTab').children[0].classList.add('active')
+
+    const defaultTabContent = document.querySelectorAll('.tab-content')[0].style.display = 'grid'
+})
