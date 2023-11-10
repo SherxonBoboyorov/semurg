@@ -47,6 +47,7 @@ class InsuranceProductController extends Controller
         $data = $request->all();
 
         $data['image'] = InsuranceProduct::uploadImage($request);
+        $data['icon'] = InsuranceProduct::uploadIcon($request);
 
         if (InsuranceProduct::create($data)) {
             return redirect()->route('insuranceproduct.index')->with('message', "added successfully!!");
@@ -97,6 +98,7 @@ class InsuranceProductController extends Controller
 
         $data = $request->all();
         $data['image'] = InsuranceProduct::updateImage($request, $insuranceproduct);
+        $data['icon'] = InsuranceProduct::updateIcon($request, $insuranceproduct);
 
         if ($insuranceproduct->update($data)) {
             return redirect()->route('insuranceproduct.index')->with('message', "changed successfully!!");
@@ -110,17 +112,10 @@ class InsuranceProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(InsuranceProduct $insuranceproduct)
     {
-        if (!InsuranceProduct::find($id)) {
-            return redirect()->route('insuranceproduct.index')->with('message', "not found");
-        }
 
-        $insuranceproduct = InsuranceProduct::find($id);
-
-        if (File::exists(public_path() . $insuranceproduct->image)) {
-            File::delete(public_path() . $insuranceproduct->image);
-        }
+        $insuranceproduct->delete();
 
         if ($insuranceproduct->delete()) {
             return redirect()->route('insuranceproduct.index')->with('message', "deleted successfully!!");

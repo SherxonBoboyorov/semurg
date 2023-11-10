@@ -106,7 +106,7 @@
                                 @endif
                             </div>
                         </div>
-    
+
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-12">
                                 <label for="content_en">Content [English]</label>
@@ -121,7 +121,7 @@
                                 @endif
                             </div>
                         </div><br>
-    
+
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-6">
                                 <label for="meta_title_ru">Meta Title RU</label>
@@ -148,7 +148,7 @@
                                 @endif
                             </div>
                         </div>
-    
+
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-6">
                                 <label for="meta_title_uz">Meta Title UZ</label>
@@ -175,7 +175,7 @@
                                 @endif
                             </div>
                         </div>
-    
+
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-6">
                                 <label for="meta_title_en">Meta Title EN</label>
@@ -205,7 +205,7 @@
 
                          <div class="row" style="margin-top: 15px">
                             <div class="col-md-6">
-                                <label for="image">Image</label>
+                                <label for="image">Icon</label>
                                 <input type="file" name="image" class="form-control-file">
                                 @if($errors->has('image'))
                                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -213,6 +213,21 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                         {{ $errors->first('image') }}
+                                    </div>
+                                @endif
+                            </div>
+                        </div><br>
+
+                        <div class="row" style="margin-top: 15px">
+                            <div class="col-md-6">
+                                <label for="icon">Image</label>
+                                <input type="file" name="icon" class="form-control-file">
+                                @if($errors->has('icon'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        {{ $errors->first('icon') }}
                                     </div>
                                 @endif
                             </div>

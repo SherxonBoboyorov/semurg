@@ -20,6 +20,10 @@
                 <div data-aos="slide-up">
                     <h3 class="title3">{{ $insuranceproduct->{'title_' . app()->getLocale()} }}</h3>
                 </div>
+
+                <div class="img" data-aos="slide-up">
+                    <img src="{{ asset($insuranceproduct->icon) }}" alt="">
+                </div>
                 <p data-aos="slide-up" class="text">
                     {!! $insuranceproduct->{'content_' . app()->getLocale()} !!}
                 </p>

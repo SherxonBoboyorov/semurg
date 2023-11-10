@@ -202,10 +202,10 @@
                             @endif
                         </div>
                     </div><br>
-                      
+
                      <div class="row" style="margin-top: 15px">
                         <div class="col-md-6">
-                            <label for="image">Image</label>
+                            <label for="image">Icon</label>
                             <input type="file" name="image" class="form-control-file">
                             @if($errors->has('image'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -218,6 +218,24 @@
                         </div>
                         <div class="col-md-6">
                             <img src="{{ asset($insuranceproduct->image) }}" width="150" height="150" alt="">
+                        </div>
+                    </div><br>
+
+                    <div class="row" style="margin-top: 15px">
+                        <div class="col-md-6">
+                            <label for="icon">Image</label>
+                            <input type="file" name="icon" class="form-control-file">
+                            @if($errors->has('icon'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    {{ $errors->first('icon') }}
+                                </div>
+                            @endif
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{{ asset($insuranceproduct->icon) }}" width="150" height="150" alt="">
                         </div>
                     </div><br>
 

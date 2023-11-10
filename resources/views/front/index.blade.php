@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="hero hero-index">
+    <div class="hero hero-index" style="min-height: 700px">
         <div class="hero__left">
             <div class="hero__grid">
                 <div class="half half1" data-aos="slide-left">
@@ -83,8 +83,8 @@
                         </button>
                     </div>
                 </div>
-            </div>
         </div>
+
         <div class="hero__swiper" data-aos="zoom-in">
             <div class="swiper">
                 <div class="swiper-wrapper">
