@@ -77,6 +77,21 @@
                             </div>
                          </div><br>
 
+                         <div class="row" style="margin-top: 15px">
+                            <div class="col-md-4">
+                                <label for="attribute">Attribute</label>
+                                <input type="text" id="attribute" class="form-control" name="attribute">
+                                @if($errors->has('attribute'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    {{ $errors->first('attribute') }}
+                                </div>
+                                @endif
+                            </div>
+                        </div><br>
+
 
                          <div class="row" style="margin-top: 15px">
                             <div class="col-md-12">

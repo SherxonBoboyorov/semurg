@@ -16,6 +16,7 @@ class InsuranceProduct extends Model
         'insurancecategory_id',
         'image',
         'icon',
+        'attribute',
         'title_ru',
         'title_uz',
         'title_en',

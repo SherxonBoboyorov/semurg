@@ -25,6 +25,7 @@ class UpdateInsuranceProduct extends FormRequest
     {
         return [
             'insurancecategory_id' => 'required',
+            'attribute' => 'required|string|max:255',
             'title_ru' => 'required|string|max:255',
             'title_uz' => 'required|string|max:255',
             'title_en' => 'required|string|max:255',

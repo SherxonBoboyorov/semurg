@@ -5,9 +5,17 @@
     <div class="hero hero-index">
         <div class="hero__left">
             <div class="hero__grid">
-                <a href="#!" class="half half1" data-aos="slide-left">
-                    <img src="{{ asset('front/images/header-hero/hero-icon3.png') }}" alt="">
-                    <h2 class="heading2">Имущество и ответственность</h2>
+              @foreach (\App\Models\InsuranceProduct::orderBy('created_at', 'DESC')->paginate(6) as $insuranceproduct)
+              <a href="{{ route('product', $insuranceproduct->id) }}" {!! $insuranceproduct->attribute !!}>
+                 @if (str_contains($insuranceproduct->attribute, "half"))
+                 <img src="{!! asset($insuranceproduct->image) !!}" alt="">
+                 @else
+                 <img src="{!! asset($insuranceproduct->icon) !!}" alt="">
+                 <div class="full__info">
+                  @endif
+
+
+                  <h2 class="heading2">{{ $insuranceproduct->{'title_' . app()->getLocale()} }}</h2>
                     <button class="more-btn">
                         <span>@lang('front.more_details')</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
@@ -16,77 +24,15 @@
                                 stroke-linejoin="round" />
                         </svg>
                     </button>
+                    @if (str_contains($insuranceproduct->attribute, "full"))
+                 </div>
+                  @endif
                 </a>
-                <a href="#!" class="full full1" data-aos="slide-right">
-                    <img src="{{ asset('front/images/header-hero/hero-left-bg1.png') }}" alt="">
-                    <div class="full__info">
-                        <h2 class="heading2">Страхование грузов</h2>
-                        <button class="more-btn">
-                            <span>@lang('front.more_details')</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
-                                fill="none">
-                                <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-                </a>
-                <a href="#!" class="full full2" data-aos="slide-left">
-                    <img src="{{ asset('front/images/header-hero/hero-left-bg2.png') }}" alt="">
-                    <div class="full__info">
-                        <h2 class="heading2">Автострахование</h2>
-                        <button class="more-btn">
-                            <span>@lang('front.more_details')</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
-                                fill="none">
-                                <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-                </a>
-                <a href="#!" class="half half2" data-aos="slide-right">
-                    <img src="{{ asset('front/images/header-hero/hero-icon2.png') }}" alt="">
-                    <h2 class="heading2">Сфера энергетики</h2>
-                    <button class="more-btn">
-                        <span>@lang('front.more_details')</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
-                            fill="none">
-                            <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                </a>
-                <a href="#!" class="half half3" data-aos="zoom-in-left">
-                    <img src="{{ asset('front/images/header-hero/hero-icon1.png') }}" alt="">
-                    <h2 class="heading2">Агрострахование</h2>
-                    <button class="more-btn">
-                        <span>@lang('front.more_details')</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
-                            fill="none">
-                            <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                </a>
-                <a href="#!" class="full full3" data-aos="zoom-in-right">
-                    <img src="{{ asset('front/images/header-hero/hero-left-bg3.png') }}" alt="img">
-                    <div class="full__info">
-                        <h2 class="heading2">Страхование строительно-монтажных рисков</h2>
-                        <button class="more-btn">
-                            <span>@lang('front.more_details')</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
-                                fill="none">
-                                <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-                </a>
+                @endforeach
             </div>
         </div>
 
-        <div class="hero__swiper" data-aos="zoom-in">
+    <div class="hero__swiper" data-aos="zoom-in">
             <div class="swiper">
                 <div class="swiper-wrapper">
                     @foreach ($sliders as $slider)

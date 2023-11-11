@@ -10,12 +10,12 @@ class TendersController extends Controller
 {
     public function list(){
 
-        $tenders = Tender::orderBy('id')->paginate(8);
+        $tenders = Tender::orderBy('id')->paginate(12);
         return view('front.press-center.tender.list', compact(
             'tenders'
         ));
     }
- 
+
     public function show($slug) {
         $tender = Tender::where('slug_uz', $slug)
         ->orWhere('slug_ru', $slug)
