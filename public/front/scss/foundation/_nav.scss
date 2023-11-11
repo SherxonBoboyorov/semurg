@@ -74,8 +74,8 @@
                 position: absolute;
                 right: 0;
                 padding: 8px;
-                top: calc(100% - 0px);
-                background: $bg-secondary;
+                top: calc(100% + 2px);
+                background: $white-color;
                 border-radius: $bor-rad-size;
                 transform: scale(0);
                 transition: all 0.2s ease;
@@ -99,24 +99,25 @@
 
                     a {
                         display: block;
+                        font-weight: 700;
                         text-wrap: nowrap;
-                        @include font(13, 13, $dark-color);
-
+                        @include font(14, 13, $dark-color);
+                        
                         @include media(1200px) {
                             @include font(16, 16, $dark-color);
-
+                            
                         }
-
+                        
                         &::after {
                             display: none;
                         }
                     }
 
                     &:hover {
-                        background: $bg-primary;
-
+                        transition: 0.3s;
                         a {
-                            color: $white-color;
+                            color: $bg-primary;
+                            text-decoration: underline;
                         }
                     }
                 }

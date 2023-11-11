@@ -2,10 +2,10 @@
 
 @section('content')
 
-    <div class="hero hero-index" style="min-height: 700px">
+    <div class="hero hero-index">
         <div class="hero__left">
             <div class="hero__grid">
-                <div class="half half1" data-aos="slide-left">
+                <a href="#!" class="half half1" data-aos="slide-left">
                     <img src="{{ asset('front/images/header-hero/hero-icon3.png') }}" alt="">
                     <h2 class="heading2">Имущество и ответственность</h2>
                     <button class="more-btn">
@@ -16,8 +16,8 @@
                                 stroke-linejoin="round" />
                         </svg>
                     </button>
-                </div>
-                <div class="full full1" data-aos="slide-right">
+                </a>
+                <a href="#!" class="full full1" data-aos="slide-right">
                     <img src="{{ asset('front/images/header-hero/hero-left-bg1.png') }}" alt="">
                     <div class="full__info">
                         <h2 class="heading2">Страхование грузов</h2>
@@ -30,8 +30,8 @@
                             </svg>
                         </button>
                     </div>
-                </div>
-                <div class="full full2" data-aos="slide-left">
+                </a>
+                <a href="#!" class="full full2" data-aos="slide-left">
                     <img src="{{ asset('front/images/header-hero/hero-left-bg2.png') }}" alt="">
                     <div class="full__info">
                         <h2 class="heading2">Автострахование</h2>
@@ -44,8 +44,8 @@
                             </svg>
                         </button>
                     </div>
-                </div>
-                <div class="half half2" data-aos="slide-right">
+                </a>
+                <a href="#!" class="half half2" data-aos="slide-right">
                     <img src="{{ asset('front/images/header-hero/hero-icon2.png') }}" alt="">
                     <h2 class="heading2">Сфера энергетики</h2>
                     <button class="more-btn">
@@ -56,8 +56,8 @@
                                 stroke-linejoin="round" />
                         </svg>
                     </button>
-                </div>
-                <div class="half half3" data-aos="zoom-in-left">
+                </a>
+                <a href="#!" class="half half3" data-aos="zoom-in-left">
                     <img src="{{ asset('front/images/header-hero/hero-icon1.png') }}" alt="">
                     <h2 class="heading2">Агрострахование</h2>
                     <button class="more-btn">
@@ -68,8 +68,8 @@
                                 stroke-linejoin="round" />
                         </svg>
                     </button>
-                </div>
-                <div class="full full3" data-aos="zoom-in-right">
+                </a>
+                <a href="#!" class="full full3" data-aos="zoom-in-right">
                     <img src="{{ asset('front/images/header-hero/hero-left-bg3.png') }}" alt="img">
                     <div class="full__info">
                         <h2 class="heading2">Страхование строительно-монтажных рисков</h2>
@@ -82,8 +82,8 @@
                             </svg>
                         </button>
                     </div>
-                </div>
-                </div>
+                </a>
+            </div>
         </div>
 
         <div class="hero__swiper" data-aos="zoom-in">
@@ -203,10 +203,10 @@
             </div>
         </section>
 
-        <section class="news">
+        <section class="news news2">
             <div class="container">
                 <h1 class="title">@lang('front.news')</h1>
-                <div class="news__row">
+                <div class="news__row news2__row">
                   @foreach ($news as $new)
                     <a href="{{ route('new.show', $new->{'slug_' . app()->getLocale()}) }}" class="news__col" data-aos="slide-left">
                         <div class="img">
