@@ -5,12 +5,12 @@
     <div class="hero hero-index">
         <div class="hero__left">
           <div class="hero__grid">
-             @foreach (\App\Models\InsuranceProduct::orderBy('created_at', 'DESC')->paginate(6) as $insuranceproduct)
-              <a href="{{ route('product', $insuranceproduct->id) }}" {!! $insuranceproduct->attribute !!}>
-                 @if (str_contains($insuranceproduct->attribute, "half"))
-                 <img src="{!! asset($insuranceproduct->image) !!}" alt="">
+             @foreach (\App\Models\InsuranceProduct::all() as $insuranceproduct)
+             <a href="{{ route('product', $insuranceproduct->id) }}" {!! $insuranceproduct->attribute !!}>
+                @if (str_contains($insuranceproduct->attribute, "half"))
+                 <img src="{!! asset($insuranceproduct->image) !!}" alt="img">
              @else
-                 <img src="{!! asset($insuranceproduct->icon) !!}" alt="">
+                 <img src="{!! asset($insuranceproduct->icon) !!}" alt="img">
                  <div class="full__info">
              @endif
                   <h2 class="heading2">{{ $insuranceproduct->{'title_' . app()->getLocale()} }}</h2>
@@ -24,7 +24,7 @@
                     </button>
                     @if (str_contains($insuranceproduct->attribute, "full"))
                  </div>
-             @endif
+                 @endif
                 </a>
                 @endforeach
             </div>

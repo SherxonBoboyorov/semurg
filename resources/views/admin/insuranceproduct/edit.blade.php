@@ -79,9 +79,12 @@
                      </div><br>
 
                      <div class="row" style="margin-top: 15px">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <label for="attribute">Attribute</label>
-                            <input type="text" id="attribute" value="{{ $insuranceproduct->attribute }}" class="form-control" name="attribute">
+                            <select name="attribute" id="attribute" class="form-control">
+                                    <option value="{{ 'class="half half1" data-aos="slide-left"' }}">1</option>
+                                    <option value="{{ 'class="full full1" data-aos="slide-right"' }}">2</option>
+                            </select>
                             @if($errors->has('attribute'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
