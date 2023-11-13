@@ -5,9 +5,9 @@
     <div class="hero hero-index">
         <div class="hero__left">
           <div class="hero__grid">
-             @foreach (\App\Models\InsuranceProduct::all() as $insuranceproduct)
+             @foreach (\App\Models\InsuranceProduct::orderBy('created_at', 'DESC')->paginate(6) as $insuranceproduct)
              <a href="{{ route('product', $insuranceproduct->id) }}" {!! $insuranceproduct->attribute !!}>
-                @if (str_contains($insuranceproduct->attribute, "half"))
+             @if (str_contains($insuranceproduct->attribute, "half"))
                  <img src="{!! asset($insuranceproduct->image) !!}" alt="img">
              @else
                  <img src="{!! asset($insuranceproduct->icon) !!}" alt="img">

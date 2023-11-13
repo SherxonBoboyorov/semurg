@@ -179,12 +179,12 @@
 
 .history-company {
     .about-history-company-par {
-        height: 100vh;
-        overflow: scroll;
-
+        height: 70vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-right: 20px;
         &::-webkit-scrollbar {
-            width: 0px;
-            height: 0px;
+            width: 6px;
         }
     }
 
@@ -235,10 +235,9 @@
         flex-direction: column;
         gap: 34px;
         margin-left: 60px;
-        margin-bottom: 70vh;
+        margin-bottom: 48vh;
 
         &-item {
-            opacity: 0.2;
 
             h5 {
                 margin-bottom: 9px;
@@ -251,10 +250,10 @@
                 border-bottom: 1px solid rgba($color: $dark-color, $alpha: 0.4);
             }
 
-            &.active {
-                opacity: 1;
-                border-bottom: 1px solid rgba($color: $dark-color, $alpha: 0.1);
-            }
+            // &.active {
+            //     opacity: 1;
+            //     border-bottom: 1px solid rgba($color: $dark-color, $alpha: 0.1);
+            // }
         }
     }
 }
