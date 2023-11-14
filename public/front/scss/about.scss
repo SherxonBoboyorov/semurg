@@ -178,13 +178,19 @@
 }
 
 .history-company {
+    max-width: 1000px;
+    margin: 0 auto;
+.parent{
+    padding-top: 60px;
+    padding-bottom: 0;
+}
     .about-history-company-par {
-        height: 70vh;
-        overflow-y: auto;
-        overflow-x: hidden;
-        padding-right: 20px;
+        height: 100vh;
+        overflow: scroll;
+
         &::-webkit-scrollbar {
-            width: 6px;
+            width: 0px;
+            height: 0px;
         }
     }
 
@@ -207,7 +213,10 @@
 
         .active-year {
             font-weight: 700;
-            @include font(60, 32, $bg-primary);
+            @include font(100, 100, $bg-primary);
+            @include media(650px){
+            @include font(60, 60, $bg-primary);
+            }
         }
     }
 
@@ -223,7 +232,6 @@
         &-item {
             font-weight: 700;
             @include font(60, 32, rgba($color: $dark-color, $alpha: 0.2));
-
             &.active {
                 color: $bg-primary;
             }
@@ -235,10 +243,12 @@
         flex-direction: column;
         gap: 34px;
         margin-left: 60px;
-        margin-bottom: 48vh;
+        margin-bottom: 70vh;
 
         &-item {
-
+            opacity: 1;
+            border-bottom: 1px solid rgba($color: $dark-color, $alpha: 0.1);
+            padding-bottom: 30px;
             h5 {
                 margin-bottom: 9px;
                 font-weight: 700;
@@ -250,10 +260,7 @@
                 border-bottom: 1px solid rgba($color: $dark-color, $alpha: 0.4);
             }
 
-            // &.active {
-            //     opacity: 1;
-            //     border-bottom: 1px solid rgba($color: $dark-color, $alpha: 0.1);
-            // }
+           
         }
     }
 }
@@ -341,12 +348,15 @@
             background: $white-color;
             border-radius: $bor-rad-size;
             padding: 16px;
-            .description{
+
+            .description {
                 @include font(13, 16, $dark-color);
-                strong{
+
+                strong {
                     font-weight: 700;
                 }
-                p{
+
+                p {
                     margin: 16px 0;
                 }
             }
@@ -438,3 +448,77 @@
         }
     }
 }
+
+
+.about-history-company-par{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100%;
+    .history-company__year-info-item{
+        margin-left: 40px;
+        animation: fade linear both;
+        animation-timeline: view(block);
+        animation-range: cover 0% contain 100%;
+        height: 100%;
+        scroll-snap-align: start;
+        padding-top: 30px;
+    }
+    
+}
+
+.history-company__year-info{
+    display: flex;
+    gap: 10px;
+}
+#year_number{
+    display: flex;
+    position: relative;
+    padding-left: 40px;
+    @include media(650px){
+        padding-left: 0px;
+        }
+}
+
+.history-company__content{
+    display: flex;
+    gap: 0;
+}
+
+.year_number-item{
+    font-weight: 700;
+    position: absolute;
+    @include font(100,100,$bg-primary);
+    top: 12px;
+    left: -60px;
+    animation: fade linear;
+    animation-timeline: view();
+    @include media(650px){
+        @include font(60, 60, $bg-primary);
+        }
+}
+
+
+@keyframes fade {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.0001;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+

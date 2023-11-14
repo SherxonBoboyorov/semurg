@@ -82,8 +82,8 @@
                         <div class="col-md-3">
                             <label for="attribute">Attribute</label>
                             <select name="attribute" id="attribute" class="form-control">
-                                    <option value="{{ 'class="half half1" data-aos="slide-left"' }}">1</option>
-                                    <option value="{{ 'class="full full1" data-aos="slide-right"' }}">2</option>
+                                <option value="{{ 'class="half half1" data-aos="slide-left"' }}">1</option>
+                                <option value="{{ 'class="full full1" data-aos="slide-right"' }}">2</option>
                             </select>
                             @if($errors->has('attribute'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">

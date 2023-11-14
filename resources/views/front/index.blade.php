@@ -1,52 +1,55 @@
 @extends('layouts.front')
 
+
 @section('content')
 
     <div class="hero hero-index">
-        <div class="hero__left">
-          <div class="hero__grid">
-             @foreach (\App\Models\InsuranceProduct::orderBy('created_at', 'DESC')->paginate(6) as $insuranceproduct)
-             <a href="{{ route('product', $insuranceproduct->id) }}" {!! $insuranceproduct->attribute !!}>
-             @if (str_contains($insuranceproduct->attribute, "half"))
-                 <img src="{!! asset($insuranceproduct->image) !!}" alt="img">
-             @else
-                 <img src="{!! asset($insuranceproduct->icon) !!}" alt="img">
-                 <div class="full__info">
-             @endif
-                  <h2 class="heading2">{{ $insuranceproduct->{'title_' . app()->getLocale()} }}</h2>
-                    <button class="more-btn">
-                        <span>@lang('front.more_details')</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
-                            fill="none">
-                            <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                    @if (str_contains($insuranceproduct->attribute, "full"))
-                 </div>
-                 @endif
-                </a>
-                @endforeach
-            </div>
-        </div>
-
-    <div class="hero__swiper" data-aos="zoom-in">
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    @foreach ($sliders as $slider)
-                    <div class="swiper-slide">
-                        <img src="{{ asset($slider->image) }}" alt="img">
-                        <div class="swiper-slide__info">
-                            <h1>{{ $slider->{'title_' . app()->getLocale()} }}</h1>
-                            <p>{{ $slider->{'description_' . app()->getLocale()} }}</p>
-                        </div>
+      <div class="container">
+         <div class="hero__left">
+            <div class="hero__grid">
+                @foreach (\App\Models\InsuranceProduct::orderBy('id')->paginate(6) as $insuranceproduct)
+                <a href="{{ route('product', $insuranceproduct->id) }}" {!! $insuranceproduct->attribute !!}>
+                @if (str_contains($insuranceproduct->attribute, "half"))
+                    <img src="{!! asset($insuranceproduct->image) !!}" alt="img">
+                @else
+                    <img src="{!! asset($insuranceproduct->icon) !!}" alt="img">
+                    <div class="full__info">
+                @endif
+                     <h2 class="heading2">{{ $insuranceproduct->{'title_' . app()->getLocale()} }}</h2>
+                       <button class="more-btn">
+                           <span>@lang('front.more_details')</span>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
+                               fill="none">
+                               <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
+                                   stroke-linejoin="round" />
+                           </svg>
+                       </button>
+                       @if (str_contains($insuranceproduct->attribute, "full"))
                     </div>
-                    @endforeach
+                    @endif
+                   </a>
+                   @endforeach
+               </div>
+         </div>
 
+         <div class="hero__swiper" data-aos="zoom-in">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        @foreach ($sliders as $slider)
+                        <div class="swiper-slide">
+                            <img src="{{ asset($slider->image) }}" alt="img">
+                            <div class="swiper-slide__info">
+                                <h1>{{ $slider->{'title_' . app()->getLocale()} }}</h1>
+                                <p>{{ $slider->{'description_' . app()->getLocale()} }}</p>
+                            </div>
+                        </div>
+                        @endforeach
+
+                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
-                <div class="swiper-pagination"></div>
             </div>
-        </div>
+         </div>
     </div>
 
     <main>
