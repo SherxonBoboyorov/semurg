@@ -1,6 +1,5 @@
 @extends('layouts.front')
 
-
 @section('content')
 
     <div class="hero hero-index">

@@ -30,81 +30,29 @@
                     <div class="kacko__info" data-aos="zoom-in">
                         <h3>Марка автомобиля</h3>
                         <div class="types">
+                          @foreach ($cars as $car)
                             <div class="types__item">
                                 <label>
                                     <input type="radio" name="kacko-el">
-                                    <span>KIA</span>
+                                    <span>{{ $car->type }}</span>
                                 </label>
                             </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>Chery</span>
-                                </label>
-                            </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>Renault</span>
-                                </label>
-                            </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>Skoda</span>
-                                </label>
-                            </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>Chevrolet</span>
-                                </label>
-                            </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>BYD</span>
-                                </label>
-                            </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>Hyundai</span>
-                                </label>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="line"></div>
                         <div class="btns odd-btn">
-                            <a href="./kacko2.html" class="btn-right btn form-btn">Далее</a>
+                             <a href="#!" class="btn-right btn form-btn">Далее</a>
                         </div>
                     </div>
                     <div class="kacko__result" data-aos="fade-up">
                         <h1>Результаты расчета</h1>
                         <ul class="res-list">
+                            @foreach($car->characters as $character)
                             <li class="res-list__item">
-                                <p>Сумма ответственности</p>
-                                <h4>1 200 000 сум</h4>
+                                <p>{{ $character->key }}</p>
+                                <h4>{{ $character->value }}</h4>
                             </li>
-                            <li class="res-list__item">
-                                <p>Страховая премия</p>
-                                <h4>3 399 000 сум</h4>
-                            </li>
-                            <li class="res-list__item">
-                                <p>Марка автомобиля</p>
-                                <h4>Chevrolet</h4>
-                            </li>
-                            <li class="res-list__item">
-                                <p>Модель автомобиля</p>
-                                <h4>Tracker</h4>
-                            </li>
-                            <li class="res-list__item">
-                                <p>Комплектация</p>
-                                <h4>TRK LS</h4>
-                            </li>
-                            <li class="res-list__item">
-                                <p>Год выпуска авто</p>
-                                <h4>2023</h4>
-                            </li>
+                            @endforeach
                         </ul>
                         <a href="./kacko-form.html" class="btn form-btn btn-right">Отправить заявку на оформление полиса</a>
                     </div>

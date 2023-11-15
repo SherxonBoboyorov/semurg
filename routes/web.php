@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\CarController;
 use App\Http\Controllers\Admin\CarouselController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ClientController;
@@ -93,7 +94,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'options' => OptionsController::class,
         'poll' => PollController::class,
         'feedback' => FeedbacksController::class,
-        'pollanswer' => PollAnswerController::class
+        'pollanswer' => PollAnswerController::class,
+        'car' => CarController::class
     ]);
 });
 
@@ -126,6 +128,7 @@ Route::group(
             // Route::get('outgoing-reinsurance', [OutgoingReinsuranceController::class, 'outgoingReinsurance'])->name('outgoing-reinsurance');
             Route::get('contact', [ContactController::class, 'contact'])->name('contact');
             Route::get('kacko', [KackoController::class, 'kacko'])->name('kacko');
+            Route::get('kacko/{id?}', [KackoController::class, 'show'])->name('kacko.show');
             Route::post('search_front', [SearchController::class, 'search'])->name('search_front');
             Route::post('/feedback-form', FeedbackController::class)->name('feedback-form.store');
     });
