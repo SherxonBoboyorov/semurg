@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\AutomobileModelController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CarController;
 use App\Http\Controllers\Admin\CarouselController;
@@ -95,7 +96,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'poll' => PollController::class,
         'feedback' => FeedbacksController::class,
         'pollanswer' => PollAnswerController::class,
-        'car' => CarController::class
+        'car' => CarController::class,
+        'automobilemodel' => AutomobileModelController::class
     ]);
 });
 

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\CreateAutomobileModel;
+use App\Http\Requests\Admin\UpdateAutomobileModel;
 use App\Models\AutomobileModel;
 use App\Models\Car;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class AutomobileModelController extends Controller
 {
@@ -35,9 +36,14 @@ class AutomobileModelController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreateAutomobileModel $request)
     {
-        //
+        $data = $request->all();
+
+        if (AutomobileModel::create($data)) {
+            return redirect()->route('automobilemodel.index')->with("message", "created successfully!!");
+        }
+        return redirect()->route('automobilemodel.index')->with("message", "failed to add successfully!!");
     }
 
     /**
@@ -63,9 +69,17 @@ class AutomobileModelController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateAutomobileModel $request, string $id)
     {
-        //
+        $automobilemodel = AutomobileModel::find($id);
+
+        $data = $request->all();
+
+        if ($automobilemodel->update($data)) {
+            return redirect()->route('automobilemodel.index')->with('message', 'updated successfully!!!');
+        }
+
+        return redirect()->route('automobilemodel.index')->with('message', 'failed to update successfully!!!');
     }
 
     /**
@@ -73,6 +87,12 @@ class AutomobileModelController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $automobilemodel = AutomobileModel::find($id);
+
+        if ($automobilemodel->delete()) {
+            return redirect()->route('automobilemodel.index')->with('message', "deleted successfully");
+        }
+
+        return redirect()->route('automobilemodel.index')->with('message', "failed to delete successfullt!!");
     }
 }

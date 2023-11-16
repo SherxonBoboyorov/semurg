@@ -9,10 +9,15 @@ class AutomobileModel extends Model
 {
     use HasFactory;
 
-    protected $table = 'automobilemodels';
+    protected $table = 'automobile_models';
 
     protected $fillable = [
         'car_id',
         'automobile_name'
     ];
+
+    public function car()
+    {
+        return $this->belongsTo(Car::class, 'car_id');
+    }
 }

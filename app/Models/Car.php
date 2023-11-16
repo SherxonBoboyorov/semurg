@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Car extends Model
 {
@@ -15,5 +14,10 @@ class Car extends Model
     protected $fillable = [
         'type'
     ];
+
+    public function automobilemodels()
+    {
+        return $this->hasMany(AutomobileModel::class, 'car_id');
+    }
 
 }
