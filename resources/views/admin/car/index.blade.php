@@ -8,13 +8,13 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">All Car</h4>
+                    <h4 class="page-title">All Automobile type</h4>
                 </div>
             </div>
             <div class="clearfix"></div>
         </div>
 
-             <a href="{{ route('car.create')}}" class="btn bg-success mb-2">Add Car +</a>
+             <a href="{{ route('car.create')}}" class="btn bg-success mb-2">Add Automobile type +</a>
 
         <div class="card">
             <div class="card-body">
@@ -34,7 +34,7 @@
                     <thead>
                         <tr>
                             <th style="width: 2%;">#</th>
-                            <th>Type [Uzbek]</th>
+                            <th>Automobile type</th>
                             <th colspan="2" style="width: 2%;">Actions</th>
                         </tr>
                     </thead>

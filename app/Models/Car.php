@@ -16,8 +16,4 @@ class Car extends Model
         'type'
     ];
 
-    public function characters(): HasMany
-    {
-        return $this->hasMany(CalculationResult::class, 'car_id', 'id');
-    }
 }

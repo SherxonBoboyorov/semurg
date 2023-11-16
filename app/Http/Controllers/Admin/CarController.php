@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\CalculationResult;
+use App\Http\Requests\Admin\CreateCar;
+use App\Http\Requests\Admin\UpdateCar;
 use App\Models\Car;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class CarController extends Controller
 {
@@ -30,29 +30,14 @@ class CarController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreateCar $request)
     {
-        $input = $request->all();
+        $data = $request->all();
 
-        Validator::make($input, [
-            'type' => 'required|max:255',
-        ])->validate();
-
-        $car = Car::create([
-            'type' => $input['type'],
-        ]);
-
-        if (isset($input['attributes']) && $input['attributes'] !== null && json_decode($input['attributes'], true)) {
-            foreach(json_decode($input['attributes'], true) as $attr) {
-                CalculationResult::create([
-                    'car_id' => $car->id,
-                    'key' => $attr['attr'],
-                    'value' => $attr['val_attr']
-                ]);
-            }
+        if(Car::create($data)) {
+            return redirect()->route('car.index')->with('message', "Created successfully!!");
         }
-
-        return redirect()->route('car.index')->with('message', "created successfully!!");
+        return redirect()->route('car.index')->with('message', "Failed to create successfully!!");
     }
 
     /**
@@ -75,29 +60,17 @@ class CarController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateCar $request, string $id)
     {
-        $input = $request->all();
-
-        Validator::make($input, [
-            'type' => 'required|max:255',
-        ])->validate();
-
         $car = Car::find($id);
 
-        $car->type = $input['type'];
+        $data = $request->all();
 
-        if (isset($input['attributes']) && $input['attributes'] !== null && json_decode($input['attributes'], true)) {
-            foreach(json_decode($input['attributes'], true) as $attr) {
-                CalculationResult::create([
-                    'car_id' => $car->id,
-                    'key' => $attr['key'],
-                    'value' => $attr['value']
-                ]);
-            }
+        if ($car->update($data)) {
+            return redirect()->route('car.index')->with('message', 'updated successfully!!');
         }
 
-        return redirect()->route('car.index')->with('message', "updated successfully!!");
+        return redirect()->route('car.index')->with('message', 'failed to update successfully!!');
     }
 
     /**
@@ -110,5 +83,7 @@ class CarController extends Controller
         if ($car->delete()) {
             return redirect()->route('car.index')->with('message', "deleted successfully!!");
         }
+
+        return redirect()->route('car.index')->with('message', "failed to delete successfully!!");
     }
 }

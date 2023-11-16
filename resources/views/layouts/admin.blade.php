@@ -373,6 +373,16 @@
 
                   <br>
 
+                     {{-- start  --}}
+                     <li class="nav-item">
+                        <a href="{{ route('car.index') }}" class="nav-link">
+                          <i class="nav-icon fas fa-envelope-open-text"></i>
+                           <p>
+                              KACKO
+                          </p>
+                         </a>
+                       </li>
+                      {{-- end  --}}
 
 
                 </ul>

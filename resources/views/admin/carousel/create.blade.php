@@ -87,7 +87,7 @@
                                 @endif
                             </div>
                         </div>
-    
+
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-12">
                                 <label for="content_en">Content [English]</label>
