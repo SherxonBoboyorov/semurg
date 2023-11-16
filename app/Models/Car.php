@@ -20,4 +20,9 @@ class Car extends Model
         return $this->hasMany(AutomobileModel::class, 'car_id');
     }
 
+    public function equipment()
+    {
+        return $this->hasMany(Equipment::class, 'car_id');
+    }
+
 }

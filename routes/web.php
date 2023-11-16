@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\ContactListController;
 use App\Http\Controllers\Admin\DirectorController;
+use App\Http\Controllers\Admin\EquipmentController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\FeedbacksController;
 use App\Http\Controllers\Admin\ForumController;
@@ -97,7 +98,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'feedback' => FeedbacksController::class,
         'pollanswer' => PollAnswerController::class,
         'car' => CarController::class,
-        'automobilemodel' => AutomobileModelController::class
+        'automobilemodel' => AutomobileModelController::class,
+        'equipment' => EquipmentController::class
     ]);
 });
 

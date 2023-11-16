@@ -376,7 +376,7 @@
                      {{-- start  --}}
                      <li class="nav-item">
                         <a href="{{ route('car.index') }}" class="nav-link">
-                          <i class="nav-icon fas fa-envelope-open-text"></i>
+                          <i class="nav-icon fas fa-car"></i>
                            <p>
                               Automobile Type
                           </p>
@@ -388,7 +388,7 @@
                       {{-- start  --}}
                      <li class="nav-item">
                         <a href="{{ route('automobilemodel.index') }}" class="nav-link">
-                          <i class="nav-icon fas fa-envelope-open-text"></i>
+                          <i class="nav-icon fas fa-car"></i>
                            <p>
                             Automobile Model
                           </p>
@@ -396,7 +396,17 @@
                        </li>
                       {{-- end  --}}
 
-                      automobilemodel
+                      {{-- start  --}}
+                     <li class="nav-item">
+                        <a href="{{ route('equipment.index') }}" class="nav-link">
+                          <i class="nav-icon fas fa-car"></i>
+                           <p>
+                            Automobile Name
+                          </p>
+                         </a>
+                       </li>
+                      {{-- end  --}}
+
 
 
                 </ul>
