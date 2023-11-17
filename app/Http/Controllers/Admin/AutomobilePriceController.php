@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\CreateAutomobilePrice;
+use App\Http\Requests\Admin\UpdateAutomobilePrice;
 use App\Models\AutomobileModel;
 use App\Models\AutomobilePrice;
 use App\Models\Car;
@@ -40,9 +42,14 @@ class AutomobilePriceController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreateAutomobilePrice $request)
     {
-        //
+        $data = $request->all();
+
+        if (AutomobilePrice::create($data)) {
+            return redirect()->route('automobileprice.index')->with("message", "created successfully!!");
+        }
+        return redirect()->route('automobileprice.index')->with("message", "failed to add successfully!!");
     }
 
     /**
@@ -56,17 +63,33 @@ class AutomobilePriceController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(AutomobilePrice $automobileprice)
     {
-        //
+        $car = Car::all();
+        $automobilemodel = AutomobileModel::all();
+        $equipment = Equipment::all();
+        return view('admin.automobileprice.edit', [
+            'car' => $car,
+            'automobilemodel' =>$automobilemodel,
+            'equipment' => $equipment,
+            'automobileprice' => $automobileprice
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateAutomobilePrice $request, string $id)
     {
-        //
+        $automobileprice = Equipment::find($id);
+
+        $data = $request->all();
+
+        if ($automobileprice->update($data)) {
+            return redirect()->route('automobileprice.index')->with('message', 'updated successfully!!!');
+        }
+
+        return redirect()->route('automobileprice.index')->with('message', 'failed to update successfully!!!');
     }
 
     /**
@@ -74,6 +97,12 @@ class AutomobilePriceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $automobileprice = AutomobilePrice::find($id);
+
+        if ($automobileprice->delete()) {
+            return redirect()->route('automobileprice.index')->with('message', "deleted successfully");
+        }
+
+        return redirect()->route('automobileprice.index')->with('message', "failed to delete successfullt!!");
     }
 }
