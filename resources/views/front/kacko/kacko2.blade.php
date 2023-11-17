@@ -30,50 +30,22 @@
                     <div class="kacko__info" data-aos="zoom-in">
                         <h3>Модель автомобиля</h3>
                         <div class="types">
+                            @foreach ($carmodels as $carmodel)
                             <div class="types__item">
                                 <label>
                                     <input type="radio" name="kacko-el">
-                                    <span>Tracker</span>
+                                    <span>{{ $carmodel->automobile_name }}</span>
                                 </label>
                             </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>Malibu</span>
-                                </label>
-                            </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>Tahoe</span>
-                                </label>
-                            </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>Equinox</span>
-                                </label>
-                            </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>Traverse</span>
-                                </label>
-                            </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>Onyx</span>
-                                </label>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="line"></div>
                         <div class="btns">
-                            <a href="./kacko.html" class="btn form-btn" id="prev">Назад</a>
+                            <a href="#!" class="btn form-btn" id="prev">Назад</a>
                             <a href="./kacko3.html" class="btn-right btn form-btn">Далее</a>
                         </div>
                     </div>
-                    <div class="kacko__result" data-aos="fade-up">
+                    {{-- <div class="kacko__result" data-aos="fade-up">
                         <h1>Результаты расчета</h1>
                         <ul class="res-list">
                             <li class="res-list__item">
@@ -102,7 +74,7 @@
                             </li>
                         </ul>
                         <a href="./kacko-form.html" class="btn form-btn btn-right">Отправить заявку на оформление полиса</a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>

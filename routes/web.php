@@ -135,8 +135,8 @@ Route::group(
             Route::get('reinsurance', [IncomingReinsuranceController::class, 'incomingReinsurance'])->name('reinsurance');
             // Route::get('outgoing-reinsurance', [OutgoingReinsuranceController::class, 'outgoingReinsurance'])->name('outgoing-reinsurance');
             Route::get('contact', [ContactController::class, 'contact'])->name('contact');
-            Route::get('kacko', [KackoController::class, 'kacko'])->name('kacko');
-            Route::get('kacko/{id?}', [KackoController::class, 'show'])->name('kacko.show');
+            Route::get('types', [KackoController::class, 'kacko'])->name('types');
+            Route::get('type/{id?}', [KackoController::class, 'show'])->name('type.show');
             Route::post('search_front', [SearchController::class, 'search'])->name('search_front');
             Route::post('/feedback-form', FeedbackController::class)->name('feedback-form.store');
     });
