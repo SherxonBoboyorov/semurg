@@ -30,7 +30,7 @@
                     background-color: #182B45;
                 }
             </style>
-            <span class="brand-text font-weight-light" style="margin-left: 88px">Semurg</span>
+            <span class="brand-text font-weight-light" style="margin-left: 77px">Semurg</span>
         </a>
         <div class="sidebar" style="background-color: #182B45">
             <nav class="mt-8" style="padding-bottom: 40px">
@@ -373,8 +373,62 @@
 
                   <br>
 
-                     {{-- start  --}}
-                     <li class="nav-item">
+                   {{-- start--}}
+                   <li class="nav-item">
+
+                    <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-car"></i>
+                    <p>
+                        KACKO
+                    </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                    <li class="nav-item">
+
+                    <li class="nav-item" >
+                      <a href="{{ route('car.index') }}" class="nav-link">
+                      <i class="nav-icon"></i>
+                      <p>
+                        Automobile Type
+                      </p>
+                      </a>
+                    </li>
+
+                   <li class="nav-item" >
+                    <a href="{{ route('automobilemodel.index') }}" class="nav-link">
+                    <i class="nav-icon"></i>
+                    <p>
+                        Automobile Model
+                    </p>
+                    </a>
+                  </li>
+
+                   <li class="nav-item" >
+                    <a href="{{ route('equipment.index') }}" class="nav-link">
+                    <i class="nav-icon"></i>
+                    <p>
+                        Automobile Name
+                    </p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item" >
+                    <a href="{{ route('automobileprice.index') }}" class="nav-link">
+                    <i class="nav-icon"></i>
+                    <p>
+                        Automobile Price
+                    </p>
+                    </a>
+                  </li>
+                </li>
+
+               </ul>
+             </li>
+                {{-- end  --}}
+                <br>
+
+                     {{-- <li class="nav-item">
                         <a href="{{ route('car.index') }}" class="nav-link">
                           <i class="nav-icon fas fa-car"></i>
                            <p>
@@ -382,10 +436,8 @@
                           </p>
                          </a>
                        </li>
-                      {{-- end  --}}
 
 
-                      {{-- start  --}}
                      <li class="nav-item">
                         <a href="{{ route('automobilemodel.index') }}" class="nav-link">
                           <i class="nav-icon fas fa-car"></i>
@@ -394,9 +446,7 @@
                           </p>
                          </a>
                        </li>
-                      {{-- end  --}}
 
-                      {{-- start  --}}
                      <li class="nav-item">
                         <a href="{{ route('equipment.index') }}" class="nav-link">
                           <i class="nav-icon fas fa-car"></i>
@@ -405,9 +455,7 @@
                           </p>
                          </a>
                        </li>
-                      {{-- end  --}}
 
-                       {{-- start  --}}
                      <li class="nav-item">
                         <a href="{{ route('automobileprice.index') }}" class="nav-link">
                           <i class="nav-icon fas fa-car"></i>
@@ -415,9 +463,7 @@
                             Automobile Price
                           </p>
                          </a>
-                       </li>
-                      {{-- end  --}}
-
+                       </li> --}}
                 </ul>
             </nav>
         </div>
@@ -436,17 +482,7 @@
 
 <script src="/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
 <script>
-     $(window).on('load', function () {
 
-if (feather) {
-    feather.replace({
-        width: 14,
-        height: 14
-    });
-}
-
-
-})
     $.widget.bridge('uibutton', $.ui.button)
 </script>
 <script src="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
