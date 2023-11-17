@@ -74,7 +74,7 @@
                                 </div>
                                 @endif
                             </div>
-                         </div><br>
+                         </div><br><br>
 
                         <div class="row">
                             <div class="col-md-4">

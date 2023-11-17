@@ -23,7 +23,7 @@ return new class extends Migration
             $table->unsignedBigInteger('equipment_id')->index();
             $table->foreign('equipment_id')->references('id')->on('equipment')->onDelete('CASCADE');
 
-            $table->integer('price');
+            $table->string('price');
 
             $table->timestamps();
         });

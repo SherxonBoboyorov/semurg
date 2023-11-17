@@ -81,7 +81,7 @@ class AutomobilePriceController extends Controller
      */
     public function update(UpdateAutomobilePrice $request, string $id)
     {
-        $automobileprice = Equipment::find($id);
+        $automobileprice = AutomobilePrice::find($id);
 
         $data = $request->all();
 

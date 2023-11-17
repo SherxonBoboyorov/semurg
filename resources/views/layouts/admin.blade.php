@@ -407,7 +407,16 @@
                        </li>
                       {{-- end  --}}
 
-
+                       {{-- start  --}}
+                     <li class="nav-item">
+                        <a href="{{ route('automobileprice.index') }}" class="nav-link">
+                          <i class="nav-icon fas fa-car"></i>
+                           <p>
+                            Automobile Price
+                          </p>
+                         </a>
+                       </li>
+                      {{-- end  --}}
 
                 </ul>
             </nav>

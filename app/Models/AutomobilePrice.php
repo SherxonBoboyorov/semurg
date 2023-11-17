@@ -17,4 +17,20 @@ class AutomobilePrice extends Model
         'equipment_id',
         'price'
     ];
+
+
+    public function car()
+    {
+        return $this->belongsTo(Car::class, 'car_id');
+    }
+
+    public function automobilemodel()
+    {
+        return $this->belongsTo(AutomobileModel::class, 'automobilemodel_id');
+    }
+
+    public function equipment()
+    {
+        return $this->belongsTo(Equipment::class, 'equipment_id');
+    }
 }

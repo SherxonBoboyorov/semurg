@@ -17,12 +17,17 @@ class Car extends Model
 
     public function automobilemodels()
     {
-        return $this->hasMany(AutomobileModel::class, 'car_id');
+        return $this->hasMany(AutomobileModel::class);
     }
 
     public function equipment()
     {
-        return $this->hasMany(Equipment::class, 'car_id');
+        return $this->hasMany(Equipment::class);
+    }
+
+    public function automobileprices()
+    {
+        return $this->hasMany(AutomobilePrice::class);
     }
 
 }

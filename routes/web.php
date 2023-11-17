@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\AutomobileModelController;
+use App\Http\Controllers\Admin\AutomobilePriceController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CarController;
 use App\Http\Controllers\Admin\CarouselController;
@@ -99,7 +100,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'pollanswer' => PollAnswerController::class,
         'car' => CarController::class,
         'automobilemodel' => AutomobileModelController::class,
-        'equipment' => EquipmentController::class
+        'equipment' => EquipmentController::class,
+        'automobileprice' => AutomobilePriceController::class
     ]);
 });
 

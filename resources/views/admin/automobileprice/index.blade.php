@@ -8,13 +8,13 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">All Automobile Name</h4>
+                    <h4 class="page-title">All Automobile Price</h4>
                 </div>
             </div>
             <div class="clearfix"></div>
         </div>
 
-             <a href="{{ route('equipment.create')}}" class="btn bg-success mb-2">Add Automobile Name +</a>
+             <a href="{{ route('automobileprice.create')}}" class="btn bg-success mb-2">Add Automobile Price +</a>
 
         <div class="card">
             <div class="card-body">
@@ -37,23 +37,25 @@
                             <th>Automobile Type</th>
                             <th>Automobile Model</th>
                             <th>Automobile Name</th>
+                            <th>Automobile Price</th>
                             <th colspan="2" style="width: 2%;">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($equipments as $equipment)
+                        @foreach ($automobileprices as $automobileprice)
                         <tr>
-                            <td>{{ $equipment->id }}</td>
-                            <td>{{ $equipment->car->type ?? "" }}</td>
-                            <td>{{ $equipment->automobilemodel->automobile_name ?? "" }}</td>
-                            <td>{{ $equipment->name }}</td>
+                            <td>{{ $automobileprice->id }}</td>
+                            <td>{{ $automobileprice->car->type ?? "" }}</td>
+                            <td>{{ $automobileprice->automobilemodel->automobile_name ?? "" }}</td>
+                            <td>{{ $automobileprice->equipment->name ?? "" }}</td>
+                            <td>{{ $automobileprice->price }}</td>
                             <td>
-                                <a href="{{ route('equipment.edit', $equipment->id) }}" class="btn btn-primary btn-icon">
+                                <a href="{{ route('automobileprice.edit', $automobileprice->id) }}" class="btn btn-primary btn-icon">
                                     <i class="fa fa-edit">Edit</i>
                                 </a>
                             </td>
                             <td>
-                                <form action="{{ route('equipment.destroy', $equipment->id) }}" method="POST">
+                                <form action="{{ route('automobileprice.destroy', $automobileprice->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-icon">
@@ -65,7 +67,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {!! $equipments->links() !!}
+                {!! $automobileprices->links() !!}
             </div>
         </div>
     </div>

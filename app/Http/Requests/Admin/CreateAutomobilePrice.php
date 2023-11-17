@@ -25,7 +25,7 @@ class CreateAutomobilePrice extends FormRequest
             'car_id' => 'required',
             'automobilemodel_id' => 'required',
             'equipment_id' => 'required',
-            'price' => 'required|max:50',
+            'price' => 'required|max:255',
         ];
     }
 }
