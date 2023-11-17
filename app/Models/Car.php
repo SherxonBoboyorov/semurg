@@ -30,4 +30,8 @@ class Car extends Model
         return $this->hasMany(AutomobilePrice::class);
     }
 
+    public function years()
+    {
+        return $this->hasMany(Year::class);
+    }
 }

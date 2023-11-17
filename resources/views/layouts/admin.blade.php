@@ -421,6 +421,15 @@
                     </p>
                     </a>
                   </li>
+
+                  <li class="nav-item" >
+                    <a href="{{ route('year.index') }}" class="nav-link">
+                    <i class="nav-icon"></i>
+                    <p>
+                        Automobile Year
+                    </p>
+                    </a>
+                  </li>
                 </li>
 
                </ul>

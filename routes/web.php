@@ -37,6 +37,7 @@ use App\Http\Controllers\Admin\StructureController;
 use App\Http\Controllers\Admin\TenderController;
 use App\Http\Controllers\Admin\UsefulController;
 use App\Http\Controllers\Admin\VacancyController;
+use App\Http\Controllers\Admin\YearController;
 use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\DocumentsController;
@@ -101,7 +102,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'car' => CarController::class,
         'automobilemodel' => AutomobileModelController::class,
         'equipment' => EquipmentController::class,
-        'automobileprice' => AutomobilePriceController::class
+        'automobileprice' => AutomobilePriceController::class,
+        'year' => YearController::class
     ]);
 });
 
