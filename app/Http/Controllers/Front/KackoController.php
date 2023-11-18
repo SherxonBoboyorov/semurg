@@ -11,7 +11,7 @@ class KackoController extends Controller
 {
     public function kacko() {
 
-        $cars = Car::orderBy('id')->get();
+        $cars = Car::with('automobilemodels')->orderBy('id')->get();
         return view('front.kacko.kacko', compact(
             'cars',
         ));

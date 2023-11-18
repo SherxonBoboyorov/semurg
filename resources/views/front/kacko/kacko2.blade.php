@@ -41,7 +41,7 @@
                         </div>
                         <div class="line"></div>
                         <div class="btns">
-                            <a href="#!" class="btn form-btn" id="prev">Назад</a>
+                            <a href="{{ route('types') }}" class="btn form-btn" id="prev">Назад</a>
                             <a href="./kacko3.html" class="btn-right btn form-btn">Далее</a>
                         </div>
                     </div>

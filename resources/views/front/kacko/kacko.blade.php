@@ -41,7 +41,7 @@
                         </div>
                         <div class="line"></div>
                         <div class="btns odd-btn">
-                               <a href="#!" class="btn-right btn form-btn">Далее</a>
+                               <a href="{{ route('type.show', ['id' => $car->id]) }}" class="btn-right btn form-btn">Далее</a>
                         </div>
                     </div>
                     {{-- <div class="kacko__result" data-aos="fade-up>
