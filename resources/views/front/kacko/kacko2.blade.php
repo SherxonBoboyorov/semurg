@@ -41,8 +41,8 @@
                         </div>
                         <div class="line"></div>
                         <div class="btns">
-                            <a href="{{ route('types') }}" class="btn form-btn" id="prev">Назад</a>
-                            <a href="#!" class="btn-right btn form-btn">Далее</a>
+                            <a href="{{ route('automobiletypes') }}" class="btn form-btn" id="prev">Назад</a>
+                            <a href="{{ route('kacko.automobilemodel', $carmodel->id) }}" class="btn-right btn form-btn">Далее</a>
                         </div>
                     </div>
                     {{-- <div class="kacko__result" data-aos="fade-up">

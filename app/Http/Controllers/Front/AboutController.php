@@ -15,7 +15,7 @@ class AboutController extends Controller
         $pages = Page::all();
         return view('front.about.about-us', compact(
             'directors',
-            'pages'
+            'pages',
         ));
     }
 }

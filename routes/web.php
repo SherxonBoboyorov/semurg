@@ -135,10 +135,14 @@ Route::group(
             Route::get('reinsurance', [IncomingReinsuranceController::class, 'incomingReinsurance'])->name('reinsurance');
             // Route::get('outgoing-reinsurance', [OutgoingReinsuranceController::class, 'outgoingReinsurance'])->name('outgoing-reinsurance');
             Route::get('contact', [ContactController::class, 'contact'])->name('contact');
-            Route::get('types', [KackoController::class, 'kacko'])->name('types');
-            Route::get('type/{id?}', [KackoController::class, 'show'])->name('type.show');
+            Route::get('automobiletypes', [KackoController::class, 'automobileType'])->name('automobiletypes');
+            Route::get('automobiletypes/{id?}', [KackoController::class, 'show'])->name('kacko.automobiletype');
+            Route::get('automobilemodel/{id?}', [KackoController::class, 'automobileModel'])->name('kacko.automobilemodel');
+            Route::get('automobileprice/{id?}', [KackoController::class, 'automobilePrice'])->name('kacko.automobileprice');
             Route::post('search_front', [SearchController::class, 'search'])->name('search_front');
             Route::post('/feedback-form', FeedbackController::class)->name('feedback-form.store');
+
+
     });
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {

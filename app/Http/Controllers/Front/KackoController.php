@@ -4,14 +4,16 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\AutomobileModel;
+use App\Models\AutomobilePrice;
 use App\Models\Car;
+use App\Models\Equipment;
 use Illuminate\Http\Request;
 
 class KackoController extends Controller
 {
-    public function kacko() {
+    public function automobileType() {
 
-        $cars = Car::with('automobilemodels')->orderBy('id')->get();
+        $cars = Car::all();
         return view('front.kacko.kacko', compact(
             'cars',
         ));
@@ -24,6 +26,26 @@ class KackoController extends Controller
         return view('front.kacko.kacko2', compact(
             'car',
             'carmodels'
+        ));
+    }
+
+    public function automobileModel($id)
+    {
+        $carmodel = AutomobileModel::find($id);
+        $equipments = Equipment::where('automobilemodel_id', $id)->get();
+        return view('front.kacko.kacko3', compact(
+            'carmodel',
+            'equipments'
+        ));
+    }
+
+    public function automobilePrice($id)
+    {
+        $equipment = Equipment::find($id);
+        $automobileprices = AutomobilePrice::where('equipment_id', $id)->get();
+        return view('front.kacko.kacko4', compact(
+            'equipment',
+            'automobileprices'
         ));
     }
 }

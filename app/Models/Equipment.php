@@ -22,7 +22,6 @@ class Equipment extends Model
         return $this->belongsTo(Car::class, 'car_id');
     }
 
-
     public function automobilemodel()
     {
         return $this->belongsTo(AutomobileModel::class, 'automobilemodel_id');

@@ -30,56 +30,22 @@
                     <div class="kacko__info" data-aos="zoom-in">
                         <h3>Комплектация</h3>
                         <div class="types">
+                          @foreach ($equipments as $equipment)
                             <div class="types__item">
                                 <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>TRK LS</span>
+                                    <input type="radio" value="{{ $equipment['id'] }}" name="kacko-el">
+                                    <span>{{ $equipment->name }}</span>
                                 </label>
                             </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>TRK Premier</span>
-                                </label>
-                            </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>TRK LTZ PLUS</span>
-                                </label>
-                            </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>TRK REDLINE</span>
-                                </label>
-                            </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>TRK LTZ</span>
-                                </label>
-                            </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>TRK LS PLUS</span>
-                                </label>
-                            </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>TRK Premier PLUS</span>
-                                </label>
-                            </div>
+                          @endforeach
                         </div>
                         <div class="line"></div>
                         <div class="btns">
-                            <a href="./kacko2.html" class="btn form-btn" id="prev">Назад</a>
-                            <a href="./kacko4.html" class="btn-right btn form-btn">Далее</a>
+                            <a href="{{ route('kacko.automobiletype', ['id' => 1]) }}" class="btn form-btn" id="prev">Назад</a>
+                            <a href="{{ route('kacko.automobileprice', $equipment->id) }}" class="btn-right btn form-btn">Далее</a>
                         </div>
                     </div>
-                    <div class="kacko__result" data-aos="fade-up">
+                    {{-- <div class="kacko__result" data-aos="fade-up">
                         <h1>Результаты расчета</h1>
                         <ul class="res-list">
                             <li class="res-list__item">
@@ -108,7 +74,7 @@
                             </li>
                         </ul>
                         <a href="./kacko-form.html" class="btn form-btn btn-right">Отправить заявку на оформление полиса</a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>
