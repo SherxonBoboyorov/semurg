@@ -19,7 +19,7 @@
                 <div class="kacko__top">
                     <h1>Отправить заявку на оформление полиса</h1>
                 </div>
-                <form action="" class="kacko-form__el">
+                <form action="#!" class="kacko-form__el">
                     <input class="base-input" type="text" placeholder="ФИО">
                     <input class="base-input" type="text" placeholder="Телефон">
                     <button class="form-btn">Отправить заявку</button>

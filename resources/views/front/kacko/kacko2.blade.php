@@ -42,7 +42,7 @@
                         <div class="line"></div>
                         <div class="btns">
                             <a href="{{ route('types') }}" class="btn form-btn" id="prev">Назад</a>
-                            <a href="./kacko3.html" class="btn-right btn form-btn">Далее</a>
+                            <a href="#!" class="btn-right btn form-btn">Далее</a>
                         </div>
                     </div>
                     {{-- <div class="kacko__result" data-aos="fade-up">

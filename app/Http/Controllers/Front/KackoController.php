@@ -26,5 +26,4 @@ class KackoController extends Controller
             'carmodels'
         ));
     }
-
 }
