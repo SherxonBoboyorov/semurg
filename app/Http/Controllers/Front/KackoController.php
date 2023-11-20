@@ -7,12 +7,13 @@ use App\Models\AutomobileModel;
 use App\Models\AutomobilePrice;
 use App\Models\Car;
 use App\Models\Equipment;
+use App\Models\Year;
 use Illuminate\Http\Request;
 
 class KackoController extends Controller
 {
-    public function automobileType() {
-
+    public function automobileType()
+    {
         $cars = Car::all();
         return view('front.kacko.kacko', compact(
             'cars',
@@ -48,4 +49,15 @@ class KackoController extends Controller
             'automobileprices'
         ));
     }
+
+    public function automobileYear($id)
+    {
+        $automobileprice = AutomobilePrice::find($id);
+        $years = Year::where('automobileprice_id', $id)->get();
+        return view('front.kacko.kacko5', compact(
+            'automobileprice',
+            'years'
+        ));
+    }
+
 }

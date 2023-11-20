@@ -28,19 +28,18 @@
                     <div class="kacko__info" data-aos="zoom-in">
                       <h3>Год выпуска авто</h3>
                         <div class="types">
-                          @foreach ($automobileprices as $automobileprice)
+                          @foreach ($years as $year)
                             <div class="types__item">
                                 <label>
                                     <input type="radio" name="kacko-el">
-                                    <span>{{ $automobileprice->price }}</span>
+                                    <span>{{ $year->year }}</span>
                                 </label>
                             </div>
                           @endforeach
                          </div>
                         <div class="line"></div>
                         <div class="btns">
-                            <a href="{{ route('kacko.automobilemodel', ['id' => 1]) }}" class="btn form-btn" id="prev">Назад</a>
-                            <a href="{{ route('kacko.automobileyear', $automobileprice->id) }}" class="btn-right btn form-btn">Далее</a>
+                            <a href="{{ route('kacko.automobileprice', ['id' => 1]) }}" class="btn form-btn" id="prev">Назад</a>
                         </div>
                     </div>
                     {{-- <div class="kacko__result" data-aos="fade-up">

@@ -139,6 +139,7 @@ Route::group(
             Route::get('automobiletypes/{id?}', [KackoController::class, 'show'])->name('kacko.automobiletype');
             Route::get('automobilemodel/{id?}', [KackoController::class, 'automobileModel'])->name('kacko.automobilemodel');
             Route::get('automobileprice/{id?}', [KackoController::class, 'automobilePrice'])->name('kacko.automobileprice');
+            Route::get('automobileyear/{id?}', [KackoController::class, 'automobileYear'])->name('kacko.automobileyear');
             Route::post('search_front', [SearchController::class, 'search'])->name('search_front');
             Route::post('/feedback-form', FeedbackController::class)->name('feedback-form.store');
 
