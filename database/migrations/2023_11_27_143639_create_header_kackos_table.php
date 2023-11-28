@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('header_kackos', function (Blueprint $table) {
             $table->id();
 
-            $table->string('image')->nullable();
+            $table->string('image');
             $table->string('icon')->nullable();
 
             $table->string('title_ru');
