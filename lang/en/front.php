@@ -61,7 +61,12 @@ return [
      'question4' => 'Financial statements',
      'question5' => 'Dividends',
      'question6' => 'Audit reports',
-     'question7' => 'Information on purchasing shares'
+     'question7' => 'Information on purchasing shares',
+     'full_name' => 'Full name',
+     'phone' => 'Phone',
+     'comment' => 'Comment',
+     'reinsurance' => 'Reinsurance'
+
 ]
 
 

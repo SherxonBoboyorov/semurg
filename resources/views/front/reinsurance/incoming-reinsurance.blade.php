@@ -6,17 +6,17 @@
         <div class="hero hero-crumb" data-aos="flip-up">
             <div class="container">
                 <div class="breadcrumb">
-                    <h1 class="title">@lang('front.incoming_reinsurance')</h1>
+                    <h1 class="title">@lang('front.reinsurance')</h1>
                     <ul>
                         <li><a href="{{ route('/') }}">@lang('front.home')</a></li>
-                        <li><a>@lang('front.incoming_reinsurance')</a></li>
+                        <li><a>@lang('front.reinsurance')</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <section id="incoming-reinsurance">
             <div class="container" data-aos="slide-up">
-                @foreach ($incomings as $incoming)     
+                @foreach ($incomings as $incoming)
                 <h6 class="text">{!! $incoming->{'content_' . app()->getLocale()} !!}</h6>
                 @endforeach
             </div>
@@ -25,7 +25,7 @@
                     <h1 class="title" id="incoming-reinsurance__title">@lang('front.our_international')</h1>
                     <div class="swiper2">
                         <div class="swiper-wrapper">
-                            @foreach ($partners as $partner) 
+                            @foreach ($partners as $partner)
                             <div class="swiper-slide">
                                 <img src="{{ asset($partner->image) }}" alt="">
                             </div>
@@ -36,7 +36,10 @@
                 </div>
             </div>
         </section>
-        
+
+
+        @include('alert')
+
         @include('layouts.feedback')
 
     </main>

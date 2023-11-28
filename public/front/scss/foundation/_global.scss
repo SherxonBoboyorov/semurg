@@ -7,7 +7,7 @@
     font-style: normal;
     list-style: none;
     text-decoration: none;
-    // outline: 1px solid crimson;
+    // outline: 1px solid red;
 }
 
 /* width */
@@ -639,8 +639,8 @@ textarea {
 
     &__row {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
 
         @include media(400px) {
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -656,16 +656,16 @@ textarea {
 
         .img {
             width: 100%;
-            height: 315px;
+            height: 280px;
             border-radius: 8px 8px 0px 0px;
             overflow: hidden;
 
             @include media(1024px) {
-                height: 290px;
+                height: 250px;
             }
 
             @include media(768px) {
-                height: 250px;
+                height: 225px;
             }
 
             @include media(550px) {
@@ -1113,7 +1113,7 @@ textarea {
 
             p {
                 font-weight: 700;
-                text-align: center;
+                text-align: start;
                 @include font(20, 22, $desc-color);
             }
 

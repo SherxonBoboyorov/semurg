@@ -12,8 +12,8 @@ class InsurancesController extends Controller
     public function insurancesProduct($id)
     {
         $menu = InsuranceCategory::where('id', $id)->get();
-        $insurancecategories = InsuranceCategory::all();
-        $insuranceproducts = InsuranceProduct::where('insurancecategory_id', $id)->get();
+        $insurancecategories = InsuranceCategory::orderBy('id')->get();
+        $insuranceproducts = InsuranceProduct::where('insurancecategory_id', $id)->orderBy('id')->get();
 
         return view('front.insurance-products.for-individuals', compact(
             'insurancecategories',

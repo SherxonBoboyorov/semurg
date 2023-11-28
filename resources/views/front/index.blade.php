@@ -1,107 +1,55 @@
 @extends('layouts.front')
 
+
 @section('content')
 
     <div class="hero hero-index">
-        <div class="hero__left">
+      <div class="container">
+         <div class="hero__left">
             <div class="hero__grid">
-                <div class="half half1" data-aos="slide-left">
-                    <img src="{{ asset('front/images/header-hero/hero-icon3.png') }}" alt="">
-                    <h2 class="heading2">Имущество и ответственность</h2>
-                    <button class="more-btn">
-                        <span>@lang('front.more_details')</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
-                            fill="none">
-                            <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="full full1" data-aos="slide-right">
-                    <img src="{{ asset('front/images/header-hero/hero-left-bg1.png') }}" alt="">
+                @foreach (\App\Models\InsuranceProduct::orderBy('id')->paginate(6) as $insuranceproduct)
+                <a href="{{ route('product', $insuranceproduct->id) }}" {!! $insuranceproduct->attribute !!}>
+                @if (str_contains($insuranceproduct->attribute, "half"))
+                    <img src="{!! asset($insuranceproduct->image) !!}" alt="img">
+                @else
+                    <img src="{!! asset($insuranceproduct->icon) !!}" alt="img">
                     <div class="full__info">
-                        <h2 class="heading2">Страхование грузов</h2>
-                        <button class="more-btn">
-                            <span>@lang('front.more_details')</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
-                                fill="none">
-                                <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </button>
+                @endif
+                     <h2 class="heading2">{{ $insuranceproduct->{'title_' . app()->getLocale()} }}</h2>
+                       <button class="more-btn">
+                           <span>@lang('front.more_details')</span>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
+                               fill="none">
+                               <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
+                                   stroke-linejoin="round" />
+                           </svg>
+                       </button>
+                       @if (str_contains($insuranceproduct->attribute, "full"))
                     </div>
-                </div>
-                <div class="full full2" data-aos="slide-left">
-                    <img src="{{ asset('front/images/header-hero/hero-left-bg2.png') }}" alt="">
-                    <div class="full__info">
-                        <h2 class="heading2">Автострахование</h2>
-                        <button class="more-btn">
-                            <span>@lang('front.more_details')</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
-                                fill="none">
-                                <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="half half2" data-aos="slide-right">
-                    <img src="{{ asset('front/images/header-hero/hero-icon2.png') }}" alt="">
-                    <h2 class="heading2">Сфера энергетики</h2>
-                    <button class="more-btn">
-                        <span>@lang('front.more_details')</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
-                            fill="none">
-                            <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="half half3" data-aos="zoom-in-left">
-                    <img src="{{ asset('front/images/header-hero/hero-icon1.png') }}" alt="">
-                    <h2 class="heading2">Агрострахование</h2>
-                    <button class="more-btn">
-                        <span>@lang('front.more_details')</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
-                            fill="none">
-                            <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="full full3" data-aos="zoom-in-right">
-                    <img src="{{ asset('front/images/header-hero/hero-left-bg3.png') }}" alt="">
-                    <div class="full__info">
-                        <h2 class="heading2">Страхование строительно-монтажных рисков</h2>
-                        <button class="more-btn">
-                            <span>@lang('front.more_details')</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
-                                fill="none">
-                                <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero__swiper" data-aos="zoom-in">
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    @foreach ($sliders as $slider)
-                    <div class="swiper-slide">
-                        <img src="{{ asset($slider->image) }}" alt="">
-                        <div class="swiper-slide__info">
-                            <h1>{{ $slider->{'title_' . App::getLocale()} }}</h1>
-                            <p>{{ $slider->{'description_' . App::getLocale()} }}</p>
+                    @endif
+                   </a>
+                   @endforeach
+               </div>
+         </div>
+
+         <div class="hero__swiper" data-aos="zoom-in">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        @foreach ($sliders as $slider)
+                        <div class="swiper-slide">
+                            <img src="{{ asset($slider->image) }}" alt="img">
+                            <div class="swiper-slide__info">
+                                <h1>{{ $slider->{'title_' . app()->getLocale()} }}</h1>
+                                <p>{{ $slider->{'description_' . app()->getLocale()} }}</p>
+                            </div>
                         </div>
+                        @endforeach
+
                     </div>
-                    @endforeach
-                    
+                    <div class="swiper-pagination"></div>
                 </div>
-                <div class="swiper-pagination"></div>
             </div>
-        </div>
+         </div>
     </div>
 
     <main>
@@ -109,12 +57,12 @@
             <div class="container">
                 <h1 class="title">@lang('front.about_us')</h1>
                 @foreach ($pages as $page)
-                    
+
                 <p class="text">
                     {!! $page->{'content_' . app()->getLocale()} !!}
                 </p>
                 <div class="about-company__map">
-                    <img src="{{ asset($page->image) }}" alt="">
+                    <img src="{{ asset($page->image) }}" alt="img">
                 </div>
                 @endforeach
 
@@ -124,7 +72,7 @@
         <section class="insurance-products" data-aos="fade-up">
             <div class="container">
                 <h1 class="title">@lang('front.insurance_products')</h1>
-                <div class="tab">
+                <div class="tab" id="categoryTab">
                     @foreach ($insurancecategories as $insurancecategory)
                     <button class="tablinks" onclick="openCity(event, 'category_{{ $insurancecategory->id }}')">{{ $insurancecategory->{'title_' . app()->getLocale()} }}</button>
                     @endforeach
@@ -142,9 +90,9 @@
                         @endforeach
                     </div>
                 @endforeach
-               
+
                 <div class="insurance-products__btn">
-                    <a href="{{ route('product.show', ['id' => 1]) }}">
+                    <a href="{{ route('product.show', 1) }}">
                     <button class="btn primary-btn">
                         @lang('front.all_products')
                     </button>
@@ -168,7 +116,7 @@
                 </div>
             </div>
         </section>
-       
+
         <section class="clients-choose" data-aos="flip-down" data-aos-duration="1500">
             <div class="container">
                 <div class="clients-choose__content">
@@ -184,7 +132,7 @@
                     <div class="swiper3 clients-choose__right">
                         <div class="swiper-wrapper">
                             @foreach ($carousels as $carousel)
-                                
+
                             <div class="swiper-slide">
                                 <div class="slide-top">
                                     <div class="img">
@@ -201,11 +149,11 @@
                 </div>
             </div>
         </section>
-        
-        <section class="news">
+
+        <section class="news news2">
             <div class="container">
                 <h1 class="title">@lang('front.news')</h1>
-                <div class="news__row">
+                <div class="news__row news2__row">
                   @foreach ($news as $new)
                     <a href="{{ route('new.show', $new->{'slug_' . app()->getLocale()}) }}" class="news__col" data-aos="slide-left">
                         <div class="img">
@@ -227,7 +175,7 @@
                     </svg>
                 </a>
             </div>
-        </section> 
+        </section>
 
         <section class="subscribe" data-aos="flip-up" data-aos-duration="1500">
             <div class="container">
@@ -246,7 +194,7 @@
                 <h1 class="title">@lang('front.useful_links')</h1>
                 <div class="useful-links__row">
                     @foreach ($usefuls as $useful)
-                        
+
                     <div class="useful-links__col" data-aos="slide-right">
                         <div class="img">
                             <img src="{{ asset($useful->image) }}" alt="">
@@ -254,7 +202,7 @@
                         <p class="card-desc">{{ $useful->{'title_' . app()->getLocale()} }}</p>
                         <a href="{{ $useful->link }}">{{ $useful->link }}</a>
                     </div>
-                    @endforeach                   
+                    @endforeach
                 </div>
             </div>
         </section>

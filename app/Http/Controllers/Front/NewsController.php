@@ -10,22 +10,22 @@ class NewsController extends Controller
 {
     public function list(){
 
-        $news = Article::orderBy('id')->paginate(8);
+        $news = Article::orderBy('id')->paginate(12);
         return view('front.press-center.news.list', compact(
             'news'
         ));
     }
- 
+
     public function show($slug) {
         $new = Article::where('slug_uz', $slug)
-        ->orWhere('slug_ru', $slug)
-        ->orWhere('slug_en', $slug)
-        ->first();
+            ->orWhere('slug_ru', $slug)
+            ->orWhere('slug_en', $slug)
+            ->first();
 
         return view('front.press-center.news.show', compact(
             'new',
         ));
-               
+
     }
 
 }

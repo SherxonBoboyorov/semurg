@@ -20,6 +20,11 @@ class PollAnswer extends Model
         'order'
     ];
 
+    public function poll()
+    {
+        return $this->belongsTo(Poll::class, 'poll_id');
+    }
+
     public function votes(): HasMany
     {
         return $this->hasMany(PollVotes::class, 'answer_id', 'id');

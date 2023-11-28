@@ -1,4 +1,4 @@
-@extends('layouts.front')
+{{-- @extends('layouts.front')
 
 @section('content')
 
@@ -16,7 +16,7 @@
         </div>
         <section id="incoming-reinsurance">
             <div class="container" data-aos="slide-up">
-                @foreach ($outgoings as $outgoing)  
+                @foreach ($outgoings as $outgoing)
                   <h6 class="text">{!! $outgoing->{'content_' . app()->getLocale()} !!}</h6>
                 @endforeach
             </div>
@@ -36,8 +36,11 @@
                 </div>
             </div>
         </section>
-        
+
+        @include('alert')
+
         @include('layouts.feedback')
+
     </main>
 
-    @endsection
+    @endsection --}}

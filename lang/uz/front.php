@@ -10,7 +10,7 @@ return [
    'company_structure' => 'Kompaniyaning tuzilishi',
    'insurance_products' => 'Sug\'urta mahsulotlari',
    'documents' => 'Hujjatlar',
-   'company_charter' => 'Ustav', 
+   'company_charter' => 'Ustav',
    'provisions' => 'Nizom qoidalar',
    'codex' => 'Kodeks',
    'shareholders_and_investors' => 'Aksiyadorlar va investorlar',
@@ -61,9 +61,11 @@ return [
    'question4' => 'Moliyaviy hisobot',
    'question5' => 'Dividendlar',
    'question6' => 'Audit hisobotlari',
-   'question7' => 'Aktsiyalarni sotib olish to\'g\'risida ma\'lumot'
-
-
+   'question7' => 'Aktsiyalarni sotib olish to\'g\'risida ma\'lumot',
+   'full_name' => 'To\'liq ism',
+   'phone' => 'Telefon',
+   'comment' => 'Izoh',
+   'reinsurance' => 'Qayta sug\'urtalash'
 
 ]
 

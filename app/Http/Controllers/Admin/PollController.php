@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\CreatePoll;
+use App\Http\Requests\Admin\UpdatePoll;
 use App\Models\Poll;
 use App\Models\PollAnswer;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -30,38 +33,19 @@ class PollController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreatePoll $request)
     {
-        $input = $request->all();
+        $data = $request->all();
 
-        Validator::make($input, [
-            'question_uz' => 'required|max:255',
-            'question_ru' => 'required|max:255',
-            'question_en' => 'required|max:255',
-        ])->validate();
-
-        $poll = Poll::create([
-            'question_uz' => $input['question_uz'],
-            'question_ru' => $input['question_ru'],
-            'question_en' => $input['question_en'],
-        ]);
-
-        if (isset($input['answers']) && $input['answers'] !== null && json_decode($input['answers'], true)) {
-            foreach(json_decode($input['answers'], true) as $answer) {
-                PollAnswer::create([
-                    'poll_id' => $poll->id,
-                    'answer_uz' => $answer['answer_uz'],
-                    'answer_ru' => $answer['answer_ru'],
-                    'answer_en' => $answer['answer_en'],
-                    'order' => $answer['order']
-                ]);
-            }
+        if (Poll::create($data)) {
+            return redirect()
+                   ->route('poll.index')
+                   ->with('message', 'added successfully!!');
         }
-
-        dd($request->all());
-
-
-        return redirect()->route('poll.index')->with('message', "Created successfully!!");
+        return redirect()
+               ->route('poll.index')
+               ->with('message', 'failed to add successfully!!');
+         return redirect()->route('poll.index')->with('message', "Created successfully!!");
 
     }
 
@@ -78,15 +62,28 @@ class PollController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $poll = Poll::find($id);
+        return view('admin.poll.edit', compact('poll'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdatePoll $request, string $id)
     {
-        //
+        $poll = Poll::find($id);
+
+        $data = $request->all();
+
+        if ($poll->update($data)) {
+            return redirect()
+                   ->route('poll.index')
+                   ->with('message', 'updated successfully!!');
+        }
+
+        return redirect()
+               ->route('poll.index')
+               ->with('message', 'failed to update successfully!!');
     }
 
     /**

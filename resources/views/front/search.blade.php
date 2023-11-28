@@ -38,13 +38,12 @@
         </div>
     </section>
 
-
-    <section class="news-page tenders">
+     <section class="news-page tenders">
         <div class="container">
             <div class="parent">
                 <div class="content news-page__content">
                     <div class="news__row">
-                      @foreach ($tenders as $tender)
+                       @foreach ($tenders as $tender)
                         <a href="{{ route('tender.show', $tender->{'slug_' . app()->getLocale()}) }}" style="display: block" class="news__col" data-aos="slide-left">
                             <div class="img">
                                 <img src="{{ asset($tender->image) }}" alt="">
@@ -66,11 +65,11 @@
     </section>
 
 
-    <section class="leadership-management">
+     <section class="leadership-management">
         <div class="container">
             <div class="parent">
                 <div class="content leadership-management__content">
-                    @foreach ($leaderships as $leadership)        
+                     @foreach ($leaderships as $leadership)
                     <div class="leadership-management__item" data-aos="slide-right">
                         <div class="leadership-management__item-img">
                             <img src="{{ asset($leadership->image) }}" alt="">
