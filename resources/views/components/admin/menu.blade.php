@@ -19,6 +19,13 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{ route('headerkacko.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-sliders-h"></i>
+                        <p>Header Calculator</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-list"></i>
                         <p>Kasko <i class="right fas fa-angle-left"></i></p>

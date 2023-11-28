@@ -19,6 +19,7 @@ class HeaderKacko extends Model
         'title_uz',
         'title_en',
         'attribute',
+        'link'
     ];
 
 

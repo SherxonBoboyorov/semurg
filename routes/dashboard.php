@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\DirectorController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\FeedbacksController;
 use App\Http\Controllers\Admin\ForumController;
+use App\Http\Controllers\Admin\HeaderKackoController;
 use App\Http\Controllers\Admin\HistoryController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\IncomingController;
@@ -70,6 +71,7 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'pollanswer' => PollAnswerController::class,
         'kasko_auto_brand' => KaskoAutoBrandController::class,
         'kasko_auto_model' => KaskoAutoModelController::class,
-        'kasko_auto_equipment' => KaskoAutoEquipmentController::class
+        'kasko_auto_equipment' => KaskoAutoEquipmentController::class,
+        'headerkacko' => HeaderKackoController::class
     ]);
 });

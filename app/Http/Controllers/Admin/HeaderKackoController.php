@@ -15,7 +15,7 @@ class HeaderKackoController extends Controller
      */
     public function index()
     {
-        $headerkackos = HeaderKacko::orderBy('id')->get();
+        $headerkackos = HeaderKacko::orderBy('id')->paginate(12);
         return view('admin.headerkacko.index', compact('headerkackos'));
     }
 
