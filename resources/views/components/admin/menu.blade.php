@@ -20,7 +20,7 @@
 
                 <li class="nav-item">
                     <a href="{{ route('headerkacko.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-sliders-h"></i>
+                        <i class="nav-icon fa-solid fa-calculator"></i>
                         <p>Header Calculator</p>
                     </a>
                 </li>
@@ -54,7 +54,7 @@
 
                 <li class="nav-item">
                     <a href="{{ route('kackobanner.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-sliders-h"></i>
+                        <i class="nav-icon fas fa-flag"></i>
                         <p>Kacko Banner</p>
                     </a>
                 </li>
@@ -62,7 +62,7 @@
 
                 <li class="nav-item">
                     <a href="{{ route('ocagobanner.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-sliders-h"></i>
+                        <i class="nav-icon fas fa-flag"></i>
                         <p>Ocago Banner</p>
                     </a>
                 </li>

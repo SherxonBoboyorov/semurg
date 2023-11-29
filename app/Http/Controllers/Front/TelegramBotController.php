@@ -23,19 +23,13 @@ class TelegramBotController extends Controller
             . "<b>Ф.И.О:</b> {$request->input('customer')}\n"
             . "<b>Телефон:</b> {$request->input('phone')}\n";
 
-        // Telegram::sendMessage([
-        //     'chat_id' => Config::get('telegram.telegram_channel_id'),
-        //     'parse_mode' => 'HTML',
-        //     'text' => $text
-        // ]);
-
-
-
-        dd($text);
+        Telegram::sendMessage([
+            'chat_id' => Config::get('telegram.telegram_channel_id'),
+            'parse_mode' => 'HTML',
+            'text' => $text
+        ]);
 
         return redirect('/');
     }
-
-
 
 }
