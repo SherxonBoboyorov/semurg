@@ -8,13 +8,13 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">All Kacko Banner</h4>
+                    <h4 class="page-title">All Ocago Banner</h4>
                 </div>
             </div>
             <div class="clearfix"></div>
         </div>
 
-             <a href="{{ route('kackobanner.create')}}" class="btn bg-success mb-2">Add Kacko Banner +</a>
+             <a href="{{ route('ocagobanner.create')}}" class="btn bg-success mb-2">Add Ocago Banner +</a>
 
 
         <div class="card">
@@ -43,22 +43,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($kackobanners as $kackobanner)
+                        @foreach ($ocagobanners as $ocagobanner)
                         <tr>
-                            <td>{{ $kackobanner->id }}</td>
+                            <td>{{ $ocagobanner->id }}</td>
                             <td>
-                                <img src="{{ asset($kackobanner->image) }}" alt="" width="35" height="35">
+                                <img src="{{ asset($ocagobanner->image) }}" alt="" width="35" height="35">
                             </td>
-                            <td>{{ $kackobanner->title_uz }}</td>
-                            <td>{{ $kackobanner->title_ru }}</td>
-                            <td>{{ $kackobanner->title_en }}</td>
+                            <td>{{ $ocagobanner->title_uz }}</td>
+                            <td>{{ $ocagobanner->title_ru }}</td>
+                            <td>{{ $ocagobanner->title_en }}</td>
                             <td>
-                                <a href="{{ route('kackobanner.edit', $kackobanner->id) }}" class="btn btn-primary btn-icon">
+                                <a href="{{ route('ocagobanner.edit', $ocagobanner->id) }}" class="btn btn-primary btn-icon">
                                     <i class="fa fa-edit">Edit</i>
                                 </a>
                             </td>
                             <td>
-                                <form action="{{ route('kackobanner.destroy', $kackobanner->id) }}" method="POST">
+                                <form action="{{ route('ocagobanner.destroy', $ocagobanner->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-icon">

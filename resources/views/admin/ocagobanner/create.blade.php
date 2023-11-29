@@ -15,7 +15,7 @@
         </div>
 
         <!-- end page title end breadcrumb -->
-        <form action="{{ route('kackobanner.store') }}" enctype="multipart/form-data" method="POST">
+        <form action="{{ route('ocagobanner.store') }}" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="card">
                 <div class="card-body">
@@ -103,6 +103,7 @@
                             </div>
                         </div><br><br>
 
+
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-12">
                                 <label for="footercontent_uz">Footer Content [Uzbek]</label>
@@ -146,6 +147,8 @@
                                 @endif
                             </div>
                         </div><br><br>
+
+
 
                          <div class="row" style="margin-top: 15px">
                             <div class="col-md-6">

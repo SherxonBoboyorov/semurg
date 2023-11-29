@@ -26,6 +26,7 @@ use App\Http\Controllers\Admin\KaskoAutoModelController;
 use App\Http\Controllers\Admin\LeadershipController;
 use App\Http\Controllers\Admin\LicensesCategoryController;
 use App\Http\Controllers\Admin\LicensesDocumentController;
+use App\Http\Controllers\Admin\OcagoBannerController;
 use App\Http\Controllers\Admin\OptionsController;
 use App\Http\Controllers\Admin\OutgoingController;
 use App\Http\Controllers\Admin\PageController;
@@ -74,6 +75,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'kasko_auto_model' => KaskoAutoModelController::class,
         'kasko_auto_equipment' => KaskoAutoEquipmentController::class,
         'headerkacko' => HeaderKackoController::class,
-        'kackobanner' => KackoBannerController::class
+        'kackobanner' => KackoBannerController::class,
+        'kackobanner' => KackoBannerController::class,
+        'ocagobanner' => OcagoBannerController::class
     ]);
 });

@@ -178,79 +178,18 @@
         <div class="kacko-modal hidden">
             <div class="kacko-modal__form">
                 <h1>Заявка на оформление полиса</h1>
-                <form action="{{ route('kaskoRegister') }}" id="kaskoForm" class="kacko-modal__form-el" method="POST">
-                    @csrf
-                    <input type="hidden" name="kasko_year" value="{{ $_COOKIE['kasko_year'] }}">
-                    <input type="hidden" name="equipment" value="{{ $_COOKIE['equipment_name'] }}">
-                    <input type="hidden" name="insurancePremium" value="{{ $_COOKIE['insurancePremium'] }}">
-                    <input type="hidden" name="amountLiability" value="{{ $_COOKIE['amountLiability'] }}">
-                    <input type="hidden" name="model_name" value="{{ $_COOKIE['model_name'] }}">
-                    <input type="hidden" name="brand_name" value="{{ $_COOKIE['brand_name'] }}">
-                    <input class="base-input" name="customer" type="text" placeholder="ФИО" required>
-                    <input class="base-input" name="phone" type="tel" placeholder="Телефон" required>
-                    <button onclick="closeKackoModel()" type="submit" class="form-btn">Отправить заявку</button>
+                <form action="" class="kacko-modal__form-el">
+                    <input class="base-input" type="text" placeholder="ФИО">
+                    <input class="base-input" type="text" placeholder="Номер телефона">
+                    <button onclick="closeKackoModal()" class="form-btn">Оформить Заявку</button>
                 </form>
             </div>
         </div>
 
-        <section class="about-insurance">
-            <div class="about-insurance__main">
-                <div class="container">
-                    <div class="about-insurance__main-left">
-                        <h1>Почувствуйте уверенность в завтрашнем дне</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="about-insurance__main-right">
-                        <div class="img">
-                            <img src="{{ asset('front/images/kacko/about-inc-img.png') }}" alt="about-inc-img">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="about-insurance__info">
-                <div class="container">
-                    <h1 class="title3">Страхование в Узбекистане</h1>
-                    <p class="text">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium
-                        doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi
-                        architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit,
-                        aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem
-                        sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur,
-                        adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam
-                        aliquam quaerat voluptatem.</p>
-                </div>
-            </div>
-        </section>
+        @include('layouts/ocagobanner')
+
     </main>
 
 @endsection
 
-@section('custom_js')
-<script>
-    var cookies = [
-        'kasko_year',
-        'equipment_name',
-        'insurancePremium',
-        'amountLiability',
-        'model_name',
-        'brand_id',
-        'model_id',
-        'equipment_id',
-        'brand_name'
-    ];
-
-    submitForm = document.getElementById("kaskoForm");
-
-    submitForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        for (var item in cookies) {
-            document.cookie = cookies[item] + "= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
-        }
-
-        submitForm.submit();
-    });
-
-</script>
-@endsection
 

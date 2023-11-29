@@ -15,7 +15,7 @@
         </div>
 
         <!-- end page title end breadcrumb -->
-        <form action="{{ route('kackobanner.update', $kackobanner->id) }}" enctype="multipart/form-data" method="POST">
+        <form action="{{ route('ocagobanner.update', $ocagobanner->id) }}" enctype="multipart/form-data" method="POST">
             @csrf
             @method('PUT')
             <div class="card">
@@ -23,7 +23,7 @@
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-4">
                             <label for="title_uz">Title [Uzbek]</label>
-                            <input type="text" id="title_uz" value="{{ $kackobanner->title_uz }}" class="form-control" name="title_uz">
+                            <input type="text" id="title_uz" value="{{ $ocagobanner->title_uz }}" class="form-control" name="title_uz">
                             @if($errors->has('title_uz'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-md-4">
                             <label for="title_ru">Title [Russian]</label>
-                            <input type="text" id="title_ru" value="{{ $kackobanner->title_ru }}" class="form-control" name="title_ru">
+                            <input type="text" id="title_ru" value="{{ $ocagobanner->title_ru }}" class="form-control" name="title_ru">
                             @if($errors->has('title_ru'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -47,7 +47,7 @@
                         </div>
                         <div class="col-md-4">
                             <label for="title_en">Title [English]</label>
-                            <input type="text" id="title_en" value="{{ $kackobanner->title_en }}" class="form-control" name="title_en">
+                            <input type="text" id="title_en" value="{{ $ocagobanner->title_en }}" class="form-control" name="title_en">
                             @if($errors->has('title_en'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -62,7 +62,7 @@
                      <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
                             <label for="content_uz">Content [Uzbek]</label>
-                            <textarea name="content_uz" class="my-editor" id="content_uz" cols="30" rows="10">{{ $kackobanner->content_uz }}</textarea>
+                            <textarea name="content_uz" class="my-editor" id="content_uz" cols="30" rows="10">{{ $ocagobanner->content_uz }}</textarea>
                             @if($errors->has('content_uz'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -76,7 +76,7 @@
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
                             <label for="content_ru">Content [Russian]</label>
-                            <textarea name="content_ru" class="my-editor" id="content_ru" cols="30" rows="10">{{ $kackobanner->content_ru }}</textarea>
+                            <textarea name="content_ru" class="my-editor" id="content_ru" cols="30" rows="10">{{ $ocagobanner->content_ru }}</textarea>
                             @if($errors->has('content_ru'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -91,7 +91,7 @@
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
                             <label for="content_en">Content [English]</label>
-                            <textarea name="content_en" class="my-editor" id="content_en" cols="30" rows="10">{{ $kackobanner->content_en }}</textarea>
+                            <textarea name="content_en" class="my-editor" id="content_en" cols="30" rows="10">{{ $ocagobanner->content_en }}</textarea>
                             @if($errors->has('content_en'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -103,11 +103,10 @@
                         </div>
                     </div><br><br>
 
-
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
                             <label for="footercontent_uz">Footer Content [Uzbek]</label>
-                            <textarea name="footercontent_uz" class="my-editor" id="footercontent_uz" cols="30" rows="10">{{ $kackobanner->footercontent_uz }}</textarea>
+                            <textarea name="footercontent_uz" class="my-editor" id="footercontent_uz" cols="30" rows="10">{{ $ocagobanner->footercontent_uz }}</textarea>
                             @if($errors->has('footercontent_uz'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -121,7 +120,7 @@
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
                             <label for="footercontent_ru">Footer Content [Russian]</label>
-                            <textarea name="footercontent_ru" class="my-editor" id="footercontent_ru" cols="30" rows="10">{{ $kackobanner->footercontent_ru }}</textarea>
+                            <textarea name="footercontent_ru" class="my-editor" id="footercontent_ru" cols="30" rows="10">{{ $ocagobanner->footercontent_ru }}</textarea>
                             @if($errors->has('footercontent_ru'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -136,7 +135,7 @@
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
                             <label for="footercontent_en">Footer Content [English]</label>
-                            <textarea name="footercontent_en" class="my-editor" id="footercontent_en" cols="30" rows="10">{{ $kackobanner->footercontent_en }}</textarea>
+                            <textarea name="footercontent_en" class="my-editor" id="footercontent_en" cols="30" rows="10">{{ $ocagobanner->footercontent_en }}</textarea>
                             @if($errors->has('footercontent_en'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -162,7 +161,7 @@
                             @endif
                         </div>
                         <div class="col-md-6">
-                            <img src="{{ asset($kackobanner->image) }}" width="150" height="150" alt="">
+                            <img src="{{ asset($ocagobanner->image) }}" width="150" height="150" alt="">
                         </div>
                     </div><br>
 

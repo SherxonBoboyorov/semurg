@@ -40,6 +40,6 @@ class KaskoController extends Controller
 
     public function registerPolicy()
     {
-        return view('front.kasko.accident-insurance-sports');
+        return view('front.kasko.ocago');
     }
 }

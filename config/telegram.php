@@ -32,7 +32,7 @@ return [
     */
     'bots' => [
         'mybot' => [
-            'token' => env('TELEGRAM_BOT_TOKEN', '6134600852:AAHkzonkSkANoBQe3lbdJ_hZ6Me0yFIqIY8'),
+            'token' => env('TELEGRAM_BOT_TOKEN', '6850001317:AAEm1GjMfFQ0JwAzpXipSSgzeXUJ3WS78gw'),
             'certificate_path' => env('TELEGRAM_CERTIFICATE_PATH', 'YOUR-CERTIFICATE-PATH'),
             'webhook_url' => env('TELEGRAM_WEBHOOK_URL', 'YOUR-BOT-WEBHOOK-URL'),
             'commands' => [
@@ -212,5 +212,5 @@ return [
         // 'status' => Acme\Project\Commands\StatusCommand::class,
     ],
 
-    // 'telegram_channel_id' => "-1002103305110"
+    'telegram_channel_id' => "-1002103305110"
 ];

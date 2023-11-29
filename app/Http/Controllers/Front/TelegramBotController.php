@@ -23,31 +23,19 @@ class TelegramBotController extends Controller
             . "<b>Ф.И.О:</b> {$request->input('customer')}\n"
             . "<b>Телефон:</b> {$request->input('phone')}\n";
 
-        Telegram::sendMessage([
-            'chat_id' => Config::get('telegram.telegram_channel_id'),
-            'parse_mode' => 'HTML',
-            'text' => $text
-        ]);
+        // Telegram::sendMessage([
+        //     'chat_id' => Config::get('telegram.telegram_channel_id'),
+        //     'parse_mode' => 'HTML',
+        //     'text' => $text
+        // ]);
+
+
+
+        dd($text);
 
         return redirect('/');
     }
 
 
-    public static function send($to, $subject, $message, $from = null, $attachments = [])
-    {
-        $to = trim($to);
-        $from = $from ?: config('mail.email_address');
-
-        Mail::send([], [], function ($message) use ($to, $subject, $message, $from, $attachments) {
-            $message->to($to)
-                ->subject($subject)
-                ->from($from)
-                ->setBody($message, '');
-
-            foreach ($attachments as $attachment) {
-                $message->attach($attachment);
-            }
-        });
-    }
 
 }

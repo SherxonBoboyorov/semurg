@@ -13,13 +13,14 @@ class KackoMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $data;
 
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($request)
     {
-        //
+        $this->data = $request;
     }
 
     /**
@@ -28,7 +29,7 @@ class KackoMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Kacko Mail',
+            subject: 'Kacko Mail ',
         );
     }
 
@@ -38,7 +39,7 @@ class KackoMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'mail.kackomail',
         );
     }
 
@@ -52,3 +53,5 @@ class KackoMail extends Mailable
         return [];
     }
 }
+
+

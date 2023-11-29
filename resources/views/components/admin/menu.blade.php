@@ -53,6 +53,21 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{ route('kackobanner.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-sliders-h"></i>
+                        <p>Kacko Banner</p>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a href="{{ route('ocagobanner.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-sliders-h"></i>
+                        <p>Ocago Banner</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{ route('insurancecategory.index') }}" class="nav-link">
                         <i class="nav-icon fa-solid fa-arrow-down-wide-short"></i>
                         <p>Insurance Category</p>

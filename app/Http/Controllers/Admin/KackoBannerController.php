@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\CreateKackoBanner;
+use App\Http\Requests\Admin\UpdateKackoBanner;
 use App\Models\KackoBanner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -29,7 +31,7 @@ class KackoBannerController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreateKackoBanner $request)
     {
         $data = $request->all();
 
@@ -61,7 +63,7 @@ class KackoBannerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateKackoBanner $request, string $id)
     {
         $kackobanner = KackoBanner::find($id);
 

@@ -11,7 +11,7 @@ class UpdateKackoBanner extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,15 @@ class UpdateKackoBanner extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title_ru' => 'required|string|max:255',
+            'title_uz' => 'required|string|max:255',
+            'title_en' => 'required|string|max:255',
+            'content_ru' => 'required|string',
+            'content_uz' => 'required|string',
+            'content_en' => 'required|string',
+            'footercontent_ru' => 'required|string',
+            'footercontent_uz' => 'required|string',
+            'footercontent_en' => 'required|string',
         ];
     }
 }

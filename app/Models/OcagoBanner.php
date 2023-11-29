@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 
-class KackoBanner extends Model
+class OcagoBanner extends Model
 {
     use HasFactory;
 
-    protected $table = 'kacko_banners';
+    protected $table = 'ocago_banners';
 
     protected $fillable = [
         'image',
@@ -34,39 +34,39 @@ class KackoBanner extends Model
 
             $request->file('image')
                 ->move(
-                    public_path() . '/upload/kackobanner/' . date('d-m-Y'),
+                    public_path() . '/upload/ocagobanner/' . date('d-m-Y'),
                     $request->file('image')->getClientOriginalName()
                 );
-            return '/upload/kackobanner/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+            return '/upload/ocagobanner/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
         }
 
         return null;
     }
 
-    public static function updateImage($request, $kackobanner): string
+    public static function updateImage($request, $ocagobanner): string
     {
         if ($request->hasFile('image')) {
-            if (File::exists(public_path() . $kackobanner->image)) {
-                File::delete(public_path() . $kackobanner->image);
+            if (File::exists(public_path() . $ocagobanner->image)) {
+                File::delete(public_path() . $ocagobanner->image);
             }
 
             self::checkDirectory();
 
             $request->file('image')
                 ->move(
-                    public_path() . '/upload/kackobanner/' . date('d-m-Y'),
+                    public_path() . '/upload/ocagobanner/' . date('d-m-Y'),
                     $request->file('image')->getClientOriginalName()
                 );
-            return '/upload/kackobanner/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+            return '/upload/ocagobanner/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
         }
 
-        return $kackobanner->image;
+        return $ocagobanner->image;
     }
 
     private static function checkDirectory(): bool
     {
-        if (!File::exists(public_path() . '/upload/kackobanner/' . date('d-m-Y'))) {
-            File::makeDirectory(public_path() . '/upload/kackobanner/' . date('d-m-Y'), $mode = 0777, true, true);
+        if (!File::exists(public_path() . '/upload/ocagobanner/' . date('d-m-Y'))) {
+            File::makeDirectory(public_path() . '/upload/ocagobanner/' . date('d-m-Y'), $mode = 0777, true, true);
         }
 
         return true;
