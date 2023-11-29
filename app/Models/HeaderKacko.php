@@ -22,8 +22,6 @@ class HeaderKacko extends Model
         'link'
     ];
 
-
-
     public static function uploadImage($request): ?string
     {
         if ($request->hasFile('image')) {

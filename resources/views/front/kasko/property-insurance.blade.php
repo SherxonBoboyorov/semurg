@@ -6,10 +6,10 @@
         <div class="hero hero-crumb" data-aos="flip-up">
             <div class="container">
                 <div class="breadcrumb">
-                    <h1 class="title">Страхование от несчастныx случаев Спорт</h1>
+                    <h1 class="title">Страхование имущества</h1>
                     <ul>
-                        <li><a href="../index/index.html">Главная</a></li>
-                        <li><a href="./accident-insurance-sports.html">Страхование от несчастныx случаев Спорт</a></li>
+                        <li><a href="{{ route('/') }}">Главная</a></li>
+                        <li><a href="./property-insurance.html">Страхование имущества</a></li>
                     </ul>
                 </div>
             </div>
@@ -28,96 +28,61 @@
                 </div>
                 <div class="kacko__content">
                     <div class="kacko__info accident-insurance__info" data-aos="zoom-in">
-                        <ul class="add-family-member">
-                            <li class="information">
-                                <label>
-                                    <span>Укажите возраст</span>
-                                    <input class="base-input" type="date">
-                                </label>
-                                <label>
-                                    <span>Добавить спортсмена</span>
-                                    <div>
-                                        <button onclick="addFamilyMemberItem()" class="add-member-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                viewBox="0 0 20 20" fill="none">
-                                                <path
-                                                    d="M0 10C0 9.07952 0.746192 8.33333 1.66667 8.33333H18.3333C19.2538 8.33333 20 9.07952 20 10C20 10.9205 19.2538 11.6667 18.3333 11.6667H1.66667C0.746192 11.6667 0 10.9205 0 10Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M10 0C10.9205 4.02352e-08 11.6667 0.746192 11.6667 1.66667V18.3333C11.6667 19.2538 10.9205 20 10 20C9.07952 20 8.33333 19.2538 8.33333 18.3333L8.33333 1.66667C8.33333 0.746192 9.07952 -4.02352e-08 10 0Z"
-                                                    fill="white" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </label>
-                            </li>
-                            <li class="information hidden" id="add-family-member-item2">
-                                <label>
-                                    <input class="base-input" type="date">
-                                </label>
-                                <label>
-                                    <div class="add-member-btns">
-                                        <button class="add-member-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                viewBox="0 0 20 20" fill="none">
-                                                <path
-                                                    d="M0 10C0 9.07952 0.746192 8.33333 1.66667 8.33333H18.3333C19.2538 8.33333 20 9.07952 20 10C20 10.9205 19.2538 11.6667 18.3333 11.6667H1.66667C0.746192 11.6667 0 10.9205 0 10Z"
-                                                    fill="white" />
-                                                <path
-                                                    d="M10 0C10.9205 4.02352e-08 11.6667 0.746192 11.6667 1.66667V18.3333C11.6667 19.2538 10.9205 20 10 20C9.07952 20 8.33333 19.2538 8.33333 18.3333L8.33333 1.66667C8.33333 0.746192 9.07952 -4.02352e-08 10 0Z"
-                                                    fill="white" />
-                                            </svg>
-                                        </button>
-                                        <button onclick="removeFamilyMemberItem()" class="add-member-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                viewBox="0 0 20 20" fill="none">
-                                                <path
-                                                    d="M0 10C0 9.07952 0.746192 8.33333 1.66667 8.33333H18.3333C19.2538 8.33333 20 9.07952 20 10C20 10.9205 19.2538 11.6667 18.3333 11.6667H1.66667C0.746192 11.6667 0 10.9205 0 10Z"
-                                                    fill="white" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </label>
-                            </li>
-                        </ul>
-                        <div class="line"></div>
-                        <div class="information">
-                            <label class="max-money">
-                                <span>Вид спорта</span>
-                               <div class="information__select base-input">
-                                <select name="" id="">
-                                    <option value="">Вид спорта</option>
-                                    <option value="">Вид спорта2</option>
-                                    <option value="">Вид спорта3</option>
-                                </select>
-                                <div class="abso">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none">
-                                        <path d="M0.999999 0.999999L9 9.03347L17 1" stroke="#0B4848" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                      </svg>
-                                </div>
-                               </div>
-                            </label>
-                        </div>
-                        <div class="line"></div>
-                        <h3 class="types-name">Срок действия полиса</h3>
+                        <h3>Что будет застраховано</h3>
                         <div class="types">
                             <div class="types__item">
                                 <label>
                                     <input type="radio" name="kacko-el">
-                                    <span>6 месяцев</span>
+                                    <span>Квартира</span>
                                 </label>
                             </div>
                             <div class="types__item">
                                 <label>
                                     <input type="radio" name="kacko-el">
-                                    <span>12 месяцев</span>
+                                    <span>Дом</span>
                                 </label>
                             </div>
                         </div>
                         <div class="line"></div>
                         <div class="information">
                             <label class="max-money">
-                                <span>Максимальная сумма покрытия</span>
+                                <span>Где находится недвижимость?</span>
+                                <div class="information__select base-input">
+                                    <select name="" id="">
+                                        <option value="">Ташкент</option>
+                                        <option value="">Фергана</option>
+                                        <option value="">Андижан</option>
+                                    </select>
+                                    <div class="abso">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"
+                                            viewBox="0 0 18 11" fill="none">
+                                            <path d="M0.999999 0.999999L9 9.03347L17 1" stroke="#0B4848"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="line"></div>
+                        <h3 class="property-insurance-title">Что будет застраховано</h3>
+                        <ul class="property-insurance-list">
+                            <li>Чрезвычайная ситуация</li>
+                            <li>Механическое воздействие</li>
+                            <li>Падение летательных аппаратов и
+                                их частей</li>
+                            <li>Противоправные действия третьих
+                                лиц</li>
+                            <li> Взрывы</li>
+                            <li>Стихийные бедствия</li>
+                            <li>Залив</li>
+                                <li>Удар молнии</li>
+                            <li>Падение посторонних предметов</li>
+                            <li>Пожар</li>
+                        </ul>
+                        <div class="line"></div>
+                        <div class="information">
+                            <label class="max-money">
+                                <span>Внутренняя отделка и инженерное оборудование</span>
                                 <input class="base-input" type="text">
                             </label>
                         </div>
@@ -127,35 +92,45 @@
                                 <span>20 000 000</span>
                             </div>
                             <div class="range-slider">
-                                <input class="maximum-coverage-amount__input slider" type="range" value="8000000" min="1000000" max="20000000" step="1">
+                                <input class="maximum-coverage-amount__input slider" type="range" value="8000000"
+                                    min="1000000" max="20000000" step="1">
                                 <div class="slider-thumb">
                                     <div class="tooltip"></div>
                                 </div>
                                 <div class="progress"></div>
                             </div>
                         </div>
-                        <div class="line"></div>
-                        <div class="btns odd-btn">
-                            <a href="#" class="btn-right btn form-btn">Далее</a>
+                        <div class="property-insurance-term">
+                            <h3 class="types-name">Срок действия полиса</h3>
+                            <div class="types">
+                                <div class="types__item">
+                                    <label>
+                                        <input type="radio" name="kacko-el">
+                                        <span>6 месяцев</span>
+                                    </label>
+                                </div>
+                                <div class="types__item">
+                                    <label>
+                                        <input type="radio" name="kacko-el">
+                                        <span>12 месяцев</span>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="kacko__result" data-aos="fade-up">
                         <h1>Результаты расчета</h1>
                         <ul class="res-list">
                             <li class="res-list__item">
-                                <p>Число персон</p>
-                                <h4>1</h4>
+                                <p>Жилое помещение</p>
+                                <h4>Квартира</h4>
                             </li>
                             <li class="res-list__item">
-                                <p>Возраст</p>
-                                <h4>26.05.1994</h4>
+                                <p>Регион</p>
+                                <h4>Ташкент</h4>
                             </li>
                             <li class="res-list__item">
-                                <p>Вид спорта</p>
-                                <h4>Альпинизм</h4>
-                            </li>
-                            <li class="res-list__item">
-                                <p>Сумма покрытия</p>
+                                <p>Внутренняя отделка и инженерное оборудование</p>
                                 <h4>5 000 000 сум</h4>
                             </li>
                             <li class="res-list__item">
@@ -175,23 +150,23 @@
             </div>
         </section>
 
-        <div class="kacko-modal hidden">
-            <div class="kacko-modal__form">
-                <h1>Заявка на оформление полиса</h1>
-                <form action="{{ route('kaskoRegister') }}" id="kaskoForm" class="kacko-modal__form-el" method="POST">
-                    @csrf
-                    <input type="hidden" name="kasko_year" value="{{ $_COOKIE['kasko_year'] }}">
-                    <input type="hidden" name="equipment" value="{{ $_COOKIE['equipment_name'] }}">
-                    <input type="hidden" name="insurancePremium" value="{{ $_COOKIE['insurancePremium'] }}">
-                    <input type="hidden" name="amountLiability" value="{{ $_COOKIE['amountLiability'] }}">
-                    <input type="hidden" name="model_name" value="{{ $_COOKIE['model_name'] }}">
-                    <input type="hidden" name="brand_name" value="{{ $_COOKIE['brand_name'] }}">
-                    <input class="base-input" name="customer" type="text" placeholder="ФИО" required>
-                    <input class="base-input" name="phone" type="tel" placeholder="Телефон" required>
-                    <button onclick="closeKackoModel()" type="submit" class="form-btn">Отправить заявку</button>
-                </form>
-            </div>
+        <div class="kacko-modal__form">
+            <h1>Заявка на оформление полиса</h1>
+            <form action="{{ route('kaskoRegister') }}" id="kaskoForm" class="kacko-modal__form-el" method="POST">
+                @csrf
+                <input type="hidden" name="kasko_year" value="{{ $_COOKIE['kasko_year'] }}">
+                <input type="hidden" name="equipment" value="{{ $_COOKIE['equipment_name'] }}">
+                <input type="hidden" name="insurancePremium" value="{{ $_COOKIE['insurancePremium'] }}">
+                <input type="hidden" name="amountLiability" value="{{ $_COOKIE['amountLiability'] }}">
+                <input type="hidden" name="model_name" value="{{ $_COOKIE['model_name'] }}">
+                <input type="hidden" name="brand_name" value="{{ $_COOKIE['brand_name'] }}">
+                <input class="base-input" name="customer" type="text" placeholder="ФИО" required>
+                <input class="base-input" name="phone" type="tel" placeholder="Телефон" required>
+                <button onclick="closeKackoModel()" type="submit" class="form-btn">Отправить заявку</button>
+            </form>
         </div>
+    </div>
+
 
         <section class="about-insurance">
             <div class="about-insurance__main">

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Mail\KackoMail;
 use Illuminate\Support\Facades\Config;
 use Telegram\Bot\Laravel\Facades\Telegram;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class TelegramBotController extends Controller
 {
@@ -26,7 +28,26 @@ class TelegramBotController extends Controller
             'parse_mode' => 'HTML',
             'text' => $text
         ]);
- 
+
         return redirect('/');
     }
+
+
+    public static function send($to, $subject, $message, $from = null, $attachments = [])
+    {
+        $to = trim($to);
+        $from = $from ?: config('mail.email_address');
+
+        Mail::send([], [], function ($message) use ($to, $subject, $message, $from, $attachments) {
+            $message->to($to)
+                ->subject($subject)
+                ->from($from)
+                ->setBody($message, '');
+
+            foreach ($attachments as $attachment) {
+                $message->attach($attachment);
+            }
+        });
+    }
+
 }

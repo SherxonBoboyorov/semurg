@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\IncomingController;
 use App\Http\Controllers\Admin\InsuranceCategoryController;
 use App\Http\Controllers\Admin\InsuranceProductController;
 use App\Http\Controllers\Admin\InternationalController;
+use App\Http\Controllers\Admin\KackoBannerController;
 use App\Http\Controllers\Admin\KaskoAutoBrandController;
 use App\Http\Controllers\Admin\KaskoAutoEquipmentController;
 use App\Http\Controllers\Admin\KaskoAutoModelController;
@@ -72,6 +73,7 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'kasko_auto_brand' => KaskoAutoBrandController::class,
         'kasko_auto_model' => KaskoAutoModelController::class,
         'kasko_auto_equipment' => KaskoAutoEquipmentController::class,
-        'headerkacko' => HeaderKackoController::class
+        'headerkacko' => HeaderKackoController::class,
+        'kackobanner' => KackoBannerController::class
     ]);
 });

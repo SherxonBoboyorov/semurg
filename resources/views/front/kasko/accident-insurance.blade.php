@@ -6,10 +6,10 @@
         <div class="hero hero-crumb" data-aos="flip-up">
             <div class="container">
                 <div class="breadcrumb">
-                    <h1 class="title">Страхование от несчастныx случаев Спорт</h1>
+                    <h1 class="title">Страхование от несчастныx случаев</h1>
                     <ul>
-                        <li><a href="../index/index.html">Главная</a></li>
-                        <li><a href="./accident-insurance-sports.html">Страхование от несчастныx случаев Спорт</a></li>
+                        <li><a href="{{ route('/') }}">Главная</a></li>
+                        <li><a href="./accident-insurance.html">Страхование от несчастныx случаев</a></li>
                     </ul>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                                     <input class="base-input" type="date">
                                 </label>
                                 <label>
-                                    <span>Добавить спортсмена</span>
+                                    <span>Добавить члена семьи</span>
                                     <div>
                                         <button onclick="addFamilyMemberItem()" class="add-member-btn">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -81,38 +81,15 @@
                             </li>
                         </ul>
                         <div class="line"></div>
-                        <div class="information">
-                            <label class="max-money">
-                                <span>Вид спорта</span>
-                               <div class="information__select base-input">
-                                <select name="" id="">
-                                    <option value="">Вид спорта</option>
-                                    <option value="">Вид спорта2</option>
-                                    <option value="">Вид спорта3</option>
-                                </select>
-                                <div class="abso">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none">
-                                        <path d="M0.999999 0.999999L9 9.03347L17 1" stroke="#0B4848" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                      </svg>
-                                </div>
-                               </div>
+                        <div class="information wrapped">
+                            <label>
+                                <span>Дата начала страховки</span>
+                                <input class="base-input" type="date">
                             </label>
-                        </div>
-                        <div class="line"></div>
-                        <h3 class="types-name">Срок действия полиса</h3>
-                        <div class="types">
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>6 месяцев</span>
-                                </label>
-                            </div>
-                            <div class="types__item">
-                                <label>
-                                    <input type="radio" name="kacko-el">
-                                    <span>12 месяцев</span>
-                                </label>
-                            </div>
+                            <label>
+                                <span>Конечная дата страховки</span>
+                                <input class="base-input" type="date" disabled>
+                            </label>
                         </div>
                         <div class="line"></div>
                         <div class="information">
@@ -151,8 +128,12 @@
                                 <h4>26.05.1994</h4>
                             </li>
                             <li class="res-list__item">
-                                <p>Вид спорта</p>
-                                <h4>Альпинизм</h4>
+                                <p>Дата начала</p>
+                                <h4>26.10.2023</h4>
+                            </li>
+                            <li class="res-list__item">
+                                <p>Дата окончания</p>
+                                <h4>26.10.2024</h4>
                             </li>
                             <li class="res-list__item">
                                 <p>Сумма покрытия</p>
@@ -160,11 +141,11 @@
                             </li>
                             <li class="res-list__item">
                                 <p>Срок действия полиса</p>
-                                <h4>6 месяцев</h4>
+                                <h4>12 месяцев</h4>
                             </li>
                             <li class="res-list__item">
                                 <p>Стоимость полиса:</p>
-                                <h4 class="res">100 000 сум</h4>
+                                <h4 class="res">16 000 сум</h4>
                             </li>
                         </ul>
                         <button onclick="openKackoModal()" class="btn form-btn btn-right">

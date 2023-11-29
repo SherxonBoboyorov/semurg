@@ -12,7 +12,7 @@ use Illuminate\Support\Number;
 
 class KaskoController extends Controller
 {
-    public function kaskoStart() 
+    public function kaskoStart()
     {
         $brands = KaskoAutoBrand::orderByDesc('created_at')->get();
         $models = KaskoAutoModel::all();
@@ -28,17 +28,18 @@ class KaskoController extends Controller
     public function calculationAmount(Request $request): JsonResponse
     {
         $kaskoEquipment = KaskoAutoEquipment::find($request->input('equipment_id'));
+
         $amountLiability = $kaskoEquipment->price - ($kaskoEquipment->price / 100 * ((date('Y') - $request->input('year')) * 10));
         $insurancePremium = $amountLiability / 100 * $kaskoEquipment->tariff;
-        
+
         return response()->json([
             'amountLiability' => Number::currency($amountLiability, in: "UZS", locale: "uz"),
             'insurancePremium' => Number::currency($insurancePremium, in: "UZS", locale: "uz")
         ]);
     }
 
-    public function registerPolicy() 
+    public function registerPolicy()
     {
-        return view('front.kasko.kacko-form');
+        return view('front.kasko.accident-insurance-sports');
     }
 }
