@@ -84,50 +84,50 @@ class InsuranceProduct extends Model
     }
 
 
-    public static function uploadIcon($request): ?string
-    {
-        if ($request->hasFile('icon')) {
+    // public static function uploadIcon($request): ?string
+    // {
+    //     if ($request->hasFile('icon')) {
 
-            self::checkDirectory();
+    //         self::checkDirectory();
 
-            $request->file('icon')
-                ->move(
-                    public_path() . '/upload/insuranceproducticon/' . date('d-m-Y'),
-                    $request->file('icon')->getClientOriginalName()
-                );
-            return '/upload/insuranceproducticon/' . date('d-m-Y') . '/' . $request->file('icon')->getClientOriginalName();
-        }
+    //         $request->file('icon')
+    //             ->move(
+    //                 public_path() . '/upload/insuranceproducticon/' . date('d-m-Y'),
+    //                 $request->file('icon')->getClientOriginalName()
+    //             );
+    //         return '/upload/insuranceproducticon/' . date('d-m-Y') . '/' . $request->file('icon')->getClientOriginalName();
+    //     }
 
-        return null;
-    }
+    //     return null;
+    // }
 
-    public static function updateIcon($request, $insuranceproducticon): string
-    {
-        if ($request->hasFile('icon')) {
-            if (File::exists(public_path() . $insuranceproducticon->icon)) {
-                File::delete(public_path() . $insuranceproducticon->icon);
-            }
+    // public static function updateIcon($request, $insuranceproducticon): string
+    // {
+    //     if ($request->hasFile('icon')) {
+    //         if (File::exists(public_path() . $insuranceproducticon->icon)) {
+    //             File::delete(public_path() . $insuranceproducticon->icon);
+    //         }
 
-            self::checkDirectory();
+    //         self::checkDirectory();
 
-            $request->file('icon')
-                ->move(
-                    public_path() . '/upload/insuranceproducticon/' . date('d-m-Y'),
-                    $request->file('icon')->getClientOriginalName()
-                );
-            return '/upload/insuranceproducticon/' . date('d-m-Y') . '/' . $request->file('icon')->getClientOriginalName();
-        }
+    //         $request->file('icon')
+    //             ->move(
+    //                 public_path() . '/upload/insuranceproducticon/' . date('d-m-Y'),
+    //                 $request->file('icon')->getClientOriginalName()
+    //             );
+    //         return '/upload/insuranceproducticon/' . date('d-m-Y') . '/' . $request->file('icon')->getClientOriginalName();
+    //     }
 
-        return $insuranceproducticon->icon;
-    }
+    //     return $insuranceproducticon->icon;
+    // }
 
-    private static function checkDirectoryIcon(): bool
-    {
-        if (!File::exists(public_path() . '/upload/insuranceproducticon/' . date('d-m-Y'))) {
-            File::makeDirectory(public_path() . '/upload/insuranceproducticon/' . date('d-m-Y'), $mode = 0777, true, true);
-        }
+    // private static function checkDirectoryIcon(): bool
+    // {
+    //     if (!File::exists(public_path() . '/upload/insuranceproducticon/' . date('d-m-Y'))) {
+    //         File::makeDirectory(public_path() . '/upload/insuranceproducticon/' . date('d-m-Y'), $mode = 0777, true, true);
+    //     }
 
-        return true;
-    }
+    //     return true;
+    // }
 }
 

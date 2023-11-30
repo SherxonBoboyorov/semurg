@@ -39,7 +39,7 @@
                         <div class="swiper-slide">
                             <img src="{{ asset($slider->image) }}" alt="img">
                             <div class="swiper-slide__info">
-                                <h1>{{ $slider->{'title_' . app()->getLocale()} }}</h1>
+                                <a href="{{ $slider->link }}"><h1>{{ $slider->{'title_' . app()->getLocale()} }}</h1></a>
                                 <p>{{ $slider->{'description_' . app()->getLocale()} }}</p>
                             </div>
                         </div>

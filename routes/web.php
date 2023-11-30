@@ -55,8 +55,8 @@ Route::group([
     Route::get('vacancies', [VacancysController::class, 'vacancies'])->name('vacancies');
     Route::get('history-company', [HistoryCompanysController::class, 'historyCompany'])->name('history-company');
     Route::get('leadership-management', [ManagementController::class, 'leadershipManagement'])->name('leadership-management');
-    Route::get('products/{id?}', [InsurancesController::class, 'insurancesProduct'])->name('product.show');
-    Route::get('product/{id?}', [InsurancesController::class, 'show'])->name('product');
+    Route::get('/products/{id?}', [InsurancesController::class, 'insurancesProduct'])->name('product.show');
+    Route::get('/product/{id?}', [InsurancesController::class, 'show'])->name('product');
     Route::get('documents/{id?}', [DocumentsController::class, 'document'])->name('document.show');
     Route::get('reinsurance', [IncomingReinsuranceController::class, 'incomingReinsurance'])->name('reinsurance');
     // Route::get('outgoing-reinsurance', [OutgoingReinsuranceController::class, 'outgoingReinsurance'])->name('outgoing-reinsurance');

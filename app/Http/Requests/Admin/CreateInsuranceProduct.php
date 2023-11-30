@@ -25,8 +25,8 @@ class CreateInsuranceProduct extends FormRequest
     {
         return [
             'insurancecategory_id' => 'required',
-            'image' => 'required|image|mimes:png,jpg,jpeg,wepb,svg',
-            'icon' => 'required|image|mimes:png,jpg,jpeg,wepb',
+            'image' => 'nullable|image|mimes:png,jpg,jpeg,wepb,svg',
+            'icon' => 'nullable|image|mimes:png,jpg,jpeg,wepb',
             'attribute' => 'required|string|max:255',
             'title_ru' => 'required|string|max:255',
             'title_uz' => 'required|string|max:255',
