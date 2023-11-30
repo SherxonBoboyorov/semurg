@@ -13,7 +13,6 @@ class KackoEmailController extends Controller
 {
     public function __invoke(Request $request)
     {
-
         $data = $request->all();
 
         $text = "<b>Новый заказ для Каско</b>\n\n"

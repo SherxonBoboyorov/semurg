@@ -29,7 +29,7 @@ class KackoMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Kacko Mail ',
+            subject: 'Новый заказ для Каско',
         );
     }
 
