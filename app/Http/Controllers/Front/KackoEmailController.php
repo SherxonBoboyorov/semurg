@@ -13,6 +13,9 @@ class KackoEmailController extends Controller
 {
     public function __invoke(Request $request)
     {
+
+        $data = $request->all();
+
         $text = "<b>Новый заказ для Каско</b>\n\n"
             . "<b>Сумма ответственности:</b> {$request->input('amountLiability')}\n"
             . "<b>Страховая премия:</b> {$request->input('insurancePremium')}\n"
@@ -29,10 +32,7 @@ class KackoEmailController extends Controller
             'text' => $text
         ]);
 
-        $sendToEmail = strtolower('sherxonbabayar@gmail.com');
-		if(isset($sendToEmail) && !empty($sendToEmail) && filter_var($sendToEmail, FILTER_VALIDATE_EMAIL)){
-			Mail::to($sendToEmail)->send(new KackoMail($text));
-		}
+		Mail::to('online@semurgins.uz')->send(new KackoMail($data));
 
         return redirect('/');
     }
