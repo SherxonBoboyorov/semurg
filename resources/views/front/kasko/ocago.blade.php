@@ -135,7 +135,7 @@
     <div class="kacko-modal hidden">
             <div class="kacko-modal__form">
                 <h1>Заявка на оформление полиса</h1>
-                <form action="{{ route('kaskoRegister') }}" id="kaskoForm" class="kacko-modal__form-el" method="POST">
+                <form action="{{ route('feedback-form.store') }}" id="kaskoForm" class="kacko-modal__form-el" method="POST">
                     @csrf
                     <input type="hidden" name="kasko_year" value="{{ $_COOKIE['kasko_year'] }}">
                     <input type="hidden" name="equipment" value="{{ $_COOKIE['equipment_name'] }}">

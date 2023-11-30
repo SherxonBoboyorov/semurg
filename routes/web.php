@@ -15,6 +15,7 @@ use App\Http\Controllers\Front\HistoryCompanysController;
 use App\Http\Controllers\Front\IncomingReinsuranceController;
 use App\Http\Controllers\Front\IndexController;
 use App\Http\Controllers\Front\InsurancesController;
+use App\Http\Controllers\Front\KackoEmailController;
 use App\Http\Controllers\Front\KaskoController;
 use App\Http\Controllers\Front\LicensesCertificatesController;
 use App\Http\Controllers\Front\ManagementController;
@@ -67,9 +68,10 @@ Route::group([
     Route::get('accident-insurance', [OcagoController::class, 'accidentInsurance'])->name('ocago.accident-insurance');
     Route::get('accident-insurance-sports', [OcagoController::class, 'accidentInsuranceSports'])->name('ocago.accident-insurance-sports');
     Route::get('property-insurance', [OcagoController::class, 'propertyInsurance'])->name('ocago.property-insurance');
-    Route::post('kasko_register', [TelegramBotController::class, 'storeKaskoMessage'])->name('kaskoRegister');
+    // Route::post('kasko_register', [TelegramBotController::class, 'storeKaskoMessage'])->name('kaskoRegister');
     Route::post('search_front', [SearchController::class, 'search'])->name('search_front');
-    Route::post('/feedback-form', FeedbackController::class)->name('feedback-form.store');
+    Route::post('/feedback-form', KackoEmailController::class)->name('feedback-form.store');
+    Route::post('/kasko_register-form', FeedbackController::class)->name('kasko-form.store');
 });
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {

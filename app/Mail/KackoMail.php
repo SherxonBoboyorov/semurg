@@ -13,14 +13,14 @@ class KackoMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $data;
+    public $text;
 
     /**
      * Create a new message instance.
      */
     public function __construct($request)
     {
-        $this->data = $request;
+        $this->text = $request;
     }
 
     /**
