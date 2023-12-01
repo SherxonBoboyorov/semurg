@@ -47,7 +47,7 @@ class InsuranceProductController extends Controller
         $data = $request->all();
 
         $data['image'] = InsuranceProduct::uploadImage($request);
-        $data['icon'] = InsuranceProduct::uploadIcon($request);
+        // $data['icon'] = InsuranceProduct::uploadIcon($request);
 
         if (InsuranceProduct::create($data)) {
             return redirect()->route('insuranceproduct.index')->with('message', "added successfully!!");

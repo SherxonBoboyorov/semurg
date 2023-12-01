@@ -29,6 +29,7 @@ class InsuranceProduct extends Model
         'meta_description_ru',
         'meta_description_uz',
         'meta_description_en',
+        'order'
     ];
 
     public function insurancecategory()

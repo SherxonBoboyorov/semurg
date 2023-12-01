@@ -32,6 +32,7 @@ class UpdateInsuranceProduct extends FormRequest
             'content_ru' => 'required|string',
             'content_uz' => 'required|string',
             'content_en' => 'required|string',
+            'order' => 'nullable|numeric',
         ];
     }
 }

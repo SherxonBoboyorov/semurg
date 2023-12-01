@@ -221,6 +221,13 @@
                             </div>
                         </div><br>
 
+                        <div class="form-check">
+                            <input name="order" class="form-check-input" type="checkbox" value="1" id="flexCheckChecked" >
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Home Page
+                            </label>
+                        </div><br><br>
+
                          <div class="row" style="margin-top: 15px">
                             <div class="col-md-6">
                                 <label for="image">Image</label>
