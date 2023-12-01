@@ -80,7 +80,7 @@
 
                 @foreach ($insurancecategories as $insurancecategory)
                     <div id="category_{{ $insurancecategory->id }}" class="tab-content">
-                        @foreach($insurancecategory->insuranceproducts as $insuranceproduct)
+                        @foreach($insurancecategory->insuranceproducts->take(6) as $insuranceproduct)
                         <a href="{{ route('product', $insuranceproduct->id) }}" class="tab-content__item" data-aos="slide-right">
                             <div class="img-item">
                                 <img src="{{ asset($insuranceproduct->image) }}" alt="">
@@ -162,7 +162,7 @@
                         <div class="news__col-txt">
                             <h6 class="date">{{  date('d.m.Y', strtotime($new->created_at)) }}</h6>
                             <h3 class="card-title">{{ $new->{'title_' . app()->getLocale()} }}</h3>
-                            <h6 class="desc">{!! $new->{'content_' . app()->getLocale()} !!}</h6>
+                            <h6 class="desc">{!! (mb_substr($new->{'content_' . app()->getLocale()}, 0, 120)) !!}</h6>
                         </div>
                     </a>
                     @endforeach

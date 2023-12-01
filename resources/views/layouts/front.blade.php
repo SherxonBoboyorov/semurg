@@ -56,7 +56,7 @@
                             </ul>
                         </li>
                         <li class="relative">
-                            <button class="nav__list-link {{ (\Request::route()->getName() == 'product.show') ? 'active' : '' }}" {{ (\Request::route()->getName() == 'products') ? 'active' : '' }}>@lang('front.insurance_products')</button>
+                            <button class="nav__list-link {{ (\Request::route()->getName() == 'product.show') ? 'active' : '' }}">@lang('front.insurance_products')</button>
                             <ul class="submenu">
                                 @foreach (\App\Models\InsuranceCategory::orderBy('id')->get() as $insurancecategory)
                                 <li>
