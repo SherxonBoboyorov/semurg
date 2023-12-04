@@ -31,7 +31,7 @@
                             @foreach ($cars as $car)
                             <div class="types__item">
                                 <label>
-                                    <input type="radio" name="type">
+                                    <input id="type" type="radio" value="{{ $car['id'] }}" data-id="" name="type">
                                     <span>{{ $car->type }}</span>
                                 </label>
                             </div>
@@ -46,5 +46,12 @@
             </div>
         </section>
     </main>
+
+@endsection
+@section('custom_js')
+
+<script>
+
+</script>
 
 @endsection

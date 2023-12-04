@@ -65,7 +65,19 @@ return [
      'full_name' => 'Full name',
      'phone' => 'Phone',
      'comment' => 'Comment',
-     'reinsurance' => 'Reinsurance'
+     'reinsurance' => 'Reinsurance',
+     'casco' => 'Casco',
+     'calculate_the_cost_of_your_insurance_policy' => 'Calculate the cost of your insurance policy',
+     'calculation_results' => 'Calculation results',
+     'amount_of_liability' => 'Amount of liability',
+     'insurance_premium' => 'Insurance premium',
+     'car_model' => 'car model',
+     'automobile_model' => 'Automobile model',
+     'equipment' => 'Equipment',
+     'year_of_manufacture_of_the_car' => 'Year of manufacture of the car',
+     'send_an_application_for_a_policy' => 'Send an application for a policy',
+     'back' => 'Back',
+     'further' => 'Further'
 
 ]
 

@@ -6,9 +6,11 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "intl": "*",
         "butschster/meta-tags": "^2.2",
         "guzzlehttp/guzzle": "^7.2",
         "intervention/image": "^2.7",
+        "irazasyed/telegram-bot-sdk": "^3.13",
         "laravel/fortify": "^1.13",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",

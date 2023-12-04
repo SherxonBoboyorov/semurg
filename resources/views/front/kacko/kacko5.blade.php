@@ -39,7 +39,7 @@
                          </div>
                         <div class="line"></div>
                         <div class="btns">
-                            <a href="{{ route('kacko.automobileprice', ['id' => 1]) }}" class="btn form-btn" id="prev">Назад</a>
+                            <a href="#!" class="btn form-btn" id="prev">Назад</a>
                         </div>
                     </div>
                     {{-- <div class="kacko__result" data-aos="fade-up">

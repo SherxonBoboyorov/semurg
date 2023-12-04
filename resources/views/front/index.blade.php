@@ -1,20 +1,21 @@
 @extends('layouts.front')
 
+
 @section('content')
 
     <div class="hero hero-index">
       <div class="container">
          <div class="hero__left">
             <div class="hero__grid">
-                @foreach (\App\Models\InsuranceProduct::orderBy('id')->paginate(6) as $insuranceproduct)
-                <a href="{{ route('product', $insuranceproduct->id) }}" {!! $insuranceproduct->attribute !!}>
-                @if (str_contains($insuranceproduct->attribute, "half"))
-                    <img src="{!! asset($insuranceproduct->image) !!}" alt="img">
+                @foreach (\App\Models\HeaderKacko::orderBy('id')->paginate(6) as $headerkacko)
+                <a href="{{ $headerkacko->link }}" {!! $headerkacko->attribute !!}>
+                @if (str_contains($headerkacko->attribute, "half"))
+                    <img src="{!! asset($headerkacko->image) !!}" alt="img">
                 @else
-                    <img src="{!! asset($insuranceproduct->icon) !!}" alt="img">
+                    <img src="{!! asset($headerkacko->icon) !!}" alt="img">
                     <div class="full__info">
                 @endif
-                     <h2 class="heading2">{{ $insuranceproduct->{'title_' . app()->getLocale()} }}</h2>
+                     <h2 class="heading2">{{ $headerkacko->{'title_' . app()->getLocale()} }}</h2>
                        <button class="more-btn">
                            <span>@lang('front.more_details')</span>
                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
@@ -23,7 +24,7 @@
                                    stroke-linejoin="round" />
                            </svg>
                        </button>
-                       @if (str_contains($insuranceproduct->attribute, "full"))
+                       @if (str_contains($headerkacko->attribute, "full"))
                     </div>
                     @endif
                    </a>
@@ -38,7 +39,7 @@
                         <div class="swiper-slide">
                             <img src="{{ asset($slider->image) }}" alt="img">
                             <div class="swiper-slide__info">
-                                <h1>{{ $slider->{'title_' . app()->getLocale()} }}</h1>
+                                <a href="{{ $slider->link }}"><h1>{{ $slider->{'title_' . app()->getLocale()} }}</h1></a>
                                 <p>{{ $slider->{'description_' . app()->getLocale()} }}</p>
                             </div>
                         </div>
@@ -79,7 +80,7 @@
 
                 @foreach ($insurancecategories as $insurancecategory)
                     <div id="category_{{ $insurancecategory->id }}" class="tab-content">
-                        @foreach($insurancecategory->insuranceproducts as $insuranceproduct)
+                        @foreach($insurancecategory->insuranceproducts->where('order', 1)->take(6) as $insuranceproduct)
                         <a href="{{ route('product', $insuranceproduct->id) }}" class="tab-content__item" data-aos="slide-right">
                             <div class="img-item">
                                 <img src="{{ asset($insuranceproduct->image) }}" alt="">
@@ -91,7 +92,7 @@
                 @endforeach
 
                 <div class="insurance-products__btn">
-                    <a href="{{ route('product.show', ['id' => 1]) }}">
+                    <a href="{{ route('products', 1) }}">
                     <button class="btn primary-btn">
                         @lang('front.all_products')
                     </button>
@@ -161,7 +162,7 @@
                         <div class="news__col-txt">
                             <h6 class="date">{{  date('d.m.Y', strtotime($new->created_at)) }}</h6>
                             <h3 class="card-title">{{ $new->{'title_' . app()->getLocale()} }}</h3>
-                            <h6 class="desc">{!! $new->{'content_' . app()->getLocale()} !!}</h6>
+                            <h6 class="desc">{!! (mb_substr($new->{'content_' . app()->getLocale()}, 0, 90)) !!}</h6>
                         </div>
                     </a>
                     @endforeach
@@ -175,7 +176,6 @@
                 </a>
             </div>
         </section>
-
         <section class="subscribe" data-aos="flip-up" data-aos-duration="1500">
             <div class="container">
                 <h1 class="title2">@lang('front.subscribe_to_our_newsletter')</h1>

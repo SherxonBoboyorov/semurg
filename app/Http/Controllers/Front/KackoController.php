@@ -20,6 +20,7 @@ class KackoController extends Controller
         ));
     }
 
+
     public function show($id)
     {
         $car = Car::find($id);
@@ -59,5 +60,4 @@ class KackoController extends Controller
             'years'
         ));
     }
-
 }

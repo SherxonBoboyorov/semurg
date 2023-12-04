@@ -25,9 +25,9 @@ class UpdateArticle extends FormRequest
             'title_ru' => 'required|string|max:255',
             'title_uz' => 'required|string|max:255',
             'title_en' => 'required|string|max:255',
-            'content_ru' => 'required|string',
-            'content_uz' => 'required|string',
-            'content_en' => 'required|string',
+            'content_ru' => 'required',
+            'content_uz' => 'required',
+            'content_en' => 'required',
         ];
     }
 }

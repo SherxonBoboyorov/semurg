@@ -31,7 +31,7 @@
                         </ul>
                     </div>
                     <div class="content leadership-management__content">
-                        @foreach ($leaderships as $leadership)        
+                        @foreach ($leaderships as $leadership)
                         <div class="leadership-management__item" data-aos="slide-right">
                             <div class="leadership-management__item-img">
                                 <img src="{{ asset($leadership->image) }}" alt="">

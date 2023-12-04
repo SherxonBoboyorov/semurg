@@ -342,6 +342,7 @@
             top: 50%;
             transform: translate(-50%, -50%);
             max-width: 544px;
+            width: 100%;
             max-height: 95vh;
             overflow-y: auto;
             z-index: 99999;
@@ -361,7 +362,24 @@
                 }
             }
         }
-
+        &-top{
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            .close{
+                display: none;
+                svg{
+                    pointer-events: none;
+                    font-size: 32px;
+                    path{
+                        fill:$bg-primary;
+                    }
+                }
+                @include media(768px){
+                    display: block;
+                }
+            }
+        }
         &-title {
             margin-bottom: 7px;
             font-weight: 700;

@@ -65,7 +65,20 @@ return [
      'full_name' => 'ФИО',
      'phone' => 'Телефон',
      'comment' => 'Комментарий',
-     'reinsurance' => 'Перестрахование'
+     'reinsurance' => 'Перестрахование',
+     'casco' => 'Каско',
+     'calculate_the_cost_of_your_insurance_policy' => 'Рассчитайте стоимость страхового полиса',
+     'calculation_results' => 'Результаты расчета',
+     'amount_of_liability' => 'Сумма ответственности',
+     'insurance_premium' => 'Страховая премия',
+     'car_model' => 'Марка автомобиля',
+     'automobile_model' => 'Модель автомобиля',
+     'equipment' => 'Комплектация',
+     'year_of_manufacture_of_the_car' => 'Год выпуска авто',
+     'send_an_application_for_a_policy' => 'Отправить заявку на оформление полиса',
+     'back' => 'Назад',
+     'further' => 'Далее'
+
 
 ];
 

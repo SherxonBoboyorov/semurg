@@ -30,7 +30,6 @@
                     <div class="content news-page__content">
                         <div class="news__row">
                             @foreach ($news as $new)
-                                
                             <a href="{{ route('new.show', $new->{'slug_' . app()->getLocale()}) }}" class="news__col" data-aos="fade-up">
                                 <div class="img">
                                     <img src="{{ asset($new->image) }}" alt="">

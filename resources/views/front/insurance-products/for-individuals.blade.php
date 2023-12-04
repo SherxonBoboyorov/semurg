@@ -20,7 +20,7 @@
             <div class="container">
                   <div class="tab">
                     @foreach ($insurancecategories as $insurancecategory)
-                        <a href="{{ route('product.show', ['id' => $insurancecategory->id]) }}"><button style="display: block" class="tablinks @if($insurancecategory->id == $id) active @endif">{{ $insurancecategory->{'title_' . app()->getLocale()} }}</button></a>
+                        <a href="{{ route('products', ['id' => $insurancecategory->id]) }}"><button style="display: block" class="tablinks @if($insurancecategory->id == $id) active @endif">{{ $insurancecategory->{'title_' . app()->getLocale()} }}</button></a>
                      @endforeach
                   </div>
 

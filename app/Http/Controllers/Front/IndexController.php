@@ -20,7 +20,7 @@ class IndexController extends Controller
         $sliders = Slider::orderBy('id')->get();
         $pages = Page::all();
         $insurancecategories = InsuranceCategory::all();
-        $insuranceproducts = InsuranceProduct::orderBy('id')->get();
+        $insuranceproducts = InsuranceProduct::where('order', 1)->get();
         $news = Article::orderBy('created_at', 'DESC')->paginate(3);
         $carousels = Carousel::orderBy('id')->get();
         $usefuls = Useful::orderBy('id')->get();

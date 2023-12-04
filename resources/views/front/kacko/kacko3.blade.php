@@ -41,7 +41,7 @@
                         </div>
                         <div class="line"></div>
                         <div class="btns">
-                            <a href="{{ route('kacko.automobiletype', ['id' => 1]) }}" class="btn form-btn" id="prev">Назад</a>
+                            <a href="#!" class="btn form-btn" id="prev">Назад</a>
                             <a href="{{ route('kacko.automobileprice', $equipment->id) }}" class="btn-right btn form-btn">Далее</a>
                         </div>
                     </div>

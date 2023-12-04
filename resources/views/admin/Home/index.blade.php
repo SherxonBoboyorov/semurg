@@ -126,10 +126,10 @@
                                         <div class="progress-bar bg-danger" role="progressbar" style="width: 61%;" aria-valuenow="61" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
