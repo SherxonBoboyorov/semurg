@@ -203,9 +203,15 @@
                             <ul class="menu-right__lang-options hidden">
                              @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                @if($localeCode != app()->getLocale())
-                                  <a rel="alternate" hreflang="{{ $localeCode }}" class="lang-option-item" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                     {{ strtoupper($localeCode) }}
-                                  </a>
+                                @if ($localeCode !== 'en')
+                                    <a rel="alternate" hreflang="{{ $localeCode }}" class="lang-option-item" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                        {{ strtoupper($localeCode) }}
+                                     </a>
+                                 @else
+                                    <a class="lang-option-item" href="https://global.semurginsurance.uz/en/">
+                                        EN
+                                     </a>
+                                @endif
                                @endif
                               @endforeach
                             </ul>
