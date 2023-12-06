@@ -3,9 +3,34 @@
 
 @section('content')
 
-    <div class="hero hero-index">
+    <div class="hero hero-index home-hero">
       <div class="container">
          <div class="hero__left">
+
+            @foreach ($ocagos as $ocago)
+             <a href="{{ $ocago->link }}" class="first-slide">
+                <div class="text-content">
+                    <div class="text-block">
+                        <p class="">{{ $ocago->{'title_' . app()->getLocale()} }}</p>
+                        <div class="description">
+                            <span class="more">@lang('front.buy_a_policy')</span>
+                            <span class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
+                                    fill="none">
+                                    <path d="M1 11L6.02092 6L1 1" stroke="white" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="img-content">
+                    <img src="{{ asset($ocago->image) }}"
+                        alt="img">
+                </div>
+            </a>
+            @endforeach
+
             <div class="hero__grid">
                 @foreach (\App\Models\HeaderKacko::orderBy('id')->paginate(6) as $headerkacko)
                 <a href="{{ $headerkacko->link }}" {!! $headerkacko->attribute !!}>
@@ -29,8 +54,9 @@
                     @endif
                    </a>
                    @endforeach
-               </div>
-         </div>
+            </div>
+
+          </div>
 
          <div class="hero__swiper" data-aos="zoom-in">
                 <div class="swiper">
@@ -54,7 +80,7 @@
 
     <main>
         <section class="about-company" data-aos="zoom-in-up">
-            <div class="container">
+            <div class="container custom-about-container" style="height: 100% !important;">
                 <h1 class="title">@lang('front.about_us')</h1>
                 @foreach ($pages as $page)
 

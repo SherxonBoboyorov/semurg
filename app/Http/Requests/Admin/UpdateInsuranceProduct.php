@@ -33,6 +33,15 @@ class UpdateInsuranceProduct extends FormRequest
             'content_uz' => 'required|string',
             'content_en' => 'required|string',
             'order' => 'nullable|numeric',
+            'banner_text_ru' => 'required|string|max:255',
+            'banner_text_uz' => 'required|string|max:255',
+            'banner_text_en' => 'required|string|max:255',
+            'banner_content_ru' => 'required',
+            'banner_content_uz' => 'required',
+            'banner_content_en' => 'required',
+            'content_right_ru' => 'required',
+            'content_right_uz' => 'required',
+            'content_right_en' => 'required',
         ];
     }
 }

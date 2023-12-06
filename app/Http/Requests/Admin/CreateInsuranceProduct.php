@@ -31,10 +31,21 @@ class CreateInsuranceProduct extends FormRequest
             'title_ru' => 'required|string|max:255',
             'title_uz' => 'required|string|max:255',
             'title_en' => 'required|string|max:255',
-            'content_ru' => 'required|string',
-            'content_uz' => 'required|string',
-            'content_en' => 'required|string',
+            'content_ru' => 'required',
+            'content_uz' => 'required',
+            'content_en' => 'required',
             'order' =>  'nullable|numeric',
+            'banner_text_ru' => 'required|string|max:255',
+            'banner_text_uz' => 'required|string|max:255',
+            'banner_text_en' => 'required|string|max:255',
+            'banner_content_ru' => 'required',
+            'banner_content_uz' => 'required',
+            'banner_content_en' => 'required',
+            'content_right_ru' => 'required',
+            'content_right_uz' => 'required',
+            'content_right_en' => 'required',
+
+
         ];
     }
 }

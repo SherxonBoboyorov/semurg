@@ -96,9 +96,10 @@
                         </div>
                     </div><br>
 
-                     <div class="row" style="margin-top: 15px">
+
+                    <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
-                            <label for="content_uz">Content [Uzbek]</label>
+                            <label for="content_uz">Content Left [Uzbek]</label>
                             <textarea name="content_uz" class="my-editor" id="content_uz" cols="30" rows="10">{{ $insuranceproduct->content_uz }}</textarea>
                             @if($errors->has('content_uz'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -112,7 +113,7 @@
                     </div>
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
-                            <label for="content_ru">Content [Russian]</label>
+                            <label for="content_ru">Content Left [Russian]</label>
                             <textarea name="content_ru" class="my-editor" id="content_ru" cols="30" rows="10">{{ $insuranceproduct->content_ru }}</textarea>
                             @if($errors->has('content_ru'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -127,7 +128,7 @@
 
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
-                            <label for="content_en">Content [English]</label>
+                            <label for="content_en">Content Left [English]</label>
                             <textarea name="content_en" class="my-editor" id="content_en" cols="30" rows="10">{{ $insuranceproduct->content_en }}</textarea>
                             @if($errors->has('content_en'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -138,30 +139,97 @@
                             </div>
                             @endif
                         </div>
+                    </div><br><hr>
+
+
+                    <div class="row" style="margin-top: 15px">
+                        <div class="col-md-12">
+                            <label for="content_right_uz">Content Right [Uzbek]</label>
+                            <textarea name="content_right_uz" class="my-editor" id="content_right_uz" cols="30" rows="10">{{ $insuranceproduct->content_right_uz }}</textarea>
+                            @if($errors->has('content_right_uz'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                {{ $errors->first('content_right_uz') }}
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 15px">
+                        <div class="col-md-12">
+                            <label for="content_right_ru">Content Right [Russian]</label>
+                            <textarea name="content_right_ru" class="my-editor" id="content_right_ru" cols="30" rows="10">{{ $insuranceproduct->content_right_ru }}</textarea>
+                            @if($errors->has('content_right_ru'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                {{ $errors->first('content_right_ru') }}
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 15px">
+                        <div class="col-md-12">
+                            <label for="content_right_en">Content Right [English]</label>
+                            <textarea name="content_right_en" class="my-editor" id="content_right_en" cols="30" rows="10">{{ $insuranceproduct->content_right_en }}</textarea>
+                            @if($errors->has('content_right_en'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                {{ $errors->first('content_right_en') }}
+                            </div>
+                            @endif
+                        </div>
+                    </div><br>
+
+
+
+                    <h1>Banner</h1>
+
+                    <div class="row" style="margin-top: 15px">
+                        <div class="col-md-6">
+                            <label for="icon">Banner Image</label>
+                            <input type="file" name="icon" class="form-control-file">
+                            @if($errors->has('icon'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    {{ $errors->first('icon') }}
+                                </div>
+                            @endif
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{{ asset($insuranceproduct->icon) }}" width="150" height="150" alt="">
+                        </div>
                     </div><br>
 
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-6">
-                            <label for="meta_title_ru">Meta Title RU</label>
-                            <textarea name="meta_title_ru" class="form-control" id="meta_title_ru" cols="30" rows="5">{{ $insuranceproduct->meta_title_ru }}</textarea>
-                            @if($errors->has('meta_title_ru'))
+                            <label for="banner_text_ru">Banner Title RU</label>
+                            <textarea name="banner_text_ru" class="form-control" id="banner_text_ru" cols="30" rows="5">{{ $insuranceproduct->banner_text_ru }}</textarea>
+                            @if($errors->has('banner_text_ru'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                {{ $errors->first('meta_title_ru') }}
+                                {{ $errors->first('banner_text_ru') }}
                             </div>
                             @endif
                         </div>
                         <div class="col-md-6">
-                            <label for="meta_description_ru">Meta Description RU</label>
-                            <textarea name="meta_description_ru" class="form-control" id="meta_description_ru" cols="30" rows="5">{{ $insuranceproduct->meta_description_ru }}</textarea>
-                            @if($errors->has('meta_description_ru'))
+                            <label for="banner_content_ru">Banner Description RU</label>
+                            <textarea name="banner_content_ru" class="form-control" id="banner_content_ru" cols="30" rows="5">{{ $insuranceproduct->banner_content_ru }}</textarea>
+                            @if($errors->has('banner_content_ru'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                {{ $errors->first('meta_description_ru') }}
+                                {{ $errors->first('banner_content_ru') }}
                             </div>
                             @endif
                         </div>
@@ -169,26 +237,26 @@
 
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-6">
-                            <label for="meta_title_uz">Meta Title UZ</label>
-                            <textarea name="meta_title_uz" class="form-control" id="meta_title_uz" cols="30" rows="5">{{ $insuranceproduct->meta_title_uz }}</textarea>
-                            @if($errors->has('meta_title_uz'))
+                            <label for="banner_text_uz">Banner Title UZ</label>
+                            <textarea name="banner_text_uz" class="form-control" id="banner_text_uz" cols="30" rows="5">{{ $insuranceproduct->banner_text_uz }}</textarea>
+                            @if($errors->has('banner_text_uz'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                {{ $errors->first('meta_title_uz') }}
+                                {{ $errors->first('banner_text_uz') }}
                             </div>
                             @endif
                         </div>
                         <div class="col-md-6">
-                            <label for="meta_description_uz">Meta Description UZ</label>
-                            <textarea name="meta_description_uz" class="form-control" id="meta_description_uz" cols="30" rows="5">{{ $insuranceproduct->meta_description_uz }}</textarea>
-                            @if($errors->has('meta_description_uz'))
+                            <label for="banner_content_uz">Banner Description UZ</label>
+                            <textarea name="banner_content_uz" class="form-control" id="banner_content_uz" cols="30" rows="5">{{ $insuranceproduct->banner_content_uz }}</textarea>
+                            @if($errors->has('banner_content_uz'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                {{ $errors->first('meta_description_uz') }}
+                                {{ $errors->first('banner_content_uz') }}
                             </div>
                             @endif
                         </div>
@@ -196,30 +264,31 @@
 
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-6">
-                            <label for="meta_title_en">Meta Title EN</label>
-                            <textarea name="meta_title_en" class="form-control" id="meta_title_en" cols="30" rows="5">{{ $insuranceproduct->meta_title_en }}</textarea>
-                            @if($errors->has('meta_title_en'))
+                            <label for="banner_text_en">Banner Title EN</label>
+                            <textarea name="banner_text_en" class="form-control" id="banner_text_en" cols="30" rows="5">{{ $insuranceproduct->banner_text_en }}</textarea>
+                            @if($errors->has('banner_text_en'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                {{ $errors->first('meta_title_en') }}
+                                {{ $errors->first('banner_text_en') }}
                             </div>
                             @endif
                         </div>
                         <div class="col-md-6">
-                            <label for="meta_description_en">Meta Description EN</label>
-                            <textarea name="meta_description_en" class="form-control" id="meta_description_en" cols="30" rows="5">{{ $insuranceproduct->meta_description_en }}</textarea>
-                            @if($errors->has('meta_description_en'))
+                            <label for="banner_content_en">Banner Description EN</label>
+                            <textarea name="banner_content_en" class="form-control" id="banner_content_en" cols="30" rows="5">{{ $insuranceproduct->banner_content_en }}</textarea>
+                            @if($errors->has('banner_content_en'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                {{ $errors->first('meta_description_en') }}
+                                {{ $errors->first('banner_content_en') }}
                             </div>
                             @endif
                         </div>
                     </div><br>
+
 
                     <div class="form-check">
                         <input name="order" class="form-check-input" type="checkbox" value="1" id="flexCheckChecked" >
@@ -247,23 +316,6 @@
                         </div>
                     </div><br>
 
-                    {{-- <div class="row" style="margin-top: 15px">
-                        <div class="col-md-6">
-                            <label for="icon">Image</label>
-                            <input type="file" name="icon" class="form-control-file">
-                            @if($errors->has('icon'))
-                                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    {{ $errors->first('icon') }}
-                                </div>
-                            @endif
-                        </div>
-                        <div class="col-md-6">
-                            <img src="{{ asset($insuranceproduct->icon) }}" width="150" height="150" alt="">
-                        </div>
-                    </div><br> --}}
 
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">

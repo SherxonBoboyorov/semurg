@@ -77,7 +77,8 @@ return [
      'year_of_manufacture_of_the_car' => 'Year of manufacture of the car',
      'send_an_application_for_a_policy' => 'Send an application for a policy',
      'back' => 'Back',
-     'further' => 'Further'
+     'further' => 'Further',
+     'buy_a_policy' => 'Buy a policy'
 
 ]
 

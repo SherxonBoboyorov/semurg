@@ -77,7 +77,8 @@ return [
    'year_of_manufacture_of_the_car' => 'Avtomobil ishlab chiqarilgan yili',
    'send_an_application_for_a_policy' => 'Siyosat uchun ariza yuboring',
    'back' => 'Orqaga',
-   'further' => 'Keyinchalik'
+   'further' => 'Keyinchalik',
+   'buy_a_policy' => 'Siyosat sotib oling'
 
 
 

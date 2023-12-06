@@ -8,6 +8,7 @@ use App\Models\Carousel;
 use App\Models\Client;
 use App\Models\InsuranceCategory;
 use App\Models\InsuranceProduct;
+use App\Models\Ocago;
 use App\Models\Page;
 use App\Models\Slider;
 use App\Models\Useful;
@@ -18,6 +19,7 @@ class IndexController extends Controller
     public function homepage()
     {
         $sliders = Slider::orderBy('id')->get();
+        $ocagos = Ocago::take(1)->get();
         $pages = Page::all();
         $insurancecategories = InsuranceCategory::all();
         $insuranceproducts = InsuranceProduct::where('order', 1)->get();
@@ -28,6 +30,7 @@ class IndexController extends Controller
 
         return view('front.index', compact(
             'sliders',
+            'ocagos',
             'pages',
             'insurancecategories',
             'insuranceproducts',

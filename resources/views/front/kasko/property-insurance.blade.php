@@ -1,7 +1,6 @@
 @extends('layouts.front')
 
 @section('content')
-
     <main>
         <div class="hero hero-crumb" data-aos="flip-up">
             <div class="container">
@@ -9,7 +8,7 @@
                     <h1 class="title">Страхование имущества</h1>
                     <ul>
                         <li><a href="{{ route('/') }}">Главная</a></li>
-                        <li><a href="./property-insurance.html">Страхование имущества</a></li>
+                        <li><a>Страхование имущества</a></li>
                     </ul>
                 </div>
             </div>
@@ -32,13 +31,13 @@
                         <div class="types">
                             <div class="types__item">
                                 <label>
-                                    <input type="radio" name="kacko-el">
+                                    <input type="radio" onclick="apartmentType()" name="kacko-el" data-value="Квартира">
                                     <span>Квартира</span>
                                 </label>
                             </div>
                             <div class="types__item">
                                 <label>
-                                    <input type="radio" name="kacko-el">
+                                    <input type="radio" onclick="apartmentType()" name="kacko-el" data-value="Дом">
                                     <span>Дом</span>
                                 </label>
                             </div>
@@ -48,10 +47,22 @@
                             <label class="max-money">
                                 <span>Где находится недвижимость?</span>
                                 <div class="information__select base-input">
-                                    <select name="" id="">
-                                        <option value="">Ташкент</option>
-                                        <option value="">Фергана</option>
-                                        <option value="">Андижан</option>
+                                    <select name="regions" id="" id="regions" onchange="getRegion(event)">
+                                        <option value="" disabled selected>Выберите местоположение</option>
+                                        <option value="Ташкент">Ташкент</option>
+                                        <option value="Республика Каракалпакстан">Республика Каракалпакстан</option>
+                                        <option value="Андижанская область">Андижанская область</option>
+                                        <option value="Бухарская область">Бухарская область</option>
+                                        <option value="Джизакская область">Джизакская область</option>
+                                        <option value="Кашкадарьинская область">Кашкадарьинская область</option>
+                                        <option value="Навоийская область">Навоийская область</option>
+                                        <option value="Наманганская область">Наманганская область</option>
+                                        <option value="Самаркандская область">Самаркандская область</option>
+                                        <option value="Сурхандарьинская область">Сурхандарьинская область</option>
+                                        <option value="Сырдарьинская область">Сырдарьинская область</option>
+                                        <option value="Ташкентская область">Ташкентская область</option>
+                                        <option value="Ферганская область">Ферганская область</option>
+                                        <option value="Хорезмская область">Хорезмская область</option>
                                     </select>
                                     <div class="abso">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11"
@@ -83,21 +94,21 @@
                         <div class="information">
                             <label class="max-money">
                                 <span>Внутренняя отделка и инженерное оборудование</span>
-                                <input class="base-input" type="text">
+                                <input class="base-input" type="text" value="200000000"  id="inputNumber" name="">
                             </label>
                         </div>
                         <div class="maximum-coverage-amount">
                             <div class="maximum-coverage-amount__top">
-                                <span>1 000 000</span>
-                                <span>20 000 000</span>
+                                <span>200 000 000</span>
+                                <span>5 000 000 000</span>
                             </div>
                             <div class="range-slider">
-                                <input class="maximum-coverage-amount__input slider" type="range" value="8000000"
-                                    min="1000000" max="20000000" step="1">
-                                <div class="slider-thumb">
+                                <input class="maximum-coverage-amount__input slider" type="range" id="rangeNumber" 
+                                    min="200000000" max="5000000000" step="500000" value="200000000">
+                                <div class="slider-thumb" id="rangeThumbTooltip">
                                     <div class="tooltip"></div>
                                 </div>
-                                <div class="progress"></div>
+                                <div class="progress" id="rangeProgress"></div>
                             </div>
                         </div>
                         <div class="property-insurance-term">
@@ -105,13 +116,13 @@
                             <div class="types">
                                 <div class="types__item">
                                     <label>
-                                        <input type="radio" name="kacko-el">
+                                        <input type="radio" name="period" onclick="period()" data-value="6 месяцев" value="6">
                                         <span>6 месяцев</span>
                                     </label>
                                 </div>
                                 <div class="types__item">
                                     <label>
-                                        <input type="radio" name="kacko-el">
+                                        <input type="radio" name="period" onclick="period()" data-value="12 месяцев" value="12">
                                         <span>12 месяцев</span>
                                     </label>
                                 </div>
@@ -121,28 +132,28 @@
                     <div class="kacko__result" data-aos="fade-up">
                         <h1>Результаты расчета</h1>
                         <ul class="res-list">
-                            <li class="res-list__item">
+                            <li class="res-list__item" id="apartment_section" style="display: none;">
                                 <p>Жилое помещение</p>
-                                <h4>Квартира</h4>
+                                <h4 id="apartment">Квартира</h4>
                             </li>
-                            <li class="res-list__item">
+                            <li class="res-list__item" id="region_section" style="display: none;">
                                 <p>Регион</p>
-                                <h4>Ташкент</h4>
+                                <h4 id="region">Ташкент</h4>
                             </li>
-                            <li class="res-list__item">
+                            <li class="res-list__item" id="interior_section">
                                 <p>Внутренняя отделка и инженерное оборудование</p>
-                                <h4>5 000 000 сум</h4>
+                                <h4 id="interior">200 000 000 UZS</h4>
                             </li>
-                            <li class="res-list__item">
+                            <li class="res-list__item" id="period_section" style="display: none;">
                                 <p>Срок действия полиса</p>
-                                <h4>6 месяцев</h4>
+                                <h4 id="period">6 месяцев</h4>
                             </li>
-                            <li class="res-list__item">
+                            <li class="res-list__item" id="amount_section" style="display: none;">
                                 <p>Стоимость полиса:</p>
-                                <h4 class="res">100 000 сум</h4>
+                                <h4 class="res" id="amount">100 000 сум</h4>
                             </li>
                         </ul>
-                        <button onclick="openKackoModal()" class="btn form-btn btn-right">
+                        <button onclick="openKackoModal()" class="btn form-btn btn-right" id="buttonApartmentModal" style="display: none;">
                             Отправить заявку на оформление полиса
                         </button>
                     </div>
@@ -153,10 +164,16 @@
         <div class="kacko-modal hidden">
             <div class="kacko-modal__form">
                 <h1>Заявка на оформление полиса</h1>
-                <form action="" class="kacko-modal__form-el">
-                    <input class="base-input" type="text" placeholder="ФИО">
-                    <input class="base-input" type="text" placeholder="Номер телефона">
-                    <button onclick="closeKackoModal()" class="form-btn">Оформить Заявку</button>
+                <form action="{{ route('apartmentInsurance') }}" class="kacko-modal__form-el" method="POST">
+                    @csrf
+                    <input type="hidden" name="form_apartment" value="">
+                    <input type="hidden" name="form_region" value="">
+                    <input type="hidden" name="form_interior" value="">
+                    <input type="hidden" name="form_amount" value="">
+                    <input type="hidden" name="form_period" value="">
+                    <input class="base-input" name="name" type="text" placeholder="ФИО">
+                    <input class="base-input" name="phone" type="text" placeholder="Номер телефона">
+                    <button type="submit" class="form-btn">Оформить Заявку</button>
                 </form>
             </div>
         </div>
@@ -164,6 +181,100 @@
         @include('layouts/ocagobanner')
 
     </main>
-
 @endsection
 
+@section('custom_js')
+<script src="https://unpkg.com/imask"></script>
+<script>
+var UZS = new Intl.NumberFormat('ae', {
+    style: 'currency',
+    currency: "UZS",
+});
+
+IMask(
+    document.getElementById('inputNumber'),
+    {
+        mask: 'num',
+        blocks: {
+        num: {
+            // nested masks are available!
+            mask: Number,
+            thousandsSeparator: ' '
+        }
+        }
+    }
+)
+</script>
+<script>
+    let inputNumber = document.getElementById("inputNumber");
+    let rangeNumber = document.getElementById("rangeNumber");
+    var MySlider = document.querySelector(".slider");
+    document.querySelector('input[name="form_interior"]').value = MySlider.value;
+
+    inputNumber.addEventListener('input', function (e) {
+        document.getElementById("interior_section").style.setProperty('display', 'block')
+        document.getElementById("interior").innerHTML = UZS.format(e.target.value.replace(/ /g, ""))
+        rangeNumber.value = e.target.value.replace(/ /g, "");
+        document.getElementById('rangeThumbTooltip').style.setProperty('left', (MySlider.value / MySlider.getAttribute("max")) * 100 + "%");
+        document.getElementById('rangeProgress').style.setProperty('width', (MySlider.value / MySlider.getAttribute("max")) * 100 + "%");
+        document.querySelector('.tooltip').innerHTML = UZS.format(MySlider.value);
+        document.querySelector('input[name="form_interior"]').value = UZS.format(MySlider.value);
+    })
+
+    rangeNumber.addEventListener('input', function (e) {
+        document.getElementById("interior_section").style.setProperty('display', 'block')
+        document.getElementById("interior").innerHTML = UZS.format(e.target.value)
+        inputNumber.value = e.target.value;
+        rangeNumber.value = e.target.value;
+        IMask(
+            document.getElementById('inputNumber'),
+            {
+                mask: 'num',
+                blocks: {
+                num: {
+                    // nested masks are available!
+                    mask: Number,
+                    thousandsSeparator: ' '
+                }
+                }
+            }
+        );
+        document.querySelector('input[name="form_interior"]').value = UZS.format(e.target.value);
+    })
+
+    function apartmentType()
+    {
+        var value = document.querySelector('input[name="kacko-el"]:checked');
+        document.getElementById("apartment_section").style.setProperty('display', 'block');
+        document.getElementById("apartment").innerHTML = value.getAttribute('data-value');
+        document.querySelector('input[name="form_apartment"]').value = value.getAttribute('data-value');
+    }
+
+    function getRegion(event)
+    {
+        var region = event.target.value;
+        document.getElementById("region_section").style.setProperty('display', 'block');
+        document.getElementById("region").innerHTML = region;
+        document.querySelector('input[name="form_region"]').value = region;
+
+    }
+
+    function period()
+    {
+        var value = document.querySelector('input[name="period"]:checked');
+        document.getElementById("period_section").style.setProperty('display', 'block');
+        document.getElementById("period").innerHTML = value.getAttribute('data-value');
+        document.getElementById("amount_section").style.setProperty('display', 'block');
+        document.getElementById("buttonApartmentModal").style.setProperty('display', 'block');
+        document.querySelector('input[name="form_period"]').value = value.getAttribute('data-value');
+
+        if (value.value == 6) {
+            document.getElementById("amount").innerHTML = UZS.format(rangeNumber.value * 0.015);
+            document.querySelector('input[name="form_amount"]').value = rangeNumber.value * 0.015;
+        } else if (value.value == 12) {
+            document.getElementById("amount").innerHTML = UZS.format(rangeNumber.value * 0.03);
+            document.querySelector('input[name="form_amount"]').value = rangeNumber.value * 0.03;
+        }
+    }
+</script>
+@endsection

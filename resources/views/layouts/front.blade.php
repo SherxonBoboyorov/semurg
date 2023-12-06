@@ -21,6 +21,12 @@
     <link rel="stylesheet" href="{{ asset('front/css/contact.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/persons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/kacko.min.css') }}">
+
+    <style>
+        .about-company .container.custom-about-company,  .about-company .container {
+            height: 100% !important;
+        }
+    </style>
 </head>
 
 <body>

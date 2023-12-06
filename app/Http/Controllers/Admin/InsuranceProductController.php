@@ -47,7 +47,7 @@ class InsuranceProductController extends Controller
         $data = $request->all();
 
         $data['image'] = InsuranceProduct::uploadImage($request);
-        // $data['icon'] = InsuranceProduct::uploadIcon($request);
+        $data['icon'] = InsuranceProduct::uploadIcon($request);
 
         if (InsuranceProduct::create($data)) {
             return redirect()->route('insuranceproduct.index')->with('message', "added successfully!!");
@@ -90,15 +90,11 @@ class InsuranceProductController extends Controller
      */
     public function update(UpdateInsuranceProduct $request, $id)
     {
-        if (!InsuranceProduct::find($id)) {
-            return redirect()->route('insuranceproduct.index')->with('message', "not fount");
-        }
-
         $insuranceproduct = InsuranceProduct::find($id);
 
         $data = $request->all();
         $data['image'] = InsuranceProduct::updateImage($request, $insuranceproduct);
-        // $data['icon'] = InsuranceProduct::updateIcon($request, $insuranceproduct);
+        $data['icon'] = InsuranceProduct::updateIcon($request, $insuranceproduct);
 
         if ($insuranceproduct->update($data)) {
             return redirect()->route('insuranceproduct.index')->with('message', "changed successfully!!");

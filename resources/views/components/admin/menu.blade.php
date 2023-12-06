@@ -19,6 +19,13 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{ route('ocago.index') }}" class="nav-link">
+                        <i class="nav-icon fa-solid fa-calculator"></i>
+                        <p>Header Ocago</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{ route('headerkacko.index') }}" class="nav-link">
                         <i class="nav-icon fa-solid fa-calculator"></i>
                         <p>Header Calculator</p>

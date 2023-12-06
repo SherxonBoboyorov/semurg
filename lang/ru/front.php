@@ -77,7 +77,8 @@ return [
      'year_of_manufacture_of_the_car' => 'Год выпуска авто',
      'send_an_application_for_a_policy' => 'Отправить заявку на оформление полиса',
      'back' => 'Назад',
-     'further' => 'Далее'
+     'further' => 'Далее',
+     'buy_a_policy' => 'Купить полис'
 
 
 ];

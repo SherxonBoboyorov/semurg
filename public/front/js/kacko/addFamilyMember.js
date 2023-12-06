@@ -16,11 +16,16 @@ const sliderThumb = document.querySelector(".slider-thumb");
 const tooltip = document.querySelector(".tooltip");
 const progress = document.querySelector(".progress");
 
+var UZS = new Intl.NumberFormat('ae', {
+    style: 'currency',
+    currency: 'UZS',
+});
+
 function customSlider(){
     const maxVal = slider.getAttribute("max");
     const val = (slider.value / maxVal) * 100 + "%";
 
-    tooltip.innerHTML = slider.value;
+    tooltip.innerHTML = UZS.format(slider.value);
     progress.style.width = val;
     sliderThumb.style.left = val;
 
