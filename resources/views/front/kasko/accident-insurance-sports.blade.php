@@ -8,8 +8,8 @@
                 <div class="breadcrumb">
                     <h1 class="title">Страхование от несчастныx случаев Спорт</h1>
                     <ul>
-                        <li><a href="../index/index.html">Главная</a></li>
-                        <li><a href="./accident-insurance-sports.html">Страхование от несчастныx случаев Спорт</a></li>
+                        <li><a href="{{ route('/') }}">Главная</a></li>
+                        <li><a>Страхование от несчастныx случаев Спорт</a></li>
                     </ul>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                             <li class="information">
                                 <label>
                                     <span>Укажите возраст</span>
-                                    <input class="base-input" type="date">
+                                    <input class="base-input" onclick="personType()" type="date" data-value="date">
                                 </label>
                                 <label>
                                     <span>Добавить спортсмена</span>
@@ -53,7 +53,7 @@
                             </li>
                             <li class="information hidden" id="add-family-member-item2">
                                 <label>
-                                    <input class="base-input" type="date">
+                                    <input class="base-input" onclick="personType()" type="date" data-value="date">
                                 </label>
                                 <label>
                                     <div class="add-member-btns">
@@ -79,16 +79,18 @@
                                     </div>
                                 </label>
                             </li>
+
                         </ul>
                         <div class="line"></div>
                         <div class="information">
                             <label class="max-money">
                                 <span>Вид спорта</span>
                                <div class="information__select base-input">
-                                <select name="" id="">
-                                    <option value="">Вид спорта</option>
-                                    <option value="">Вид спорта2</option>
-                                    <option value="">Вид спорта3</option>
+                                <select name="" id="sports" onchange="getSport(event)">
+                                    {{-- @foreach (\App\Mopdels\Sport::all() as $sport)
+                                    <option value="" disabled selected>Выберите спорта</option>
+                                    <option value="">{{ $sport->{'name_' . app()->getLocale()} }}</option>
+                                    @endforeach --}}
                                 </select>
                                 <div class="abso">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none">
@@ -103,13 +105,13 @@
                         <div class="types">
                             <div class="types__item">
                                 <label>
-                                    <input type="radio" name="kacko-el">
+                                    <input type="radio" name="period" onclick="period()" data-value="6 месяцев" value="6">
                                     <span>6 месяцев</span>
                                 </label>
                             </div>
                             <div class="types__item">
                                 <label>
-                                    <input type="radio" name="kacko-el">
+                                    <input type="radio" name="period" onclick="period()" data-value="12 месяцев" value="12">
                                     <span>12 месяцев</span>
                                 </label>
                             </div>
@@ -127,44 +129,45 @@
                                 <span>20 000 000</span>
                             </div>
                             <div class="range-slider">
-                                <input class="maximum-coverage-amount__input slider" type="range" value="8000000" min="1000000" max="20000000" step="1">
-                                <div class="slider-thumb">
+                                <input class="maximum-coverage-amount__input slider" type="range" id="rangeNumber"
+                                   min="200000000" max="5000000000" step="500000" value="200000000">
+                                <div class="slider-thumb" id="rangeThumbTooltip">
                                     <div class="tooltip"></div>
                                 </div>
-                                <div class="progress"></div>
+                                <div class="progress" id="rangeProgress"></div>
                             </div>
                         </div>
                         <div class="line"></div>
-                        <div class="btns odd-btn">
+                        {{-- <div class="btns odd-btn">
                             <a href="#" class="btn-right btn form-btn">Далее</a>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="kacko__result" data-aos="fade-up">
                         <h1>Результаты расчета</h1>
                         <ul class="res-list">
-                            <li class="res-list__item">
+                            <li class="res-list__item" id="person_section" style="display: none;">
                                 <p>Число персон</p>
-                                <h4>1</h4>
+                                <h4 id="person">1</h4>
                             </li>
-                            <li class="res-list__item">
+                            <li class="res-list__item" id="age_section" style="display: none;">
                                 <p>Возраст</p>
-                                <h4>26.05.1994</h4>
+                                <h4 id="age">26.05.1994</h4>
                             </li>
-                            <li class="res-list__item">
+                            <li class="res-list__item" id="sport_section" style="display: none;">
                                 <p>Вид спорта</p>
-                                <h4>Альпинизм</h4>
+                                <h4 id="sport">Альпинизм</h4>
                             </li>
-                            <li class="res-list__item">
+                            <li class="res-list__item" id="coverage_section">
                                 <p>Сумма покрытия</p>
-                                <h4>5 000 000 сум</h4>
+                                <h4 id="coverage">5 000 000 сум</h4>
                             </li>
-                            <li class="res-list__item">
+                            <li class="res-list__item" id="period_section" style="display: none;">
                                 <p>Срок действия полиса</p>
-                                <h4>6 месяцев</h4>
+                                <h4 id="period">6 месяцев</h4>
                             </li>
-                            <li class="res-list__item">
+                            <li class="res-list__item" id="amount_section" style="display: none;">
                                 <p>Стоимость полиса:</p>
-                                <h4 class="res">100 000 сум</h4>
+                                <h4 class="res" id="amount">100 000 сум</h4>
                             </li>
                         </ul>
                         <button onclick="openKackoModal()" class="btn form-btn btn-right">
@@ -178,7 +181,14 @@
         <div class="kacko-modal hidden">
             <div class="kacko-modal__form">
                 <h1>Заявка на оформление полиса</h1>
-                <form action="" class="kacko-modal__form-el">
+                <form action="{{ route('accidentInsuranceSport') }}" class="kacko-modal__form-el" method="POST">
+                    @csrf
+                    <input type="hidden" name="form_person" value="">
+                    <input type="hidden" name="form_age" value="">
+                    <input type="hidden" name="form_sport" value="">
+                    <input type="hidden" name="form_coverage" value="">
+                    <input type="hidden" name="form_period" value="">
+                    <input type="hidden" name="form_amount" value="">
                     <input class="base-input" type="text" placeholder="ФИО">
                     <input class="base-input" type="text" placeholder="Номер телефона">
                     <button onclick="closeKackoModal()" class="form-btn">Оформить Заявку</button>
