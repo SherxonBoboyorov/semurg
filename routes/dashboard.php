@@ -35,6 +35,7 @@ use App\Http\Controllers\Admin\PollAnswerController;
 use App\Http\Controllers\Admin\PollController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\SportController;
 use App\Http\Controllers\Admin\StructureController;
 use App\Http\Controllers\Admin\TenderController;
 use App\Http\Controllers\Admin\UsefulController;
@@ -79,6 +80,7 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'kackobanner' => KackoBannerController::class,
         'kackobanner' => KackoBannerController::class,
         'ocagobanner' => OcagoBannerController::class,
-        'ocago' => OcagoController::class
+        'ocago' => OcagoController::class,
+        'sport' => SportController::class
     ]);
 });

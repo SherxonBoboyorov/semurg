@@ -30,9 +30,9 @@
                     <div class="kacko__info accident-insurance__info" data-aos="zoom-in">
                         <ul class="add-family-member">
                             <li class="information">
-                                <label>
+                                <label >
                                     <span>Укажите возраст</span>
-                                    <input class="base-input" onclick="personType()" type="date" data-value="date">
+                                    <input class="base-input" onclick="personType(event)" name="age" type="date">
                                 </label>
                                 <label>
                                     <span>Добавить спортсмена</span>
@@ -53,7 +53,7 @@
                             </li>
                             <li class="information hidden" id="add-family-member-item2">
                                 <label>
-                                    <input class="base-input" onclick="personType()" type="date" data-value="date">
+                                    <input class="base-input" onclick="personType(event)" name="age" type="date">
                                 </label>
                                 <label>
                                     <div class="add-member-btns">
@@ -86,11 +86,11 @@
                             <label class="max-money">
                                 <span>Вид спорта</span>
                                <div class="information__select base-input">
-                                <select name="" id="sports" onchange="getSport(event)">
-                                    {{-- @foreach (\App\Mopdels\Sport::all() as $sport)
+                                <select name="sports" id="" id="sports" onchange="getSport(event)">
                                     <option value="" disabled selected>Выберите спорта</option>
-                                    <option value="">{{ $sport->{'name_' . app()->getLocale()} }}</option>
-                                    @endforeach --}}
+                                    @foreach (\App\Models\Sport::all() as $sport)
+                                       <option>{{ $sport->{'name_' . app()->getLocale()} }}</option>
+                                    @endforeach
                                 </select>
                                 <div class="abso">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none">
@@ -120,18 +120,18 @@
                         <div class="information">
                             <label class="max-money">
                                 <span>Максимальная сумма покрытия</span>
-                                <input class="base-input" type="text">
+                                <input class="base-input" type="text" value="100000" id="inputNumber" name="">
                             </label>
                         </div>
                         <div class="maximum-coverage-amount">
                             <div class="maximum-coverage-amount__top">
-                                <span>1 000 000</span>
+                                <span>5 000 000</span>
                                 <span>20 000 000</span>
                             </div>
                             <div class="range-slider">
                                 <input class="maximum-coverage-amount__input slider" type="range" id="rangeNumber"
-                                   min="200000000" max="5000000000" step="500000" value="200000000">
-                                <div class="slider-thumb" id="rangeThumbTooltip">
+                                   min="100000" max="20000000" step="20000" value="100000">
+                                   <div class="slider-thumb" id="rangeThumbTooltip">
                                     <div class="tooltip"></div>
                                 </div>
                                 <div class="progress" id="rangeProgress"></div>
@@ -157,9 +157,9 @@
                                 <p>Вид спорта</p>
                                 <h4 id="sport">Альпинизм</h4>
                             </li>
-                            <li class="res-list__item" id="coverage_section">
+                            <li class="res-list__item" id="interior_section">
                                 <p>Сумма покрытия</p>
-                                <h4 id="coverage">5 000 000 сум</h4>
+                                <h4 id="interior">5 000 000 сум</h4>
                             </li>
                             <li class="res-list__item" id="period_section" style="display: none;">
                                 <p>Срок действия полиса</p>
@@ -170,7 +170,7 @@
                                 <h4 class="res" id="amount">100 000 сум</h4>
                             </li>
                         </ul>
-                        <button onclick="openKackoModal()" class="btn form-btn btn-right">
+                        <button onclick="openKackoModal()" class="btn form-btn btn-right" id="buttonApartmentModal" style="display: none;">
                             Отправить заявку на оформление полиса
                         </button>
                     </div>
@@ -181,12 +181,12 @@
         <div class="kacko-modal hidden">
             <div class="kacko-modal__form">
                 <h1>Заявка на оформление полиса</h1>
-                <form action="{{ route('accidentInsuranceSport') }}" class="kacko-modal__form-el" method="POST">
+                <form action="#!" class="kacko-modal__form-el" method="POST">
                     @csrf
                     <input type="hidden" name="form_person" value="">
                     <input type="hidden" name="form_age" value="">
                     <input type="hidden" name="form_sport" value="">
-                    <input type="hidden" name="form_coverage" value="">
+                    <input type="hidden" name="form_interior" value="">
                     <input type="hidden" name="form_period" value="">
                     <input type="hidden" name="form_amount" value="">
                     <input class="base-input" type="text" placeholder="ФИО">
@@ -197,9 +197,114 @@
         </div>
 
         @include('layouts/ocagobanner')
-
     </main>
 
+@endsection
+
+
+@section('custom_js')
+<script src="https://unpkg.com/imask"></script>
+<script>
+var UZS = new Intl.NumberFormat('ae', {
+    style: 'currency',
+    currency: "UZS",
+});
+
+IMask(
+    document.getElementById('inputNumber'),
+    {
+        mask: 'num',
+        blocks: {
+        num: {
+            // nested masks are available!
+            mask: Number,
+            thousandsSeparator: ' '
+        }
+        }
+    }
+)
+</script>
+<script>
+    let inputNumber = document.getElementById("inputNumber");
+    let rangeNumber = document.getElementById("rangeNumber");
+    var MySlider = document.querySelector(".slider");
+    document.querySelector('input[name="form_interior"]').value = MySlider.value;
+
+    inputNumber.addEventListener('input', function (e) {
+        document.getElementById("interior_section").style.setProperty('display', 'block')
+        document.getElementById("interior").innerHTML = UZS.format(e.target.value.replace(/ /g, ""))
+        rangeNumber.value = e.target.value.replace(/ /g, "");
+        document.getElementById('rangeThumbTooltip').style.setProperty('left', (MySlider.value / MySlider.getAttribute("max")) * 100 + "%");
+        document.getElementById('rangeProgress').style.setProperty('width', (MySlider.value / MySlider.getAttribute("max")) * 100 + "%");
+        document.querySelector('.tooltip').innerHTML = UZS.format(MySlider.value);
+        document.querySelector('input[name="form_interior"]').value = UZS.format(MySlider.value);
+    })
+
+    rangeNumber.addEventListener('input', function (e) {
+        document.getElementById("interior_section").style.setProperty('display', 'block')
+        document.getElementById("interior").innerHTML = UZS.format(e.target.value)
+        inputNumber.value = e.target.value;
+        rangeNumber.value = e.target.value;
+        IMask(
+            document.getElementById('inputNumber'),
+            {
+                mask: 'num',
+                blocks: {
+                num: {
+                    // nested masks are available!
+                    mask: Number,
+                    thousandsSeparator: ' '
+                }
+                }
+            }
+        );
+        document.querySelector('input[name="form_interior"]').value = UZS.format(e.target.value);
+    })
+
+    function personType()
+    {
+        var age = event.target.value;
+        document.getElementById("age_section").style.setProperty('display', 'block');
+        document.getElementById("age").innerHTML = age;
+        document.querySelector('input[name="form_age"]').value = age;
+    }
+
+    function addFamilyMemberItem(event)
+    {
+        counterValue++;
+        document.getElementById('counter').innerText = counterValue;
+        document.getElementById("person_section").style.setProperty('display', 'block');
+        document.getElementById("person").innerHTML = counterValue;
+        document.querySelector('input[name="form_person"]').value = counterValue;
+    }
+
+    function getSport(event)
+    {
+        var sport = event.target.value;
+        document.getElementById("sport_section").style.setProperty('display', 'block');
+        document.getElementById("sport").innerHTML = sport;
+        document.querySelector('input[name="form_sport"]').value = sport;
+
+    }
+
+    function period()
+    {
+        var value = document.querySelector('input[name="period"]:checked');
+        document.getElementById("period_section").style.setProperty('display', 'block');
+        document.getElementById("period").innerHTML = value.getAttribute('data-value');
+        document.getElementById("amount_section").style.setProperty('display', 'block');
+        document.getElementById("buttonApartmentModal").style.setProperty('display', 'block');
+        document.querySelector('input[name="form_period"]').value = value.getAttribute('data-value');
+
+        if (value.value == 6) {
+            document.getElementById("amount").innerHTML = UZS.format(rangeNumber.value * 0.015);
+            document.querySelector('input[name="form_amount"]').value = rangeNumber.value * 0.015;
+        } else if (value.value == 12) {
+            document.getElementById("amount").innerHTML = UZS.format(rangeNumber.value * 0.03);
+            document.querySelector('input[name="form_amount"]').value = rangeNumber.value * 0.03;
+        }
+    }
+</script>
 @endsection
 
 

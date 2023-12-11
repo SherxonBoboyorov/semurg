@@ -66,6 +66,13 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{ route('sport.index') }}" class="nav-link">
+                        <i class="nav-icon	fas fa-dumbbell"></i>
+                        <p>Sport</p>
+                    </a>
+                </li>
+
 
                 <li class="nav-item">
                     <a href="{{ route('ocagobanner.index') }}" class="nav-link">

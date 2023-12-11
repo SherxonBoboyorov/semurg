@@ -11,7 +11,6 @@ class LicensesCertificatesController extends Controller
 {
     public function licensesCertificates()
     {
-
         $licensesdocuments = LicensesDocument::orderBy('id')->get();
         $licensescategories = LicensesCategory::with('licensesdocuments')->get();
         return view('front.about.licenses-certificates', compact(
