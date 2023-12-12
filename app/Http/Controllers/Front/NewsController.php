@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Article;
 use Illuminate\Http\Request;
 
+use function Laravel\Prompts\error;
+
 class NewsController extends Controller
 {
     public function list(){

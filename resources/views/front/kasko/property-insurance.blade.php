@@ -103,7 +103,7 @@
                                 <span>5 000 000 000</span>
                             </div>
                             <div class="range-slider">
-                                <input class="maximum-coverage-amount__input slider" type="range" id="rangeNumber" 
+                                <input class="maximum-coverage-amount__input slider" type="range" id="rangeNumber"
                                     min="200000000" max="5000000000" step="500000" value="200000000">
                                 <div class="slider-thumb" id="rangeThumbTooltip">
                                     <div class="tooltip"></div>
@@ -173,7 +173,7 @@
                     <input type="hidden" name="form_period" value="">
                     <input class="base-input" name="name" type="text" placeholder="ФИО">
                     <input class="base-input" name="phone" type="text" placeholder="Номер телефона">
-                    <button type="submit" class="form-btn">Оформить Заявку</button>
+                    <button onclick="closeKackoModal()" class="form-btn">Оформить Заявку</button>
                 </form>
             </div>
         </div>

@@ -223,6 +223,7 @@ IMask(
         }
     }
 )
+
 </script>
 <script>
     let inputNumber = document.getElementById("inputNumber");
@@ -261,21 +262,12 @@ IMask(
         document.querySelector('input[name="form_interior"]').value = UZS.format(e.target.value);
     })
 
-    function personType()
+    function personType(event)
     {
         var age = event.target.value;
         document.getElementById("age_section").style.setProperty('display', 'block');
         document.getElementById("age").innerHTML = age;
         document.querySelector('input[name="form_age"]').value = age;
-    }
-
-    function addFamilyMemberItem(event)
-    {
-        counterValue++;
-        document.getElementById('counter').innerText = counterValue;
-        document.getElementById("person_section").style.setProperty('display', 'block');
-        document.getElementById("person").innerHTML = counterValue;
-        document.querySelector('input[name="form_person"]').value = counterValue;
     }
 
     function getSport(event)
