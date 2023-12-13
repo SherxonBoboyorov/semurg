@@ -215,7 +215,6 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
-        'Telegram'  => Telegram\Bot\Laravel\Facades\Telegram::class
     ])->toArray(),
 
 ];
