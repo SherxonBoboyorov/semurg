@@ -80,7 +80,7 @@ class TelegramBotController extends Controller
             'text' => $text
         ]);
 
-        $sendToEmail = strtolower('online@semurgins.uz');
+        $sendToEmail = strtolower('sherxonbabayar@gmail.com');
         if(isset($sendToEmail) && !empty($sendToEmail) && filter_var($sendToEmail, FILTER_VALIDATE_EMAIL)){
             Mail::to($sendToEmail)->send(new AccidentInsuranceSportsMail($request));
         }

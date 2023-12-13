@@ -39,7 +39,7 @@ class AccidentInsuranceSportsMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.accident_insurance_sport',
+            view: 'mail.accident_insurance_sport',
         );
     }
 
