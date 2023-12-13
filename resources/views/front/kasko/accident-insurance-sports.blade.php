@@ -32,7 +32,7 @@
                             <li class="information">
                                 <label >
                                     <span>Укажите возраст</span>
-                                    <input class="base-input" onclick="personType(event)" name="age" type="date">
+                                    <input class="base-input" oninput="personType(event)" name="age" type="date">
                                 </label>
                                 <label>
                                     <span>Добавить спортсмена</span>
@@ -53,11 +53,11 @@
                             </li>
                             <li class="information hidden" id="add-family-member-item2">
                                 <label>
-                                    <input class="base-input" onclick="personType(event)" name="age" type="date">
+                                    <input class="base-input" oninput="secondType(event)" id="ageinput2" name="secondage" type="date">
                                 </label>
                                 <label>
                                     <div class="add-member-btns">
-                                        <button class="add-member-btn">
+                                        <button onclick="addFamilyMemberItem()" class="add-member-btn">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                 viewBox="0 0 20 20" fill="none">
                                                 <path
@@ -151,7 +151,8 @@
                             </li>
                             <li class="res-list__item" id="age_section" style="display: none;">
                                 <p>Возраст</p>
-                                <h4 id="age">26.05.1994</h4>
+                                <h4 id="age"></h4>
+                                <h4 id="secondage"></h4>
                             </li>
                             <li class="res-list__item" id="sport_section" style="display: none;">
                                 <p>Вид спорта</p>
@@ -181,7 +182,7 @@
         <div class="kacko-modal hidden">
             <div class="kacko-modal__form">
                 <h1>Заявка на оформление полиса</h1>
-                <form action="#!" class="kacko-modal__form-el" method="POST">
+                <form action="{{ route('accidentInsuranceSports') }}" class="kacko-modal__form-el" method="POST">
                     @csrf
                     <input type="hidden" name="form_person" value="">
                     <input type="hidden" name="form_age" value="">
@@ -189,8 +190,8 @@
                     <input type="hidden" name="form_interior" value="">
                     <input type="hidden" name="form_period" value="">
                     <input type="hidden" name="form_amount" value="">
-                    <input class="base-input" type="text" placeholder="ФИО">
-                    <input class="base-input" type="text" placeholder="Номер телефона">
+                    <input class="base-input" name="name" type="text" placeholder="ФИО">
+                    <input class="base-input" name="phone" type="text" placeholder="Номер телефона">
                     <button onclick="closeKackoModal()" class="form-btn">Оформить Заявку</button>
                 </form>
             </div>
@@ -262,13 +263,63 @@ IMask(
         document.querySelector('input[name="form_interior"]').value = UZS.format(e.target.value);
     })
 
+
+
+    // const secondage = document.querySelector("#secondage")
+    // const secondinput = document.querySelector("#secondinput")
+
+
+    let personNumber = 1;
+
+
+
+
+
     function personType(event)
     {
         var age = event.target.value;
         document.getElementById("age_section").style.setProperty('display', 'block');
         document.getElementById("age").innerHTML = age;
         document.querySelector('input[name="form_age"]').value = age;
+        document.querySelector('#person_section').style.setProperty('display', 'block');
+        document.querySelector('#person').textContent = personNumber;
     }
+
+
+    function secondType(event)
+    {
+        var age = event.target.value;
+        if (event.target.value) {
+        document.getElementById("age_section").style.setProperty('display', 'block');
+        document.getElementById("secondage").innerHTML = age;
+        document.querySelector('input[name="form_age"]').value = age;
+        addFamilyMemberItem(age);
+        }else {
+        document.getElementById("age_section").style.setProperty('display', 'none');
+        }
+    }
+
+    function removeFamilyMemberItem() {
+        document.querySelector('#add-family-member-item2').classList.add('hidden');
+        document.getElementById("secondage").style.setProperty('display', 'none');
+        document.getElementById('ageinput2').value = '';
+        personNumber = 1;
+        document.querySelector('#person').textContent = personNumber;
+
+
+    }
+
+    function addFamilyMemberItem(age)
+    {
+        document.querySelector('#add-family-member-item2').classList.remove('hidden');
+        personNumber = 2;
+        document.querySelector('#person').textContent = personNumber;
+        if (age) {
+            document.getElementById('ageinput2').value = age;
+            document.getElementById("secondage").style.setProperty('display', 'block');
+        }
+    }
+
 
     function getSport(event)
     {
@@ -276,7 +327,6 @@ IMask(
         document.getElementById("sport_section").style.setProperty('display', 'block');
         document.getElementById("sport").innerHTML = sport;
         document.querySelector('input[name="form_sport"]').value = sport;
-
     }
 
     function period()

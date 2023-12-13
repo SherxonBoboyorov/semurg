@@ -8,7 +8,6 @@ function removeFamilyMemberItem(){
     familyMemberItem2.classList.add('hidden')
 }
 
-
 // Range Slider
 const rangeSlider = document.querySelector(".range-slider");
 const slider = document.querySelector(".slider");
@@ -22,12 +21,15 @@ var UZS = new Intl.NumberFormat('ae', {
 });
 
 function customSlider(){
-    const maxVal = slider.getAttribute("max");
-    const val = (slider.value / maxVal) * 100 + "%";
+    if (slider) {
+        const maxVal = slider.getAttribute("max");
+        const val = (slider.value / maxVal) * 100 + "%";
 
-    tooltip.innerHTML = UZS.format(slider.value);
-    progress.style.width = val;
-    sliderThumb.style.left = val;
+        tooltip.innerHTML = UZS.format(slider.value);
+        progress.style.width = val;
+        sliderThumb.style.left = val;
+    }
+
 
 }
 customSlider()
