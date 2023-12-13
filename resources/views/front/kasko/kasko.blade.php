@@ -53,7 +53,7 @@
                                 <h4 id="insurancePremium">{{ $_COOKIE['insurancePremium'] ?? "" }}</h4>
                             </li>
                             <li class="res-list__item">
-                                <p>@lang('front.car_mdoel')</p>
+                                <p>@lang('front.car_model')</p>
                                 <h4 id="autoBrand">{{ $_COOKIE['brand_name'] ?? "" }}</h4>
                             </li>
                             <li class="res-list__item" id="autoModelsSection" @if(!isset($_COOKIE['model_name'])) style="display: none;" @endif>

@@ -281,6 +281,7 @@ IMask(
     function secondType(event)
     {
         var age = event.target.value;
+        var secondage = event.target.value;
         if (event.target.value) {
         document.getElementById("age_section").style.setProperty('display', 'block');
         document.getElementById("secondage").innerHTML = age;
