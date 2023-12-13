@@ -263,17 +263,7 @@ IMask(
         document.querySelector('input[name="form_interior"]').value = UZS.format(e.target.value);
     })
 
-
-
-    // const secondage = document.querySelector("#secondage")
-    // const secondinput = document.querySelector("#secondinput")
-
-
     let personNumber = 1;
-
-
-
-
 
     function personType(event)
     {
@@ -283,6 +273,8 @@ IMask(
         document.querySelector('input[name="form_age"]').value = age;
         document.querySelector('#person_section').style.setProperty('display', 'block');
         document.querySelector('#person').textContent = personNumber;
+        document.querySelector('input[name="form_person"]').value = personNumber;
+
     }
 
 
@@ -305,8 +297,6 @@ IMask(
         document.getElementById('ageinput2').value = '';
         personNumber = 1;
         document.querySelector('#person').textContent = personNumber;
-
-
     }
 
     function addFamilyMemberItem(age)
@@ -314,6 +304,7 @@ IMask(
         document.querySelector('#add-family-member-item2').classList.remove('hidden');
         personNumber = 2;
         document.querySelector('#person').textContent = personNumber;
+        document.querySelector('input[name="form_person"]').value = personNumber;
         if (age) {
             document.getElementById('ageinput2').value = age;
             document.getElementById("secondage").style.setProperty('display', 'block');
