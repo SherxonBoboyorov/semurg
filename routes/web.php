@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Front\AboutController;
+use App\Http\Controllers\Front\AccidentInsuranceController;
 use App\Http\Controllers\Front\AccidentInsuranceSportsController;
 use App\Http\Controllers\Front\ApartmentInsuranceController;
 use App\Http\Controllers\Front\ContactController;
@@ -82,6 +83,7 @@ Route::group([
     Route::post('/kasko_register-form', FeedbackController::class)->name('kasko-form.store');
     Route::post('apartment-insurance', ApartmentInsuranceController::class)->name('apartmentInsurance');
     Route::post('accident-insurance-sports', AccidentInsuranceSportsController::class)->name('accidentInsuranceSports');
+    Route::post('accident-insurance', AccidentInsuranceController::class)->name('accidentInsurance');
 });
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {

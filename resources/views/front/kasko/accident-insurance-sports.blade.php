@@ -32,7 +32,7 @@
                             <li class="information">
                                 <label >
                                     <span>Укажите возраст</span>
-                                    <input class="base-input" oninput="personType(event)" name="age" type="date">
+                                    <input class="base-input" max="2018-12-31" oninput="personType(event)" name="age" type="date">
                                 </label>
                                 <label>
                                     <span>Добавить спортсмена</span>
@@ -162,7 +162,7 @@
                             </li>
                             <li class="res-list__item" id="interior_section">
                                 <p>Сумма покрытия</p>
-                                <h4 id="interior">5 000 000 сум</h4>
+                                <h4 id="interior">100 000 сум</h4>
                             </li>
                             <li class="res-list__item" id="period_section" style="display: none;">
                                 <p>Срок действия полиса</p>

@@ -85,11 +85,11 @@
                         <div class="information wrapped">
                             <label>
                                 <span>Дата начала страховки</span>
-                                <input class="base-input" id="firstInput" oninput="firstInputValue(event)" type="date">
+                                <input class="base-input" max="2018-12-31" id="firstInput" oninput="firstInputValue(event)" name="first" type="date">
                             </label>
                             <label>
                                 <span>Конечная дата страховки</span>
-                                <input class="base-input" id="lastInput" type="date" disabled>
+                                <input class="base-input" name="last" oninput="lastDate(event)" id="lastInput" type="date" disabled>
                             </label>
                         </div>
 
@@ -145,6 +145,8 @@
                             <li class="res-list__item" id="age_section" style="display: none;">
                                 <p>Возраст</p>
                                 <h4 id="age"></h4>
+                            </li>
+                            <li class="res-list__item" id="secondage_section" style="display: none;">
                                 <h4 id="secondage"></h4>
                             </li>
                             <li class="res-list__item" id="start_section" style="display: none;">
@@ -157,7 +159,7 @@
                             </li>
                             <li class="res-list__item" id="interior_section">
                                 <p>Сумма покрытия</p>
-                                <h4 id="interior">5 000 000 сум</h4>
+                                <h4 id="interior">100 000 сум</h4>
                             </li>
                             <li class="res-list__item" id="period_section" style="display: none;">
                                 <p>Срок действия полиса</p>
@@ -165,7 +167,7 @@
                             </li>
                             <li class="res-list__item" id="amount_section" style="display: none;">
                                 <p>Стоимость полиса:</p>
-                                <h4 class="res" id="amound">16 000 сум</h4>
+                                <h4 class="res" id="amount">16 000 сум</h4>
                             </li>
                         </ul>
                         <button onclick="openKackoModal()" class="btn form-btn btn-right" id="buttonApartmentModal" style="display: none;">
@@ -183,13 +185,14 @@
                     @csrf
                     <input type="hidden" name="form_person" value="">
                     <input type="hidden" name="form_age" value="">
+                    <input type="hidden" name="form_secondage" value="">
                     <input type="hidden" name="form_start" value="">
                     <input type="hidden" name="form_expiration" value="">
                     <input type="hidden" name="form_interior" value="">
                     <input type="hidden" name="form_period" value="">
-                    <input type="hidden" name="form_amound" value="">
-                    <input class="base-input" type="text" placeholder="ФИО">
-                    <input class="base-input" type="text" placeholder="Номер телефона">
+                    <input type="hidden" name="form_amount" value="">
+                    <input class="base-input" name="name" type="text" placeholder="ФИО">
+                    <input class="base-input" name="phone" type="text" placeholder="Номер телефона">
                     <button onclick="closeKackoModal()" class="form-btn">Оформить Заявку</button>
                 </form>
             </div>
@@ -271,71 +274,83 @@ IMask(
         let arr = inputValue.split("-");
         let year = Number(arr[0]) + 1;
         let day = null;
+        document.getElementById("start_section").style.setProperty('display', 'block');
+        document.getElementById("start").innerHTML = inputValue;
+        document.querySelector('input[name="form_start"]').value = inputValue;
         if (Number(arr[2]) != 1) {
             day = Number(arr[2]) - 1;
         }else {
             day = Number(arr[2])
         }
+
+        let beringanSanasi = new Date(inputValue);
+        beringanSanasi.setFullYear(beringanSanasi.getFullYear() + 1);
+
+        let unixTimestampt = new Date(beringanSanasi.setDate(beringanSanasi.getDate() - 1));
+
+        var endDate = unixTimestampt.getDate().length == 1 ? `0${unixTimestampt.getDate()}` : unixTimestampt.getDate();
+        var currentEndMonth = unixTimestampt.getMonth() + 1;
+        var endMonth = currentEndMonth.toString().length == 1 ? `0${currentEndMonth.toString()}` : currentEndMonth.toString();
+
         let result = [];
-        result.push(String(year), arr[1], String(day));
+
+        result.push(unixTimestampt.getFullYear(), endMonth, endDate);
 
         lastInput.value = result.join("-")
+
+        document.getElementById("expiration_section").style.setProperty('display', 'block');
+        document.getElementById("expiration").innerHTML = lastInput.value = result.join("-");
+        document.querySelector('input[name="form_expiration"]').value = lastInput.value = result.join("-");
+
+    }
+
+    let personNumber = 1;
+
+    function personType(event)
+    {
+        var age = event.target.value;
+        document.getElementById("age_section").style.setProperty('display', 'block');
+        document.getElementById("age").innerHTML = age;
+        document.querySelector('input[name="form_age"]').value = age;
+        document.querySelector('#person_section').style.setProperty('display', 'block');
+        document.querySelector('#person').textContent = personNumber;
+        document.querySelector('input[name="form_person"]').value = personNumber;
     }
 
 
-
-
-
-
-
-
-
-        let personNumber = 1;
-
-        function personType(event)
-        {
-            var age = event.target.value;
-            document.getElementById("age_section").style.setProperty('display', 'block');
-            document.getElementById("age").innerHTML = age;
-            document.querySelector('input[name="form_age"]').value = age;
-            document.querySelector('#person_section').style.setProperty('display', 'block');
-            document.querySelector('#person').textContent = personNumber;
-            document.querySelector('input[name="form_person"]').value = personNumber;
+    function secondType(event)
+    {
+        var age = event.target.value;
+        if (event.target.value) {
+        document.getElementById("secondage_section").style.setProperty('display', 'block');
+        document.getElementById("secondage").innerHTML = age;
+        document.querySelector('input[name="form_secondage"]').value = age;
+        document.querySelector('#secondage_section').style.setProperty('display', 'block');
+        addFamilyMemberItem(age);
+        }else {
+        document.getElementById("age_section").style.setProperty('display', 'none');
         }
+    }
 
-        function secondType(event)
-        {
-            var age = event.target.value;
-            var secondage = event.target.value;
-            if (event.target.value) {
-            document.getElementById("age_section").style.setProperty('display', 'block');
-            document.getElementById("secondage").innerHTML = age;
-            document.querySelector('input[name="form_age"]').value = age;
-            addFamilyMemberItem(age);
-            }else {
-            document.getElementById("age_section").style.setProperty('display', 'none');
-            }
-        }
+    function removeFamilyMemberItem() {
+        document.querySelector('#add-family-member-item2').classList.add('hidden');
+        document.getElementById("secondage").style.setProperty('display', 'none');
+        document.getElementById('ageinput2').value = '';
+        personNumber = 1;
+        document.querySelector('#person').textContent = personNumber;
+    }
 
-        function removeFamilyMemberItem() {
-            document.querySelector('#add-family-member-item2').classList.add('hidden');
-            document.getElementById("secondage").style.setProperty('display', 'none');
-            document.getElementById('ageinput2').value = '';
-            personNumber = 1;
-            document.querySelector('#person').textContent = personNumber;
+    function addFamilyMemberItem(age)
+    {
+        document.querySelector('#add-family-member-item2').classList.remove('hidden');
+        personNumber = 2;
+        document.querySelector('#person').textContent = personNumber;
+        document.querySelector('input[name="form_person"]').value = personNumber;
+        if (age) {
+            document.getElementById('ageinput2').value = age;
+            document.getElementById("secondage").style.setProperty('display', 'block');
         }
-
-        function addFamilyMemberItem(age)
-        {
-            document.querySelector('#add-family-member-item2').classList.remove('hidden');
-            personNumber = 2;
-            document.querySelector('#person').textContent = personNumber;
-            document.querySelector('input[name="form_person"]').value = personNumber;
-            if (age) {
-                document.getElementById('ageinput2').value = age;
-                document.getElementById("secondage").style.setProperty('display', 'block');
-            }
-        }
+    }
 
     function period()
     {
