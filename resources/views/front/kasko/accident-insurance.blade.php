@@ -81,14 +81,15 @@
                             </li>
                         </ul>
                         <div class="line"></div>
+
                         <div class="information wrapped">
                             <label>
                                 <span>Дата начала страховки</span>
-                                <input class="base-input" type="date">
+                                <input class="base-input" id="firstInput" oninput="firstInputValue(event)" type="date">
                             </label>
                             <label>
                                 <span>Конечная дата страховки</span>
-                                <input class="base-input" type="date" disabled>
+                                <input class="base-input" id="lastInput" type="date" disabled>
                             </label>
                         </div>
 
@@ -258,6 +259,36 @@ IMask(
         );
         document.querySelector('input[name="form_interior"]').value = UZS.format(e.target.value);
     })
+
+
+
+    let firstInput = document.getElementById("firstInput");
+    let lastInput = document.getElementById("lastInput");
+
+
+    function firstInputValue(event) {
+        let inputValue = event.target.value;
+        let arr = inputValue.split("-");
+        let year = Number(arr[0]) + 1;
+        let day = null;
+        if (Number(arr[2]) != 1) {
+            day = Number(arr[2]) - 1;
+        }else {
+            day = Number(arr[2])
+        }
+        let result = [];
+        result.push(String(year), arr[1], String(day));
+
+        lastInput.value = result.join("-")
+    }
+
+
+
+
+
+
+
+
 
         let personNumber = 1;
 

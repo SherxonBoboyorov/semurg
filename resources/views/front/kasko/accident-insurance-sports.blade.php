@@ -152,6 +152,8 @@
                             <li class="res-list__item" id="age_section" style="display: none;">
                                 <p>Возраст</p>
                                 <h4 id="age"></h4>
+                            </li>
+                            <li class="res-list__item" id="secondage_section" style="display: none;">
                                 <h4 id="secondage"></h4>
                             </li>
                             <li class="res-list__item" id="sport_section" style="display: none;">
@@ -186,6 +188,7 @@
                     @csrf
                     <input type="hidden" name="form_person" value="">
                     <input type="hidden" name="form_age" value="">
+                    <input type="hidden" name="form_secondage" value="">
                     <input type="hidden" name="form_sport" value="">
                     <input type="hidden" name="form_interior" value="">
                     <input type="hidden" name="form_period" value="">
@@ -274,18 +277,17 @@ IMask(
         document.querySelector('#person_section').style.setProperty('display', 'block');
         document.querySelector('#person').textContent = personNumber;
         document.querySelector('input[name="form_person"]').value = personNumber;
-
     }
 
 
     function secondType(event)
     {
         var age = event.target.value;
-        var secondage = event.target.value;
         if (event.target.value) {
-        document.getElementById("age_section").style.setProperty('display', 'block');
+        document.getElementById("secondage_section").style.setProperty('display', 'block');
         document.getElementById("secondage").innerHTML = age;
-        document.querySelector('input[name="form_age"]').value = age;
+        document.querySelector('input[name="form_secondage"]').value = age;
+        document.querySelector('#secondage_section').style.setProperty('display', 'block');
         addFamilyMemberItem(age);
         }else {
         document.getElementById("age_section").style.setProperty('display', 'none');
