@@ -32,7 +32,7 @@
                             <li class="information">
                                 <label >
                                     <span>Укажите возраст</span>
-                                    <input class="base-input" max="2018-12-31" oninput="personType(event)" name="age" type="date">
+                                    <input class="base-input" oninput="personType(event)" max="2100-12-31" name="age" type="date">
                                 </label>
                                 <label>
                                     <span>Добавить спортсмена</span>
@@ -53,7 +53,7 @@
                             </li>
                             <li class="information hidden" id="add-family-member-item2">
                                 <label>
-                                    <input class="base-input" oninput="secondType(event)" id="ageinput2" name="secondage" type="date">
+                                    <input class="base-input" oninput="secondType(event)" max="2100-12-31" id="ageinput2" name="secondage" type="date">
                                 </label>
                                 <label>
                                     <div class="add-member-btns">
@@ -120,17 +120,17 @@
                         <div class="information">
                             <label class="max-money">
                                 <span>Максимальная сумма покрытия</span>
-                                <input class="base-input" type="text" value="100000" id="inputNumber" name="">
+                                <input class="base-input" type="text" value="1000000" id="inputNumber" name="">
                             </label>
                         </div>
                         <div class="maximum-coverage-amount">
                             <div class="maximum-coverage-amount__top">
-                                <span>5 000 000</span>
-                                <span>20 000 000</span>
+                                <span>1 000 000</span>
+                                <span>30 000 000</span>
                             </div>
                             <div class="range-slider">
                                 <input class="maximum-coverage-amount__input slider" type="range" id="rangeNumber"
-                                   min="100000" max="20000000" step="20000" value="100000">
+                                   min="1000000" max="30000000" step="20000" value="1000000">
                                    <div class="slider-thumb" id="rangeThumbTooltip">
                                     <div class="tooltip"></div>
                                 </div>
@@ -266,62 +266,67 @@ IMask(
         document.querySelector('input[name="form_interior"]').value = UZS.format(e.target.value);
     })
 
-    let personNumber = 1;
+        let personNumber = 1;
 
-    function personType(event)
-    {
-        var age = event.target.value;
-        document.getElementById("age_section").style.setProperty('display', 'block');
-        document.getElementById("age").innerHTML = age;
-        document.querySelector('input[name="form_age"]').value = age;
-        document.querySelector('#person_section').style.setProperty('display', 'block');
-        document.querySelector('#person').textContent = personNumber;
-        document.querySelector('input[name="form_person"]').value = personNumber;
-    }
-
-
-    function secondType(event)
-    {
-        var age = event.target.value;
-        if (event.target.value) {
-        document.getElementById("secondage_section").style.setProperty('display', 'block');
-        document.getElementById("secondage").innerHTML = age;
-        document.querySelector('input[name="form_secondage"]').value = age;
-        document.querySelector('#secondage_section').style.setProperty('display', 'block');
-        addFamilyMemberItem(age);
-        }else {
-        document.getElementById("age_section").style.setProperty('display', 'none');
+        function personType(event)
+        {
+            var age = event.target.value;
+            document.getElementById("age_section").style.setProperty('display', 'block');
+            document.getElementById("age").innerHTML = age;
+            document.querySelector('input[name="form_age"]').value = age;
+            document.querySelector('#person_section').style.setProperty('display', 'block');
+            document.querySelector('#person').textContent = personNumber;
+            document.querySelector('input[name="form_person"]').value = personNumber;
+            period()
         }
-    }
 
-    function removeFamilyMemberItem() {
-        document.querySelector('#add-family-member-item2').classList.add('hidden');
-        document.getElementById("secondage").style.setProperty('display', 'none');
-        document.getElementById('ageinput2').value = '';
-        personNumber = 1;
-        document.querySelector('#person').textContent = personNumber;
-    }
-
-    function addFamilyMemberItem(age)
-    {
-        document.querySelector('#add-family-member-item2').classList.remove('hidden');
-        personNumber = 2;
-        document.querySelector('#person').textContent = personNumber;
-        document.querySelector('input[name="form_person"]').value = personNumber;
-        if (age) {
-            document.getElementById('ageinput2').value = age;
-            document.getElementById("secondage").style.setProperty('display', 'block');
+        function secondType(event)
+        {
+            var age = event.target.value;
+            if (event.target.value) {
+            document.getElementById("secondage_section").style.setProperty('display', 'block');
+            document.getElementById("secondage").innerHTML = age;
+            document.querySelector('input[name="form_secondage"]').value = age;
+            document.querySelector('#secondage_section').style.setProperty('display', 'block');
+            addFamilyMemberItem(age);
+            }else {
+            document.getElementById("age_section").style.setProperty('display', 'none');
+            }
         }
-    }
+
+        function removeFamilyMemberItem() {
+            document.querySelector('#add-family-member-item2').classList.add('hidden');
+            document.getElementById("secondage").style.setProperty('display', 'none');
+            document.getElementById('ageinput2').value = '';
+            personNumber = 1;
+            document.querySelector('#person').textContent = personNumber;
+            period()
+        }
+
+        let singlePerson = false;
+
+        function addFamilyMemberItem(age)
+        {
+            document.querySelector('#add-family-member-item2').classList.remove('hidden');
+            personNumber = 2;
+            document.querySelector('#person').textContent = personNumber;
+            document.querySelector('input[name="form_person"]').value = personNumber;
+            period()
+            singlePerson = true;
+            if (age) {
+                document.getElementById('ageinput2').value = age;
+                document.getElementById("secondage").style.setProperty('display', 'block');
+            }
+        }
 
 
-    function getSport(event)
-    {
-        var sport = event.target.value;
-        document.getElementById("sport_section").style.setProperty('display', 'block');
-        document.getElementById("sport").innerHTML = sport;
-        document.querySelector('input[name="form_sport"]').value = sport;
-    }
+        function getSport(event)
+        {
+            var sport = event.target.value;
+            document.getElementById("sport_section").style.setProperty('display', 'block');
+            document.getElementById("sport").innerHTML = sport;
+            document.querySelector('input[name="form_sport"]').value = sport;
+        }
 
     function period()
     {
@@ -333,11 +338,11 @@ IMask(
         document.querySelector('input[name="form_period"]').value = value.getAttribute('data-value');
 
         if (value.value == 6) {
-            document.getElementById("amount").innerHTML = UZS.format(rangeNumber.value * 0.015);
-            document.querySelector('input[name="form_amount"]').value = rangeNumber.value * 0.015;
+            document.getElementById("amount").innerHTML = rangeNumber.value * 0.0025 * personNumber;
+            document.querySelector('input[name="form_amount"]').value = rangeNumber.value * 0.0025 * personNumber;
         } else if (value.value == 12) {
-            document.getElementById("amount").innerHTML = UZS.format(rangeNumber.value * 0.03);
-            document.querySelector('input[name="form_amount"]').value = rangeNumber.value * 0.03;
+            document.getElementById("amount").innerHTML = rangeNumber.value * 0.005 * personNumber;
+            document.querySelector('input[name="form_amount"]').value = rangeNumber.value * 0.005 * personNumber;
         }
     }
 </script>

@@ -7,7 +7,7 @@
       <div class="container">
          <div class="hero__left">
 
-            {{-- @foreach ($ocagos as $ocago)
+            @foreach ($ocagos as $ocago)
              <a href="{{ $ocago->link }}" class="first-slide">
                 <div class="text-content">
                     <div class="text-block">
@@ -29,7 +29,7 @@
                         alt="img">
                 </div>
             </a>
-            @endforeach --}}
+            @endforeach
 
             <div class="hero__grid">
                 @foreach (\App\Models\HeaderKacko::orderBy('id')->paginate(6) as $headerkacko)

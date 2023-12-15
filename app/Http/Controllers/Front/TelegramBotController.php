@@ -40,52 +40,52 @@ class TelegramBotController extends Controller
         // return redirect('/');
     }
 
-    public static function storeApartmentMessage($request)
-    {
-        $text = "<b>Новый заказ для Страхование имущества</b>\n\n"
-            . "<b>Жилое помещение:</b> {$request['form_apartment']}\n"
-            . "<b>Регион:</b> {$request['form_region']}\n"
-            . "<b>Внутренняя отделка и инженерное оборудование:</b> {$request['form_interior']}\n"
-            . "<b>Срок действия полиса:</b> {$request['form_period']}\n"
-            . "<b>Стоимость полиса:</b> {$request['form_amount']}\n\n"
-            . "<b>Ф.И.О:</b> {$request['name']}\n"
-            . "<b>Телефон:</b> {$request['phone']}\n";
+    // public static function storeApartmentMessage($request)
+    // {
+    //     $text = "<b>Новый заказ для Страхование имущества</b>\n\n"
+    //         . "<b>Жилое помещение:</b> {$request['form_apartment']}\n"
+    //         . "<b>Регион:</b> {$request['form_region']}\n"
+    //         . "<b>Внутренняя отделка и инженерное оборудование:</b> {$request['form_interior']}\n"
+    //         . "<b>Срок действия полиса:</b> {$request['form_period']}\n"
+    //         . "<b>Стоимость полиса:</b> {$request['form_amount']}\n\n"
+    //         . "<b>Ф.И.О:</b> {$request['name']}\n"
+    //         . "<b>Телефон:</b> {$request['phone']}\n";
 
-        Telegram::sendMessage([
-            'chat_id' => Config::get('telegram.telegram_channel_id'),
-            'parse_mode' => 'HTML',
-            'text' => $text
-        ]);
+    //     Telegram::sendMessage([
+    //         'chat_id' => Config::get('telegram.telegram_channel_id'),
+    //         'parse_mode' => 'HTML',
+    //         'text' => $text
+    //     ]);
 
-        $sendToEmail = strtolower('online@semurgins.uz');
-        if(isset($sendToEmail) && !empty($sendToEmail) && filter_var($sendToEmail, FILTER_VALIDATE_EMAIL)){
-            Mail::to($sendToEmail)->send(new ApartmentInsuranceMail($request));
-        }
-    }
+    //     $sendToEmail = strtolower('online@semurgins.uz');
+    //     if(isset($sendToEmail) && !empty($sendToEmail) && filter_var($sendToEmail, FILTER_VALIDATE_EMAIL)){
+    //         Mail::to($sendToEmail)->send(new ApartmentInsuranceMail($request));
+    //     }
+    // }
 
-    public static function storeAccidentSportsMessage($request)
-    {
-        $text = "<b>Новый заказ для Страхование от несчастныx случаев Спорт</b>\n\n"
-            . "<b>Число персон:</b> {$request['form_person']}\n"
-            . "<b>Возраст:</b> {$request['form_age']}\n{$request['form_secondage']}\n"
-            . "<b>Вид спорта:</b> {$request['form_sport']}\n"
-            . "<b>Сумма покрытия:</b> {$request['form_interior']}\n"
-            . "<b>Срок действия полиса:</b> {$request['form_period']}\n\n"
-            . "<b>Стоимость полиса:</b> {$request['form_amount']}\n\n"
-            . "<b>Ф.И.О:</b> {$request['name']}\n"
-            . "<b>Телефон:</b> {$request['phone']}\n";
+    // public static function storeAccidentSportsMessage($request)
+    // {
+    //     $text = "<b>Новый заказ для Страхование от несчастныx случаев Спорт</b>\n\n"
+    //         . "<b>Число персон:</b> {$request['form_person']}\n"
+    //         . "<b>Возраст:</b> {$request['form_age']}\n{$request['form_secondage']}\n"
+    //         . "<b>Вид спорта:</b> {$request['form_sport']}\n"
+    //         . "<b>Сумма покрытия:</b> {$request['form_interior']}\n"
+    //         . "<b>Срок действия полиса:</b> {$request['form_period']}\n\n"
+    //         . "<b>Стоимость полиса:</b> {$request['form_amount']}\n\n"
+    //         . "<b>Ф.И.О:</b> {$request['name']}\n"
+    //         . "<b>Телефон:</b> {$request['phone']}\n";
 
-        Telegram::sendMessage([
-            'chat_id' => Config::get('telegram.telegram_channel_id'),
-            'parse_mode' => 'HTML',
-            'text' => $text
-        ]);
+    //     Telegram::sendMessage([
+    //         'chat_id' => Config::get('telegram.telegram_channel_id'),
+    //         'parse_mode' => 'HTML',
+    //         'text' => $text
+    //     ]);
 
-        $sendToEmail = strtolower('online@semurgins.uz');
-        if(isset($sendToEmail) && !empty($sendToEmail) && filter_var($sendToEmail, FILTER_VALIDATE_EMAIL)){
-            Mail::to($sendToEmail)->send(new AccidentInsuranceSportsMail($request));
-        }
-    }
+    //     $sendToEmail = strtolower('online@semurgins.uz');
+    //     if(isset($sendToEmail) && !empty($sendToEmail) && filter_var($sendToEmail, FILTER_VALIDATE_EMAIL)){
+    //         Mail::to($sendToEmail)->send(new AccidentInsuranceSportsMail($request));
+    //     }
+    // }
 
 
 
@@ -102,16 +102,18 @@ class TelegramBotController extends Controller
             . "<b>Ф.И.О:</b> {$request['name']}\n"
             . "<b>Телефон:</b> {$request['phone']}\n";
 
-        Telegram::sendMessage([
-            'chat_id' => Config::get('telegram.telegram_channel_id'),
-            'parse_mode' => 'HTML',
-            'text' => $text
-        ]);
+            dd($text);
 
-        $sendToEmail = strtolower('online@semurgins.uz');
-        if(isset($sendToEmail) && !empty($sendToEmail) && filter_var($sendToEmail, FILTER_VALIDATE_EMAIL)){
-            Mail::to($sendToEmail)->send(new AccidentInsuranceMail($request));
-        }
+        // Telegram::sendMessage([
+        //     'chat_id' => Config::get('telegram.telegram_channel_id'),
+        //     'parse_mode' => 'HTML',
+        //     'text' => $text
+        // ]);
+
+        // $sendToEmail = strtolower('online@semurgins.uz');
+        // if(isset($sendToEmail) && !empty($sendToEmail) && filter_var($sendToEmail, FILTER_VALIDATE_EMAIL)){
+        //     Mail::to($sendToEmail)->send(new AccidentInsuranceMail($request));
+        // }
     }
 
 

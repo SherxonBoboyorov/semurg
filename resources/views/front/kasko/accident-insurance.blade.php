@@ -32,7 +32,7 @@
                             <li class="information">
                                 <label>
                                     <span>Укажите возраст</span>
-                                    <input class="base-input" oninput="personType(event)" name="age" type="date">
+                                    <input class="base-input" oninput="personType(event)" max="2100-12-31" name="age" type="date">
                                 </label>
                                 <label>
                                     <span>Добавить члена семьи</span>
@@ -53,7 +53,7 @@
                             </li>
                             <li class="information hidden" id="add-family-member-item2">
                                 <label>
-                                    <input class="base-input" oninput="secondType(event)" id="ageinput2" name="secondage" type="date">
+                                    <input class="base-input" oninput="secondType(event)" max="2100-12-31" id="ageinput2" name="secondage" type="date">
                                 </label>
                                 <label>
                                     <div class="add-member-btns">
@@ -85,7 +85,7 @@
                         <div class="information wrapped">
                             <label>
                                 <span>Дата начала страховки</span>
-                                <input class="base-input" max="2018-12-31" id="firstInput" oninput="firstInputValue(event)" name="first" type="date">
+                                <input class="base-input" id="firstInput" max="2100-12-31" oninput="firstInputValue(event)" name="first" type="date">
                             </label>
                             <label>
                                 <span>Конечная дата страховки</span>
@@ -113,17 +113,17 @@
                         <div class="information">
                             <label class="max-money">
                                 <span>Максимальная сумма покрытия</span>
-                                <input class="base-input" type="text" value="100000" id="inputNumber" name="">
+                                <input class="base-input" type="text" value="1000000" id="inputNumber" name="">
                             </label>
                         </div>
                         <div class="maximum-coverage-amount">
                             <div class="maximum-coverage-amount__top">
-                                <span>5 000 000</span>
-                                <span>20 000 000</span>
+                                <span>1 000 000</span>
+                                <span>30 000 000</span>
                             </div>
                             <div class="range-slider">
                                 <input class="maximum-coverage-amount__input slider" type="range" id="rangeNumber"
-                                   min="100000" max="20000000" step="20000" value="100000">
+                                   min="1000000" max="30000000" step="20000" value="1000000">
                                    <div class="slider-thumb" id="rangeThumbTooltip">
                                     <div class="tooltip"></div>
                                 </div>
@@ -159,7 +159,7 @@
                             </li>
                             <li class="res-list__item" id="interior_section">
                                 <p>Сумма покрытия</p>
-                                <h4 id="interior">100 000 сум</h4>
+                                <h4 id="interior">1 000 000 сум</h4>
                             </li>
                             <li class="res-list__item" id="period_section" style="display: none;">
                                 <p>Срок действия полиса</p>
@@ -264,7 +264,6 @@ IMask(
     })
 
 
-
     let firstInput = document.getElementById("firstInput");
     let lastInput = document.getElementById("lastInput");
 
@@ -288,7 +287,7 @@ IMask(
 
         let unixTimestampt = new Date(beringanSanasi.setDate(beringanSanasi.getDate() - 1));
 
-        var endDate = unixTimestampt.getDate().length == 1 ? `0${unixTimestampt.getDate()}` : unixTimestampt.getDate();
+        var endDate = unixTimestampt.getDate() <10 ? `0${unixTimestampt.getDate()}` : unixTimestampt.getDate();
         var currentEndMonth = unixTimestampt.getMonth() + 1;
         var endMonth = currentEndMonth.toString().length == 1 ? `0${currentEndMonth.toString()}` : currentEndMonth.toString();
 
@@ -301,8 +300,8 @@ IMask(
         document.getElementById("expiration_section").style.setProperty('display', 'block');
         document.getElementById("expiration").innerHTML = lastInput.value = result.join("-");
         document.querySelector('input[name="form_expiration"]').value = lastInput.value = result.join("-");
-
     }
+
 
     let personNumber = 1;
 
@@ -315,6 +314,7 @@ IMask(
         document.querySelector('#person_section').style.setProperty('display', 'block');
         document.querySelector('#person').textContent = personNumber;
         document.querySelector('input[name="form_person"]').value = personNumber;
+        period()
     }
 
 
@@ -338,7 +338,10 @@ IMask(
         document.getElementById('ageinput2').value = '';
         personNumber = 1;
         document.querySelector('#person').textContent = personNumber;
+        period()
     }
+
+    let singlePerson = false;
 
     function addFamilyMemberItem(age)
     {
@@ -346,6 +349,8 @@ IMask(
         personNumber = 2;
         document.querySelector('#person').textContent = personNumber;
         document.querySelector('input[name="form_person"]').value = personNumber;
+        period()
+        singlePerson = true;
         if (age) {
             document.getElementById('ageinput2').value = age;
             document.getElementById("secondage").style.setProperty('display', 'block');
@@ -362,11 +367,11 @@ IMask(
         document.querySelector('input[name="form_period"]').value = value.getAttribute('data-value');
 
         if (value.value == 6) {
-            document.getElementById("amount").innerHTML = UZS.format(rangeNumber.value * 0.015);
-            document.querySelector('input[name="form_amount"]').value = rangeNumber.value * 0.015;
+            document.getElementById("amount").innerHTML = rangeNumber.value * 0.0025 * personNumber;
+            document.querySelector('input[name="form_amount"]').value = rangeNumber.value * 0.0025 * personNumber;
         } else if (value.value == 12) {
-            document.getElementById("amount").innerHTML = UZS.format(rangeNumber.value * 0.03);
-            document.querySelector('input[name="form_amount"]').value = rangeNumber.value * 0.03;
+            document.getElementById("amount").innerHTML = rangeNumber.value * 0.005 * personNumber;
+            document.querySelector('input[name="form_amount"]').value = rangeNumber.value * 0.005 * personNumber;
         }
     }
 </script>
