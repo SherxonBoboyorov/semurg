@@ -162,7 +162,7 @@
                             </li>
                             <li class="res-list__item" id="interior_section">
                                 <p>Сумма покрытия</p>
-                                <h4 id="interior">100 000 сум</h4>
+                                <h4 id="interior">1 000 000 сум</h4>
                             </li>
                             <li class="res-list__item" id="period_section" style="display: none;">
                                 <p>Срок действия полиса</p>
@@ -266,67 +266,68 @@ IMask(
         document.querySelector('input[name="form_interior"]').value = UZS.format(e.target.value);
     })
 
-        let personNumber = 1;
+    let personNumber = 1;
 
-        function personType(event)
-        {
-            var age = event.target.value;
-            document.getElementById("age_section").style.setProperty('display', 'block');
-            document.getElementById("age").innerHTML = age;
-            document.querySelector('input[name="form_age"]').value = age;
-            document.querySelector('#person_section').style.setProperty('display', 'block');
-            document.querySelector('#person').textContent = personNumber;
-            document.querySelector('input[name="form_person"]').value = personNumber;
-            period()
+    function personType(event)
+    {
+        var age = event.target.value;
+        document.getElementById("age_section").style.setProperty('display', 'block');
+        document.getElementById("age").innerHTML = age;
+        document.querySelector('input[name="form_age"]').value = age;
+        document.querySelector('#person_section').style.setProperty('display', 'block');
+        document.querySelector('#person').textContent = personNumber;
+        document.querySelector('input[name="form_person"]').value = personNumber;
+        period()
+    }
+
+
+    function secondType(event)
+    {
+        var age = event.target.value;
+        if (event.target.value) {
+        document.getElementById("secondage_section").style.setProperty('display', 'block');
+        document.getElementById("secondage").innerHTML = age;
+        document.querySelector('input[name="form_secondage"]').value = age;
+        document.querySelector('#secondage_section').style.setProperty('display', 'block');
+        addFamilyMemberItem(age);
+        }else {
+        document.getElementById("age_section").style.setProperty('display', 'none');
         }
+    }
 
-        function secondType(event)
-        {
-            var age = event.target.value;
-            if (event.target.value) {
-            document.getElementById("secondage_section").style.setProperty('display', 'block');
-            document.getElementById("secondage").innerHTML = age;
-            document.querySelector('input[name="form_secondage"]').value = age;
-            document.querySelector('#secondage_section').style.setProperty('display', 'block');
-            addFamilyMemberItem(age);
-            }else {
-            document.getElementById("age_section").style.setProperty('display', 'none');
-            }
+    function removeFamilyMemberItem() {
+        document.querySelector('#add-family-member-item2').classList.add('hidden');
+        document.getElementById("secondage").style.setProperty('display', 'none');
+        document.getElementById('ageinput2').value = '';
+        personNumber = 1;
+        document.querySelector('#person').textContent = personNumber;
+        period()
+    }
+
+    let singlePerson = false;
+
+    function addFamilyMemberItem(age)
+    {
+        document.querySelector('#add-family-member-item2').classList.remove('hidden');
+        personNumber = 2;
+        document.querySelector('#person').textContent = personNumber;
+        document.querySelector('input[name="form_person"]').value = personNumber;
+        period()
+        singlePerson = true;
+        if (age) {
+            document.getElementById('ageinput2').value = age;
+            document.getElementById("secondage").style.setProperty('display', 'block');
         }
-
-        function removeFamilyMemberItem() {
-            document.querySelector('#add-family-member-item2').classList.add('hidden');
-            document.getElementById("secondage").style.setProperty('display', 'none');
-            document.getElementById('ageinput2').value = '';
-            personNumber = 1;
-            document.querySelector('#person').textContent = personNumber;
-            period()
-        }
-
-        let singlePerson = false;
-
-        function addFamilyMemberItem(age)
-        {
-            document.querySelector('#add-family-member-item2').classList.remove('hidden');
-            personNumber = 2;
-            document.querySelector('#person').textContent = personNumber;
-            document.querySelector('input[name="form_person"]').value = personNumber;
-            period()
-            singlePerson = true;
-            if (age) {
-                document.getElementById('ageinput2').value = age;
-                document.getElementById("secondage").style.setProperty('display', 'block');
-            }
-        }
+    }
 
 
-        function getSport(event)
-        {
-            var sport = event.target.value;
-            document.getElementById("sport_section").style.setProperty('display', 'block');
-            document.getElementById("sport").innerHTML = sport;
-            document.querySelector('input[name="form_sport"]').value = sport;
-        }
+    function getSport(event)
+    {
+        var sport = event.target.value;
+        document.getElementById("sport_section").style.setProperty('display', 'block');
+        document.getElementById("sport").innerHTML = sport;
+        document.querySelector('input[name="form_sport"]').value = sport;
+    }
 
     function period()
     {
@@ -347,5 +348,3 @@ IMask(
     }
 </script>
 @endsection
-
-
