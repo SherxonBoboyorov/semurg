@@ -25,6 +25,8 @@ class CreateSport extends FormRequest
             'name_ru' => 'required|max:255',
             'name_uz' => 'required|max:255',
             'name_en' => 'required|max:255',
+            'six_month' => 'nullable|max:100',
+            'twelve_month' => 'nullable|max:100',
         ];
     }
 }

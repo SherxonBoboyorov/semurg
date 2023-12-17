@@ -59,8 +59,36 @@
                                     </div>
                                     @endif
                                 </div>
-
                              </div><br>
+
+
+                             <div class="row" style="margin-top: 15px">
+                                <div class="col-md-6">
+                                    <label for="six_month">6 Month</label>
+                                    <input name="six_month" value="{{ $sport->six_month }}" class="form-control" id="six_month">
+                                    @if($errors->has('six_month'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        {{ $errors->first('six_month') }}
+                                    </div>
+                                    @endif
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="twelve_month">12 Month</label>
+                                    <input name="twelve_month" value="{{ $sport->twelve_month }}" class="form-control" id="twelve_month">
+                                    @if($errors->has('twelve_month'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        {{ $errors->first('twelve_month') }}
+                                    </div>
+                                    @endif
+                                </div>
+                             </div>
 
 
                         <div class="row" style="margin-top: 15px">

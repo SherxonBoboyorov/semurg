@@ -1,12 +1,4 @@
-const familyMemberItem2 = document.querySelector('#add-family-member-item2')
 
-function addFamilyMemberItem(){
-    familyMemberItem2.classList.remove('hidden')
-}
-
-function removeFamilyMemberItem(){
-    familyMemberItem2.classList.add('hidden')
-}
 
 // Range Slider
 const rangeSlider = document.querySelector(".range-slider");

@@ -15,5 +15,7 @@ class Sport extends Model
         'name_ru',
         'name_uz',
         'name_en',
+        'six_month',
+        'twelve_month'
     ];
 }
