@@ -65,7 +65,8 @@ return [
      'full_name' => 'ФИО',
      'phone' => 'Телефон',
      'comment' => 'Комментарий',
-     'reinsurance' => 'Перестрахование'
+     'reinsurance' => 'Перестрахование',
+     'the_site_is_working_in_test_mode' => 'Сайт находится в тестовом режиме'
 
 ];
 

@@ -78,7 +78,8 @@ return [
      'send_an_application_for_a_policy' => 'Send an application for a policy',
      'back' => 'Back',
      'further' => 'Further',
-     'buy_a_policy' => 'Buy a policy'
+     'buy_a_policy' => 'Buy a policy',
+     'the_site_is_working_in_test_mode' => 'The site is working in test mode'
 
 ]
 

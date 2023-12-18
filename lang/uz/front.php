@@ -65,7 +65,8 @@ return [
    'full_name' => 'To\'liq ism',
    'phone' => 'Telefon',
    'comment' => 'Izoh',
-   'reinsurance' => 'Qayta sug\'urtalash'
+   'reinsurance' => 'Qayta sug\'urtalash',
+   'the_site_is_working_in_test_mode' => 'Sayt test rejimida ishlamoqda'
 
 ]
 

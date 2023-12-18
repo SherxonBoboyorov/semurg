@@ -33,7 +33,7 @@
 
             <div class="hero__grid">
                 @foreach (\App\Models\HeaderKacko::orderBy('id')->paginate(6) as $headerkacko)
-                <a href="{{ $headerkacko->link }}" {!! $headerkacko->attribute !!}>
+                <a href="{{ $headerkacko->link }}">
                 @if (str_contains($headerkacko->attribute, "half"))
                     <img src="{!! asset($headerkacko->image) !!}" alt="img">
                 @else
@@ -75,6 +75,7 @@
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
+
          </div>
     </div>
 

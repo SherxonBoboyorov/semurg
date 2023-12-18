@@ -31,6 +31,7 @@
 
 <body>
 
+    <h1 style="text-align: center; margin-bottom: 20px; align-items: center; margin-top: revert; color: red">@lang('front.the_site_is_working_in_test_mode')</h1>
     <header>
         <nav class="nav">
             <div class="nav__top">
