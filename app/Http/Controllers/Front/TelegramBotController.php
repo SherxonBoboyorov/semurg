@@ -75,8 +75,6 @@ class TelegramBotController extends Controller
             . "<b>Ф.И.О:</b> {$request['name']}\n"
             . "<b>Телефон:</b> {$request['phone']}\n";
 
-            dd($text);
-
         Telegram::sendMessage([
             'chat_id' => Config::get('telegram.telegram_channel_id'),
             'parse_mode' => 'HTML',
@@ -103,8 +101,6 @@ class TelegramBotController extends Controller
             . "<b>Стоимость полиса:</b> {$request['form_amount']}\n\n"
             . "<b>Ф.И.О:</b> {$request['name']}\n"
             . "<b>Телефон:</b> {$request['phone']}\n";
-
-            dd($text);
 
         Telegram::sendMessage([
             'chat_id' => Config::get('telegram.telegram_channel_id'),
