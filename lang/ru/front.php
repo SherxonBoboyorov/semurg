@@ -66,8 +66,20 @@ return [
      'phone' => 'Телефон',
      'comment' => 'Комментарий',
      'reinsurance' => 'Перестрахование',
-     'the_site_is_working_in_test_mode' => 'Сайт находится в тестовом режиме'
-
+     'casco' => 'Каско',
+     'calculate_the_cost_of_your_insurance_policy' => 'Рассчитайте стоимость вашего страхового полиса',
+     'calculation_results' => 'Результаты расчета',
+     'amount_of_liability' => 'Сумма ответственности',
+     'insurance_premium' => 'Страховая премия',
+     'car_model' => 'Модель машины',
+     'automobile_model' => 'Модель автомобиля',
+     'equipment' => 'Оборудование',
+     'year_of_manufacture_of_the_car' => 'Год выпуска автомобиля',
+     'send_an_application_for_a_policy' => 'Отправить заявку на полис',
+     'back' => 'Назад',
+     'further' => 'Дальше',
+     'buy_a_policy' => 'Купить полис',
+     'the_site_is_working_in_test_mode' => 'Сайт находится в тестовом режиме',
 ];
 
 

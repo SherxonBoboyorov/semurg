@@ -1,12 +1,10 @@
 @extends('layouts.front')
 
-
 @section('content')
 
     <div class="hero hero-index home-hero">
       <div class="container">
          <div class="hero__left">
-
             @foreach ($ocagos as $ocago)
              <a href="{{ $ocago->link }}" class="first-slide">
                 <div class="text-content">
@@ -25,15 +23,14 @@
                     </div>
                 </div>
                 <div class="img-content">
-                    <img src="{{ asset($ocago->image) }}"
-                        alt="img">
+                    <img src="{{ asset($ocago->image) }}" alt="img">
                 </div>
-            </a>
+             </a>
             @endforeach
 
             <div class="hero__grid">
-                @foreach (\App\Models\HeaderKacko::orderBy('id')->paginate(6) as $headerkacko)
-                <a href="{{ $headerkacko->link }}" {!! $headerkacko->attribute !!}>
+              @foreach (\App\Models\HeaderKacko::orderBy('id')->paginate(6) as $headerkacko)
+               <a href="{{ $headerkacko->link }}" {!! $headerkacko->attribute !!}>
                 @if (str_contains($headerkacko->attribute, "half"))
                     <img src="{!! asset($headerkacko->image) !!}" alt="img">
                 @else
@@ -51,32 +48,29 @@
                        </button>
                        @if (str_contains($headerkacko->attribute, "full"))
                     </div>
-                    @endif
-                   </a>
-                   @endforeach
+                   @endif
+                  </a>
+                @endforeach
             </div>
-
           </div>
 
          <div class="hero__swiper" data-aos="zoom-in">
-                <div class="swiper">
-                    <div class="swiper-wrapper">
-                        @foreach ($sliders as $slider)
+                <div class="swiper" style="border-radius: 8px">
+                   <div class="swiper-wrapper">
+                     @foreach ($sliders as $slider)
                         <div class="swiper-slide">
-                            <img src="{{ asset($slider->image) }}" alt="img">
+                          <img src="{{ asset($slider->image) }}" alt="img">
                             <div class="swiper-slide__info">
                                 <a href="{{ $slider->link }}"><h1>{{ $slider->{'title_' . app()->getLocale()} }}</h1></a>
                                 <p>{{ $slider->{'description_' . app()->getLocale()} }}</p>
                             </div>
-                        </div>
+                         </div>
                         @endforeach
-
                     </div>
-                    <div class="swiper-pagination"></div>
-                </div>
+                  <div class="swiper-pagination"></div>
+               </div>
             </div>
-
-         </div>
+        </div>
     </div>
 
     <main>
@@ -84,7 +78,6 @@
             <div class="container custom-about-container">
                 <h1 class="title">@lang('front.about_us')</h1>
                 @foreach ($pages as $page)
-
                 <p class="text">
                     {!! $page->{'content_' . app()->getLocale()} !!}
                 </p>
@@ -92,7 +85,6 @@
                     <img src="{{ asset($page->image) }}" alt="img">
                 </div>
                 @endforeach
-
             </div>
         </section>
 

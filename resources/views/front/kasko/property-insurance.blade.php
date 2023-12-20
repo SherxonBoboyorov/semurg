@@ -256,7 +256,6 @@ IMask(
         document.getElementById("region_section").style.setProperty('display', 'block');
         document.getElementById("region").innerHTML = region;
         document.querySelector('input[name="form_region"]').value = region;
-
     }
 
     function period()
@@ -269,11 +268,11 @@ IMask(
         document.querySelector('input[name="form_period"]').value = value.getAttribute('data-value');
 
         if (value.value == 6) {
-            document.getElementById("amount").innerHTML = UZS.format(rangeNumber.value * 0.015);
-            document.querySelector('input[name="form_amount"]').value = rangeNumber.value * 0.015;
+            document.getElementById("amount").innerHTML = rangeNumber.value * 0.0015;
+            document.querySelector('input[name="form_amount"]').value = rangeNumber.value * 0.0015;
         } else if (value.value == 12) {
-            document.getElementById("amount").innerHTML = UZS.format(rangeNumber.value * 0.03);
-            document.querySelector('input[name="form_amount"]').value = rangeNumber.value * 0.03;
+            document.getElementById("amount").innerHTML = rangeNumber.value * 0.003;
+            document.querySelector('input[name="form_amount"]').value = rangeNumber.value * 0.003;
         }
     }
 </script>

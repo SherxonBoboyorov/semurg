@@ -13,8 +13,8 @@
                 </div>
             </div>
         </div>
+        @foreach ($polls as $poll)
         <section class="survey-page">
-            @foreach ($polls as $poll)
             <div class="container">
                 <div class="survey-page__left" data-aos="slide-right">
                     <form action="/survey/vote" method="POST">

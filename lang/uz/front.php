@@ -66,8 +66,20 @@ return [
    'phone' => 'Telefon',
    'comment' => 'Izoh',
    'reinsurance' => 'Qayta sug\'urtalash',
+   'casco' => 'Kasko',
+   'calculate_the_cost_of_your_insurance_policy' => 'Sug\'urta polisining narxini hisoblang',
+   'calculation_results' => 'Hisoblash natijalari',
+   'amount_of_liability' => 'Mas\'uliyat miqdori',
+   'insurance_premium' => 'Sug\'urta mukofoti',
+   'car_model' => 'Mashina modeli',
+   'automobile_model' => 'Avtomobil modeli',
+   'equipment' => 'Uskunalar',
+   'year_of_manufacture_of_the_car' => 'Avtomobil ishlab chiqarilgan yili',
+   'send_an_application_for_a_policy' => 'Siyosat uchun ariza yuboring',
+   'back' => 'Orqaga',
+   'further' => 'Keyinchalik',
+   'buy_a_policy' => 'Siyosat sotib oling',
    'the_site_is_working_in_test_mode' => 'Sayt test rejimida ishlamoqda'
-
 ]
 
 
