@@ -20,7 +20,7 @@
                                 </svg>
                             </span>
                         </div>
-                    </div>
+                    </div>`
                 </div>
                 <div class="img-content">
                     <img src="{{ asset($ocago->image) }}" alt="img">
@@ -54,7 +54,7 @@
             </div>
           </div>
 
-         <div class="hero__swiper" data-aos="zoom-in">
+         <div class="hero__swiper">
                 <div class="swiper" style="border-radius: 8px">
                    <div class="swiper-wrapper">
                      @foreach ($sliders as $slider)
@@ -227,3 +227,5 @@
     </main>
 
 @endsection
+
+

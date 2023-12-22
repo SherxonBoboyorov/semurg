@@ -33,7 +33,7 @@
 
     <h1 style="text-align: center; margin-bottom: 20px; align-items: center; margin-top: revert; color: red">@lang('front.the_site_is_working_in_test_mode')</h1>
     <header>
-        <nav class="nav">
+        <nav class="nav" style="z-index: 1000">
             <div class="nav__top">
                 <div class="container">
                     <div class="bg-nav__list hidden"></div>
