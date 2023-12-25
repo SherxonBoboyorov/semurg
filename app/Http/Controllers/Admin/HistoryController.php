@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\CreateHistory;
 use App\Http\Requests\Admin\UpdateHistory;
 use App\Models\History;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class HistoryController extends Controller
 {
@@ -33,6 +34,7 @@ class HistoryController extends Controller
     public function store(CreateHistory $request)
     {
         $data = $request->all();
+        $data['image'] = History::uploadImage($request);
 
         if(History::create($data)) {
             return redirect()->route('history.index')->with('message', "Created successfully!!");
@@ -65,6 +67,7 @@ class HistoryController extends Controller
         $history = History::find($id);
 
         $data = $request->all();
+        $data['image'] = History::updateImage($request, $history);
 
         if ($history->update($data)) {
             return redirect()->route('history.index')->with('message', 'updated successfully!!');
@@ -79,6 +82,11 @@ class HistoryController extends Controller
     public function destroy(string $id)
     {
         $history = History::find($id);
+
+
+        if (File::exists(public_path() . $history->image)) {
+            File::delete(public_path() . $history->image);
+        }
 
         if ($history->delete()) {
             return redirect()->route('history.index')->with('message', "deleted successfully!!");

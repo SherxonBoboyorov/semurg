@@ -20,38 +20,6 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label for="active_year">Active Year</label>
-                                <input type="text" id="active_year" value="{{ $history->active_year }}" class="form-control" name="active_year">
-                                @if($errors->has('active_year'))
-                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        {{ $errors->first('active_year') }}
-
-                                    </div>
-                                @endif
-                            </div>
-                        </div><br>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label for="year">Year</label>
-                                <input type="text" id="year" value="{{ $history->year }}" class="form-control" name="year">
-                                @if($errors->has('year'))
-                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        {{ $errors->first('year') }}
-
-                                    </div>
-                                @endif
-                            </div>
-                        </div><br>
-                        
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-12">
                                 <label for="content_uz">Content [Uzbek]</label>
@@ -80,7 +48,7 @@
                                 @endif
                             </div>
                         </div>
-    
+
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-12">
                                 <label for="content_en">Content [English]</label>
@@ -93,6 +61,25 @@
                                     {{ $errors->first('content_en') }}
                                 </div>
                                 @endif
+                            </div>
+                        </div><br><br>
+
+
+                        <div class="row" style="margin-top: 15px">
+                            <div class="col-md-6">
+                                <label for="image">Image</label>
+                                <input type="file" name="image" class="form-control-file">
+                                @if($errors->has('image'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        {{ $errors->first('image') }}
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="col-md-6">
+                                <img src="{{ asset($history->image) }}" width="150" height="150" alt="">
                             </div>
                         </div><br>
 

@@ -22,11 +22,9 @@ class UpdateHistory extends FormRequest
     public function rules(): array
     {
         return [
-            'year' => 'required|string|max:100',
             'content_ru' => 'required',
             'content_uz' => 'required',
             'content_en' => 'required',
-            'active_year' => 'required|string|max:100',
         ];
     }
 }

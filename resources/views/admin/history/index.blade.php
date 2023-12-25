@@ -34,7 +34,7 @@
                         <thead>
                         <tr>
                             <th style="width: 2%;">#</th>
-                            <th>Year</th>
+                            <th>Image</th>
                             <th>Content [Uzbek]</th>
                             <th>Content [Russian]</th>
                             <th>Content [Engish]</th>
@@ -45,7 +45,9 @@
                         @foreach ($histories as $history)
                             <tr>
                                 <td>{{ $history->id }}</td>
-                                <td>{{ $history->year }}</td>
+                                <td>
+                                    <img src="{{ asset($history->image) }}" alt="" width="35" height="35">
+                                </td>
                                 <td>{!! $history->content_ru !!}</td>
                                 <td>{!! $history->content_uz !!}</td>
                                 <td>{!! $history->content_en !!}</td>
