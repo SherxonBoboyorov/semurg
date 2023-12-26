@@ -17,19 +17,28 @@
         </div>
         <section class="for-individuals_in">
             <div class="container">
-                <div class="contents">
-                    <div class="content-item">
-                        <p data-aos="slide-up" class="text">
-                            {!! $insuranceproduct->{'content_' . app()->getLocale()} !!}
+                <div id="for-ind-info">
+                    <div id="for-ind-info__left">
+                        <h1 class="for-ind-info__left-title">Программа КАСКО</h1>
+                        <p class="text">
+                            Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+
+                            Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
                         </p>
                     </div>
 
-                    <div class="content-item">
-                        <ul data-aos="slide-up" class="text">
-                          <li>
-                              {!! $insuranceproduct->{'content_right_' . app()->getLocale()} !!}
-                           </li>
-                        </ul>
+                    <div id="for-ind-info__right">
+                        <h1 class="for-ind-info__right-title">Что входит в страховой случай1</h1>
+                        <ul class="for-ind-info__right-list">
+                          <li>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem</li>
+                          <li>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem</li>
+                          <li>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem</li>
+                          <li>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem</li>
+                          <li>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem</li>
+                          <li>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem</li>
+                          <li>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem</li>
+                          <li>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem</li>
+                        </p>
                     </div>
                 </div>
 

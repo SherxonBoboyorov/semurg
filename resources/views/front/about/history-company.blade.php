@@ -22,14 +22,14 @@
     <section class="about-us">
         <div class="container">
             <div class="content news-page__content">
-                <div class="news__row">
+                <div id="news__row">
                     @foreach ($list as $item)
-                    <div class="news__col" style="display: block">
-                        <div class="img">
-                            <img src="{{ asset($item->image) }}" width="100%" height="100%" alt="">
+                    <div id="news__col">
+                        <div id="img">
+                            <img src="{{ asset($item->image) }}" alt="">
                         </div>
-                        <div class="news__col-txt">
-                            <h6 class="desc">{!! $item->{'content_' . app()->getLocale()} !!}</h6>
+                        <div id="desc" class="news__col-txt">
+                            <p class="desc">{!! $item->{'content_' . app()->getLocale()} !!}</p>
                         </div>
                     </div>
                     @endforeach
