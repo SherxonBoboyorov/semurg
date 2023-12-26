@@ -19,33 +19,23 @@
         </div>
     </div>
 
-    <section class="history-company">
+    <section class="about-us">
         <div class="container">
-          <div class="parent">
-            <div class="about-history-company-par">
-              <div class="content history-company__content">
-                <div class="history-company__content-list">
-                  <div class="history-company__content-item">
-                    <span class="active-year">20</span>
-                  </div>
+            <div class="content news-page__content">
+                <div class="news__row">
+                    @foreach ($list as $item)
+                    <div class="news__col" style="display: block">
+                        <div class="img">
+                            <img src="{{ asset($item->image) }}" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="news__col-txt">
+                            <h6 class="desc">{!! $item->{'content_' . app()->getLocale()} !!}</h6>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
-                <ul class="history-company__year-info">
-                  @foreach ($list as $item)
-                  <div id="year_number">
-                    <span class="year_number-item">{{ $item['active_year'] }}</span>
-                    <li class="history-company__year-info-item active">
-                      <h5>{{ $item->year }}</h5>
-                      <p class="text">
-                        {!! $item->{'content_' . app()->getLocale()} !!}
-                      </p>
-                    </li>
-                  </div>
-                  @endforeach
-                </ul>
-              </div>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 </main>
 @endsection

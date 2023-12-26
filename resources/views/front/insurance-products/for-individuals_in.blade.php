@@ -25,9 +25,11 @@
                     </div>
 
                     <div class="content-item">
-                        <p data-aos="slide-up" class="text">
-                            {!! $insuranceproduct->{'content_right_' . app()->getLocale()} !!}
-                        </p>
+                        <ul data-aos="slide-up" class="text">
+                          <li>
+                              {!! $insuranceproduct->{'content_right_' . app()->getLocale()} !!}
+                           </li>
+                        </ul>
                     </div>
                 </div>
 

@@ -14,7 +14,6 @@
             <div class="clearfix"></div>
         </div>
 
-        <!-- end page title end breadcrumb -->
         <form action="{{ route('insuranceproduct.store') }}" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="card">
@@ -77,7 +76,7 @@
                             </div>
                          </div><br>
 
-                         <div class="row">
+                         <div class="row" style="display: none">
                             <div class="col-md-3">
                                 <label>Attribute</label>
                                 <select name="attribute" id="attribute" class="form-control">
@@ -97,7 +96,7 @@
 
 
                          <div class="row" style="margin-top: 15px">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <label for="content_uz">Content Left [Uzbek]</label>
                                 <textarea name="content_uz" class="my-editor" id="content_uz" cols="30" rows="10"></textarea>
                                 @if($errors->has('content_uz'))
@@ -109,9 +108,8 @@
                                 </div>
                                 @endif
                             </div>
-                        </div>
-                        <div class="row" style="margin-top: 15px">
-                            <div class="col-md-12">
+
+                            <div class="col-md-4">
                                 <label for="content_ru">Content Left [Russian]</label>
                                 <textarea name="content_ru" class="my-editor" id="content_ru" cols="30" rows="10"></textarea>
                                 @if($errors->has('content_ru'))
@@ -123,10 +121,8 @@
                                 </div>
                                 @endif
                             </div>
-                        </div>
 
-                        <div class="row" style="margin-top: 15px">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <label for="content_en">Content Left [English]</label>
                                 <textarea name="content_en" class="my-editor" id="content_en" cols="30" rows="10"></textarea>
                                 @if($errors->has('content_en'))
@@ -142,7 +138,7 @@
 
 
                         <div class="row" style="margin-top: 15px">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <label for="content_right_uz">Content Right [Uzbek]</label>
                                 <textarea name="content_right_uz" class="my-editor" id="content_right_uz" cols="30" rows="10"></textarea>
                                 @if($errors->has('content_right_uz'))
@@ -154,9 +150,7 @@
                                 </div>
                                 @endif
                             </div>
-                        </div>
-                        <div class="row" style="margin-top: 15px">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <label for="content_right_ru">Content Right [Russian]</label>
                                 <textarea name="content_right_ru" class="my-editor" id="content_right_ru" cols="30" rows="10"></textarea>
                                 @if($errors->has('content_right_ru'))
@@ -168,10 +162,8 @@
                                 </div>
                                 @endif
                             </div>
-                        </div>
 
-                        <div class="row" style="margin-top: 15px">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <label for="content_right_en">Content Right [English]</label>
                                 <textarea name="content_right_en" class="my-editor" id="content_right_en" cols="30" rows="10"></textarea>
                                 @if($errors->has('content_right_en'))
