@@ -78,7 +78,7 @@
                         </div>
                      </div><br>
 
-                     <div class="row" style="display: none; margin-top: 15px">
+                     <div class="row" style="display: none;">
                         <div class="col-md-3">
                             <label for="attribute">Attribute</label>
                             <select name="attribute" id="attribute" class="form-control">
@@ -95,6 +95,45 @@
                             @endif
                         </div>
                     </div><br>
+
+                    <div class="row" style="margin-top: 15px">
+                        <div class="col-md-4">
+                            <label for="title_left_uz">Title Left [Uzbek]</label>
+                            <input type="text" id="title_left_uz" value="{{ $insuranceproduct->title_left_uz }}" class="form-control" name="title_left_uz">
+                            @if($errors->has('title_left_uz'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                {{ $errors->first('title_left_uz') }}
+                            </div>
+                            @endif
+                        </div>
+                        <div class="col-md-4">
+                            <label for="title_left_ru">Title Left [Russian]</label>
+                            <input type="text" id="title_left_ru" value="{{ $insuranceproduct->title_left_ru }}" class="form-control" name="title_left_ru">
+                            @if($errors->has('title_left_ru'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                {{ $errors->first('title_left_ru') }}
+                            </div>
+                            @endif
+                        </div>
+                        <div class="col-md-4">
+                            <label for="title_left_en">Title Left [English]</label>
+                            <input type="text" id="title_left_en" value="{{ $insuranceproduct->title_left_en }}" class="form-control" name="title_left_en">
+                            @if($errors->has('title_left_en'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                {{ $errors->first('title_left_en') }}
+                            </div>
+                            @endif
+                        </div>
+                     </div><br>
 
 
                     <div class="row" style="margin-top: 15px">
@@ -136,6 +175,45 @@
                             @endif
                         </div>
                     </div><br><hr>
+
+                    <div class="row" style="margin-top: 15px">
+                        <div class="col-md-4">
+                            <label for="title_right_uz">Title Right [Uzbek]</label>
+                            <input type="text" id="title_right_uz" value="{{ $insuranceproduct->title_right_uz }}" class="form-control" name="title_right_uz">
+                            @if($errors->has('title_right_uz'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                {{ $errors->first('title_right_uz') }}
+                            </div>
+                            @endif
+                        </div>
+                        <div class="col-md-4">
+                            <label for="title_right_ru">Title Right [Russian]</label>
+                            <input type="text" id="title_right_ru" value="{{ $insuranceproduct->title_right_ru }}" class="form-control" name="title_right_ru">
+                            @if($errors->has('title_right_ru'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                {{ $errors->first('title_right_ru') }}
+                            </div>
+                            @endif
+                        </div>
+                        <div class="col-md-4">
+                            <label for="title_right_en">Title Right [English]</label>
+                            <input type="text" id="title_right_en" value="{{ $insuranceproduct->title_right_en }}" class="form-control" name="title_right_en">
+                            @if($errors->has('title_right_en'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                {{ $errors->first('title_right_en') }}
+                            </div>
+                            @endif
+                        </div>
+                     </div><br>
 
 
                     <div class="row" style="margin-top: 15px">

@@ -39,7 +39,12 @@ class InsuranceProduct extends Model
         'content_right_ru',
         'content_right_uz',
         'content_right_en',
-
+        'title_left_ru',
+        'title_left_uz',
+        'title_left_en',
+        'title_right_ru',
+        'title_right_uz',
+        'title_right_en',
     ];
 
     public function insurancecategory()
