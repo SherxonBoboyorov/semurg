@@ -4,7 +4,7 @@
 
 
 <main>
-    <div class="hero hero-img">
+    <div class="hero hero-crumb" data-aos="flip-up">
         <div class="container">
             <div class="breadcrumb">
                 <h1 class="title">@lang('front.company_history')</h1>
@@ -13,11 +13,9 @@
                     <li><a>@lang('front.company_history')</a></li>
                 </ul>
             </div>
-            <div class="hero-img__item" data-aos="zoom-in">
-                <img src="{{ asset('front/images/employees/partners-img.png') }}" alt="">
-            </div>
         </div>
     </div>
+
 
     <section class="about-us">
         <div class="container">
@@ -25,17 +23,18 @@
                 <div id="news__row">
                     @foreach ($list as $item)
                     <div id="news__col">
-                        <div id="img">
+                        {{-- <div id="img"> --}}
                             <img src="{{ asset($item->image) }}" alt="">
-                        </div>
-                        <div id="desc" class="news__col-txt">
+                        {{-- </div> --}}
+                        {{-- <div id="desc" class="news__col-txt"> --}}
                             <p class="desc">{!! $item->{'content_' . app()->getLocale()} !!}</p>
-                        </div>
+                        {{-- </div> --}}
                     </div>
                     @endforeach
                 </div>
             </div>
         </div>
     </section>
+
 </main>
 @endsection

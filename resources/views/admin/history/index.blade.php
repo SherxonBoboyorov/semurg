@@ -14,7 +14,7 @@
                 <div class="clearfix"></div>
             </div>
 
-            <a href="{{ route('history.create')}}" class="btn bg-success mb-2">Add Company history +</a>
+            {{-- <a href="{{ route('history.create')}}" class="btn bg-success mb-2">Add Company history +</a> --}}
 
             <div class="card">
                 <div class="card-body">
@@ -56,7 +56,7 @@
                                         <i class="fa fa-edit">Edit</i>
                                     </a>
                                 </td>
-                                <td>
+                                {{-- <td>
                                     <form action="{{ route('history.destroy', $history->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
@@ -64,7 +64,7 @@
                                             <i class="fa fa-trash">Delete</i>
                                         </button>
                                     </form>
-                                </td>
+                                </td> --}}
                             </tr>
                         @endforeach
                         </tbody>

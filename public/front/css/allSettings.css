@@ -6,15 +6,18 @@
 }
 
 #news__col {
-    display: flex;
     align-items: center;
     gap: 40px;
+    margin-top: 60px;
 }
 
-#news__col #img {
-    width: 400px;
-    height: 350px;
-    border-radius: 8px;
+#news__col img {
+    width: 600px;
+    height: 500px;
+    border-radius: 6px;
+    float: left;
+    margin: 40px;
+    margin-top: 5px;
 }
 
 #news__col #img img {
@@ -22,14 +25,6 @@
     height: inherit;
     object-fit: cover;
     border-radius: 8px;
-}
-
-#news__col #desc {
-    flex-grow: 1;
-    max-height: 350px;
-    overflow-y: auto;
-    padding: 0;
-    padding-right: 15px;
 }
 
 /* Kasco__in new setting css */
