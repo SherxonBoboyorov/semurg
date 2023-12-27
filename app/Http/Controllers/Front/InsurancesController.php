@@ -13,7 +13,7 @@ class InsurancesController extends Controller
     {
         $menu = InsuranceCategory::where('id', $id)->get();
         $insurancecategories = InsuranceCategory::orderBy('id')->get();
-        $insuranceproducts = InsuranceProduct::where('insurancecategory_id', $id)->orderBy('id')->get();
+        $insuranceproducts = InsuranceProduct::where('insurancecategory_id', $id)->orderBy('created_at', 'DESC')->get();
 
         return view('front.insurance-products.for-individuals', compact(
             'insurancecategories',

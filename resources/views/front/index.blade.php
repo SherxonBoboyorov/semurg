@@ -99,7 +99,7 @@
 
                 @foreach ($insurancecategories as $insurancecategory)
                     <div id="category_{{ $insurancecategory->id }}" class="tab-content">
-                        @foreach($insurancecategory->insuranceproducts->where('order', 1)->take(6) as $insuranceproduct)
+                        @foreach($insurancecategory->insuranceproducts->where('order', 1)->sortByDesc('created_at')->take(6) as $insuranceproduct)
                         <a href="{{ route('product', $insuranceproduct->id) }}" class="tab-content__item" data-aos="slide-right">
                             <div class="img-item">
                                 <img src="{{ asset($insuranceproduct->image) }}" alt="">
