@@ -34,7 +34,7 @@
 
 <body>
 
-    <h1 style="text-align: center; margin-bottom: 20px; align-items: center; margin-top: revert; color: red">@lang('front.the_site_is_working_in_test_mode')</h1>
+    {{-- <h1 style="text-align: center; margin-bottom: 20px; align-items: center; margin-top: revert; color: red">@lang('front.the_site_is_working_in_test_mode')</h1> --}}
     <header>
         <nav class="nav" style="z-index: 1000">
             <div class="nav__top">
@@ -139,7 +139,12 @@
                     <a href="{{ route('/') }}" class="logo">
                         <img src="{{ asset('front/images/logo.svg') }}" alt="logo">
                     </a>
+
                     <div class="menu-right">
+                        <a href="{{ asset('front/document/Европротокол.pdf') }}" download class="custom-document-link">
+                            europrotocol
+                        </a>
+
                         <a href="tel:{{ $options->where('key', 'fax')->first()->value }}" class="menu-right__operator">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none">
                                 <path fill="#0B4848"

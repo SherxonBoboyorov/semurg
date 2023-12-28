@@ -15,3 +15,19 @@ document.addEventListener('click', (e)=>{
     bars.classList.remove('change')
    }
 })
+
+const handleResize = () => {
+  if(window.innerWidth < 1120) {
+    const menu = document.querySelector('.nav__list')
+    let li = document.createElement("li");
+
+    li.innerHTML = `<a href="front/document/Европротокол.pdf" download class="custom-document-link-responsive">europrotocol</a>`
+
+    menu.appendChild(li)
+  }
+};
+
+window.addEventListener("resize", handleResize);
+document.addEventListener('DOMContentLoaded', () => {
+    handleResize()
+});

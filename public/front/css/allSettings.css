@@ -122,3 +122,32 @@
         width: 100%;
     }
 }
+
+
+
+.custom-document-link {
+    padding: 12px 18px;
+    text-align: center;
+    border-radius: 20px;
+    color: white;
+    background-color: #0B4848;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.custom-document-link-responsive {
+    padding: 12px 18px;
+    text-align: center;
+    border-radius: 20px;
+    color: #0B4848;
+    background-color: white;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+@media (max-width: 1120px) {
+    .menu-right__operator, .custom-document-link {
+        display: none !important;
+    }
+}
