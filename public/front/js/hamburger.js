@@ -17,17 +17,26 @@ document.addEventListener('click', (e)=>{
 })
 
 const handleResize = () => {
-  if(window.innerWidth < 1120) {
     const menu = document.querySelector('.nav__list')
-    let li = document.createElement("li");
+  if(window.innerWidth < 1120) {
 
-    li.innerHTML = `<a href="front/document/Европротокол.pdf" download class="custom-document-link-responsive">europrotocol</a>`
 
-    menu.appendChild(li)
+    if(!menu.querySelector('.custom-document-link-responsive')) {
+        let li = document.createElement("li");
+
+        li.innerHTML = `<a href="front/document/Европротокол.pdf" download class="custom-document-link-responsive">europrotocol</a>`
+
+        menu.appendChild(li)
+    }
+  } else {
+    if(menu.querySelector('.custom-document-link-responsive')) {
+        menu.querySelector('.custom-document-link-responsive').parentElement.remove()
+    }
   }
 };
 
-window.addEventListener("resize", handleResize);
 document.addEventListener('DOMContentLoaded', () => {
     handleResize()
 });
+
+windw.addEventListener("resize", handleResize)
