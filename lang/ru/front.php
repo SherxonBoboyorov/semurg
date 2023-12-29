@@ -80,6 +80,8 @@ return [
      'further' => 'Дальше',
      'buy_a_policy' => 'Купить полис',
      'the_site_is_working_in_test_mode' => 'Сайт находится в тестовом режиме',
+     'europrotocol' => 'ЕВРОПРОТОКОЛ',
+
 ];
 
 

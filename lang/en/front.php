@@ -79,7 +79,7 @@ return [
      'back' => 'Back',
      'further' => 'Further',
      'buy_a_policy' => 'Buy a policy',
-     'the_site_is_working_in_test_mode' => 'The site is working in test mode'
+     'europrotocol' => 'EUROPROTOCOL',
 ]
 
 

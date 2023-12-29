@@ -79,7 +79,9 @@ return [
    'back' => 'Orqaga',
    'further' => 'Keyinchalik',
    'buy_a_policy' => 'Siyosat sotib oling',
-   'the_site_is_working_in_test_mode' => 'Sayt test rejimida ishlamoqda'
+   'the_site_is_working_in_test_mode' => 'Sayt test rejimida ishlamoqda',
+   'europrotocol' => 'EVROPROTOKOL',
+
 ]
 
 

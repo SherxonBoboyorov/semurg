@@ -128,6 +128,11 @@
                         <li>
                             <a class="nav__list-link {{ (\Request::route()->getName() == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">@lang('front.contacts')</a>
                         </li>
+                        <li class="custom-document-li">
+                            <a href="{{ asset('front/document/Европротокол.pdf') }}" download class="custom-document-link-responsive">
+                                @lang('front.europrotocol')
+                            </a>
+                        </li>
                     </ul>
                     <div class="bars">
                         <div class="bar1"></div><div class="bar2"></div><div class="bar3"></div>
@@ -142,7 +147,7 @@
 
                     <div class="menu-right">
                         <a href="{{ asset('front/document/Европротокол.pdf') }}" download class="custom-document-link">
-                            europrotocol
+                            @lang('front.europrotocol')
                         </a>
 
                         <a href="tel:{{ $options->where('key', 'fax')->first()->value }}" class="menu-right__operator">

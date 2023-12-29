@@ -145,9 +145,17 @@
     font-weight: 400;
 }
 
+.custom-document-li {
+    display: none !important;
+}
+
 
 @media (max-width: 1120px) {
     .menu-right__operator, .custom-document-link {
         display: none !important;
+    }
+
+    .custom-document-li {
+        display: block !important;
     }
 }
