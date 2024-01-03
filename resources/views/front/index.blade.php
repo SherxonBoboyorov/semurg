@@ -62,7 +62,7 @@
                           <img src="{{ asset($slider->image) }}" alt="img">
                             <div class="swiper-slide__info">
                                 <a href="{{ $slider->link }}"><h1>{{ $slider->{'title_' . app()->getLocale()} }}</h1></a>
-                                <p>{{ $slider->{'description_' . app()->getLocale()} }}</p>
+                                {{-- <p>{{ $slider->{'description_' . app()->getLocale()} }}</p> --}}
                             </div>
                          </div>
                         @endforeach
@@ -74,7 +74,7 @@
     </div>
 
     <main>
-        <section class="about-company" data-aos="zoom-in-up">
+        <section class="about-company">
             <div class="container custom-about-container">
                 <h1 class="title">@lang('front.about_us')</h1>
                 @foreach ($pages as $page)
@@ -88,7 +88,7 @@
             </div>
         </section>
 
-        <section class="insurance-products" data-aos="fade-up">
+        <section class="insurance-products">
             <div class="container">
                 <h1 class="title">@lang('front.insurance_products')</h1>
                 <div class="tab" id="categoryTab">
@@ -120,7 +120,7 @@
             </div>
         </section>
 
-        <section class="our-clients" data-aos="fade-up">
+        <section class="our-clients">
             <div class="container">
                 <h1 class="title">@lang('front.our_clients')</h1>
                 <div class="swiper2">
@@ -136,7 +136,7 @@
             </div>
         </section>
 
-        <section class="clients-choose" data-aos="flip-down" data-aos-duration="1500">
+        <section class="clients-choose">
             <div class="container">
                 <div class="clients-choose__content">
                     <div class="clients-choose__left">
@@ -174,7 +174,7 @@
                 <h1 class="title">@lang('front.news')</h1>
                 <div class="news__row news2__row">
                   @foreach ($news as $new)
-                    <a href="{{ route('new.show', $new->{'slug_' . app()->getLocale()}) }}" class="news__col" data-aos="slide-left">
+                    <a href="{{ route('new.show', $new->{'slug_' . app()->getLocale()}) }}" class="news__col">
                         <div class="img">
                             <img src="{{ asset($new->image) }}" alt="alt">
                         </div>
@@ -213,7 +213,7 @@
                 <div class="useful-links__row">
                     @foreach ($usefuls as $useful)
 
-                    <div class="useful-links__col" data-aos="slide-right">
+                    <div class="useful-links__col">
                         <div class="img">
                             <img src="{{ asset($useful->image) }}" alt="">
                         </div>

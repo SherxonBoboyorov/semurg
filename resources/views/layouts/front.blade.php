@@ -246,7 +246,7 @@
     @yield('content')
 
     <footer class="footer">
-        <div class="footer__info" data-aos="zoom-in">
+        <div class="footer__info">
             <div class="container">
                 <div class="footer__info__map">
                     <div class="logo">
