@@ -100,7 +100,7 @@
                 @foreach ($insurancecategories as $insurancecategory)
                     <div id="category_{{ $insurancecategory->id }}" class="tab-content">
                         @foreach($insurancecategory->insuranceproducts->where('order', 1)->sortByDesc('created_at')->take(6) as $insuranceproduct)
-                        <a href="{{ route('product', $insuranceproduct->id) }}" class="tab-content__item" data-aos="slide-right">
+                        <a href="{{ route('product', $insuranceproduct->id) }}" class="tab-content__item">
                             <div class="img-item">
                                 <img src="{{ asset($insuranceproduct->image) }}" alt="">
                             </div>
@@ -195,12 +195,12 @@
                 </a>
             </div>
         </section>
-        <section class="subscribe" data-aos="flip-up" data-aos-duration="1500">
+        <section class="subscribe">
             <div class="container">
                 <h1 class="title2">@lang('front.subscribe_to_our_newsletter')</h1>
                 <form action="" class="subscribe__form">
                     <input class="base-input" type="email" placeholder="Email" name="email" id="email">
-                    <button type="submit" class="form-btn">
+                    <button type="submit" class="form-btn" style="background: #fff">
                         @lang('front.send')
                     </button>
                 </form>
