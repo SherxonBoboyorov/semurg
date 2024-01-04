@@ -3,7 +3,7 @@
 @section('content')
 
     <main>
-        <div class="hero hero-crumb" data-aos="flip-up">
+        <div class="hero hero-crumb">
             <div class="container">
                 <div class="breadcrumb">
                     <h1 class="title">@lang('front.vacancies')</h1>
@@ -17,7 +17,7 @@
         <section class="vacancies-page">
             <div class="container">
                 <div class="parent">
-                    <div class="sidebar" data-aos="slide-right">
+                    <div class="sidebar">
                         <ul>
                             <li><a href="{{ route('news') }}">@lang('front.news')</a></li>
                             <li><a href="{{ route('forum') }}">@lang('front.forum')</a></li>
@@ -30,7 +30,7 @@
                     <div class="content vacancies-page__content">
                         <ul class="vacancies-page__accordion accordion">
                            @foreach ($vacancies as $vacancy)
-                            <li data-aos="fade-up" class="vacancies-page__accordion-item accordion-item active">
+                            <li class="vacancies-page__accordion-item accordion-item active">
                                 <div class="accordion-header">
                                     <h3>{{ $vacancy->{'title_' . app()->getLocale()} }}</h3>
                                     <button class="accordion-header__btn">

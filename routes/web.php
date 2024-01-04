@@ -60,7 +60,7 @@ Route::group([
     Route::post('survey/vote', [SurveyController::class, 'registerVote']);
     Route::get('survey/result', [SurveyController::class, 'voteResults']);
     Route::get('tenders', [TendersController::class, 'list'])->name('tenders');
-    Route::get('tenders/{slug}', [TendersController::class, 'show'])->name('tender.show');
+    Route::get('tenders/{slug}', [TendersController::class, 'show'])->name('tender');
     Route::get('vacancies', [VacancysController::class, 'vacancies'])->name('vacancies');
     Route::get('history-company', [HistoryCompanysController::class, 'historyCompany'])->name('history-company');
     Route::get('leadership-management', [ManagementController::class, 'leadershipManagement'])->name('leadership-management');

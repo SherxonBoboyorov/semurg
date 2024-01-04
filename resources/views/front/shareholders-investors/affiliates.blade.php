@@ -3,7 +3,7 @@
 @section('content')
 
     <main>
-        <div class="hero hero-crumb" data-aos="flip-up">
+        <div class="hero hero-crumb">
             <div class="container">
                 <div class="breadcrumb">
                     @foreach($menu as $item)
@@ -19,7 +19,7 @@
         <section class="documents-pages">
             <div class="container">
                 <div class="parent">
-                    <div class="sidebar" data-aos="slide-right">
+                    <div class="sidebar">
                         <ul>
                             @foreach ($categories as $category)
                                 <li><a class="@if($category->id == $id) active @endif" href="{{ route('document.show', ['id' => $category->id]) }}">{{ $category->{'title_' . app()->getLocale()} }} </a></li>
@@ -29,7 +29,7 @@
                     <div class="content documents-pages__content">
                         <ul class="documents-pages__list">
                           @foreach ($documents as $document)
-                            <li class="documents-pages__list-item" data-aos="slide-up">
+                            <li class="documents-pages__list-item">
                                 <div class="pdf-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="38" viewBox="0 0 30 38"
                                         fill="none">

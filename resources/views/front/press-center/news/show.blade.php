@@ -2,7 +2,7 @@
 
 @section('content')
     <main>
-        <div class="hero hero-crumb" data-aos="flip-up">
+        <div class="hero hero-crumb">
             <div class="container">
                 <div class="breadcrumb">
                     <h1 class="title">{{ $new->{'title_' . app()->getLocale()} }}</h1>
@@ -15,12 +15,12 @@
             </div>
         </div>
         <div class="container">
-            <div class="news-in" data-aos="fade-up">
-                {{-- <div class="news-in__img" data-aos="zoom-in">
+            <div class="news-in">
+                {{-- <div class="news-in__img">
                     <img src="{{ asset($new->image) }}" alt="">
                 </div> --}}
-                {{-- <h5 data-aos="fade-up" class="date">{{  date('d.m.Y', strtotime($new->created_at)) }}</h5> --}}
-                <p data-aos="fade-up" class="text">
+                {{-- <h5  class="date">{{  date('d.m.Y', strtotime($new->created_at)) }}</h5> --}}
+                <p class="text">
                     {!! $new->{'content_' . app()->getLocale()} !!}</p>
 
             </div>

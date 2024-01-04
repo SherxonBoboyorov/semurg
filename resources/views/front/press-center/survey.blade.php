@@ -2,7 +2,7 @@
 
 @section('content')
     <main>
-        <div class="hero hero-crumb" data-aos="flip-up">
+        <div class="hero hero-crumb">
             <div class="container">
                 <div class="breadcrumb">
                     <h1 class="title">@lang('front.survey')</h1>
@@ -16,7 +16,7 @@
         @foreach ($polls as $poll)
         <section class="survey-page">
             <div class="container">
-                <div class="survey-page__left" data-aos="slide-right">
+                <div class="survey-page__left">
                     <form action="/survey/vote" method="POST">
                     @csrf
                     <h1 class="title3">@lang('front.online_survey')</h1>
@@ -33,7 +33,7 @@
                     </form>
                 </div>
 
-              <div class="survey-page__right" data-aos="slide-left">
+              <div class="survey-page__right">
                 <h1 class="title3">@lang('front.online_survey_results')</h1>
                     <p class="desc3">{{ $poll['question_' . app()->getLocale()] }}</p>
                     <ul class="survey-page__right__list">

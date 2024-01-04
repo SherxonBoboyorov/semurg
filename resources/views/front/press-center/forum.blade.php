@@ -3,7 +3,7 @@
 @section('content')
 
     <main>
-        <div class="hero hero-crumb" data-aos="flip-up">
+        <div class="hero hero-crumb">
             <div class="container">
                 <div class="breadcrumb">
                     <h1 class="title">@lang('front.forum')</h1>
@@ -17,7 +17,7 @@
         <section class="forum-page">
             <div class="container">
                 <div class="parent">
-                    <div class="sidebar" data-aos="slide-right">
+                    <div class="sidebar">
                         <ul>
                             <li><a href="{{ route('news') }}">@lang('front.news')</a></li>
                             <li><a class="active" href="{{ route('forum') }}">@lang('front.forum')</a></li>
@@ -30,7 +30,7 @@
                     <div class="content forum-page__content">
                         <ul class="forum-page__list">
                             @foreach ($forums as $forum)
-                            <li data-aos="slide-up" class="forum-page__list-item"><a href="{{ $forum->link }}" target="{{ $forum->link }}">{{ $forum->{'title_' . app()->getLocale()} }}</a></li>
+                            <li class="forum-page__list-item"><a href="{{ $forum->link }}" target="{{ $forum->link }}">{{ $forum->{'title_' . app()->getLocale()} }}</a></li>
                             @endforeach
                         </ul>
                     </div>

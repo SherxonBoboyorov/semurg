@@ -1,4 +1,4 @@
-<div class="kacko__info" data-aos="zoom-in">
+<div class="kacko__info">
     <h3>@lang('front.automobile_model')</h3>
     <div class="types">
         @foreach ($brands as $brand)

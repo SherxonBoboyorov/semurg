@@ -3,7 +3,7 @@
 @section('content')
 
     <main>
-        <div class="hero hero-crumb" data-aos="flip-up">
+        <div class="hero hero-crumb">
             <div class="container">
                 <div class="breadcrumb">
                     <h1 class="title">Каско</h1>
@@ -14,7 +14,7 @@
                 </div>
             </div>
         </div>
-        <section class="kacko kacko-form" data-aos="zoom-in">
+        <section class="kacko kacko-form">
             <div class="container">
                 <div class="kacko__top">
                     <h1>Отправить заявку на оформление полиса</h1>

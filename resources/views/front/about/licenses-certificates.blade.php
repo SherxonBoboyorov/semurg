@@ -3,7 +3,7 @@
 @section('content')
 
     <main>
-        <div class="hero hero-crumb" data-aos="flip-up">
+        <div class="hero hero-crumb">
             <div class="container">
                 <div class="breadcrumb">
                     <h1 class="title">@lang('front.licences_and_certificates')</h1>
@@ -17,7 +17,7 @@
         <section class="licenses-certificates">
             <div class="container">
                 <div class="parent">
-                    <div class="sidebar" data-aos="slide-right">
+                    <div class="sidebar">
                         <ul>
                             <li><a href="{{ route('about-us') }}">@lang('front.about_us')</a></li>
                             <li><a href="{{ route('history-company') }}">@lang('front.company_history')</a></li>
@@ -29,7 +29,7 @@
                     <div class="content">
                         <ul class="licenses-certificates__list">
                             @foreach($licensescategories as $licensescategory)
-                            <li class="licenses-certificates__list-item" data-aos="slide-up">
+                            <li class="licenses-certificates__list-item">
                                 <h2>{{ $licensescategory->{'title_' . app()->getLocale()} }}</h2>
                                 <div>
                                     @foreach($licensescategory->licensesdocuments as $licensesdocument)

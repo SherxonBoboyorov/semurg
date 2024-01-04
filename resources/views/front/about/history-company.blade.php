@@ -4,7 +4,7 @@
 
 
 <main>
-    <div class="hero hero-crumb" data-aos="flip-up">
+    <div class="hero hero-crumb">
         <div class="container">
             <div class="breadcrumb">
                 <h1 class="title">@lang('front.company_history')</h1>

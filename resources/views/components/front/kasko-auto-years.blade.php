@@ -1,4 +1,4 @@
-<div class="kacko__info" data-aos="zoom-in">
+<div class="kacko__info">
     <h3>@lang('front.year_of_manufacture_of_the_car')</h3>
     <div class="types">
         @foreach ($years as $year)

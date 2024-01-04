@@ -7,7 +7,7 @@
 @endphp
 @section('content')
     <main>
-        <div class="hero hero-crumb" data-aos="flip-up">
+        <div class="hero hero-crumb">
             <div class="container">
                 <div class="breadcrumb">
                     <h1 class="title">@lang('front.casco')</h1>
@@ -41,7 +41,7 @@
                     @elseif (isset($_COOKIE['equipment_id']))
                         <x-front.kasko-auto-years />
                     @endif
-                    <div class="kacko__result" data-aos="fade-up" id="autoBrandSection" @if($brandId <= 0) style="display: none;" @endif>
+                    <div class="kacko__result" id="autoBrandSection" @if($brandId <= 0) style="display: none;" @endif>
                         <h1>@lang('front.calculation_results')</h1>
                         <ul class="res-list">
                             <li class="res-list__item" id="amountLiabilitySection" @if(!isset($_COOKIE['amountLiability'])) style="display: none;" @endif>

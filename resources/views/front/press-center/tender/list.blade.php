@@ -3,7 +3,7 @@
 @section('content')
 
     <main>
-        <div class="hero hero-crumb" data-aos="flip-up">
+        <div class="hero hero-crumb">
             <div class="container">
                 <div class="breadcrumb">
                     <h1 class="title">@lang('front.tenders')</h1>
@@ -17,7 +17,7 @@
         <section class="news-page tenders">
             <div class="container">
                 <div class="parent">
-                    <div class="sidebar" data-aos="slide-right">
+                    <div class="sidebar">
                         <ul>
                             <li><a href="{{ route('news') }}">@lang('front.news')</a></li>
                             <li><a href="{{ route('forum') }}">@lang('front.forum')</a></li>
@@ -30,7 +30,7 @@
                     <div class="content news-page__content">
                         <div class="news__row">
                           @foreach ($tenders as $tender)
-                            <a href="{{ route('tender.show', $tender->{'slug_' . app()->getLocale()}) }}" style="display: block" class="news__col" data-aos="slide-left">
+                            <a href="{{ route('tender', $tender->{'slug_' . app()->getLocale()}) }}" style="display: block" class="news__col">
                                 <div class="img">
                                     <img src="{{ asset($tender->image) }}" alt="">
                                 </div>

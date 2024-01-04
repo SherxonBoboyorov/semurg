@@ -3,7 +3,7 @@
 @section('content')
 
 <main>
-    <div class="hero hero-crumb" data-aos="flip-up">
+    <div class="hero hero-crumb">
         <div class="container">
             <div class="breadcrumb">
                 <h1 class="title">@lang('front.searching_results')</h1>
@@ -20,7 +20,7 @@
                 <div class="content news-page__content">
                     <div class="news__row">
                         @foreach ($news as $new)
-                        <a href="{{ route('new.show', $new->{'slug_' . app()->getLocale()}) }}" class="news__col" data-aos="fade-up">
+                        <a href="{{ route('new.show', $new->{'slug_' . app()->getLocale()}) }}" class="news__col">
                             <div class="img">
                                 <img src="{{ asset($new->image) }}" alt="">
                             </div>
@@ -44,7 +44,7 @@
                 <div class="content news-page__content">
                     <div class="news__row">
                        @foreach ($tenders as $tender)
-                        <a href="{{ route('tender.show', $tender->{'slug_' . app()->getLocale()}) }}" style="display: block" class="news__col" data-aos="slide-left">
+                        <a href="{{ route('tender.show', $tender->{'slug_' . app()->getLocale()}) }}" style="display: block" class="news__col">
                             <div class="img">
                                 <img src="{{ asset($tender->image) }}" alt="">
                             </div>
@@ -70,7 +70,7 @@
             <div class="parent">
                 <div class="content leadership-management__content">
                      @foreach ($leaderships as $leadership)
-                    <div class="leadership-management__item" data-aos="slide-right">
+                    <div class="leadership-management__item">
                         <div class="leadership-management__item-img">
                             <img src="{{ asset($leadership->image) }}" alt="">
                         </div>

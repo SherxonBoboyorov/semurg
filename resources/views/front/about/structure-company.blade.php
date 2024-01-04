@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="hero hero-crumb" data-aos="flip-up">
+<div class="hero hero-crumb">
     <div class="container">
         <div class="breadcrumb">
             <h1 class="title">@lang('front.company_structure')</h1>
@@ -19,7 +19,7 @@
         <section class="documents-pages">
             <div class="container">
                 <div class="parent">
-                    <div class="sidebar" data-aos="slide-right">
+                    <div class="sidebar">
                         <ul>
                             <li><a href="{{ route('about-us') }}">@lang('front.about_us')</a></li>
                             <li><a href="{{ route('history-company') }}">@lang('front.company_history')</a></li>
@@ -28,7 +28,7 @@
                             <li><a class="active" href="{{ route('structure-company') }}">@lang('front.company_structure')</a></li>
                         </ul>
                     </div>
-                    <div class="content documents-pages__content" data-aos="slide-up">
+                    <div class="content documents-pages__content">
                         <ul class="documents-pages__list">
                             @foreach ($stracturs as $stractur)
                             <li class="documents-pages__list-item">

@@ -12,7 +12,7 @@
                         <li><a>@lang('front.leadership_and_management')</a></li>
                     </ul>
                 </div>
-                <div class="hero-img__item" data-aos="zoom-in">
+                <div class="hero-img__item">
                     <img src="{{ asset('front/images/employees/director-img.png') }}" alt="">
                 </div>
             </div>
@@ -21,7 +21,7 @@
         <section class="leadership-management">
             <div class="container">
                 <div class="parent">
-                    <div class="sidebar" data-aos="slide-right">
+                    <div class="sidebar">
                         <ul>
                             <li><a href="{{ route('about-us') }}">@lang('front.about_us')</a></li>
                             <li><a href="{{ route('history-company') }}">@lang('front.company_history')</a></li>

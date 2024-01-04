@@ -3,7 +3,7 @@
 @section('content')
 
     <main>
-        <div class="hero hero-crumb" data-aos="flip-up">
+        <div class="hero hero-crumb">
             <div class="container">
                 <div class="breadcrumb">
                     <h1 class="title">@lang('front.frequency_asked_questions')</h1>
@@ -17,7 +17,7 @@
         <section class="faq-page">
             <div class="container">
                 <div class="parent">
-                    <div class="sidebar" data-aos="slide-right">
+                    <div class="sidebar">
                         <ul>
                             <li><a href="{{ route('news') }}">@lang('front.news')</a></li>
                             <li><a href="{{ route('forum') }}">@lang('front.forum')</a></li>
@@ -30,7 +30,7 @@
                     <div class="content faq-page__content">
                         <ul class="faq-page__accordion accordion">
                           @foreach ($faqs as $faq)
-                            <li data-aos="fade-up" class="faq-page__accordion-item accordion-item active">
+                            <li class="faq-page__accordion-item accordion-item active">
                                 <div class="accordion-header">
                                     <h3>
                                         <button class="faq-page__req">?</button>

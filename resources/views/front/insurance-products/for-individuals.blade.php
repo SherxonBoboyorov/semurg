@@ -3,7 +3,7 @@
 @section('content')
 
     <main>
-        <div class="hero hero-crumb" data-aos="flip-up">
+        <div class="hero hero-crumb">
             <div class="container">
                 <div class="breadcrumb">
                     @foreach ($menu as $item)
@@ -26,7 +26,7 @@
 
                   <div class="tab-content" style="display: grid">
                     @foreach($insuranceproducts as $insuranceproduct)
-                      <a href="{{ route('product', $insuranceproduct->id) }}" class="tab-content__item" data-aos="slide-right">
+                      <a href="{{ route('product', $insuranceproduct->id) }}" class="tab-content__item">
                           <div class="img-item">
                               <img src="{{ asset($insuranceproduct->image) }}" alt="">
                           </div>

@@ -2,7 +2,7 @@
 
 @section('content')
     <main>
-        <div class="hero hero-crumb" data-aos="flip-up">
+        <div class="hero hero-crumb">
             <div class="container">
                 <div class="breadcrumb">
                     <h1 class="title">Страхование от несчастныx случаев Спорт</h1>
@@ -27,7 +27,7 @@
                     <h1>Расчитайте стоимость страхового полиса</h1>
                 </div>
                 <div class="kacko__content">
-                    <div class="kacko__info accident-insurance__info" data-aos="zoom-in">
+                    <div class="kacko__info accident-insurance__info">
                         <ul class="add-family-member">
                             <li class="information">
                                 <label>
@@ -150,7 +150,7 @@
                             <a href="#" class="btn-right btn form-btn">Далее</a>
                         </div> --}}
                     </div>
-                    <div class="kacko__result" data-aos="fade-up">
+                    <div class="kacko__result">
                         <h1>Результаты расчета</h1>
                         <ul class="res-list">
                             <li class="res-list__item" id="person_section" style="display: none;">
